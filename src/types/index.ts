@@ -1,5 +1,14 @@
 // El Woods Apothecary - TypeScript Types
 
+// Metadata for data gathering workflow (staging files only)
+export interface GatherMetadata {
+  gatheredAt: string;                      // ISO date (YYYY-MM-DD)
+  sources: string[];                       // Key source URLs/references
+  confidence: 'high' | 'medium' | 'low';   // Research confidence level
+  isUpdate: boolean;                       // True if updating existing entry
+  notes?: string;                          // Uncertainty flags or comments
+}
+
 export interface Plant {
   id: string;
   commonName: string;

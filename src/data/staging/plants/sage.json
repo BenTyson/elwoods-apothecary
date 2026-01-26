@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "gatheredAt": "2026-01-26",
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4003706/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC5634728/",
+      "https://www.nccih.nih.gov/health/sage",
+      "https://www.drugs.com/npp/sage.html",
+      "https://www.webmd.com/vitamins/ai/ingredientmono-504/sage",
+      "https://www.peacehealth.org/medical-topics/id/hn-2158004"
+    ],
+    "confidence": "high",
+    "isUpdate": false,
+    "notes": "Thujone content in essential oil is a significant safety concern; medicinal use should be limited to 2 months max"
+  },
+  "id": "sage",
+  "commonName": "Sage",
+  "otherNames": ["Common Sage", "Culinary Sage", "Garden Sage", "True Sage"],
+  "latinName": "Salvia officinalis",
+  "family": "Lamiaceae (Mint family)",
+  "partsUsed": ["leaves"],
+  "taste": "Aromatic, slightly bitter, warm, pungent",
+  "energy": "Warming, drying, astringent",
+  "actions": ["astringent", "antiseptic", "carminative", "antispasmodic", "antimicrobial", "anti-inflammatory", "antioxidant", "diaphoretic", "nervine"],
+  "bodySystems": ["digestive", "nervous", "respiratory", "reproductive", "immune"],
+  "conditions": ["sore-throat", "indigestion", "excessive-sweating", "hot-flashes", "cognitive-decline", "inflammation", "gingivitis", "mouth-ulcers"],
+  "preparations": ["tea", "tincture", "capsule", "oil"],
+  "traditions": ["western", "folk", "tcm"],
+  "seasons": ["summer", "fall"],
+  "featured": false,
+  "safety": {
+    "generalSafety": "Safe in culinary amounts; medicinal doses should be limited to 2 months maximum due to thujone content",
+    "contraindications": [
+      "Epilepsy or seizure disorders - thujone may trigger seizures",
+      "Estrogen-sensitive conditions - has estrogenic effects",
+      "Hypertension - may affect blood pressure"
+    ],
+    "drugInteractions": [
+      "Anticonvulsants - may reduce effectiveness",
+      "Diabetes medications - may enhance hypoglycemic effects, monitor blood sugar",
+      "Sedatives/CNS depressants - may have additive effects",
+      "Blood pressure medications - may have additive effects",
+      "Anticoagulants - potential interaction"
+    ],
+    "pregnancySafe": false,
+    "pregnancyNotes": "Avoid during pregnancy; thujone may stimulate uterine contractions and is potentially abortifacient",
+    "nursingNotes": "Avoid during breastfeeding; traditionally used to reduce milk supply and may decrease lactation",
+    "childrenNotes": "Culinary amounts safe; avoid medicinal doses in children due to thujone content"
+  },
+  "dosage": {
+    "tea": "1-2 teaspoons dried leaves per cup, steep 10-15 minutes covered, 2-3 cups daily for up to 2 months",
+    "tincture": "30-60 drops (1-2ml) 2-3 times daily",
+    "capsule": "300-600mg dried leaf extract daily",
+    "gargle": "3g dried leaf per 150ml boiling water, steep 10 minutes, use several times daily"
+  },
+  "content": {
+    "overview": "Sage (Salvia officinalis) is one of the oldest and most revered medicinal herbs, with its name derived from the Latin 'salvere' meaning 'to cure' or 'to save.' This aromatic Mediterranean herb has been valued for thousands of years for its powerful antiseptic, astringent, and cognitive-enhancing properties. It is particularly noted for supporting oral health, reducing excessive sweating, and easing menopausal symptoms.",
+    "traditionalUses": "Ancient physicians including Dioscorides, Pliny, and Galen recommended sage as a diuretic, hemostatic, emmenagogue, and tonic. Greek and Roman healers used it for digestive complaints and to improve memory. European herbalists employed it for sore throats, mouth inflammations, excessive sweating, and to dry up breast milk when weaning. It was traditionally believed to promote longevity - an old proverb asks 'Why should a man die whilst sage grows in his garden?'",
+    "modernResearch": "Modern studies have validated many traditional uses. Research demonstrates anticholinesterase activity that may improve memory and attention in healthy adults. Clinical trials show efficacy for reducing hot flashes and night sweats in menopausal women. Studies confirm significant antioxidant, antimicrobial, anti-inflammatory, and hypoglycemic effects. The rosmarinic acid, carnosic acid, and carnosol content contribute to its strong antioxidant properties.",
+    "howToUse": "For sore throat and mouth health: Prepare a strong tea and use as a gargle several times daily. For digestive support: Drink tea after meals. For excessive sweating or hot flashes: Drink cold sage tea (hot tea may induce sweating). For cognitive support: Take as tea or tincture regularly. Note: Limit medicinal use to 2 months due to thujone content."
+  },
+  "constituents": [
+    "Thujone (alpha and beta - neurotoxic in excess)",
+    "Rosmarinic acid (antioxidant, anti-inflammatory)",
+    "Carnosic acid (antioxidant, antimicrobial)",
+    "Carnosol (antioxidant)",
+    "Ursolic acid (anti-inflammatory)",
+    "Camphor (antiseptic)",
+    "1,8-Cineole (eucalyptol)",
+    "Flavonoids (apigenin, luteolin)",
+    "Tannins (astringent)"
+  ],
+  "combinations": [
+    {
+      "herb": "peppermint",
+      "purpose": "Enhanced digestive support and sore throat relief"
+    },
+    {
+      "herb": "rosemary",
+      "purpose": "Cognitive enhancement and memory support"
+    },
+    {
+      "herb": "thyme",
+      "purpose": "Respiratory infections and antimicrobial action"
+    }
+  ]
+}
