@@ -1,0 +1,311 @@
+{
+  "bodySystems": [
+    {
+      "id": "nervous",
+      "name": "Nervous System",
+      "description": "Herbs that support mental health, sleep, stress response, and cognitive function",
+      "icon": "brain",
+      "color": "calming"
+    },
+    {
+      "id": "digestive",
+      "name": "Digestive System",
+      "description": "Herbs that support digestion, gut health, liver function, and nutrient absorption",
+      "icon": "stomach",
+      "color": "digestive"
+    },
+    {
+      "id": "immune",
+      "name": "Immune System",
+      "description": "Herbs that support immune function, fight infection, and promote overall resilience",
+      "icon": "shield",
+      "color": "immune"
+    },
+    {
+      "id": "respiratory",
+      "name": "Respiratory System",
+      "description": "Herbs that support lung health, clear congestion, and ease breathing",
+      "icon": "lungs",
+      "color": "respiratory"
+    },
+    {
+      "id": "skin",
+      "name": "Skin & External",
+      "description": "Herbs for topical use, wound healing, skin conditions, and external applications",
+      "icon": "hand",
+      "color": "skin"
+    },
+    {
+      "id": "cardiovascular",
+      "name": "Cardiovascular System",
+      "description": "Herbs that support heart health, circulation, and blood vessel function",
+      "icon": "heart",
+      "color": "anti-inflammatory"
+    },
+    {
+      "id": "musculoskeletal",
+      "name": "Musculoskeletal System",
+      "description": "Herbs for muscles, joints, bones, and physical recovery",
+      "icon": "bone",
+      "color": "anti-inflammatory"
+    },
+    {
+      "id": "endocrine",
+      "name": "Endocrine System",
+      "description": "Herbs that support hormonal balance, thyroid, adrenals, and metabolic function",
+      "icon": "balance",
+      "color": "adaptogen"
+    },
+    {
+      "id": "reproductive",
+      "name": "Reproductive System",
+      "description": "Herbs that support reproductive health, fertility, and hormonal cycles",
+      "icon": "flower",
+      "color": "womens"
+    },
+    {
+      "id": "urinary",
+      "name": "Urinary System",
+      "description": "Herbs that support kidney function, bladder health, and fluid balance",
+      "icon": "droplet",
+      "color": "respiratory"
+    }
+  ],
+  "preparationTypes": [
+    {
+      "id": "tea",
+      "name": "Tea / Infusion",
+      "description": "Dried herbs steeped in hot water to extract water-soluble compounds",
+      "difficulty": "beginner",
+      "timeRequired": "10-15 minutes"
+    },
+    {
+      "id": "decoction",
+      "name": "Decoction",
+      "description": "Roots, bark, or tough plant materials simmered to extract compounds",
+      "difficulty": "beginner",
+      "timeRequired": "20-45 minutes"
+    },
+    {
+      "id": "tincture",
+      "name": "Tincture",
+      "description": "Concentrated alcohol or glycerin extract for long-term preservation",
+      "difficulty": "intermediate",
+      "timeRequired": "4-6 weeks"
+    },
+    {
+      "id": "salve",
+      "name": "Salve / Balm",
+      "description": "Oil-based preparation with beeswax for topical application",
+      "difficulty": "intermediate",
+      "timeRequired": "2-4 hours"
+    },
+    {
+      "id": "oil",
+      "name": "Infused Oil",
+      "description": "Carrier oil infused with herb properties for massage or skin care",
+      "difficulty": "beginner",
+      "timeRequired": "2-6 weeks"
+    },
+    {
+      "id": "syrup",
+      "name": "Syrup",
+      "description": "Sweet preparation combining herbs with honey or sugar for palatability",
+      "difficulty": "beginner",
+      "timeRequired": "1-2 hours"
+    },
+    {
+      "id": "poultice",
+      "name": "Poultice",
+      "description": "Fresh or dried herbs applied directly to the skin",
+      "difficulty": "beginner",
+      "timeRequired": "15-30 minutes"
+    },
+    {
+      "id": "capsule",
+      "name": "Capsule / Powder",
+      "description": "Dried, powdered herbs in capsule form for internal use",
+      "difficulty": "beginner",
+      "timeRequired": "30 minutes"
+    },
+    {
+      "id": "compress",
+      "name": "Compress",
+      "description": "Cloth soaked in herbal tea or decoction applied to the body",
+      "difficulty": "beginner",
+      "timeRequired": "20-30 minutes"
+    },
+    {
+      "id": "bath",
+      "name": "Herbal Bath",
+      "description": "Herbs added to bathwater for relaxation or therapeutic effect",
+      "difficulty": "beginner",
+      "timeRequired": "30-45 minutes"
+    }
+  ],
+  "actions": [
+    {
+      "id": "adaptogen",
+      "name": "Adaptogen",
+      "description": "Helps the body adapt to stress and restore balance"
+    },
+    {
+      "id": "alterative",
+      "name": "Alterative",
+      "description": "Gradually restores proper function and vitality"
+    },
+    {
+      "id": "analgesic",
+      "name": "Analgesic",
+      "description": "Relieves pain"
+    },
+    {
+      "id": "anti-inflammatory",
+      "name": "Anti-inflammatory",
+      "description": "Reduces inflammation"
+    },
+    {
+      "id": "antimicrobial",
+      "name": "Antimicrobial",
+      "description": "Inhibits or destroys microorganisms"
+    },
+    {
+      "id": "antioxidant",
+      "name": "Antioxidant",
+      "description": "Protects cells from oxidative damage"
+    },
+    {
+      "id": "antispasmodic",
+      "name": "Antispasmodic",
+      "description": "Relieves muscle spasms and cramps"
+    },
+    {
+      "id": "anxiolytic",
+      "name": "Anxiolytic",
+      "description": "Reduces anxiety"
+    },
+    {
+      "id": "astringent",
+      "name": "Astringent",
+      "description": "Tightens and tones tissues"
+    },
+    {
+      "id": "bitter",
+      "name": "Bitter",
+      "description": "Stimulates digestion through bitter taste receptors"
+    },
+    {
+      "id": "carminative",
+      "name": "Carminative",
+      "description": "Relieves gas and bloating"
+    },
+    {
+      "id": "demulcent",
+      "name": "Demulcent",
+      "description": "Soothes and protects irritated tissues"
+    },
+    {
+      "id": "diaphoretic",
+      "name": "Diaphoretic",
+      "description": "Promotes sweating"
+    },
+    {
+      "id": "diuretic",
+      "name": "Diuretic",
+      "description": "Increases urine production"
+    },
+    {
+      "id": "emmenagogue",
+      "name": "Emmenagogue",
+      "description": "Promotes menstrual flow"
+    },
+    {
+      "id": "expectorant",
+      "name": "Expectorant",
+      "description": "Helps expel mucus from the respiratory tract"
+    },
+    {
+      "id": "hepatoprotective",
+      "name": "Hepatoprotective",
+      "description": "Protects and supports liver function"
+    },
+    {
+      "id": "hypnotic",
+      "name": "Hypnotic",
+      "description": "Induces sleep"
+    },
+    {
+      "id": "immunomodulator",
+      "name": "Immunomodulator",
+      "description": "Regulates immune system function"
+    },
+    {
+      "id": "nervine",
+      "name": "Nervine",
+      "description": "Supports and calms the nervous system"
+    },
+    {
+      "id": "sedative",
+      "name": "Sedative",
+      "description": "Calms and reduces nervous tension"
+    },
+    {
+      "id": "vulnerary",
+      "name": "Vulnerary",
+      "description": "Promotes wound healing"
+    }
+  ],
+  "traditions": [
+    {
+      "id": "western",
+      "name": "Western Herbalism",
+      "description": "European and American traditional herbal medicine"
+    },
+    {
+      "id": "tcm",
+      "name": "Traditional Chinese Medicine",
+      "description": "Ancient Chinese medical system using herbs, acupuncture, and qi"
+    },
+    {
+      "id": "ayurveda",
+      "name": "Ayurveda",
+      "description": "Traditional Indian medicine system based on doshas and balance"
+    },
+    {
+      "id": "native-american",
+      "name": "Native American",
+      "description": "Indigenous North American healing traditions"
+    },
+    {
+      "id": "folk",
+      "name": "Folk Medicine",
+      "description": "Traditional remedies passed down through generations"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "spring",
+      "name": "Spring",
+      "focus": ["detoxification", "allergies", "renewal"],
+      "description": "Time for cleansing, supporting liver, and managing seasonal allergies"
+    },
+    {
+      "id": "summer",
+      "name": "Summer",
+      "focus": ["cooling", "hydration", "skin-protection"],
+      "description": "Time for cooling herbs, sun protection, and staying hydrated"
+    },
+    {
+      "id": "fall",
+      "name": "Fall",
+      "focus": ["immune-building", "respiratory", "grounding"],
+      "description": "Time to build immunity, support lungs, and prepare for winter"
+    },
+    {
+      "id": "winter",
+      "name": "Winter",
+      "focus": ["immune-support", "warming", "rest"],
+      "description": "Time for immune support, warming herbs, and deep nourishment"
+    }
+  ]
+}

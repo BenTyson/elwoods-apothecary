@@ -1,0 +1,224 @@
+{
+  "conditions": [
+    {
+      "id": "anxiety",
+      "name": "Anxiety & Stress",
+      "category": "nervous",
+      "description": "Feelings of worry, nervousness, or unease about something with an uncertain outcome. Stress response that may include racing thoughts, tension, and physical symptoms.",
+      "symptoms": ["Racing thoughts", "Tension", "Restlessness", "Sleep difficulties", "Difficulty concentrating", "Irritability"],
+      "herbs": ["chamomile", "lavender", "lemon-balm", "passionflower", "ashwagandha", "holy-basil"],
+      "approaches": [
+        "Nervine herbs to calm the nervous system",
+        "Adaptogens for long-term stress resilience",
+        "Relaxing teas throughout the day",
+        "Aromatherapy with calming essential oils"
+      ],
+      "lifestyle": [
+        "Regular sleep schedule",
+        "Mindfulness or meditation practice",
+        "Physical exercise",
+        "Limiting caffeine and alcohol",
+        "Time in nature"
+      ],
+      "whenToSeek": "If anxiety significantly interferes with daily life, causes panic attacks, or is accompanied by depression"
+    },
+    {
+      "id": "insomnia",
+      "name": "Insomnia & Sleep Issues",
+      "category": "nervous",
+      "description": "Difficulty falling asleep, staying asleep, or waking too early. Can be occasional or chronic, often related to stress, anxiety, or poor sleep habits.",
+      "symptoms": ["Difficulty falling asleep", "Waking during the night", "Early morning waking", "Daytime fatigue", "Irritability", "Poor concentration"],
+      "herbs": ["valerian", "passionflower", "chamomile", "lavender", "hops", "california-poppy"],
+      "approaches": [
+        "Sedative herbs taken 30-60 minutes before bed",
+        "Nervine teas to wind down in evening",
+        "Lavender aromatherapy or pillow sachets",
+        "Consistent evening herbal ritual"
+      ],
+      "lifestyle": [
+        "Consistent sleep schedule",
+        "Dark, cool sleeping environment",
+        "Avoid screens 1-2 hours before bed",
+        "No caffeine after noon",
+        "Regular exercise (not close to bedtime)"
+      ],
+      "whenToSeek": "If insomnia persists for more than a few weeks, if accompanied by daytime impairment, or if you suspect sleep apnea"
+    },
+    {
+      "id": "indigestion",
+      "name": "Indigestion & Upset Stomach",
+      "category": "digestive",
+      "description": "Discomfort in the upper abdomen including bloating, gas, nausea, or a feeling of fullness. Often related to eating too quickly, rich foods, or stress.",
+      "symptoms": ["Bloating", "Gas", "Nausea", "Fullness", "Stomach pain", "Heartburn"],
+      "herbs": ["peppermint", "ginger", "chamomile", "fennel", "dandelion", "gentian"],
+      "approaches": [
+        "Carminative herbs to relieve gas and bloating",
+        "Bitter herbs before meals to stimulate digestion",
+        "Soothing teas after meals",
+        "Ginger for nausea"
+      ],
+      "lifestyle": [
+        "Eat slowly and mindfully",
+        "Don't eat when stressed",
+        "Avoid lying down after meals",
+        "Identify trigger foods",
+        "Smaller, more frequent meals"
+      ],
+      "whenToSeek": "If symptoms persist, are severe, include vomiting blood, unexplained weight loss, or difficulty swallowing"
+    },
+    {
+      "id": "cold",
+      "name": "Common Cold",
+      "category": "immune",
+      "description": "Viral upper respiratory infection causing congestion, sore throat, runny nose, and general malaise. Typically lasts 7-10 days.",
+      "symptoms": ["Runny or stuffy nose", "Sore throat", "Sneezing", "Cough", "Mild body aches", "Low-grade fever"],
+      "herbs": ["elderberry", "echinacea", "ginger", "thyme", "garlic", "peppermint"],
+      "approaches": [
+        "Immune-supporting herbs at first sign of symptoms",
+        "Diaphoretic teas to support fever",
+        "Expectorant herbs for congestion",
+        "Throat-soothing preparations"
+      ],
+      "lifestyle": [
+        "Rest and adequate sleep",
+        "Stay well hydrated",
+        "Warm broths and soups",
+        "Humidifier for dry air",
+        "Reduce stress"
+      ],
+      "whenToSeek": "If fever is high or prolonged, symptoms worsen after 10 days, difficulty breathing, or symptoms of secondary infection"
+    },
+    {
+      "id": "flu",
+      "name": "Influenza (Flu)",
+      "category": "immune",
+      "description": "More severe viral respiratory illness than a cold, with sudden onset of high fever, body aches, fatigue, and respiratory symptoms.",
+      "symptoms": ["High fever", "Severe body aches", "Extreme fatigue", "Headache", "Dry cough", "Sore throat"],
+      "herbs": ["elderberry", "echinacea", "boneset", "yarrow", "ginger", "garlic"],
+      "approaches": [
+        "Elderberry to reduce duration and severity",
+        "Diaphoretic herbs to support fever response",
+        "Immune-stimulating herbs",
+        "Soothing preparations for symptoms"
+      ],
+      "lifestyle": [
+        "Complete rest - this is essential",
+        "Plenty of fluids",
+        "Light, easily digestible foods",
+        "Allow fever to work (unless dangerously high)",
+        "Isolation to prevent spread"
+      ],
+      "whenToSeek": "Difficulty breathing, persistent chest pain, confusion, severe vomiting, high-risk groups (elderly, pregnant, immunocompromised)"
+    },
+    {
+      "id": "headache",
+      "name": "Headache & Tension",
+      "category": "nervous",
+      "description": "Pain or discomfort in the head, often related to tension, stress, dehydration, or eye strain. Tension headaches are most common.",
+      "symptoms": ["Head pain", "Pressure around head", "Neck and shoulder tension", "Sensitivity to light", "Fatigue"],
+      "herbs": ["peppermint", "lavender", "feverfew", "willow-bark", "meadowsweet", "chamomile"],
+      "approaches": [
+        "Peppermint oil applied to temples (diluted)",
+        "Lavender aromatherapy",
+        "Anti-inflammatory herbs for pain",
+        "Nervine herbs if tension-related"
+      ],
+      "lifestyle": [
+        "Stay well hydrated",
+        "Regular sleep schedule",
+        "Manage stress",
+        "Good posture",
+        "Eye breaks from screens",
+        "Regular meals"
+      ],
+      "whenToSeek": "Sudden severe headache, headache with fever and stiff neck, headache after head injury, changes in vision or speech"
+    },
+    {
+      "id": "skin-irritation",
+      "name": "Skin Irritation & Minor Wounds",
+      "category": "skin",
+      "description": "Minor skin issues including rashes, irritation, minor cuts, scrapes, burns, and insect bites.",
+      "symptoms": ["Redness", "Itching", "Minor pain", "Swelling", "Dry or cracked skin"],
+      "herbs": ["calendula", "plantain", "chamomile", "lavender", "comfrey", "aloe"],
+      "approaches": [
+        "Vulnerary herbs to promote healing",
+        "Anti-inflammatory herbs to reduce irritation",
+        "Antimicrobial herbs to prevent infection",
+        "Demulcent herbs to soothe and protect"
+      ],
+      "lifestyle": [
+        "Keep wounds clean and covered",
+        "Avoid scratching",
+        "Identify and remove irritants",
+        "Stay hydrated for skin health"
+      ],
+      "whenToSeek": "Signs of infection (increasing redness, pus, fever), deep wounds, burns larger than 3 inches, wounds that won't stop bleeding"
+    },
+    {
+      "id": "nausea",
+      "name": "Nausea & Motion Sickness",
+      "category": "digestive",
+      "description": "Feeling of sickness with an inclination to vomit. Can be caused by motion, pregnancy, digestive upset, or other factors.",
+      "symptoms": ["Queasiness", "Urge to vomit", "Cold sweats", "Dizziness", "Loss of appetite"],
+      "herbs": ["ginger", "peppermint", "chamomile", "fennel", "lemon-balm"],
+      "approaches": [
+        "Ginger in any form - tea, capsules, crystallized, or fresh",
+        "Peppermint tea or aromatherapy",
+        "Small sips rather than large amounts",
+        "Aromatherapy with calming scents"
+      ],
+      "lifestyle": [
+        "Eat small, frequent meals",
+        "Avoid strong smells",
+        "Fresh air",
+        "Avoid lying flat",
+        "Stay hydrated with small sips"
+      ],
+      "whenToSeek": "Persistent vomiting, blood in vomit, signs of dehydration, severe abdominal pain, head injury"
+    },
+    {
+      "id": "inflammation",
+      "name": "Inflammation & Pain",
+      "category": "musculoskeletal",
+      "description": "Body's response to injury or irritation, causing redness, swelling, heat, and pain. Can be acute or chronic.",
+      "symptoms": ["Swelling", "Redness", "Heat", "Pain", "Stiffness", "Loss of function"],
+      "herbs": ["turmeric", "ginger", "willow-bark", "meadowsweet", "boswellia", "devil's-claw"],
+      "approaches": [
+        "Anti-inflammatory herbs taken consistently",
+        "Topical applications for localized pain",
+        "Combining multiple anti-inflammatory herbs",
+        "Addressing root cause alongside symptom relief"
+      ],
+      "lifestyle": [
+        "Anti-inflammatory diet (reduce sugar, processed foods)",
+        "Omega-3 fatty acids",
+        "Regular gentle movement",
+        "Adequate sleep",
+        "Stress management"
+      ],
+      "whenToSeek": "Severe pain, inability to move joint, signs of infection, inflammation without known cause"
+    },
+    {
+      "id": "immune-weakness",
+      "name": "Weak Immunity",
+      "category": "immune",
+      "description": "Tendency to catch illnesses frequently, slow recovery, or general feeling of being run down. Often related to stress, poor diet, or lack of sleep.",
+      "symptoms": ["Frequent colds", "Slow recovery", "Fatigue", "Recurrent infections"],
+      "herbs": ["astragalus", "elderberry", "reishi", "echinacea", "garlic", "holy-basil"],
+      "approaches": [
+        "Adaptogenic herbs for long-term resilience",
+        "Immune-modulating herbs taken consistently",
+        "Elderberry during cold/flu season",
+        "Deep immune tonics for chronic weakness"
+      ],
+      "lifestyle": [
+        "7-9 hours of sleep",
+        "Stress management",
+        "Nutrient-rich diet",
+        "Regular moderate exercise",
+        "Adequate vitamin D"
+      ],
+      "whenToSeek": "Frequent severe infections, infections that don't respond to treatment, unexplained weight loss or fatigue"
+    }
+  ]
+}
