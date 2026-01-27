@@ -10,6 +10,12 @@
 | `src/data/categories.json` | Taxonomy (body systems, preparations, actions, traditions) | 5KB |
 | `src/data/conditions.json` | Ailment guides | 8KB |
 | `src/data/remedies.json` | Recipe database | 10KB |
+| `src/data/ingredients.json` | Non-plant materials (carrier oils, waxes, etc.) | varies |
+| `src/data/preparations.json` | Method guides (how to make tinctures, etc.) | varies |
+| `src/data/actions.json` | Herbal action definitions | varies |
+| `src/data/glossary.json` | Herbal terminology | varies |
+| `src/data/teas.json` | Tea varieties (Camellia sinensis) | varies |
+| `src/data/reference/duke-plants.json` | Dr. Duke's phytochemical reference (2,336 plants, CC0) | 3.4MB |
 | `src/data/staging/` | Staged data awaiting review (see Gather Skill below) | varies |
 
 ---
@@ -60,6 +66,15 @@ getRemediesByHerb(herbId: string): Remedy[]
 getRemediesByCondition(conditionId: string): Remedy[]
 ```
 
+### Staging
+
+**File**: `src/lib/staging.ts`
+
+```typescript
+getAllStagedItems(): StagedItemSummary[]
+getStagedItemByPath(relativePath: string): StagedItemDetail | null
+```
+
 ### Utilities
 
 ```typescript
@@ -82,6 +97,26 @@ interface GatherMetadata {
   confidence: 'high' | 'medium' | 'low';   // Research confidence level
   isUpdate: boolean;                       // True if updating existing entry
   notes?: string;                          // Uncertainty flags or comments
+}
+```
+
+### Staging Types
+
+**File**: `src/types/staging.ts`
+
+```typescript
+type StagedItemType = 'plant' | 'condition' | 'remedy';
+
+interface StagedItemSummary {
+  id: string;
+  name: string;
+  type: StagedItemType;
+  filePath: string;
+  meta: GatherMetadata;
+}
+
+interface StagedItemDetail extends StagedItemSummary {
+  data: Record<string, unknown>;
 }
 ```
 
@@ -136,6 +171,16 @@ interface PlantContent {
   howToUse: string;
   harvesting?: string;
   cultivation?: string;
+  // Botanical sections
+  history?: string;
+  nativeRange?: string;
+  taxonomy?: string;
+  morphology?: string;
+  // Practical sections
+  storage?: string;
+  quality?: string;
+  conservationStatus?: string;
+  lookalikes?: string;
 }
 ```
 
@@ -166,6 +211,96 @@ interface FilterState {
 }
 ```
 
+### Ingredient (New)
+
+```typescript
+interface Ingredient {
+  id: string;
+  name: string;
+  otherNames?: string[];
+  category: IngredientCategory;  // 'carrier-oil' | 'wax' | 'butter' | 'solvent' | ...
+  source: string;
+  description: string;
+  properties: IngredientProperties;
+  uses: string[];
+  substitutes?: IngredientSubstitute[];
+  safety?: IngredientSafety;
+  content: IngredientContent;
+}
+```
+
+### Preparation (Method Guide) (New)
+
+```typescript
+interface Preparation {
+  id: string;
+  name: string;
+  type: PreparationType;
+  description: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  timeRequired: string;
+  equipment: string[];
+  ratios: PreparationRatio[];
+  process: PreparationStep[];
+  troubleshooting?: TroubleshootingItem[];
+  storage: StorageInfo;
+  content: PreparationContent;
+}
+```
+
+### Action (New)
+
+```typescript
+interface Action {
+  id: string;
+  name: string;
+  pronunciation?: string;
+  definition: string;
+  category: ActionCategory;  // 'nervous-system' | 'digestive' | 'immune' | ...
+  mechanism: string;
+  exampleHerbs: string[];
+  conditions: string[];
+  relatedActions?: string[];
+  traditions: ActionTradition[];
+  content: ActionContent;
+}
+```
+
+### GlossaryTerm (New)
+
+```typescript
+interface GlossaryTerm {
+  id: string;
+  term: string;
+  pronunciation?: string;
+  definition: string;
+  etymology?: string;
+  category: GlossaryCategory;  // 'botanical' | 'preparation' | 'action' | ...
+  usageExamples?: string[];
+  relatedTerms?: string[];
+  seeAlso?: GlossaryReference[];
+}
+```
+
+### Tea (New)
+
+```typescript
+interface Tea {
+  id: string;
+  name: string;
+  otherNames?: string[];
+  teaType: TeaType;  // 'white' | 'green' | 'oolong' | 'black' | 'dark' | ...
+  origin: TeaOrigin;
+  processing: TeaProcessing;
+  profile: TeaProfile;
+  brewing: BrewingParameters;
+  caffeine: CaffeineProfile;
+  health: TeaHealth;
+  grading?: TeaGrading;
+  content: TeaContent;
+}
+```
+
 ---
 
 ## Adding New Data
@@ -181,29 +316,26 @@ interface FilterState {
 The `/gather` skill provides a structured workflow for researching and adding data:
 
 ```bash
-# Research and stage a new plant
-/gather plant ashwagandha
+# Research different content types
+/gather plant ashwagandha      # Herbs/medicinal plants (12 searches)
+/gather condition insomnia     # Health conditions
+/gather remedy calming-tea     # Recipes/formulas
+/gather ingredient jojoba-oil  # Non-plant materials (8 searches)
+/gather preparation tincture   # Method guides (7 searches)
+/gather action adaptogen       # Herbal actions (7 searches)
+/gather term menstruum         # Glossary terms
+/gather tea longjing           # Tea varieties (9 searches)
 
-# Research a health condition
-/gather condition insomnia
-
-# Research a remedy
-/gather remedy calming-tea
-
-# List existing items
-/gather --list plants
-
-# Review all staged items
-/gather --review
-
-# Merge staged item to main database
-/gather --merge plants/ashwagandha.json
+# Management commands
+/gather --list plants          # List existing items
+/gather --review               # Review all staged items
+/gather --merge plants/xyz.json # Merge staged item to main database
 ```
 
 **Workflow:**
 1. **Research** - Claude searches authoritative sources
 2. **Stage** - Data saved to `src/data/staging/<type>/<id>.json` with metadata
-3. **Review** - Inspect staged files, verify accuracy
+3. **Review** - Inspect staged files, verify accuracy (also via `/admin/staging` UI)
 4. **Merge** - Add to main JSON, metadata stripped
 
 **Staging Directory Structure:**
@@ -212,6 +344,11 @@ src/data/staging/
 ├── plants/
 ├── conditions/
 ├── remedies/
+├── ingredients/
+├── preparations/
+├── actions/
+├── glossary/
+├── teas/
 └── README.md
 ```
 
@@ -231,6 +368,22 @@ src/data/staging/
 ```
 
 See `src/data/staging/README.md` for full workflow documentation.
+
+## Duke Reference Data
+
+**File**: `src/data/reference/duke-plants.json`
+**Source**: USDA Dr. Duke's Phytochemical and Ethnobotanical Databases (CC0 Public Domain)
+**Build**: `node scripts/build-duke-reference.js <path-to-duke-csvs>`
+
+Pre-built reference indexed by slugified Latin name (e.g., `valeriana-officinalis`). Contains 2,336 plants with:
+
+- `latinName` — Full taxonomic name
+- `family` — Plant family (e.g., Valerianaceae)
+- `commonNames` — Array of common names
+- `constituents` — Chemical compounds grouped by plant part (e.g., Root, Leaf, Flower)
+- `ethnobotany` — Traditional uses (e.g., Insomnia, Sedative, Nervine)
+
+The `/gather` skill consults this reference in Step 1.5 to pre-fill plant data before web searches.
 
 ## Color Mapping
 

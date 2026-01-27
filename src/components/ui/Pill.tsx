@@ -10,6 +10,9 @@ type PillVariant =
   | 'womens'
   | 'anti-inflammatory'
   | 'preparation'
+  | 'confidence-high'
+  | 'confidence-medium'
+  | 'confidence-low'
   | 'default';
 
 interface PillProps {
@@ -29,6 +32,9 @@ const variantStyles: Record<PillVariant, string> = {
   'anti-inflammatory':
     'bg-anti-inflammatory/20 text-anti-inflammatory border-anti-inflammatory',
   preparation: 'bg-moss/30 text-fern border-moss',
+  'confidence-high': 'bg-fern/30 text-fern border-fern',
+  'confidence-medium': 'bg-amber/30 text-amber border-amber',
+  'confidence-low': 'bg-womens/30 text-womens border-womens',
   default: 'bg-forest-800/50 text-mist border-moss',
 };
 
@@ -61,4 +67,9 @@ export function getSystemVariant(system: string): PillVariant {
     urinary: 'respiratory',
   };
   return mapping[system] || 'default';
+}
+
+// Helper to map confidence level to pill variant
+export function getConfidenceVariant(confidence: 'high' | 'medium' | 'low'): PillVariant {
+  return `confidence-${confidence}` as PillVariant;
 }

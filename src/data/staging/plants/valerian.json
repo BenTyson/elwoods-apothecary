@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "gatheredAt": "2026-01-26",
+    "sources": [
+      "https://ods.od.nih.gov/factsheets/Valerian-HealthProfessional/",
+      "https://www.nccih.nih.gov/health/valerian",
+      "https://en.wikipedia.org/wiki/Valerian_(herb)",
+      "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/valerian",
+      "https://www.ncbi.nlm.nih.gov/books/NBK501815/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4100259/",
+      "https://www.first-nature.com/flowers/valeriana-officinalis.php",
+      "https://www.ahpa.org/herbs_in_history_valerian"
+    ],
+    "confidence": "high",
+    "isUpdate": false,
+    "notes": "Well-documented herb with extensive research. Some conflicting evidence on efficacy but safety profile is clear."
+  },
+  "id": "valerian",
+  "commonName": "Valerian",
+  "otherNames": ["All-Heal", "Garden Heliotrope", "Setwall", "Baldrian"],
+  "latinName": "Valeriana officinalis",
+  "family": "Caprifoliaceae",
+  "partsUsed": ["root", "rhizome"],
+  "taste": "bitter, pungent, slightly sweet",
+  "energy": "warming, drying",
+  "actions": [
+    "sedative",
+    "anxiolytic",
+    "nervine",
+    "antispasmodic",
+    "hypnotic",
+    "carminative"
+  ],
+  "bodySystems": ["nervous", "digestive", "musculoskeletal"],
+  "conditions": [
+    "insomnia",
+    "anxiety",
+    "stress",
+    "muscle tension",
+    "nervous restlessness",
+    "menstrual cramps"
+  ],
+  "preparations": ["tincture", "tea", "capsule", "decoction"],
+  "traditions": ["western", "folk"],
+  "seasons": ["fall", "spring"],
+  "featured": false,
+  "constituents": [
+    "valerenic acid",
+    "isovaleric acid",
+    "valepotriates (valtrate, isovaltrate)",
+    "GABA",
+    "flavonoids (hesperidin, linarin, 6-methylapigenin)",
+    "sesquiterpenes",
+    "alkaloids",
+    "essential oils (borneol, bornyl acetate)"
+  ],
+  "safety": {
+    "generalSafety": "Generally well-tolerated for short-term use (4-8 weeks). May cause drowsiness, headache, or digestive upset in some individuals. Rare reports of vivid dreams or paradoxical stimulation.",
+    "contraindications": [
+      "Allergy to valerian",
+      "Scheduled surgery (discontinue 2 weeks prior due to potential anesthesia interactions)",
+      "Liver disease (rare hepatotoxicity reports)"
+    ],
+    "drugInteractions": [
+      "CNS depressants (benzodiazepines, barbiturates, opioids) - additive sedation",
+      "Alcohol - enhanced sedative effects",
+      "Anesthetics - may prolong sedation",
+      "Other sedating herbs (kava, passionflower) - additive effects"
+    ],
+    "pregnancySafe": false,
+    "pregnancyNotes": "Not recommended during pregnancy due to insufficient safety data. Valepotriates have shown cytotoxic effects in vitro.",
+    "nursingNotes": "Not recommended while breastfeeding, especially with newborns or preterm infants. May cause sedation in nursing infants. Limited safety data available.",
+    "childrenNotes": "Not recommended for children under 3 years. Limited safety data for children. If used in older children, use lower doses under practitioner guidance."
+  },
+  "dosage": {
+    "tea": "1-2 tsp dried root per cup, steep 10-15 minutes, 1-3 cups daily",
+    "tincture": "2-4 mL (1:5, 40% alcohol) up to 3 times daily, or 4-6 mL before bed",
+    "capsule": "300-600 mg standardized extract, 30 minutes to 2 hours before bed",
+    "decoction": "1-2 tsp dried root simmered 10-15 minutes, strain, drink before bed"
+  },
+  "combinations": [
+    {
+      "herb": "passionflower",
+      "purpose": "Enhanced sedative and anxiolytic effects for sleep and anxiety"
+    },
+    {
+      "herb": "hops",
+      "purpose": "Synergistic sleep support, traditional combination for insomnia"
+    },
+    {
+      "herb": "lemon-balm",
+      "purpose": "Calming blend for nervous tension and stress-related sleep issues"
+    },
+    {
+      "herb": "skullcap",
+      "purpose": "Nervous system support for anxiety with tension"
+    }
+  ],
+  "content": {
+    "overview": "Valerian is one of the most well-known and extensively studied herbal sedatives in Western herbalism. The root has been used for over 2,000 years to promote relaxation and support healthy sleep. Its distinctive, pungent odor (often compared to dirty socks) comes from volatile compounds that develop during drying. Modern research has identified multiple mechanisms of action, primarily involving GABA receptors in the brain, though the full picture of how valerian works remains complex.",
+    "traditionalUses": "Ancient Greek physicians Hippocrates and Galen prescribed valerian for insomnia. In medieval Europe, it was used for a wide range of conditions including epilepsy, plague, and as a general tonic. The 16th-century herbalist John Gerard noted it was highly valued by the poor in northern England and Scotland. In medieval Sweden, valerian was placed in wedding clothes to ward off elves. Traditional use focused on nervous conditions, hysteria, and as a calming remedy during times of stress.",
+    "modernResearch": "Valerian contains over 150 chemical compounds with sedative properties mediated primarily through GABAergic mechanisms. Valerenic acid inhibits GABA breakdown and influences serotonin and noradrenaline levels. Meta-analyses show valerian may improve subjective sleep quality, though results are inconsistent. Clinical evidence for anxiety is limited. Studies confirm a favorable safety profile with no clinically relevant drug interactions at typical doses, despite theoretical concerns about CNS depressant combinations.",
+    "howToUse": "For sleep, take valerian 30 minutes to 2 hours before bed. Effects may take 2-4 weeks of consistent use to become noticeable. Tinctures work faster than capsules. Tea requires longer steeping (10-15 minutes) to extract active compounds from the tough root. The strong taste can be masked by combining with pleasant-tasting herbs like lemon balm or peppermint. Start with lower doses and increase as needed.",
+    "history": "The name 'valerian' likely derives from the Latin 'valere' meaning 'to be well' or 'to be strong,' though some scholars link it to the Roman district of Valeria in Pannonia. Hippocrates described its properties in ancient Greece, and Galen later prescribed it specifically for insomnia. The modern use as a nervine and sleep aid emerged in 17th-century Italy. The similar name to Valium is coincidental—Valium's name comes from the Latin salute 'Vale' meaning 'be well' or 'sleep well.'",
+    "nativeRange": "Native to Europe and southwestern Asia, ranging from Iceland south to Portugal, north to central Scandinavia, east to European Russia, and southeast to Iran. Found throughout Britain, Ireland, and mainland Europe. Introduced to North America as an ornamental and medicinal plant, where it has naturalized and is considered invasive in Connecticut, Wisconsin, and parts of Canada. Prefers moist habitats including wet meadows, woodland edges, marshes, and stream banks.",
+    "taxonomy": "Valeriana officinalis belongs to the family Caprifoliaceae (honeysuckle family), subfamily Valerianoideae. It is the type species of the genus Valeriana, which contains over 435 species worldwide. Three subspecies are recognized: V. officinalis subsp. officinalis (most common), V. officinalis subsp. sambucifolia (wetter habitats), and V. officinalis subsp. tenuifolia. Related species include marsh valerian (V. dioica), alpine valerian (V. celtica), and Korean valerian (V. fauriei). Red valerian (Centranthus ruber) is not closely related despite the common name.",
+    "morphology": "Herbaceous perennial growing 1-1.5m tall (rarely to 2m) from a sturdy rhizome with many secondary roots and short runners. Stems are erect, hollow, and usually unbranched. Leaves are opposite and pinnately compound with 5-25 toothed, lanceolate leaflets, dark green and hairy underneath. Flowers appear June-August: tiny (2.5-5mm), sweetly fragrant, white to pale pink, arranged in umbrella-shaped clusters (umbels) 2-5 inches across. Seeds have small parachutes for wind dispersal. The plant spreads via stolons and seeds. Fresh plant is nearly odorless; the characteristic pungent smell develops only after drying.",
+    "storage": "Store dried valerian root in airtight containers away from light, heat, and moisture. Whole root keeps better than cut or powdered forms. Shelf life is typically 2-3 years, though potency decreases over time. Research shows valerenic acid can degrade 50-70% over 6 months when stored at high temperature (30°C) and low humidity. To check freshness, smell the root—it should have a strong, characteristic odor. Faded color and weak smell indicate degradation. Keep whole roots when possible and grind only as needed.",
+    "quality": "Look for valerian root with a strong, characteristic pungent odor (the stronger the smell, the more potent). Color should be light brown to grayish-brown. Avoid root that appears moldy, has an off smell, or looks excessively dark. Quality varies significantly between products since valerian is not regulated for standardization in the US. Standardized extracts (to valerenic acid content) may be more consistent. Look for organic certification, third-party testing, and GMP certification. Reputable suppliers include Mountain Rose Herbs and Herb Pharm.",
+    "conservationStatus": "Common valerian (Valeriana officinalis) is not endangered—it is actually considered invasive in parts of North America (banned in Connecticut, listed as noxious in Wisconsin). The species readily naturalizes and spreads via rhizomes and wind-dispersed seeds. However, some related species are of conservation concern: Hairy valerian (V. edulis ssp. ciliata) is Endangered in Canada, and Indian valerian (V. jatamansi) is highly endangered in the Himalayas due to overharvesting. For V. officinalis, cultivated sources are preferred to reduce spread of invasive populations.",
+    "lookalikes": "Red valerian (Centranthus ruber), commonly seen growing from walls, has deeper pink/red flowers and is not medicinally interchangeable—it lacks the sedative properties of true valerian. Key differences: true valerian has pale pink to white flowers, pinnate leaves, and grows much taller (up to 6 feet). The distinctive smell of dried valerian root is the best identifier—no lookalike shares this pungent odor. When foraging, the fragrant white flower clusters in midsummer are easiest to spot. Growing your own from seed is the safest approach for positive identification."
+  }
+}

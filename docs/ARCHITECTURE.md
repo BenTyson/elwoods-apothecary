@@ -28,6 +28,7 @@
 | `/browse` | Client | Interactive filtering |
 | `/browse/[slug]` | Static (SSG) | Pre-rendered via `generateStaticParams()` |
 | `/learn`, `/tools`, `/shop` | Static | Placeholder pages |
+| `/admin/staging` | Server + Client | Server fetches staged files, client handles selection UI |
 
 ## Data Flow
 
@@ -36,9 +37,12 @@ JSON Files → data.ts functions → Components → UI
      ↓              ↓
   types/       TypeScript
   index.ts     validation
+
+Staging Files → staging.ts functions → Admin UI
+Reference DB  → /gather skill (pre-fills plant data)
 ```
 
-**Pattern**: No runtime data fetching. All data imported statically from JSON at build time.
+**Pattern**: No runtime data fetching. All data imported statically from JSON at build time. Staging data read at build time via `staging.ts`. Reference data consulted by the `/gather` skill during research.
 
 ## Key Patterns
 
@@ -93,5 +97,7 @@ import { getAllPlants } from '@/lib/data';
 |------|----------------------|
 | `layout.tsx` | Wrap pages with Header/Footer |
 | `data.ts` | All data queries |
+| `staging.ts` | Staging data access (read staged JSON files) |
 | `types/index.ts` | All interfaces |
+| `types/staging.ts` | Staging-specific types |
 | `globals.css` | All design tokens |

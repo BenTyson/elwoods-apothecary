@@ -130,10 +130,14 @@ src/
 │   ├── ui/           # Generic reusable
 │   ├── layout/       # Header, Footer
 │   ├── herbs/        # Domain-specific
+│   ├── staging/      # Admin staging review
 │   └── index.ts      # Barrel exports
 ├── lib/              # Utilities, data access
 ├── types/            # TypeScript only
 └── data/             # JSON only
+    ├── reference/    # Generated reference data
+    └── staging/      # Staged data from /gather
+scripts/              # Build utilities (Node.js)
 ```
 
 ## Git

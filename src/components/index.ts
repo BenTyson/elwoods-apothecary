@@ -9,3 +9,8 @@ export * from './ui/Callout';
 
 // Herb components
 export * from './herbs/HerbCard';
+
+// Staging components
+export * from './staging/StagedItemCard';
+export * from './staging/StagedItemDetail';
+export * from './staging/SourceLink';

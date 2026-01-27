@@ -5,7 +5,7 @@
 ## Import Pattern
 
 ```typescript
-import { Button, Pill, Callout, HerbCard } from '@/components';
+import { Button, Pill, Callout, HerbCard, StagedItemCard } from '@/components';
 ```
 
 All components exported from `src/components/index.ts`.
@@ -118,12 +118,74 @@ interface HerbCardProps {
 
 ---
 
+## Staging Components
+
+### StagedItemCard
+
+**File**: `src/components/staging/StagedItemCard.tsx`
+
+Client component for displaying staged items in a list.
+
+```typescript
+interface StagedItemCardProps {
+  item: StagedItemSummary;
+  isSelected?: boolean;
+  onClick?: () => void;
+}
+```
+
+**Usage**:
+```tsx
+<StagedItemCard item={stagedItem} isSelected={selected} onClick={handleSelect} />
+```
+
+---
+
+### StagedItemDetail
+
+**File**: `src/components/staging/StagedItemDetail.tsx`
+
+Displays full details of a staged item including metadata, sources, and data preview.
+
+```typescript
+interface StagedItemDetailProps {
+  item: StagedItemDetail;
+}
+```
+
+**Usage**:
+```tsx
+<StagedItemDetail item={selectedItem} />
+```
+
+---
+
+### SourceLink
+
+**File**: `src/components/staging/SourceLink.tsx`
+
+Displays a source URL with extracted domain and external link icon.
+
+```typescript
+interface SourceLinkProps {
+  url: string;
+}
+```
+
+**Usage**:
+```tsx
+<SourceLink url="https://example.com/article" />
+```
+
+---
+
 ## Adding New Components
 
 1. Create file in appropriate subfolder:
    - `ui/` - Generic reusable
    - `layout/` - Page structure
    - `herbs/` - Domain-specific
+   - `staging/` - Admin staging review
 
 2. Export from `src/components/index.ts`:
    ```typescript

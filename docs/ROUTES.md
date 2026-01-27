@@ -11,6 +11,7 @@
 /learn               → Educational [placeholder]
 /tools               → Tools [placeholder]
 /shop                → Marketplace [placeholder]
+/admin/staging       → Staging data review (Server + Client)
 ```
 
 ---
@@ -25,6 +26,7 @@
 | `/learn` | `src/app/learn/page.tsx` | Server |
 | `/tools` | `src/app/tools/page.tsx` | Server |
 | `/shop` | `src/app/shop/page.tsx` | Server |
+| `/admin/staging` | `src/app/admin/staging/page.tsx` | Server + Client |
 
 ---
 

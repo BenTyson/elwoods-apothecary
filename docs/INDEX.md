@@ -1,6 +1,6 @@
 # El Woods Apothecary - Agent Documentation
 
-> **Last Updated**: 2026-01-26
+> **Last Updated**: 2026-01-27
 > **Version**: 0.1.0
 
 ## Session-Start Protocol
@@ -47,6 +47,9 @@ src/
 ├── lib/           # Data layer + utils
 ├── types/         # TypeScript interfaces
 └── data/          # JSON content (plants, categories, etc.)
+    ├── reference/ # Dr. Duke's phytochemical reference (CC0)
+    └── staging/   # Staged data from /gather skill
+scripts/           # Build utilities (not part of Next.js app)
 ```
 
 ### Key Commands
@@ -77,8 +80,10 @@ src/
 - Home page with hero, pillars, featured plants
 - Browse page with multi-filter search
 - Dynamic plant detail pages (SSR)
-- 6 reusable UI components
-- Comprehensive type system
+- Admin staging review page (`/admin/staging`)
+- 9 reusable UI components (including staging components)
+- Comprehensive type system (8 content types)
+- `/gather` skill supporting 8 content types
 
 ### Placeholders (Not Yet Built)
 - `/learn` - Educational content
@@ -92,8 +97,11 @@ src/
 | File | Why It Matters |
 |------|----------------|
 | `src/lib/data.ts` | All data access functions |
-| `src/types/index.ts` | All TypeScript interfaces |
+| `src/lib/staging.ts` | Staging data access functions |
+| `src/types/index.ts` | All TypeScript interfaces (50+ types) |
 | `src/app/globals.css` | Design tokens (100+ CSS vars) |
 | `src/components/index.ts` | Component barrel exports |
 | `src/data/staging/` | Staged data from `/gather` skill |
+| `src/data/reference/duke-plants.json` | Duke phytochemical reference (2,336 plants) |
+| `scripts/build-duke-reference.js` | Builds Duke reference from CSV data |
 | `.claude/commands/` | Claude Code skills (gather, update-phase) |
