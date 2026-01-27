@@ -179,6 +179,91 @@ interface SourceLinkProps {
 
 ---
 
+## Gather Components
+
+### StatusBadge
+
+**File**: `src/components/gather/StatusBadge.tsx`
+
+Pill-based badge for gather queue item status.
+
+```typescript
+interface StatusBadgeProps {
+  status: GatherItemStatus; // 'queued' | 'staged' | 'merged'
+}
+```
+
+**Colors**: queued = moss, staged = amber, merged = fern
+
+**Usage**:
+```tsx
+<StatusBadge status="queued" />
+```
+
+---
+
+### GatherQueueCard
+
+**File**: `src/components/gather/GatherQueueCard.tsx`
+
+Client component. Displays a gather queue item with status badge, dates, notes, and optional remove button.
+
+```typescript
+interface GatherQueueCardProps {
+  item: GatherQueueItemWithStatus;
+  onRemove?: (id: string, type: string) => void; // Only shown for 'queued' status
+}
+```
+
+**Usage**:
+```tsx
+<GatherQueueCard item={item} onRemove={handleRemove} />
+```
+
+---
+
+### ManualEntryForm
+
+**File**: `src/components/gather/ManualEntryForm.tsx`
+
+Client component. Text input + Add button for non-plant content types. Uses `slugify()` to derive ID. Validates non-empty and deduplicates.
+
+```typescript
+interface ManualEntryFormProps {
+  type: GatherContentType;
+  existingIds: Set<string>;
+  onAdd: (id: string, name: string, type: GatherContentType) => void;
+}
+```
+
+**Usage**:
+```tsx
+<ManualEntryForm type="condition" existingIds={ids} onAdd={handleAdd} />
+```
+
+---
+
+### DukePlantBrowser
+
+**File**: `src/components/gather/DukePlantBrowser.tsx`
+
+Client component. Searchable browser for the Duke phytochemical reference (~2,336 plants). Features debounced search (300ms), A-Z letter navigation, and results capped at 50.
+
+```typescript
+interface DukePlantBrowserProps {
+  plants: DukePlantSummary[];
+  queuedSlugs: Set<string>;
+  onAdd: (slug: string, latinName: string) => void;
+}
+```
+
+**Usage**:
+```tsx
+<DukePlantBrowser plants={dukePlants} queuedSlugs={queued} onAdd={handleAddPlant} />
+```
+
+---
+
 ## Adding New Components
 
 1. Create file in appropriate subfolder:
@@ -186,6 +271,7 @@ interface SourceLinkProps {
    - `layout/` - Page structure
    - `herbs/` - Domain-specific
    - `staging/` - Admin staging review
+   - `gather/` - Admin gather queue
 
 2. Export from `src/components/index.ts`:
    ```typescript

@@ -14,3 +14,9 @@ export * from './herbs/HerbCard';
 export * from './staging/StagedItemCard';
 export * from './staging/StagedItemDetail';
 export * from './staging/SourceLink';
+
+// Gather components
+export * from './gather/StatusBadge';
+export * from './gather/GatherQueueCard';
+export * from './gather/ManualEntryForm';
+export * from './gather/DukePlantBrowser';

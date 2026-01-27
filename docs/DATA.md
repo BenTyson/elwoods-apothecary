@@ -16,6 +16,7 @@
 | `src/data/glossary.json` | Herbal terminology | varies |
 | `src/data/teas.json` | Tea varieties (Camellia sinensis) | varies |
 | `src/data/reference/duke-plants.json` | Dr. Duke's phytochemical reference (2,336 plants, CC0) | 3.4MB |
+| `src/data/gather-queue.json` | Gather queue (50 plants seeded, status computed at read time) | 8KB |
 | `src/data/staging/` | Staged data awaiting review (see Gather Skill below) | varies |
 
 ---
@@ -75,6 +76,24 @@ getAllStagedItems(): StagedItemSummary[]
 getStagedItemByPath(relativePath: string): StagedItemDetail | null
 ```
 
+### Gather Queue
+
+**File**: `src/lib/gather-queue.ts`
+
+```typescript
+getGatherQueue(): GatherQueueItemWithStatus[]          // All items with computed status
+getGatherQueueByType(type): GatherQueueItemWithStatus[] // Filtered by content type
+addToGatherQueue(item): { success, error? }             // Append with dedup check
+removeFromGatherQueue(id, type): { success, error? }    // Remove by id+type
+getDukePlantIndex(): DukePlantSummary[]                  // Lightweight Duke index (~2,336 entries, cached)
+getPluralDir(type): string                               // Type → staging directory name
+```
+
+**Status computation** (derived at read time, never stored):
+- `merged` → item ID found in main data file (e.g., `plants.json`)
+- `staged` → file exists at `src/data/staging/<type-plural>/<id>.json`
+- `queued` → neither of the above
+
 ### Utilities
 
 ```typescript
@@ -97,6 +116,38 @@ interface GatherMetadata {
   confidence: 'high' | 'medium' | 'low';   // Research confidence level
   isUpdate: boolean;                       // True if updating existing entry
   notes?: string;                          // Uncertainty flags or comments
+}
+```
+
+### Gather Queue Types
+
+**File**: `src/types/gather-queue.ts`
+
+```typescript
+type GatherContentType = 'plant' | 'condition' | 'remedy' | 'ingredient' |
+                          'preparation' | 'action' | 'term' | 'tea';
+
+type GatherItemStatus = 'queued' | 'staged' | 'merged';
+
+interface GatherQueueItem {
+  id: string;
+  name: string;
+  type: GatherContentType;
+  addedAt: string;         // YYYY-MM-DD
+  notes?: string;
+  dukeRef?: string;        // Duke slug for plants
+}
+
+interface GatherQueueItemWithStatus extends GatherQueueItem {
+  status: GatherItemStatus; // Computed at read time
+}
+
+interface DukePlantSummary {
+  slug: string;
+  latinName: string;
+  family: string;
+  commonNames: string[];
+  constituentCount: number;
 }
 ```
 

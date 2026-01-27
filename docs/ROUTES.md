@@ -12,6 +12,7 @@
 /tools               → Tools [placeholder]
 /shop                → Marketplace [placeholder]
 /admin/staging       → Staging data review (Server + Client)
+/admin/gather        → Gather queue management (Server + Client)
 ```
 
 ---
@@ -27,6 +28,7 @@
 | `/tools` | `src/app/tools/page.tsx` | Server |
 | `/shop` | `src/app/shop/page.tsx` | Server |
 | `/admin/staging` | `src/app/admin/staging/page.tsx` | Server + Client |
+| `/admin/gather` | `src/app/admin/gather/page.tsx` | Server + Client |
 
 ---
 

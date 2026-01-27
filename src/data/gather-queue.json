@@ -1,0 +1,354 @@
+{
+  "items": [
+    {
+      "id": "panax-ginseng",
+      "name": "Ginseng",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "panax-ginseng"
+    },
+{
+      "id": "allium-sativum",
+      "name": "Garlic",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "allium-sativum"
+    },
+    {
+      "id": "angelica-archangelica",
+      "name": "Garden Angelica",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "angelica-archangelica"
+    },
+    {
+      "id": "rosmarinus-officinalis",
+      "name": "Rosemary",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "rosmarinus-officinalis"
+    },
+    {
+      "id": "glycyrrhiza-glabra",
+      "name": "Licorice",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "glycyrrhiza-glabra"
+    },
+    {
+      "id": "ginkgo-biloba",
+      "name": "Ginkgo",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "ginkgo-biloba"
+    },
+    {
+      "id": "humulus-lupulus",
+      "name": "Hops",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "humulus-lupulus"
+    },
+    {
+      "id": "ocimum-basilicum",
+      "name": "Basil",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "ocimum-basilicum"
+    },
+    {
+      "id": "cinnamomum-verum",
+      "name": "Cinnamon",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "cinnamomum-verum"
+    },
+    {
+      "id": "valeriana-officinalis",
+      "name": "Valerian",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "valeriana-officinalis"
+    },
+    {
+      "id": "piper-nigrum",
+      "name": "Black Pepper",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "piper-nigrum"
+    },
+    {
+      "id": "trifolium-pratense",
+      "name": "Red Clover",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "trifolium-pratense"
+    },
+    {
+      "id": "medicago-sativa",
+      "name": "Alfalfa",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "medicago-sativa"
+    },
+    {
+      "id": "panax-quinquefolius",
+      "name": "American Ginseng",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "panax-quinquefolius"
+    },
+    {
+      "id": "mentha-spicata",
+      "name": "Spearmint",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "mentha-spicata"
+    },
+    {
+      "id": "salvia-officinalis",
+      "name": "Sage",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "salvia-officinalis"
+    },
+    {
+      "id": "juniperus-communis",
+      "name": "Juniper",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "juniperus-communis"
+    },
+    {
+      "id": "punica-granatum",
+      "name": "Pomegranate",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "punica-granatum"
+    },
+    {
+      "id": "trigonella-foenum-graecum",
+      "name": "Fenugreek",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "trigonella-foenum-graecum"
+    },
+    {
+      "id": "origanum-vulgare",
+      "name": "Oregano",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "origanum-vulgare"
+    },
+    {
+      "id": "urtica-dioica",
+      "name": "Stinging Nettle",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "urtica-dioica"
+    },
+    {
+      "id": "aloe-vera",
+      "name": "Aloe",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "aloe-vera"
+    },
+    {
+      "id": "eucalyptus-globulus",
+      "name": "Eucalyptus",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "eucalyptus-globulus"
+    },
+    {
+      "id": "foeniculum-vulgare",
+      "name": "Fennel",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "foeniculum-vulgare"
+    },
+    {
+      "id": "vaccinium-myrtillus",
+      "name": "Bilberry",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "vaccinium-myrtillus"
+    },
+    {
+      "id": "hypericum-perforatum",
+      "name": "St. John's Wort",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "hypericum-perforatum"
+    },
+    {
+      "id": "syzygium-aromaticum",
+      "name": "Clove",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "syzygium-aromaticum"
+    },
+    {
+      "id": "taraxacum-officinale",
+      "name": "Dandelion",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "taraxacum-officinale"
+    },
+    {
+      "id": "tanacetum-parthenium",
+      "name": "Feverfew",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "tanacetum-parthenium"
+    },
+    {
+      "id": "curcuma-longa",
+      "name": "Turmeric",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "curcuma-longa"
+    },
+    {
+      "id": "achillea-millefolium",
+      "name": "Yarrow",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "achillea-millefolium"
+    },
+    {
+      "id": "capsicum-frutescens",
+      "name": "Cayenne",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "capsicum-frutescens"
+    },
+    {
+      "id": "echinacea-purpurea",
+      "name": "Echinacea",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "echinacea-purpurea"
+    },
+    {
+      "id": "withania-somnifera",
+      "name": "Ashwagandha",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "withania-somnifera"
+    },
+    {
+      "id": "calendula-officinalis",
+      "name": "Calendula",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "calendula-officinalis"
+    },
+    {
+      "id": "melissa-officinalis",
+      "name": "Lemon Balm",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "melissa-officinalis"
+    },
+    {
+      "id": "passiflora-incarnata",
+      "name": "Passionflower",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "passiflora-incarnata"
+    },
+    {
+      "id": "silybum-marianum",
+      "name": "Milk Thistle",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "silybum-marianum"
+    },
+    {
+      "id": "arctium-lappa",
+      "name": "Burdock",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "arctium-lappa"
+    },
+    {
+      "id": "crataegus-laevigata",
+      "name": "Hawthorn",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "crataegus-laevigata"
+    },
+    {
+      "id": "equisetum-arvense",
+      "name": "Horsetail",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "equisetum-arvense"
+    },
+    {
+      "id": "plantago-major",
+      "name": "Plantain",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "plantago-major"
+    },
+    {
+      "id": "filipendula-ulmaria",
+      "name": "Meadowsweet",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "filipendula-ulmaria"
+    },
+    {
+      "id": "verbascum-thapsus",
+      "name": "Mullein",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "verbascum-thapsus"
+    },
+    {
+      "id": "symphytum-officinale",
+      "name": "Comfrey",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "symphytum-officinale"
+    },
+    {
+      "id": "hydrastis-canadensis",
+      "name": "Goldenseal",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "hydrastis-canadensis"
+    },
+    {
+      "id": "scutellaria-lateriflora",
+      "name": "Skullcap",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "scutellaria-lateriflora"
+    },
+    {
+      "id": "astragalus-membranaceus",
+      "name": "Astragalus",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "astragalus-membranaceus"
+    },
+    {
+      "id": "schisandra-chinensis",
+      "name": "Schisandra",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "schisandra-chinensis"
+    },
+    {
+      "id": "centella-asiatica",
+      "name": "Gotu Kola",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "centella-asiatica"
+    }
+  ]
+}

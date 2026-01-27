@@ -29,6 +29,7 @@
 | `/browse/[slug]` | Static (SSG) | Pre-rendered via `generateStaticParams()` |
 | `/learn`, `/tools`, `/shop` | Static | Placeholder pages |
 | `/admin/staging` | Server + Client | Server fetches staged files, client handles selection UI |
+| `/admin/gather` | Dynamic + Client | Server reads queue JSON + Duke index, client handles tabs/search/CRUD |
 
 ## Data Flow
 
@@ -40,6 +41,7 @@ JSON Files → data.ts functions → Components → UI
 
 Staging Files → staging.ts functions → Admin UI
 Reference DB  → /gather skill (pre-fills plant data)
+Gather Queue  → gather-queue.ts → /admin/gather UI (status from filesystem)
 ```
 
 **Pattern**: No runtime data fetching. All data imported statically from JSON at build time. Staging data read at build time via `staging.ts`. Reference data consulted by the `/gather` skill during research.
@@ -100,4 +102,6 @@ import { getAllPlants } from '@/lib/data';
 | `staging.ts` | Staging data access (read staged JSON files) |
 | `types/index.ts` | All interfaces |
 | `types/staging.ts` | Staging-specific types |
+| `types/gather-queue.ts` | Gather queue types |
+| `gather-queue.ts` | Gather queue CRUD + status computation |
 | `globals.css` | All design tokens |
