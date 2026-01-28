@@ -131,6 +131,7 @@ src/
 │   ├── layout/       # Header, Footer
 │   ├── herbs/        # Domain-specific
 │   ├── staging/      # Admin staging review
+│   ├── gather/       # Admin gather queue
 │   └── index.ts      # Barrel exports
 ├── lib/              # Utilities, data access
 ├── types/            # TypeScript only

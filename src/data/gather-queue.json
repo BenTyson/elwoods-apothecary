@@ -7,7 +7,7 @@
       "addedAt": "2026-01-27",
       "dukeRef": "panax-ginseng"
     },
-{
+    {
       "id": "allium-sativum",
       "name": "Garlic",
       "type": "plant",
@@ -349,6 +349,829 @@
       "type": "plant",
       "addedAt": "2026-01-27",
       "dukeRef": "centella-asiatica"
+    },
+    {
+      "id": "saccharum-officinarum",
+      "name": "Saccharum officinarum",
+      "type": "plant",
+      "addedAt": "2026-01-27",
+      "dukeRef": "saccharum-officinarum"
+    },
+    {
+      "id": "earl-grey",
+      "name": "Earl Grey",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "english-breakfast",
+      "name": "English Breakfast",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "chai",
+      "name": "Chai",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "sencha",
+      "name": "Sencha",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "darjeeling",
+      "name": "Darjeeling",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "jasmine-green",
+      "name": "Jasmine Green",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "assam",
+      "name": "Assam",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "ceylon",
+      "name": "Ceylon",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "longjing",
+      "name": "Longjing",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "pu-erh",
+      "name": "Pu-erh",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "tie-guan-yin",
+      "name": "Tie Guan Yin",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "lapsang-souchong",
+      "name": "Lapsang Souchong",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "gyokuro",
+      "name": "Gyokuro",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "da-hong-pao",
+      "name": "Da Hong Pao",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "silver-needle",
+      "name": "Silver Needle",
+      "type": "tea",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "anxiety",
+      "name": "Anxiety",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "insomnia",
+      "name": "Insomnia",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "headache",
+      "name": "Headache",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "common-cold",
+      "name": "Common Cold",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "indigestion",
+      "name": "Indigestion",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "nausea",
+      "name": "Nausea",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "stress",
+      "name": "Stress",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "sore-throat",
+      "name": "Sore Throat",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "allergies",
+      "name": "Allergies",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "joint-pain",
+      "name": "Joint Pain",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "eczema",
+      "name": "Eczema",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "acne",
+      "name": "Acne",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "constipation",
+      "name": "Constipation",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "menstrual-cramps",
+      "name": "Menstrual Cramps",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "high-blood-pressure",
+      "name": "High Blood Pressure",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "depression",
+      "name": "Depression",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "irritable-bowel-syndrome",
+      "name": "Irritable Bowel Syndrome",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "fatigue",
+      "name": "Fatigue",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "inflammation",
+      "name": "Inflammation",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "urinary-tract-infection",
+      "name": "Urinary Tract Infection",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "bronchitis",
+      "name": "Bronchitis",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "muscle-pain",
+      "name": "Muscle Pain",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "heartburn",
+      "name": "Heartburn",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "poor-circulation",
+      "name": "Poor Circulation",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "burns-and-wounds",
+      "name": "Burns and Wounds",
+      "type": "condition",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "elderberry-syrup",
+      "name": "Elderberry Syrup",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "fire-cider",
+      "name": "Fire Cider",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "chamomile-sleep-tea",
+      "name": "Chamomile Sleep Tea",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "golden-milk",
+      "name": "Golden Milk",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "echinacea-tincture",
+      "name": "Echinacea Tincture",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "ginger-honey-tea",
+      "name": "Ginger Honey Tea",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "peppermint-digestive-tea",
+      "name": "Peppermint Digestive Tea",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "lavender-salve",
+      "name": "Lavender Salve",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "calendula-salve",
+      "name": "Calendula Salve",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "sleep-tincture",
+      "name": "Sleep Tincture",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "four-thieves-vinegar",
+      "name": "Four Thieves Vinegar",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "digestive-bitters",
+      "name": "Digestive Bitters",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "throat-coat-tea",
+      "name": "Throat Coat Tea",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "oxymel",
+      "name": "Oxymel",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "mullein-ear-oil",
+      "name": "Mullein Ear Oil",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "herbal-cough-syrup",
+      "name": "Herbal Cough Syrup",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "arnica-oil",
+      "name": "Arnica Oil",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "drawing-salve",
+      "name": "Drawing Salve",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "herbal-steam",
+      "name": "Herbal Steam",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "immune-broth",
+      "name": "Immune Broth",
+      "type": "remedy",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "olive-oil",
+      "name": "Olive Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "coconut-oil",
+      "name": "Coconut Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "beeswax",
+      "name": "Beeswax",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "honey",
+      "name": "Honey",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "apple-cider-vinegar",
+      "name": "Apple Cider Vinegar",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "jojoba-oil",
+      "name": "Jojoba Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "shea-butter",
+      "name": "Shea Butter",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "grain-alcohol",
+      "name": "Grain Alcohol",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "vegetable-glycerin",
+      "name": "Vegetable Glycerin",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "sweet-almond-oil",
+      "name": "Sweet Almond Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "cocoa-butter",
+      "name": "Cocoa Butter",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "castor-oil",
+      "name": "Castor Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "vitamin-e-oil",
+      "name": "Vitamin E Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "witch-hazel",
+      "name": "Witch Hazel",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "bentonite-clay",
+      "name": "Bentonite Clay",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "epsom-salt",
+      "name": "Epsom Salt",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "argan-oil",
+      "name": "Argan Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "avocado-oil",
+      "name": "Avocado Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "rosehip-oil",
+      "name": "Rosehip Oil",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "lanolin",
+      "name": "Lanolin",
+      "type": "ingredient",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "tea-infusion",
+      "name": "Tea Infusion",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "tincture",
+      "name": "Tincture",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "salve",
+      "name": "Salve",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "syrup",
+      "name": "Syrup",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "decoction",
+      "name": "Decoction",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "infused-oil",
+      "name": "Infused Oil",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "capsule",
+      "name": "Capsule",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "poultice",
+      "name": "Poultice",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "compress",
+      "name": "Compress",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "herbal-bath",
+      "name": "Herbal Bath",
+      "type": "preparation",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "adaptogen",
+      "name": "Adaptogen",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "nervine",
+      "name": "Nervine",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "anti-inflammatory",
+      "name": "Anti-inflammatory",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "antimicrobial",
+      "name": "Antimicrobial",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "antioxidant",
+      "name": "Antioxidant",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "expectorant",
+      "name": "Expectorant",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "carminative",
+      "name": "Carminative",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "demulcent",
+      "name": "Demulcent",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "sedative",
+      "name": "Sedative",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "bitter",
+      "name": "Bitter",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "analgesic",
+      "name": "Analgesic",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "astringent",
+      "name": "Astringent",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "diuretic",
+      "name": "Diuretic",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "antispasmodic",
+      "name": "Antispasmodic",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "immunomodulator",
+      "name": "Immunomodulator",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "vulnerary",
+      "name": "Vulnerary",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "hepatoprotective",
+      "name": "Hepatoprotective",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "alterative",
+      "name": "Alterative",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "tonic",
+      "name": "Tonic",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "anxiolytic",
+      "name": "Anxiolytic",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "diaphoretic",
+      "name": "Diaphoretic",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "emmenagogue",
+      "name": "Emmenagogue",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "hypnotic",
+      "name": "Hypnotic",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "cholagogue",
+      "name": "Cholagogue",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "galactagogue",
+      "name": "Galactagogue",
+      "type": "action",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "infusion",
+      "name": "Infusion",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "tincture-term",
+      "name": "Tincture",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "decoction-term",
+      "name": "Decoction",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "tisane",
+      "name": "Tisane",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "materia-medica",
+      "name": "Materia Medica",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "menstruum",
+      "name": "Menstruum",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "constituent",
+      "name": "Constituent",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "wildcrafting",
+      "name": "Wildcrafting",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "simples",
+      "name": "Simples",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "tannin",
+      "name": "Tannin",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "alkaloid",
+      "name": "Alkaloid",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "volatile-oil",
+      "name": "Volatile Oil",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "mucilage",
+      "name": "Mucilage",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "marc",
+      "name": "Marc",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "maceration",
+      "name": "Maceration",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "fomentation",
+      "name": "Fomentation",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "rhizome",
+      "name": "Rhizome",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "aerial-parts",
+      "name": "Aerial Parts",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "officinalis",
+      "name": "Officinalis",
+      "type": "term",
+      "addedAt": "2026-01-27"
+    },
+    {
+      "id": "doctrine-of-signatures",
+      "name": "Doctrine of Signatures",
+      "type": "term",
+      "addedAt": "2026-01-27"
     }
   ]
 }

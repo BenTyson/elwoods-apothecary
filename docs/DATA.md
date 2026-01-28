@@ -16,7 +16,7 @@
 | `src/data/glossary.json` | Herbal terminology | varies |
 | `src/data/teas.json` | Tea varieties (Camellia sinensis) | varies |
 | `src/data/reference/duke-plants.json` | Dr. Duke's phytochemical reference (2,336 plants, CC0) | 3.4MB |
-| `src/data/gather-queue.json` | Gather queue (50 plants seeded, status computed at read time) | 8KB |
+| `src/data/gather-queue.json` | Gather queue (187 items across all 8 content types, status computed at read time) | 20KB+ |
 | `src/data/staging/` | Staged data awaiting review (see Gather Skill below) | varies |
 
 ---
