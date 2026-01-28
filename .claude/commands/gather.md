@@ -34,6 +34,8 @@ All gathered data goes to `src/data/staging/` first, allowing review before addi
 
 When user runs any `/gather <type> <name>` command:
 
+**Queue awareness (manual runs):** Before starting, use **Grep** to check if this item exists in `src/data/gather-queue.json` (search by name, case-insensitive). If found, note the queue item's ID and inform the user: `"Note: This item is also in the gather queue (ID: <id>). Its queue status will update automatically once staged."` This is informational only — proceed with the gather regardless.
+
 ### Step 1: Check Existing Data
 
 Use the **Grep** tool to search for the item name (case-insensitive) in the appropriate main data file:
@@ -58,7 +60,7 @@ Also use **Glob** to check the staging directory (`src/data/staging/<pluralDir>/
 For plant research, use the **Grep** tool to search for the plant name (common or Latin) in `src/data/reference/duke-plants.json`. If a match is found, use the **Read** tool to extract the full Duke entry.
 
 If found, pre-fill from Duke data:
-- **constituents**: Use Duke's chemical list, grouped by plant part
+- **constituents**: Curate Duke's chemical list (see curation rules below)
 - **conditions**: Derive from Duke's ethnobotany list
 - **family**: Use Duke's family classification
 - **latinName**: Validate against Duke's taxonomy
@@ -67,31 +69,61 @@ Set a `hasDukeData` flag for Step 2 adaptive search.
 
 **Format note**: Duke uses Latin-only family names (e.g., `Lamiaceae`). This is the standard — do not add parenthetical English names.
 
+#### Duke Constituent Curation Rules
+
+Duke entries often contain 100-400+ raw compound names across many plant parts (Root, Leaf, Shoot, Seed Oil, Fruit Epidermis, etc.). The `constituents` field on `Plant` is a flat `string[]` — curate down to **15-25 entries** using these rules:
+
+1. **Prioritize pharmacologically significant compounds** — ginsenosides, alkaloids, flavonoids, terpenes, saponins, and other compounds with known therapeutic activity. These are the reason herbalists use the plant.
+2. **Include compound classes, not every variant** — write `"ginsenosides (Rb1, Rb2, Rc, Rd, Re, Rf, Rg1)"` rather than listing each ginsenoside as a separate entry. Group related compounds.
+3. **Include notable vitamins and minerals only when therapeutically relevant** — e.g., include iron for nettle, vitamin C for rosehips. Skip trace minerals (aluminum, tin, arsenic) and generic entries (water, ash, fat, fiber, kilocalories, protein, carbohydrates).
+4. **Skip raw biochemistry artifacts** — entries like `"Eo"`, `"Pt"`, `"Gum"`, `"Starch"`, tissue culture compounds, and items that are plant structural components rather than active constituents.
+5. **Focus on the primary medicinal part** — Root constituents matter most for ginseng, leaf constituents for ginkgo, flower constituents for chamomile. Include secondary parts only when they add unique compounds.
+6. **Normalize naming** — convert Duke's title-case format (`"Beta Sitosterol"`) to lowercase with hyphens for chemical names (`"beta-sitosterol"`) or natural prose (`"ginsenosides"`). Use common names when widely recognized (`"vitamin C"` not `"ascorbic acid"`).
+7. **Include essential oil components when the plant is aromatic** — note 2-4 key volatile compounds (e.g., `"essential oil (linalool, linalyl acetate, camphor)"`).
+
+**Example**: Duke lists 400+ compounds for Panax ginseng. Curated result (~20 entries):
+```
+ginsenosides (Rb1, Rb2, Rc, Rd, Re, Rf, Rg1, Rg2, Rg3, Rh1, Rh2), protopanaxadiol,
+protopanaxatriol, panaxadiol, panaxatriol, panaxydol, panaxynol, panaxytriol,
+polyacetylenes, polysaccharides (panaxan A-U), gintonin, beta-sitosterol, stigmasterol,
+campesterol, germanium, selenium, ascorbic acid, B vitamins (thiamine, riboflavin,
+niacin, B12, folic acid, pantothenic acid, biotin),
+essential oil (alpha-panasinsene, beta-farnesene, caryophyllene, limonene)
+```
+
 ### Step 2: Research
 
-Use WebSearch to gather authoritative information. Plant searches are **adaptive** based on Duke data availability.
+Use WebSearch to gather authoritative information. **All searches within a type are independent — run them in parallel batches for efficiency** (e.g., 5 at a time).
 
-**For Plants — Always perform (10 searches):**
+Plant searches are **adaptive** based on Duke data availability.
+
+**For Plants — Always perform (8 core searches):**
 1. Search: `"<plant name>" herbal medicine uses traditional`
 2. Search: `"<plant name>" contraindications drug interactions safety`
 3. Search: `"<plant name>" pregnancy breastfeeding children`
-4. Search: `"<plant name>" history origin etymology cultural significance`
-5. Search: `"<plant name>" native range habitat distribution geography`
-6. Search: `"<plant name>" morphology identification characteristics appearance`
-7. Search: `"<plant name>" storage shelf life dried herb`
-8. Search: `"<plant name>" quality indicators buying sourcing`
-9. Search: `"<plant name>" conservation status endangered sustainable`
-10. Search: `"<plant name>" lookalikes poisonous misidentification`
+4. Search: `"<plant name>" history origin etymology native range habitat`
+5. Search: `"<plant name>" morphology identification characteristics appearance`
+6. Search: `"<plant name>" storage quality sourcing shelf life`
+7. Search: `"<plant name>" harvesting cultivation growing conditions`
+8. Search: `"<plant name>" herb combinations synergistic pairings formula`
 
-**For Plants — Skip when Duke provides constituents:**
-- ~~`"<latin name>" pharmacology constituents`~~ (pre-filled from Duke)
+**For Plants — Conditional (add when applicable):**
+9. Search: `"<plant name>" conservation status endangered sustainable` — Add when the plant is wild-harvested, foraged, on the United Plant Savers At-Risk/To-Watch list, or CITES-listed. Skip for widely cultivated garden herbs (e.g., chamomile, lavender, peppermint).
+10. Search: `"<plant name>" lookalikes poisonous misidentification` — Add when the plant is commonly foraged in the wild or has known dangerous lookalikes. Skip for plants that are exclusively purchased or cultivated (e.g., ashwagandha, turmeric).
 
-**For Plants — Skip when Duke provides family/taxonomy:**
-- ~~`"<latin name>" taxonomy classification related species`~~ → lighter search: `"<plant name>" related species subspecies varieties` (for narrative content only)
+**For Plants — Adaptive (Duke-dependent):**
+- **Skip when Duke provides constituents:** ~~`"<latin name>" pharmacology constituents`~~ (pre-filled from Duke)
+- **Skip when Duke provides family/taxonomy:** ~~`"<latin name>" taxonomy classification related species`~~ → lighter search: `"<plant name>" related species subspecies varieties` (for narrative content only)
+- **When Duke data is NOT available, add both:**
+  - Search: `"<latin name>" pharmacology constituents`
+  - Search: `"<latin name>" taxonomy classification related species`
 
-**For Plants — When Duke data is NOT available, add:**
-11. Search: `"<latin name>" pharmacology constituents`
-12. Search: `"<latin name>" taxonomy classification related species`
+**Typical search count:** 8 core + 0-2 conditional + 0-2 adaptive = 8-12 total depending on plant.
+
+**Cross-referencing (all types):** As you review search results, validate key facts across sources inline:
+- **Latin names**: Confirm against Duke reference (if available) and at least one search result. Flag discrepancies.
+- **Safety information**: Searches #2 and #3 both cover safety — note where sources agree or conflict. If sources conflict on a safety claim, set `_meta.confidence` to `"medium"` or `"low"` and document the conflict in `_meta.notes`.
+- **Conflicting claims**: When sources disagree on non-safety facts (e.g., native range, traditional uses), prefer peer-reviewed sources (PMC, PubMed) over commercial sites. Note the disagreement in the relevant content section.
 
 **For Conditions:**
 1. Search: `"<condition>" herbal treatment natural remedies`
@@ -146,15 +178,9 @@ Use WebSearch to gather authoritative information. Plant searches are **adaptive
 8. Search: `"<tea name>" history culture ceremony`
 9. Search: `"<tea name>" storage aging shelf life`
 
-### Step 3: Cross-Reference & Validate
+### Step 3: Structure Data
 
-- Verify Latin names against botanical databases
-- Cross-reference safety information from multiple sources
-- Flag any conflicting information
-
-### Step 4: Structure Data
-
-Read `src/types/index.ts` to determine the required and optional fields for the item type.
+Read `src/types/index.ts` if not already in context from a previous gather in this session. On subsequent gathers in the same session, skip this read.
 
 **Type → Interface mapping:**
 
@@ -172,7 +198,7 @@ Read `src/types/index.ts` to determine the required and optional fields for the 
 **Rules:**
 - Non-optional fields (no `?` suffix in TypeScript) MUST be populated.
 - Optional fields (with `?` suffix) SHOULD be populated when research provides data.
-- **Plant-specific override**: All 8 botanical/practical content sections (`history`, `nativeRange`, `taxonomy`, `morphology`, `storage`, `quality`, `conservationStatus`, `lookalikes`) are editorially required despite being TypeScript-optional.
+- **Plant-specific override**: All 10 extended content sections (`harvesting`, `cultivation`, `history`, `nativeRange`, `taxonomy`, `morphology`, `storage`, `quality`, `conservationStatus`, `lookalikes`) are editorially required despite being TypeScript-optional.
 
 **Format conventions:**
 - `family`: Latin only — `"Lamiaceae"` not `"Lamiaceae (Mint family)"`
@@ -180,9 +206,30 @@ Read `src/types/index.ts` to determine the required and optional fields for the 
 - `taste` / `energy`: lowercase, comma-separated — `"bitter, pungent"`
 - Array strings: lowercase unless proper nouns — `["nervine", "adaptogen"]`
 
-### Step 4.5: Validation Checklist
+**Content section length targets** (sentences per section — enforces consistent entry size):
 
-Before writing the staged file, verify every item against the checklist for its type. **If any check fails, go back and fill the gap with additional targeted research. Do not proceed to Step 5 with gaps.**
+| Section | Target | Notes |
+|---------|--------|-------|
+| `overview` | 5-8 sentences | The anchor section; cover what the plant is, key uses, and significance |
+| `traditionalUses` | 5-8 sentences | Cover multiple traditions if applicable |
+| `modernResearch` | 5-8 sentences | Summarize evidence; note quality of studies |
+| `howToUse` | 5-8 sentences | Practical preparation and dosing guidance |
+| `history` | 5-8 sentences | Etymology, cultural significance, key historical figures |
+| `nativeRange` | 3-5 sentences | Geography, habitat, elevation, naturalization |
+| `taxonomy` | 3-5 sentences | Family, relatives, subspecies, cultivars |
+| `morphology` | 4-6 sentences | Growth habit, leaves, flowers, roots, ID features |
+| `harvesting` | 3-5 sentences | When/how to harvest, age requirements |
+| `cultivation` | 3-5 sentences | Growing conditions, challenges, disease |
+| `storage` | 3-5 sentences | Shelf life, containers, degradation signs |
+| `quality` | 3-5 sentences | Buying indicators, adulteration risks |
+| `conservationStatus` | 3-5 sentences | Threat level, regulations, sustainable alternatives |
+| `lookalikes` | 4-8 sentences | Each dangerous lookalike with distinguishing features |
+
+For non-plant types, aim for 3-5 sentences per content section unless the guidelines below specify otherwise.
+
+### Step 3.5: Validation Checklist
+
+Before writing the staged file, verify every item against the checklist for its type. **If any check fails, go back and fill the gap with additional targeted research. Do not proceed to Step 4 with gaps.**
 
 **Plants:**
 - [ ] All `Plant` required fields populated (id, commonName, latinName, family, partsUsed, taste, energy, actions, bodySystems, conditions, preparations, traditions, seasons, safety, dosage, content)
@@ -191,8 +238,10 @@ Before writing the staged file, verify every item against the checklist for its 
 - [ ] `safety` has ALL 7 subfields: generalSafety, contraindications, drugInteractions, pregnancySafe, pregnancyNotes, nursingNotes, childrenNotes
 - [ ] `content` has 4 core sections: overview, traditionalUses, modernResearch, howToUse
 - [ ] `content` has all 8 extended sections: history, nativeRange, taxonomy, morphology, storage, quality, conservationStatus, lookalikes
-- [ ] Each content section is substantive (minimum 2-3 sentences)
-- [ ] `constituents` populated (from Duke or research)
+- [ ] `content` has harvesting and cultivation sections
+- [ ] Each content section meets length targets (see table above)
+- [ ] `constituents` populated and curated (15-25 entries, see Duke curation rules)
+- [ ] `combinations` has 3-5 herb pairings with purposes
 - [ ] `_meta.sources` has ≥4 URLs
 
 **Conditions:**
@@ -253,7 +302,7 @@ Before writing the staged file, verify every item against the checklist for its 
 - [ ] `content.overview` is substantive
 - [ ] `_meta.sources` has ≥4 URLs
 
-### Step 5: Write Staged File
+### Step 4: Write Staged File
 
 Write to appropriate staging directory:
 
@@ -287,7 +336,7 @@ Include `_meta` block at top level:
 }
 ```
 
-### Step 6: Report Summary
+### Step 5: Report Summary
 
 Output a summary:
 - Item name and Latin name (for plants)
@@ -364,7 +413,7 @@ When user runs `/gather --next [type]`:
 
 ### Step 3: Execute Standard Flow
 
-Execute the standard gather flow (Steps 1–6) with the mapped parameters. At the end, remind the user:
+Execute the standard gather flow (Steps 1–5) with the mapped parameters. At the end, remind the user:
 ```
 Run `/gather --next [type]` to continue, or `/gather --review` to inspect.
 ```
@@ -473,6 +522,14 @@ For safety fields (`contraindications`, `drugInteractions`, `pregnancySafe`):
 ---
 
 ## Botanical Section Guidelines
+
+**harvesting**: When to harvest (season, plant age, time of day), which part
+to harvest, sustainable harvesting practices, post-harvest processing (drying,
+cleaning), how harvest timing affects potency.
+
+**cultivation**: Growing conditions (light, soil, pH, moisture), propagation
+methods (seed, division, cuttings), common pests and diseases, growth rate,
+time to harvest maturity, replant considerations.
 
 **history**: Cover etymology of common/Latin names, cultural/spiritual significance,
 notable historical figures who used it, when it was introduced to different regions.
@@ -689,22 +746,31 @@ User: /gather plant ashwagandha
 
 Claude: I'll research ashwagandha comprehensively.
 
-[Performs web searches, cross-references sources]
+Note: This item is also in the gather queue (ID: withania-somnifera).
+Its queue status will update automatically once staged.
+
+[Performs 8 core searches + 0 conditional (cultivated herb, no foraging)]
+[Duke reference: available — skipping constituent/taxonomy searches]
 
 Staged to: src/data/staging/plants/ashwagandha.json
+
+Validation:
+- All Plant required fields: PASS
+- Family Latin-only format: PASS (Solanaceae)
+- Safety 7 subfields: PASS
+- Content 4 core + 8 extended + harvesting + cultivation: PASS
+- Section length targets: PASS
+- Constituents curated (18 entries): PASS
+- Combinations (4 pairings): PASS
+- Sources ≥4 URLs: PASS (8 URLs)
 
 Summary:
 - Latin: Withania somnifera (Solanaceae)
 - Actions: adaptogen, anxiolytic, immunomodulator, anti-inflammatory
 - Body Systems: nervous, immune, endocrine
-- Native Range: India, Middle East, parts of Africa
-- Morphology: Shrub to 1.5m, oval leaves, small greenish flowers
-- Conservation: Not at risk, widely cultivated
-- Storage: 2-3 years in airtight container, cool and dark
 - Safety: Avoid with thyroid medications, nightshade allergy
 - Sources: 8 references cited
 - Confidence: HIGH
-- Validation: All 12 content sections PRESENT
 
 Run `/gather --review` to inspect the full entry, or `/gather --merge plants/ashwagandha.json` to add to the database.
 ```
@@ -720,21 +786,20 @@ Type: plant | Queue ID: panax-ginseng | Duke ref: available
 
 Pre-filling from Duke reference data:
 - Family: Araliaceae
-- Constituents: 47 compounds across plant parts
-- Ethnobotany: 12 traditional uses
+- Constituents: 400+ raw compounds → curated to 20 entries
+- Ethnobotany: 30 traditional uses
 
-[Performs 10 adaptive web searches, cross-references sources]
-[Runs validation checklist...]
+[Performs 8 core + 2 conditional (foraged/endangered) + 1 lighter taxonomy = 11 searches]
 
 Validation:
 - All Plant required fields: PASS
 - Family Latin-only format: PASS (Araliaceae)
 - Safety 7 subfields: PASS
-- Content 4 core sections: PASS
-- Content 8 extended sections: PASS
-- Each section substantive: PASS
-- Constituents populated: PASS (from Duke)
-- Sources ≥4 URLs: PASS (6 URLs)
+- Content 4 core + 8 extended + harvesting + cultivation: PASS
+- Section length targets: PASS
+- Constituents curated (20 entries): PASS
+- Combinations (5 pairings): PASS
+- Sources ≥4 URLs: PASS (10 URLs)
 
 Staged to: src/data/staging/plants/ginseng.json
 
@@ -742,10 +807,9 @@ Summary:
 - Latin: Panax ginseng (Araliaceae)
 - Actions: adaptogen, tonic, immunomodulator
 - Body Systems: nervous, immune, endocrine
-- Safety: Avoid with blood thinners, MAOIs; not for children under 12
-- Sources: 6 references cited
+- Safety: Avoid with blood thinners, MAOIs; not for children
+- Sources: 10 references cited
 - Confidence: HIGH
-- All 12 content sections: PRESENT
 
 Run `/gather --next plant` to continue, or `/gather --review` to inspect.
 ```

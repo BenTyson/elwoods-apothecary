@@ -206,18 +206,20 @@ interface StatusBadgeProps {
 
 **File**: `src/components/gather/GatherQueueCard.tsx`
 
-Client component. Displays a gather queue item with status badge, dates, notes, and optional remove button.
+Client component. Displays a gather queue item with status badge, dates, notes, and optional remove button. **Click-to-copy**: clicking the card copies the `/gather <type> <name>` command to clipboard for pasting into a terminal session. Shows a green confirmation banner with the copied command for 2 seconds, and a hover hint previewing the command.
 
 ```typescript
 interface GatherQueueCardProps {
   item: GatherQueueItemWithStatus;
-  onRemove?: (id: string, type: string) => void; // Only shown for 'queued' status
+  onRemove?: (id: string, type: string) => void; // Only shown for 'queued' status, stopPropagation prevents copy
 }
 ```
 
 **Usage**:
 ```tsx
 <GatherQueueCard item={item} onRemove={handleRemove} />
+// Clicking card → copies "/gather plant Ginseng" to clipboard
+// Clicking Remove → only removes, does not copy
 ```
 
 ---

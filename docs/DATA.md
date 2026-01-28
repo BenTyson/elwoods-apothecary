@@ -368,13 +368,13 @@ The `/gather` skill provides a structured workflow for researching and adding da
 
 ```bash
 # Research different content types
-/gather plant ashwagandha      # Herbs/medicinal plants (12 searches)
-/gather condition insomnia     # Health conditions
-/gather remedy calming-tea     # Recipes/formulas
+/gather plant ashwagandha      # Herbs/medicinal plants (8-12 adaptive searches)
+/gather condition insomnia     # Health conditions (3 searches)
+/gather remedy calming-tea     # Recipes/formulas (2 searches)
 /gather ingredient jojoba-oil  # Non-plant materials (8 searches)
 /gather preparation tincture   # Method guides (7 searches)
 /gather action adaptogen       # Herbal actions (7 searches)
-/gather term menstruum         # Glossary terms
+/gather term menstruum         # Glossary terms (3 searches)
 /gather tea longjing           # Tea varieties (9 searches)
 
 # Queue commands
@@ -391,8 +391,8 @@ The `/gather` skill provides a structured workflow for researching and adding da
 
 **Workflow:**
 1. **Queue** - Items enter from `gather-queue.json` via `--next` or manually via `/gather <type> <name>`
-2. **Research** - Claude searches authoritative sources (adaptive: skips searches when Duke data covers constituents/taxonomy)
-3. **Validate** - Per-type checklist ensures all required fields and content sections are populated before writing
+2. **Research** - Claude searches authoritative sources (8 core + conditional conservation/lookalikes + Duke-adaptive constituent/taxonomy)
+3. **Validate** - Per-type checklist ensures all required fields, content sections, combinations, harvesting/cultivation, and length targets are met
 4. **Stage** - Data saved to `src/data/staging/<type>/<id>.json` with metadata
 5. **Review** - Inspect staged files, verify accuracy (also via `/admin/staging` UI)
 6. **Merge** - Add to main JSON, metadata stripped

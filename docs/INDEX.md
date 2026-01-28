@@ -1,6 +1,6 @@
 # El Woods Apothecary - Agent Documentation
 
-> **Last Updated**: 2026-01-27
+> **Last Updated**: 2026-01-28
 > **Version**: 0.1.0
 
 ## Session-Start Protocol
@@ -85,7 +85,10 @@ scripts/           # Build utilities (not part of Next.js app)
 - 13 reusable UI components (including staging + gather components)
 - Comprehensive type system (8 content types)
 - `/gather` skill supporting 8 content types + queue commands (`--next`, `--queue`)
-- `/gather` includes per-type validation checklists (prevents incomplete entries)
+- `/gather` includes per-type validation checklists (combinations, harvesting, cultivation, content length targets)
+- `/gather` Duke constituent curation rules (distills 400+ raw compounds → 15-25 curated entries)
+- `/gather` adaptive search (8 core + conditional + Duke-adaptive = 8-12 searches per plant)
+- `/gather` queue awareness on manual runs (detects when item is in queue)
 - Gather queue seeded with 187 items across all 8 content types (plants, teas, conditions, remedies, ingredients, preparations, actions, terms)
 
 ### Placeholders (Not Yet Built)

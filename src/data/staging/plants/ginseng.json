@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "gatheredAt": "2026-01-28",
+    "sources": [
+      "https://www.ncbi.nlm.nih.gov/books/NBK92776/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10214142/",
+      "https://en.wikipedia.org/wiki/Panax_ginseng",
+      "https://www.drugs.com/drug-interactions/ginseng.html",
+      "https://www.ncbi.nlm.nih.gov/books/NBK501814/",
+      "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:91472-1",
+      "https://herbspeak.com/ginseng-lookalikes/",
+      "https://ginsengontario.com/how-to-store-ginseng-properly-to-ensure-longevity/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7321059/",
+      "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ginseng-asian"
+    ],
+    "confidence": "high",
+    "isUpdate": false,
+    "notes": "Duke reference provided extensive constituent data. Conservation data primarily references wild Panax ginseng (nearly extinct in wild) and the related P. quinquefolius. Most commercial ginseng is cultivated."
+  },
+  "id": "ginseng",
+  "commonName": "Ginseng",
+  "otherNames": [
+    "Asian Ginseng",
+    "Korean Ginseng",
+    "Chinese Ginseng",
+    "Oriental Ginseng",
+    "Ren Shen"
+  ],
+  "latinName": "Panax ginseng",
+  "family": "Araliaceae",
+  "partsUsed": [
+    "root",
+    "rhizome",
+    "leaf"
+  ],
+  "taste": "bitter, sweet, slightly earthy",
+  "energy": "warm",
+  "actions": [
+    "adaptogen",
+    "tonic",
+    "immunomodulator",
+    "anti-inflammatory",
+    "antioxidant",
+    "hypoglycemic",
+    "cardiotonic",
+    "nervine stimulant"
+  ],
+  "bodySystems": [
+    "nervous",
+    "immune",
+    "endocrine",
+    "cardiovascular",
+    "reproductive",
+    "digestive"
+  ],
+  "conditions": [
+    "fatigue",
+    "stress",
+    "cognitive decline",
+    "diabetes",
+    "erectile dysfunction",
+    "immune deficiency",
+    "convalescence",
+    "general debility"
+  ],
+  "preparations": [
+    "tea",
+    "decoction",
+    "tincture",
+    "capsule"
+  ],
+  "traditions": [
+    "tcm",
+    "western",
+    "folk"
+  ],
+  "seasons": [
+    "fall",
+    "winter"
+  ],
+  "safety": {
+    "generalSafety": "Generally recognized as safe (GRAS) for short-term oral use up to 6 months in recommended doses. The most common side effects are nervousness, excitability, and insomnia, which usually decrease after the first few days. Some experts recommend cycling use rather than continuous long-term consumption. Rare serious side effects include liver damage and severe allergic reactions.",
+    "contraindications": [
+      "Bleeding disorders due to potential anticoagulant effects",
+      "Hormone-sensitive conditions including breast cancer, endometrial cancer, ovarian cancer, endometriosis, and uterine fibroids due to estrogen-like activity",
+      "Autoimmune disorders as ginseng may stimulate immune activity",
+      "Uncontrolled hypertension",
+      "Organ transplant recipients on immunosuppressants",
+      "Scheduled surgery (discontinue at least 2 weeks prior due to bleeding risk)"
+    ],
+    "drugInteractions": [
+      "Warfarin and other anticoagulants — may decrease effectiveness and increase bleeding risk",
+      "Insulin and oral hypoglycemics — may enhance blood sugar lowering effects, risking hypoglycemia",
+      "MAO inhibitors — potential for additive stimulant effects including headache, tremor, and mania",
+      "Imatinib (Gleevec) and CYP3A4 substrates — ginseng may inhibit CYP3A4 metabolism, increasing drug levels",
+      "Immunosuppressants (cyclosporine, tacrolimus, azathioprine) — may counteract immunosuppressive effects",
+      "Stimulant medications and caffeine — may cause excessive stimulation",
+      "Estrogen therapy and hormonal contraceptives — may have additive estrogenic effects",
+      "Digoxin — may interfere with drug monitoring assays"
+    ],
+    "pregnancySafe": false,
+    "pregnancyNotes": "Not recommended during pregnancy, especially the first trimester. Some animal studies have found one of ginseng's chemical components may cause birth defects. While a human cohort study found no adverse effects, the overall consensus among medical authorities is to avoid ginseng during pregnancy due to its estrogen-like activity and insufficient safety data.",
+    "nursingNotes": "Not recommended during breastfeeding. Due to possible estrogenic activity and lack of safety data in nursing mothers and infants, most authorities advise avoidance. There have been reported pediatric cases of tachycardia and hypertension potentially linked to maternal ginseng use during lactation. Estrogenic agonists may also decrease milk production.",
+    "childrenNotes": "Not recommended for children. Due to ginseng's estrogen-like effects, most medical references explicitly advise against use in children. There is insufficient safety data for pediatric populations."
+  },
+  "dosage": {
+    "tea": "1-2 grams dried root simmered in 8 oz water for 10-15 minutes, 1-3 times daily",
+    "decoction": "3-9 grams dried root simmered for 20-30 minutes (traditional TCM dosage)",
+    "tincture": "1-2 mL of 1:5 tincture (45-60% alcohol), 2-3 times daily",
+    "capsule": "200-400 mg standardized extract (4-7% ginsenosides) daily",
+    "powdered root": "1-2 grams daily"
+  },
+  "constituents": [
+    "ginsenosides (Rb1, Rb2, Rc, Rd, Re, Rf, Rg1, Rg2, Rg3, Rh1, Rh2)",
+    "protopanaxadiol",
+    "protopanaxatriol",
+    "panaxadiol",
+    "panaxatriol",
+    "panaxydol",
+    "panaxynol",
+    "panaxytriol",
+    "polyacetylenes",
+    "polysaccharides (panaxan A-U)",
+    "gintonin",
+    "beta-sitosterol",
+    "stigmasterol",
+    "campesterol",
+    "germanium",
+    "selenium",
+    "ascorbic acid",
+    "B vitamins (thiamine, riboflavin, niacin, B12, folic acid, pantothenic acid, biotin)",
+    "essential oil (alpha-panasinsene, beta-farnesene, caryophyllene, limonene)"
+  ],
+  "combinations": [
+    {
+      "herb": "Astragalus",
+      "purpose": "Enhanced immune support and qi tonification; classic TCM pairing for deep energy building"
+    },
+    {
+      "herb": "Rhodiola",
+      "purpose": "Complementary adaptogenic support for stress resilience and physical endurance"
+    },
+    {
+      "herb": "Licorice",
+      "purpose": "Harmonizing herb in TCM formulas; balances ginseng's stimulating nature and supports adrenal function"
+    },
+    {
+      "herb": "Ginkgo",
+      "purpose": "Enhanced cognitive function and mental clarity; complementary circulatory support"
+    },
+    {
+      "herb": "Schisandra",
+      "purpose": "Synergistic adaptogen pairing for liver support, mental performance, and stress resilience"
+    }
+  ],
+  "content": {
+    "overview": "Ginseng (Panax ginseng) is one of the most revered medicinal plants in the world, holding a central place in Traditional Chinese Medicine for over 2,000 years. Known as the 'king of tonic herbs,' ginseng root is prized for its adaptogenic properties — its ability to help the body resist physical, chemical, and biological stressors while promoting homeostasis. The root contains a complex array of active compounds, most notably the ginsenosides, a group of steroidal saponins unique to the Panax genus. Modern pharmacological research has investigated ginseng's potential effects on immune modulation, cognitive function, blood sugar regulation, cardiovascular health, and anti-cancer activity, though robust clinical evidence remains limited for many of these applications. Asian ginseng is considered warming and stimulating, distinguishing it from American ginseng (Panax quinquefolius), which is regarded as cooling and calming.",
+
+    "traditionalUses": "In Traditional Chinese Medicine, ginseng is classified as a superior tonic herb that replenishes qi (vital energy), particularly benefiting the spleen and lung meridians. The Shen Nong Pharmacopoeia, one of the earliest Chinese materia medica texts compiled around 196 AD, describes ginseng as a medicine that 'strengthens the five viscera, calms the spirit, settles the ethereal and corporeal souls, stops palpitations, removes pathogenic qi, brightens the eyes, opens the heart, and benefits understanding.' TCM practitioners prescribe ginseng for a wide range of conditions including chronic fatigue, shortness of breath, palpitations, insomnia, impotence, hemorrhage, and diabetes. Li Shizhen's Compendium of Materia Medica (1596) described it as a 'superior tonic' specifically indicated for patients with chronic illness and those convalescing. In Korean medicine, ginseng holds similar importance and is used both as white ginseng (dried) and red ginseng (steamed and dried), with red ginseng considered more warming and potent. The Donguibogam, Korea's seminal medical text, describes ginseng's use for general weakness, cholera, hiccups, vomiting, and atrophic lung disease.",
+
+    "modernResearch": "Modern pharmacological research has identified over 200 ginsenosides in Panax ginseng, with Rb1, Rb2, Rc, Rd, Re, and Rg1 being the most studied. These compounds have demonstrated diverse biological activities in laboratory and animal studies. Immunomodulatory research shows ginseng may enhance the function of natural killer cells, macrophages, and T lymphocytes, with a 2020 review noting potent antibacterial, antifungal, and antiviral properties. Studies on cognitive function suggest ginsenosides may improve memory and attention through modulation of neurotransmitter systems and neuroprotective mechanisms, though clinical results remain mixed. Anti-diabetic research indicates ginseng may improve insulin sensitivity and regulate blood glucose through its polysaccharide and ginsenoside content. Cardiovascular studies have explored ginseng's effects on blood pressure regulation, lipid profiles, and vascular function. Epidemiological data from Korea suggests people who consume ginseng preparations may be at lower risk for several cancers including stomach, lung, liver, and pancreatic cancers. However, the overall evidence base is limited by the poor quality of many clinical trials, small sample sizes, and inconsistent standardization of ginseng products across studies.",
+
+    "howToUse": "The most traditional method of consuming ginseng is as a decoction: simmer 3-9 grams of dried root slices in water for 20-30 minutes and drink the resulting tea. For a milder preparation, steep 1-2 grams of thinly sliced dried root in hot water for 10-15 minutes. Ginseng root can also be chewed directly in small pieces. Standardized extracts in capsule or tablet form are the most common modern preparations, typically providing 200-400 mg daily with 4-7% total ginsenosides. Tinctures (1:5 in 45-60% alcohol) are taken at 1-2 mL, two to three times daily. Many practitioners recommend cycling ginseng use — taking it for 2-3 weeks followed by a 1-2 week break — rather than continuous long-term use. Asian ginseng is best taken in the morning or early afternoon due to its stimulating nature. It pairs well with other adaptogens like rhodiola or ashwagandha but should not be combined with stimulants like caffeine in excess. Red ginseng (steamed root) is considered more potent and warming than white ginseng (dried root) and may be preferred for those with pronounced cold-type constitutions.",
+
+    "harvesting": "Ginseng roots are harvested when plants are at least 5-6 years old, as ginsenoside content increases significantly with age. Roots harvested younger than 4 years have lower potency and inferior flavor profiles. Harvesting typically occurs in autumn after the aerial parts have died back, when the root's energy is concentrated. Wild-harvested roots command significantly higher prices than cultivated roots due to their rarity and perceived superior quality. Careful digging is essential to preserve the root's characteristic human-like shape, which is culturally valued. After harvest, roots are washed, sorted by size and quality, and either dried (to produce white ginseng) or steamed at 95-100°C for 2-3 hours before drying (to produce red ginseng).",
+
+    "cultivation": "Panax ginseng is notoriously difficult to cultivate, requiring specific conditions that mimic its native forest understory habitat. It needs 70-80% shade, well-drained loamy soil with a pH of 5.0-6.0, and consistent moisture without waterlogging. Seeds require 18-21 months of stratification before germination, and the plants grow extremely slowly, typically requiring 4-6 years before the roots are ready for harvest. Ginseng is highly susceptible to fungal diseases including root rot, alternaria blight, and phytophthora, making disease management a primary challenge. The plant cannot be grown in the same soil twice due to a phenomenon called 'replant disease' or soil fatigue, requiring new plots for each successive planting. Major cultivation regions include Korea's Geumsan and Punggi districts, China's Jilin and Heilongjiang provinces, and parts of the Russian Far East.",
+
+    "history": "The name 'ginseng' derives from the Chinese rénshēn (人参), where rén means 'man' and shēn means 'plant root' — a reference to the root's human-like forked shape. The genus name Panax comes from the Greek panakeia meaning 'all-healing,' reflecting the plant's esteemed status in traditional medicine. Ginseng was discovered over 5,000 years ago in the mountains of Manchuria, and its first recorded medicinal description appears in the Shennong Bencao Jing, a foundational Chinese medical text dating back approximately 2,400 years. Throughout Chinese history, ginseng was so rare and valuable it was reserved for royalty and the elite. Control over ginseng-producing territories became a political issue between China and Korea by the 16th century. In Chinese folklore, particularly from the northeastern provinces, ginseng roots were said to transform into children who would appear to play before vanishing into the earth. Arab merchants introduced ginseng to Europe in the 9th century through trade routes. In 1716, Jesuit missionary Joseph-François Lafitau discovered the related American ginseng near Montreal with the help of the Iroquois, who called it garent-oguen ('resembles man'), sparking a lucrative fur-and-ginseng trade between French Canada and China that lasted nearly 200 years.",
+
+    "nativeRange": "Panax ginseng is native to the mountainous regions of the Russian Far East, Northeast China (particularly Manchuria), and the Korean Peninsula. Its natural habitat is the understory of mixed coniferous-broadleaved forests of the Manchurian type, particularly those dominated by Korean pine (Pinus koraiensis), Manchurian fir (Abies holophylla), and hornbeam (Carpinus cordata). It is a shade-loving forest plant (hylophyte) that requires forest canopy cover of 60-80% and cannot tolerate prolonged direct sunlight, though excessively heavy shade also impedes growth. The plant thrives at elevations between 200 and 1,100 meters. Today, the wild distribution is severely fragmented. The largest remaining wild population is in the southern Sikhote-Alin mountains of Russia's Primorsky Krai region, with a smaller population spanning the Russian-Chinese border in Jilin and Heilongjiang provinces. Wild ginseng was once found throughout northeastern China and northern Korea but is now practically extinct in those areas due to overharvesting. Commercial ginseng is cultivated primarily in Korea, China, Russia, and Japan.",
+
+    "taxonomy": "Panax ginseng C.A. Meyer belongs to the family Araliaceae (ivy family) and the genus Panax, which comprises approximately 12-17 recognized species depending on the taxonomic authority. The genus is characterized by the presence of ginsenosides and gintonin. Notable relatives include American ginseng (P. quinquefolius), sanchi ginseng (P. notoginseng, used in Chinese medicine for circulatory conditions), Japanese ginseng (P. japonicus), and Vietnamese ginseng (P. vietnamensis, the southernmost Panax species). Taxonomic synonyms include Aralia ginseng, Panax chin-seng, and Panax schin-seng var. coraiensis. Cultivated P. ginseng has two principal commercial forms: white ginseng (peeled and dried) and red ginseng (steamed and dried). Over 12 cultivars are registered in South Korea and 9 in China, including Chunpoong (disease-resistant, preferred for red ginseng production) and Jilin Huangguo Renshen (high ginsenoside content). It is important to distinguish true Panax species from plants marketed as 'ginseng' but belonging to different genera, most notably Siberian ginseng (Eleutherococcus senticosus), which is in the same family but contains eleutherosides rather than ginsenosides.",
+
+    "morphology": "Panax ginseng is a herbaceous perennial growing 30-60 cm tall from a fleshy, spindle- or cylinder-shaped taproot that often forks into two or more branches, giving it a human-like appearance — the feature that inspired its Chinese name. The root is typically harvested at 5-6 years, by which time it is 7-20 cm long with a yellowish-white to tannish exterior and creamy-white flesh. The plant produces 3-6 palmately compound leaves, each bearing 3-5 obovate-elliptic leaflets with densely serrated margins. Leaflets of mature plants measure 8-15 cm long. The flowers are small, greenish-white, and borne in a solitary terminal umbel of 30-50 flowers atop a peduncle 15-30 cm long, blooming in early to midsummer. The ovary is 2-carpellate with two distinct styles. Fruits mature in autumn as bright red, round, slightly flattened drupes measuring 4-5 by 6-7 mm, each containing two white, kidney-shaped seeds. Cultivar identification can be aided by stem and fruit color: the Ja-Kyung variety has a violet stem and red fruit, while the Chung-Kyung and Hwang-Sook varieties have green stems but differ in fruit color (red vs. yellow). Young plants may have only a single compound leaf and no flowering stalk.",
+
+    "storage": "Dried ginseng root, when stored properly, has a shelf life of 3-5 years. Whole roots maintain quality longest, while ground powder has the shortest shelf life at under one year. Store dried ginseng in airtight containers — glass jars with tight-fitting lids or vacuum-sealed bags are ideal — in a cool, dark location. The critical storage factors are low humidity (below 50%, ideally below 15%), cool temperature (below 21°C/70°F, ideally at or below 10°C/50°F), minimal light exposure, and limited contact with oxygen. Roots should be thoroughly dried before storage; any residual moisture promotes mold growth and accelerates degradation of ginsenosides. Excluding oxygen through vacuum sealing can extend shelf life to five years or more. To assess whether stored ginseng is still potent, check its color and aroma: high-quality ginseng retains a firm texture, creamy-white flesh with a characteristic yellow circle in cross-section, and a strong, earthy, slightly sweet smell. Faded color, musty odor, or soft texture indicate degradation. Red ginseng (steamed) generally has a longer shelf life than white ginseng (sun-dried) due to the steaming process's antimicrobial and preservative effects.",
+
+    "quality": "The single most important quality marker for ginseng is ginsenoside content, typically ranging from 2-10% in commercial products. The European Pharmacopoeia specifies standardized extracts should contain at least 4% total ginsenosides with a drug-extract ratio of 3-7:1. Plant age is a major quality determinant: ginsenoside concentrations increase significantly from years 1 to 5, and roots harvested at 5-6 years are considered optimal. Three-year roots tend to be bitter, four-year roots bland, and five-year or older roots develop an aromatic, pleasant sweetness. When purchasing whole root, look for firm texture, creamy-white flesh with a visible yellow circle in cross-section, and a fresh, earthy aroma. Any discoloration, soft spots, or musty smell indicates disease or degradation. For supplements, choose products labeled 'standardized extract' with specified ginsenoside percentage, species identification (Panax ginseng), extraction method, and third-party lab testing certifications. Beware of adulteration — a systematic review found 24% of 507 ginseng products tested were adulterated. Korean ginseng benefits from strict government quality controls and geographical indication labeling. Wild or wild-simulated roots command premium prices but cultivated roots from reputable sources can be equally effective medicinally.",
+
+    "conservationStatus": "Wild Panax ginseng is critically endangered and nearly extinct across its native range. Centuries of overharvesting for traditional medicine have devastated wild populations, and the species is now practically extinct in China and northern Korea, with the largest remaining wild population confined to Russia's Primorsky Krai region. Industrial logging of Korean pine forests, frequent forest fires, and habitat fragmentation have further degraded remaining habitats. The plant is listed under CITES (Convention on International Trade in Endangered Species), with international trade in wild-collected roots subject to strict regulation. Wild ginseng from the Russian Far East requires special export permits. The closely related American ginseng (P. quinquefolius) faces similar pressures — it is classified as globally vulnerable (G3G4) by NatureServe, is imperiled or critically imperiled in 14 U.S. states and Canadian provinces, and is listed as endangered in Canada. U.S. federal law requires that wild-harvested American ginseng plants be at least 5 years old before export. Consumers should preferentially purchase cultivated ginseng from reputable sources to reduce pressure on wild populations. Forest farming and wild-simulated cultivation methods offer sustainable alternatives that support both conservation and livelihoods. All local, state, and federal harvest regulations must be followed, and any purchase should be verified for sustainable sourcing.",
+
+    "lookalikes": "Several plants commonly found in ginseng's woodland habitat can be confused with ginseng, and some pose real dangers to foragers. Virginia creeper (Parthenocissus quinquefolia) is the single most frequently mistaken plant, particularly in spring and fall when ginseng lacks flowers or berries. Key distinction: ginseng leaflets have fine, evenly distributed serrations, while Virginia creeper has coarser teeth. Virginia creeper berries are poisonous and must never be ingested. Poison ivy (Toxicodendron radicans) can fool beginners in its young growth stage, as it shares woodland habitats; contact causes urushiol-induced dermatitis in 95% of people. Its leaves are typically glossy (ginseng's are matte) and turn red-orange in fall (ginseng turns pale yellow). Wild sarsaparilla (Aralia nudicaulis), nicknamed 'Fool's Sang,' is the most frequent lookalike due to similar leaf structure and identical habitat; the key distinction is leaf arrangement — ginseng leaflets radiate from a single point, while sarsaparilla leaflets are arranged along a central stalk. Baneberry species (Actaea rubra and A. pachypoda) pose a lethal risk if their berries are confused with ginseng's red fruits; baneberry leaves are more fern-like and complex. Jack-in-the-pulpit (Arisaema triphyllum) is toxic without extensive processing due to calcium oxalate crystals. Ohio buckeye (Aesculus glabra) has similar palmate leaves but is a tree rather than an herb. Mandrake (Podophyllum peltatum) produces a human-shaped root similar to ginseng's but is dangerously toxic. When in doubt, look for ginseng's distinctive features: a single stalk from the center of the leaf whorl bearing a terminal umbel of greenish-white flowers or bright red berries."
+  }
+}
