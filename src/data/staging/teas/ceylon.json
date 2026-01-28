@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "gatheredAt": "2026-01-28",
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4787341/",
+      "https://www.healthline.com/nutrition/ceylon-tea",
+      "https://www.medicinenet.com/ceylon_tea_nutrition_benefits_and_downsides/article.htm",
+      "https://now.tufts.edu/2015/11/09/how-long-can-you-store-tea-it-starts-lose-its-taste-and-nutritional-benefits",
+      "https://www.srilankateaboard.lk/index.php/features/fine-ceylon-tea/manufacturing",
+      "https://www.srilankabusiness.com/blog/tea-growing-areas-in-sri-lanka.html",
+      "https://www.historyofceylontea.com/ceylon-publications/ceylon-tea-articles/sri-lanka-tea-history.html",
+      "https://en.wikipedia.org/wiki/Ceylon_tea"
+    ],
+    "confidence": "high",
+    "isUpdate": false,
+    "notes": "Ceylon tea is an origin-based category rather than a single cultivar. This entry covers Ceylon black tea, the dominant and most recognized form. Sri Lanka also produces green, white, and oolong Ceylon teas, but black accounts for ~93% of production."
+  },
+  "id": "ceylon",
+  "name": "Ceylon",
+  "otherNames": ["Sri Lankan tea", "Ceylon black tea"],
+  "teaType": "black",
+  "origin": {
+    "country": "Sri Lanka",
+    "region": "Central Highlands — seven principal districts: Nuwara Eliya, Dimbula, Uva, Kandy, Uda Pussellawa, Sabaragamuwa, and Ruhuna",
+    "terroir": "Elevations range from sea level (Ruhuna) to over 6,000 feet (Nuwara Eliya). The island's tropical monsoon climate, volcanic soil, and varied altitude create distinct micro-terroirs in each district. High-grown teas (above 4,000 ft) develop lighter, more nuanced flavors, while low-grown teas (below 2,000 ft) are fuller-bodied and stronger.",
+    "harvest": "Year-round harvest with regional quality peaks: Dimbula and Nuwara Eliya peak January–March during the dry northeast monsoon; Uva peaks July–September during the southwest monsoon"
+  },
+  "processing": {
+    "oxidationLevel": "100% (fully oxidized black tea)",
+    "steps": [
+      "Hand-plucking of two leaves and a bud",
+      "Withering for 12–18 hours to reduce moisture from 78–80% to 40–45%",
+      "Rolling to rupture leaf cells and initiate oxidation, keeping temperature below 35°C (95°F)",
+      "Oxidation (fermentation) for 20 minutes to 5 hours depending on desired character",
+      "Firing and drying at high temperature to halt oxidation, reducing moisture to 2–3%",
+      "Sorting and grading through layered sieves by leaf size"
+    ],
+    "roastLevel": "none"
+  },
+  "profile": {
+    "appearance": "Wiry, well-twisted dark brown to black leaves; higher grades show golden tips among tightly rolled whole leaves",
+    "liquorColor": "Bright golden-orange to deep reddish-amber, depending on growing elevation — high-grown teas produce a lighter golden liquor, low-grown teas yield a deeper reddish-brown",
+    "aroma": ["citrus", "floral", "malty", "brisk", "slightly spicy"],
+    "flavor": ["bright citrus", "malty sweetness", "mild astringency", "honey notes", "clean finish"],
+    "mouthfeel": "Medium body with brisk, lively character and moderate tannins that create a pleasant dryness without harshness",
+    "finish": "Clean and refreshing with lingering citrus brightness; high-grown teas finish with delicate floral sweetness, low-grown teas with a warm caramel note"
+  },
+  "brewing": {
+    "waterTemp": "200–212°F (93–100°C)",
+    "steepTime": "3–5 minutes (3 min for light, 4 min for medium, 5 min for strong)",
+    "leafRatio": "2g per 8oz (240ml)",
+    "resteeps": 1,
+    "notes": "Use fresh, filtered water and preheat the vessel. For a stronger cup, increase leaf quantity rather than steep time to avoid excessive bitterness from tannin extraction. Ceylon black tea takes well to milk, lemon, or sugar, but try the first cup plain to assess the character."
+  },
+  "caffeine": {
+    "level": "moderate",
+    "mgPerCup": "50–60mg per 8oz cup",
+    "lTheanine": "Contains L-theanine at approximately 5mg/g of dried leaf, providing a synergistic effect with caffeine for sustained alertness without jitteriness",
+    "energyNotes": "Delivers a balanced, steady energy boost. The caffeine-to-L-theanine ratio promotes calm alertness rather than the sharp spike and crash associated with coffee. Energy sustains for 2–3 hours with a gentle taper."
+  },
+  "health": {
+    "primaryBenefits": [
+      "Rich in polyphenols (theaflavins and thearubigins) that provide strong antioxidant protection against oxidative cell damage",
+      "Associated with reduced risk of cardiovascular disease and stroke through LDL cholesterol reduction",
+      "May improve blood sugar regulation — studies suggest three cups daily reduces type 2 diabetes risk",
+      "Contains flavonoids (myricetin, quercetin, kaempferol) linked to anti-inflammatory effects",
+      "Caffeine and L-theanine synergy supports sustained mental alertness and cognitive function"
+    ],
+    "antioxidants": "High in theaflavins (contribute to brightness and briskness) and thearubigins (contribute to color and body), both formed during oxidation of catechins. Also contains myricetin, quercetin, and kaempferol. Ceylon tea has been noted for higher polyphenol content compared to some other origins, attributed to the island's unique terroir and orthodox processing methods.",
+    "traditionalUses": "In Sri Lankan culture, black tea has long been consumed as a daily tonic for digestive comfort, mental clarity, and general vitality. The British colonial tradition of afternoon tea remains deeply embedded in Sri Lankan social customs.",
+    "modernResearch": "A meta-analysis in the European Journal of Preventive Cardiology found regular tea consumption associated with reduced cardiovascular disease risk. Research published in PMC demonstrates that the caffeine and L-theanine combination in tea provides measurable improvements in attention and cognition compared to placebo. Studies also indicate black tea theaflavins reduce LDL cholesterol levels. The European Tea Technical Committee has rated Ceylon tea among the cleanest teas due to minimal pesticide residues.",
+    "cautions": "Caffeine content may cause sleep disruption if consumed late in the day. Tannins in black tea can inhibit non-heme iron absorption — space tea consumption at least one hour from iron-rich meals or supplements. Excessive consumption (more than 5–6 cups daily) may cause caffeine-related side effects including anxiety, headache, and digestive discomfort. Pregnant individuals should limit to 2–3 cups daily per general caffeine guidelines."
+  },
+  "grading": {
+    "system": "Orthodox",
+    "grade": "Orange Pekoe (OP) is the standard whole-leaf grade; higher grades include FBOP, FBOPF, and specialty Silver Tips and Golden Tips",
+    "gradeExplanation": "Ceylon teas are graded by leaf size through a layered sieve system. Whole leaf grades (OP, OPA, OP1) sit at the top tier, retaining full leaves with the most nuanced flavor. Broken grades (BOP, FBOP) are smaller pieces that brew more quickly and yield a bolder cup. Fannings (BOPF, FBOPF) and Dust are the smallest particles, commonly used in tea bags. The prefix letters indicate quality characteristics: F (Flowery/Finest), T (Tippy), G (Golden), indicating the presence of leaf tips and buds. SFTGFOP (Super Fine Tippy Golden Flowery Orange Pekoe) represents the pinnacle, though it is rare. Sri Lanka produces approximately 93% of its tea via orthodox methods, with only 7% using the CTC (Cut-Tear-Curl) process."
+  },
+  "content": {
+    "overview": "Ceylon tea is the internationally recognized name for tea produced in Sri Lanka, one of the world's premier tea-growing origins. Predominantly a black tea, Ceylon accounts for roughly 19% of global tea demand and is the product of over 150 years of continuous cultivation on the island. The tea is distinguished by its bright, brisk character with citrus and floral notes, a hallmark of Sri Lanka's unique terroir — the combination of tropical climate, volcanic soil, and dramatic elevation changes across seven distinct growing regions. Nearly all Ceylon tea is produced using traditional orthodox methods, which preserve the integrity of the leaf and yield a more aromatic, nuanced cup than the mechanized CTC process used elsewhere. Sri Lanka remains the world's third-largest tea exporter, and the lion logo of the Sri Lanka Tea Board is a globally recognized mark of authenticity and quality. The tea is versatile, enjoyed plain, with milk, or with lemon, and serves as the base for many popular blends including Irish Breakfast and some Earl Grey variations.",
+    "history": "The story of Ceylon tea begins not with tea but with coffee. British colonial planters established coffee as the island's dominant crop in the 1830s, but a devastating outbreak of coffee rust (Hemileia vastatrix) in 1869 wiped out virtually the entire industry. Scottish planter James Taylor had established a modest 19-acre tea plantation at the Loolecondera Estate near Kandy in 1867, and his foresight proved transformative. Taylor built the island's first tea factory in 1872, and by 1873 he was shipping tea to London. Exports surged from 282 pounds in 1875 to over 4.3 million pounds by 1885 as ruined coffee planters converted to tea en masse. Entrepreneur Sir Thomas Lipton purchased tea estates in the Uva region in the 1890s and pioneered direct-to-consumer marketing that made Ceylon tea a household name in America and Europe. When the country changed its name from Ceylon to Sri Lanka in 1972, the tea industry successfully argued to retain the \"Ceylon\" brand name, which remains one of the most valuable geographical indications in the tea world.",
+    "culture": "Tea is woven into the daily fabric of Sri Lankan life, from the ubiquitous \"plain tea\" served sweet and milky at roadside kades (shops) to the formal afternoon tea traditions inherited from the British colonial era. The hill country tea estates, particularly around Nuwara Eliya and Ella, have become major tourist destinations where visitors can tour working factories, witness hand-plucking, and taste teas at their source. The Malaiyaha Tamil community, descendants of South Indian laborers brought by the British between the 1830s and 1930s, remain the backbone of the industry, with their plucking expertise considered essential to quality. Sri Lanka's tea auction in Colombo is one of the oldest and most important in the world, conducting weekly sales that set global benchmark prices. Tea plays a central role in Sri Lankan hospitality — offering tea to guests is a fundamental expression of welcome.",
+    "production": "Ceylon tea production follows the orthodox method, a labor-intensive process prized for preserving the leaf's natural aromatics and complexity. Expert pluckers hand-select only the terminal bud and two youngest leaves (the \"two leaves and a bud\" standard), a practice that distinguishes Sri Lankan production from the mechanized harvesting common in other origins. The freshly plucked leaves undergo withering to reduce moisture, then rolling to rupture cell walls and release enzymes, followed by carefully timed oxidation where polyphenols convert to the theaflavins and thearubigins that define black tea's color and flavor. Firing at high temperatures halts oxidation at the precise moment determined by experienced factory managers who balance science with sensory intuition. The finished tea is sorted by leaf size through a series of graduated sieves, yielding grades from whole-leaf OP down to Dust. Sri Lanka's tea industry employs over one million people — approximately 5% of the national population — across plucking, manufacturing, blending, packaging, and export.",
+    "selection": "When selecting Ceylon tea, the growing region and elevation provide the most reliable guide to character: high-grown teas (Nuwara Eliya, Dimbula, Uva) offer lighter, more aromatic cups with citrus and floral notes, while low-grown teas (Ruhuna, Sabaragamuwa) deliver fuller body with caramel and chocolate undertones. Look for the Sri Lanka Tea Board's lion logo, which certifies authentic origin and quality standards. Whole-leaf grades (OP, OPA) will give the most nuanced flavor, while broken grades (BOP, FBOP) brew more quickly and boldly — both are legitimate quality choices depending on preference. Avoid teas with excessive dust or a stale, flat aroma, which indicate age or poor storage. Single-estate or single-origin Ceylon teas from named estates offer the most distinctive character, while blended Ceylon teas provide consistent everyday drinking.",
+    "storage": "Store Ceylon black tea in an opaque, airtight container away from heat, light, moisture, and strong odors, which can all degrade flavor and aroma. Properly stored loose-leaf Ceylon tea maintains its best quality for 18–24 months, with a maximum useful shelf life of about 3 years owing to the stability conferred by full oxidation. Unlike pu-erh or some oolongs, Ceylon black tea does not improve with age and should be consumed relatively fresh for optimal brightness and character. Signs of degradation include faded color, loss of the characteristic bright aroma, and a flat or musty taste when brewed. Do not refrigerate or freeze, as temperature fluctuations cause condensation that introduces damaging moisture.",
+    "pairings": "Ceylon's bright, brisk character with citrus undertones makes it an excellent pairing for rich breakfast foods — eggs, toast with butter and marmalade, pastries, and scones with clotted cream. The tea's moderate tannins and clean finish cut through fatty and savory dishes, making it a strong companion for sandwiches, cured meats, and aged cheeses. For afternoon tea, Ceylon pairs well with lemon cakes, shortbread, cucumber sandwiches, and chocolate — the citrus notes complement lemon desserts while the malty body stands up to chocolate. It is a natural choice for iced tea due to its clarity and brightness when cooled, and it blends well with cinnamon, cardamom, and cloves for a simple spiced tea. Ceylon is best enjoyed in the morning or early afternoon to take advantage of its moderate caffeine content without disrupting sleep.",
+    "variations": "Sri Lanka's seven growing regions each produce teas with distinct personalities: Nuwara Eliya (the \"Champagne of Ceylon tea\") yields the lightest, most delicate cups with pronounced floral and citrus notes; Dimbula produces mellow, jasmine-scented teas with a golden-orange liquor; Uva teas are smooth with woody undertones and a sweet finish; Kandy teas are full-bodied with chocolate notes; and Ruhuna teas are the strongest, darkest, with caramel and honey sweetness. Beyond black tea, Sri Lanka also produces Ceylon green tea (pan-fired or steamed, 0% oxidation), Ceylon white tea known as Silver Tips (one of the world's most expensive teas, made solely from unopened buds), and small quantities of Ceylon oolong. Ceylon black tea also serves as the base for many iconic blends — it is a key component in English Breakfast, Irish Breakfast, and Russian Caravan blends, and some Earl Grey blends use a Ceylon base for the bergamot oil."
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "gatheredAt": "2026-01-28",
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3249897/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8739926/",
+      "https://www.nccih.nih.gov/health/garlic",
+      "https://pubmed.ncbi.nlm.nih.gov/17918162/",
+      "https://www.ncbi.nlm.nih.gov/books/NBK501782/",
+      "https://www.drugs.com/drug-interactions/garlic.html",
+      "https://en.wikipedia.org/wiki/Garlic",
+      "https://www.ars.usda.gov/midwest-area/madison-wi/vegetable-crops-research/docs/simon-garlic-origins/",
+      "https://www.britannica.com/plant/garlic",
+      "https://www.almanac.com/plant/garlic",
+      "https://www.herbalreality.com/herb/garlic/",
+      "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2023.1120377/full"
+    ],
+    "confidence": "high",
+    "isUpdate": false,
+    "notes": "Duke reference listed family as Liliaceae; modern taxonomy places garlic in Amaryllidaceae (subfamily Allioideae). Amaryllidaceae used per APG IV classification. Exceptionally well-studied herb with extensive clinical literature. Duke provided 400+ raw bulb compounds for constituent curation."
+  },
+  "id": "garlic",
+  "commonName": "Garlic",
+  "otherNames": [
+    "Stinking Rose",
+    "Ail",
+    "Ajo",
+    "Da Suan",
+    "Lasun",
+    "Lahsun",
+    "Knoblauch"
+  ],
+  "latinName": "Allium sativum",
+  "family": "Amaryllidaceae",
+  "partsUsed": [
+    "bulb",
+    "clove",
+    "scape"
+  ],
+  "taste": "pungent, spicy, warm",
+  "energy": "warm, drying",
+  "actions": [
+    "antimicrobial",
+    "antifungal",
+    "antiviral",
+    "antiparasitic",
+    "hypotensive",
+    "hypolipidemic",
+    "antiplatelet",
+    "expectorant",
+    "diaphoretic",
+    "carminative",
+    "immunostimulant",
+    "antioxidant",
+    "hypoglycemic",
+    "vermifuge"
+  ],
+  "bodySystems": [
+    "cardiovascular",
+    "immune",
+    "respiratory",
+    "digestive"
+  ],
+  "conditions": [
+    "high blood pressure",
+    "high cholesterol",
+    "atherosclerosis",
+    "common cold",
+    "influenza",
+    "respiratory infections",
+    "fungal infections",
+    "intestinal parasites",
+    "diabetes",
+    "poor circulation"
+  ],
+  "preparations": [
+    "tea",
+    "tincture",
+    "capsule",
+    "syrup",
+    "oil",
+    "poultice"
+  ],
+  "traditions": [
+    "western",
+    "tcm",
+    "ayurveda",
+    "folk"
+  ],
+  "seasons": [
+    "spring",
+    "summer",
+    "fall",
+    "winter"
+  ],
+  "safety": {
+    "generalSafety": "Generally recognized as safe (GRAS) when consumed in dietary amounts. Supplemental doses may cause gastrointestinal discomfort, heartburn, and characteristic body odor and breath. Raw garlic applied topically can cause burns, especially under occlusive dressings. Discontinue supplemental garlic at least 2 weeks before surgery due to antiplatelet effects.",
+    "contraindications": [
+      "bleeding disorders or upcoming surgery (within 2 weeks)",
+      "allergy to garlic or other Allium species (onion, leek, chives)",
+      "active gastrointestinal ulcers or severe GERD"
+    ],
+    "drugInteractions": [
+      "anticoagulants and antiplatelet drugs (warfarin, aspirin, clopidogrel) — increased bleeding risk",
+      "HIV protease inhibitors (saquinavir) — reduced drug effectiveness",
+      "isoniazid — reduced absorption",
+      "cyclosporine and tacrolimus — altered drug levels, risk of toxicity",
+      "blood pressure medications — additive hypotensive effects",
+      "hypoglycemic drugs — additive blood sugar lowering",
+      "CYP3A4 substrates — potential altered metabolism",
+      "oral contraceptives — potential reduced effectiveness"
+    ],
+    "pregnancySafe": false,
+    "pregnancyNotes": "Safe in normal dietary amounts. Supplemental doses should be avoided during pregnancy due to potential antiplatelet effects and theoretical increased risk of bleeding. Not enough data to confirm safety of high-dose garlic supplements during pregnancy.",
+    "nursingNotes": "Generally safe in dietary amounts during lactation. Garlic metabolites (allyl methyl sulfide, allyl methyl sulfoxide) pass into breast milk and can alter its flavor. Some infants may nurse longer when exposed to garlic-flavored milk, while others may become fussy. Monitor infant for colic or gas. GRAS status applies to dietary consumption during lactation.",
+    "childrenNotes": "Safe in age-appropriate culinary amounts. Do not apply raw garlic topically to children's skin as it can cause burns. Garlic supplements are not well-studied in children and should be used with caution. Watch for allergic reactions in children with Allium family sensitivities."
+  },
+  "dosage": {
+    "fresh": "1-4 cloves daily (approximately 4g fresh garlic per clove)",
+    "dried powder": "300-1000 mg dried garlic powder 2-3 times daily",
+    "aged garlic extract": "600-1200 mg daily in divided doses",
+    "tincture": "2-4 mL of 1:5 tincture three times daily",
+    "oil": "0.03-0.12 mL garlic oil three times daily"
+  },
+  "constituents": [
+    "allicin (diallyl thiosulfinate)",
+    "alliin (S-allyl-L-cysteine sulfoxide)",
+    "alliinase",
+    "ajoene (E- and Z-ajoene)",
+    "diallyl sulfides (mono-, di-, tri-, tetra-, penta-)",
+    "S-allyl cysteine",
+    "S-allylmercaptocysteine",
+    "gamma-glutamyl-S-allylcysteine",
+    "vinyl dithiins (2-vinyl-1,3-dithiin, 3-vinyl-1,2-dithiin)",
+    "scordinins",
+    "allixin",
+    "saponins (eruboside B, sativosides)",
+    "fructans and inulin",
+    "quercetin",
+    "selenium",
+    "germanium",
+    "adenosine",
+    "polysaccharides",
+    "caffeic acid and ferulic acid",
+    "beta-sitosterol and stigmasterol"
+  ],
+  "combinations": [
+    {
+      "herb": "Echinacea",
+      "purpose": "Enhanced immune stimulation during acute infections; garlic provides direct antimicrobial action while echinacea modulates immune cell activity"
+    },
+    {
+      "herb": "Ginger",
+      "purpose": "Synergistic anti-inflammatory and circulatory stimulant; both warming herbs that support cardiovascular health and digestive function"
+    },
+    {
+      "herb": "Hawthorn",
+      "purpose": "Comprehensive cardiovascular support; garlic lowers lipids and blood pressure while hawthorn strengthens cardiac muscle and improves coronary circulation"
+    },
+    {
+      "herb": "Turmeric",
+      "purpose": "Potent anti-inflammatory combination; garlic's organosulfur compounds complement curcumin's COX-2 inhibition for systemic inflammation"
+    },
+    {
+      "herb": "Mullein",
+      "purpose": "Respiratory infection support; garlic's antimicrobial and expectorant properties pair with mullein's soothing demulcent action on irritated airways"
+    }
+  ],
+  "content": {
+    "overview": "Garlic (Allium sativum) is one of the oldest and most extensively studied medicinal plants in the world, with a documented history of therapeutic use spanning over 5,000 years. Native to Central Asia, garlic has become a cornerstone of both culinary and healing traditions across virtually every culture on earth. Its primary medicinal value lies in its rich organosulfur compounds, particularly allicin, which is produced when raw garlic cloves are crushed or chopped and the enzyme alliinase converts alliin into this potent antimicrobial agent. Garlic is perhaps most celebrated for its cardiovascular benefits, including the ability to modestly reduce blood pressure, lower cholesterol, and inhibit platelet aggregation. It also possesses broad-spectrum antimicrobial activity against bacteria, viruses, fungi, and parasites, making it a versatile first-line remedy in traditional herbalism. The National Center for Complementary and Integrative Health notes that garlic is one of the most commonly used dietary supplements in the United States, though the FDA has not approved it for any medical condition. Its distinctive pungent flavor and aroma, caused by volatile sulfur compounds, have made it both a beloved culinary staple and a symbol of protective power in folklore worldwide.",
+    "traditionalUses": "Garlic's medicinal use appears in some of the earliest surviving medical texts. The Egyptian Ebers Papyrus (circa 1550 BCE) lists garlic as a remedy for 32 ailments, and garlic clay sculptures dating to 3700 BCE have been found in Egyptian tombs. In ancient China, garlic was prescribed as early as 2700 BCE for depression, respiratory ailments, and digestive complaints, classified as a yang herb for its warming and stimulating properties. Ayurvedic medicine has long valued garlic as a tonic for appetite loss, general weakness, cough, skin diseases, rheumatism, and hemorrhoids, recognizing its pungent, light, and warming qualities that reduce vata and kapha while enhancing pitta. Greek physicians including Hippocrates prescribed garlic for a wide range of conditions, and it was given to Olympic athletes and soldiers to enhance strength and endurance. European folk medicine combined hot garlic water with honey for whooping cough and intestinal worms. Across Africa, traditional healers used garlic for respiratory infections, digestive disorders, and fever. Native American tribes including the Cherokee used wild garlic for respiratory and digestive complaints and wound care.",
+    "modernResearch": "Modern clinical research on garlic has produced a substantial body of evidence, though results are sometimes mixed depending on the preparation studied. Meta-analyses have demonstrated that garlic supplementation can reduce systolic blood pressure by approximately 5-8 mmHg and diastolic by 3-5 mmHg in hypertensive individuals. Studies on cholesterol show modest reductions in total and LDL cholesterol, typically in the range of 10-15%, though results vary by formulation. Allicin has demonstrated in vitro antimicrobial activity against a wide range of pathogens including methicillin-resistant Staphylococcus aureus (MRSA), Helicobacter pylori, and Candida species. Aged garlic extract (AGE) has been studied extensively for cardiovascular protection and shows more consistent results than raw garlic, likely due to its stable S-allyl cysteine content. Research suggests garlic may improve endothelial function through nitric oxide-mediated vasodilation. Epidemiological studies have observed associations between high garlic consumption and reduced incidence of certain cancers, particularly gastrointestinal cancers, though clinical trials are insufficient to confirm a preventive role. The antiplatelet activity of garlic is well-established, which informs the surgical precaution of discontinuing garlic supplements two weeks before procedures.",
+    "howToUse": "The most effective medicinal use of garlic requires crushing, chopping, or chewing raw cloves to activate the enzyme alliinase, which converts alliin to the bioactive allicin. Allow crushed garlic to sit for 10-15 minutes before cooking or consuming to maximize allicin formation. For immune support during acute illness, consume 1-4 fresh cloves daily, either raw or lightly cooked. Garlic can be taken as an infused honey (garlic cloves submerged in raw honey for several weeks) for sore throats and coughs. For cardiovascular support, aged garlic extract (AGE) at 600-1200 mg daily is the most studied supplemental form and avoids the odor issues of raw garlic. Garlic-infused oil can be used topically for ear infections (warmed, not for perforated eardrums) or fungal skin conditions. Fire cider, a traditional oxymel combining garlic with horseradish, ginger, onion, and hot peppers in apple cider vinegar, is a popular cold-season immune tonic. Garlic syrup made by simmering chopped garlic in honey and water serves as a traditional expectorant for productive coughs.",
+    "harvesting": "Garlic is planted in fall (October-November in most temperate zones) and harvested the following summer, typically June through August depending on the region. The harvest window is determined by leaf die-back rather than calendar dates: begin harvesting when the lower third of leaves have turned brown while the upper leaves remain green. Harvesting too early yields small, immature bulbs, while waiting too long causes cloves to separate from the bulb and reduces storage life. Use a garden fork to loosen the soil around bulbs before lifting to avoid bruising. After harvest, cure garlic by hanging or spreading plants in a warm, dry, well-ventilated area out of direct sunlight for 3-4 weeks until the outer wrappers are papery and the neck is completely dry.",
+    "cultivation": "Garlic thrives in full sun with 6-8 hours of direct sunlight daily, in well-drained soil with a pH of 6.0-7.0 and high organic matter content. Plant individual cloves pointed end up, 2-3 inches deep and 6 inches apart, in fall to allow a cold vernalization period essential for proper bulb division. Apply 4-6 inches of mulch after planting to moderate soil temperature fluctuations through winter. Garlic is relatively pest-resistant and even serves as a natural pest deterrent for neighboring plants, though it is susceptible to white rot, rust, and nematodes. Remove scapes from hardneck varieties when they curl to redirect energy to bulb development. Practice a minimum three-year crop rotation and never follow garlic with other Allium crops.",
+    "history": "The word 'garlic' derives from Old English garlēac, combining gar (spear) meaning spear-shaped and lēac (leek), literally 'spear-leek' — a reference to the plant's flat, pointed leaves. The Latin name Allium may derive from the Celtic word 'all' meaning pungent or burning. Garlic holds extraordinary cultural significance across civilizations: Egyptian laborers building the Great Pyramids were reportedly given daily garlic rations, and a labor strike allegedly occurred when supplies ran short. In ancient Rome, garlic was fed to soldiers and sailors for stamina, while the upper classes disdained it as food of the common people. During medieval plague epidemics, garlic was worn around the neck or placed in vinegar (thieves' vinegar or 'vinaigre des quatre voleurs') as protection against disease — a practice with some rational basis given garlic's antimicrobial properties. Garlic's association with warding off evil, particularly vampires in Eastern European folklore, likely stems from its strong odor and historical use against pestilence.",
+    "nativeRange": "Garlic is native to Central Asia, with its center of origin spanning from the Tien Shan mountains of western China through Kyrgyzstan, Tajikistan, Turkmenistan, and Uzbekistan, extending south through the Caucasus, northeastern Iran, and the Hindu Kush. Wild garlic populations historically ranged from China to India to Egypt to Ukraine, though today truly wild garlic is restricted to Central Asian mountain habitats. Garlic has been so extensively cultivated for millennia that it has naturalized across all temperate and subtropical regions of the world, growing successfully from USDA zones 4 through 9 and even as far north as Alaska when planted at proper depth and timing.",
+    "taxonomy": "Garlic belongs to the family Amaryllidaceae (subfamily Allioideae), though older references may list it under Liliaceae or Alliaceae. The genus Allium contains over 800 species including onion (A. cepa), leek (A. ampeloprasum), and chives (A. schoenoprasum). Two subspecies are recognized: var. sativum (softneck garlic) and var. ophioscorodon (hardneck garlic), which are further divided into ten genetic groups — Porcelain, Purple Stripe, Marbled Purple Stripe, Glazed Purple Stripe, Rocambole, Creole, Asiatic, Turban, Artichoke, and Silverskin — comprising over 600 named cultivars. The wild progenitor is believed to be Allium longicuspis, though A. tuncelianum and A. macrochaetum are also candidates. So-called elephant garlic is actually a species of leek (A. ampeloprasum) and not a true garlic.",
+    "morphology": "Garlic is a perennial bulbous herb typically grown as an annual, reaching 30-60 cm (1-2 feet) in height with an erect, stiff central stem. The leaves are flat, solid, and blue-green with a waxy coating and a central ridge — a key distinction from onion's hollow, cylindrical leaves. The bulb consists of 4-20 individual cloves arranged around a central stem disc, enclosed in papery white to purple wrappers. Hardneck varieties produce a rigid flowering stalk called a scape that coils characteristically before straightening, terminating in an umbel containing small purple-pink flowers and tiny bulbils. Softneck varieties lack this scape and form a pliable neck suitable for braiding. The root system is fibrous and shallow, typically concentrated in the top 5-25 cm of soil with a horizontal spread of about 30 cm. The distinctive sulfurous odor released when any plant tissue is crushed is the most reliable field identification feature.",
+    "storage": "Whole cured garlic bulbs store for 3-6 months at room temperature (60-65°F) in a dry, well-ventilated location away from direct sunlight. Hardneck varieties typically last 2-4 months while softneck varieties can persist 6-8 months. Avoid refrigerating whole bulbs, as the cold and moisture combination triggers premature sprouting through vernalization. Once cloves are separated from the bulb, use within 2-3 weeks; peeled cloves should be refrigerated and used within one week. Dried garlic powder in airtight containers remains viable for 2-4 years. Signs of degradation include softening, sprouting, yellowed or brown-spotted cloves, loss of pungent aroma, and a sour or musty smell.",
+    "quality": "High-quality fresh garlic bulbs are firm and heavy for their size, with tight, compact cloves and dry, papery skin free of soft spots, mold, or sprouting. The cloves should be plump with no shriveling or desiccation. A strong, sharp aroma when the wrapper is scratched indicates high allicin potential. For medicinal use, seek organically grown garlic to avoid irradiation, which destroys alliinase enzyme activity and eliminates allicin production. Locally grown or specialty hardneck varieties generally contain higher organosulfur compound levels than mass-produced softneck garlic from China, which accounts for over 70% of global supply. Aged garlic extract (AGE) products should be standardized to S-allyl cysteine content for consistent therapeutic dosing.",
+    "conservationStatus": "Garlic itself is not endangered — it is one of the most widely cultivated crops globally with over 30 million metric tons produced annually. However, genetic diversity within cultivated garlic is threatened by the dominance of a few commercial varieties and garlic's inability to produce viable seed (it reproduces clonally). Wild Allium populations in Central Asia, the center of garlic biodiversity with at least 120 native cultivars, face habitat pressure from agricultural expansion and overgrazing. Conservation efforts focus on maintaining germplasm collections of diverse garlic varieties to preserve genetic resources for future breeding and disease resistance. The USDA maintains a garlic germplasm repository in Pullman, Washington with over 300 accessions.",
+    "lookalikes": "The most dangerous garlic lookalike is lily of the valley (Convallaria majalis), whose broad basal leaves can resemble garlic greens in early spring; however, lily of the valley lacks garlic's characteristic sulfurous odor when crushed and is highly toxic, containing cardiac glycosides that can cause fatal heart arrhythmias. Autumn crocus (Colchicum autumnale) and death camas (Zigadenus species) can also be confused with wild Allium species before flowering — both are potentially lethal. Crow garlic (Allium vineale) and field garlic (Allium oleraceum) are wild relatives that are edible but far less palatable than cultivated garlic. The simplest and most reliable identification test is to crush a leaf: true garlic and its Allium relatives will produce an unmistakable sulfurous garlic odor. Any plant with garlic-like leaves that lacks this characteristic smell when crushed should never be consumed. Ramps (Allium tricoccum) and wild leeks resemble garlic but are safe to eat and carry a mild garlic-onion scent."
+  }
+}

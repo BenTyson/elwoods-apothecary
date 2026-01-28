@@ -222,6 +222,12 @@ When evaluating and citing sources, apply these tiers:
 8. Search: `"<tea name>" history culture ceremony`
 9. Search: `"<tea name>" storage aging shelf life`
 
+**For Teas — Blend adaptation (`teaType: 'blend'`):**
+When the tea is a blend (Earl Grey, English Breakfast, Chai, etc.), adapt these searches:
+- Search **#1**: Replace `origin region terroir` → `blend components origins base tea` (blends have no single origin)
+- Search **#2**: Replace `processing oxidation production` → `blend composition ratio ingredients recipe` (blends combine finished teas or add flavorings)
+- Search **#7**: Replace `grading quality selection` → `brand quality selection best examples` (blends are evaluated by brand/blend quality, not leaf grade)
+
 ### Step 3: Structure Data
 
 Read `src/types/index.ts` on the **FIRST** gather of a session only. If you can recall the Plant/PlantContent interfaces without re-reading, you already have the types loaded. Do **NOT** read again.
