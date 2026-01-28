@@ -84,7 +84,8 @@ scripts/           # Build utilities (not part of Next.js app)
 - Admin gather queue page (`/admin/gather`) — 8 content-type tabs, Duke plant browser, manual entry
 - 13 reusable UI components (including staging + gather components)
 - Comprehensive type system (8 content types)
-- `/gather` skill supporting 8 content types
+- `/gather` skill supporting 8 content types + queue commands (`--next`, `--queue`)
+- `/gather` includes per-type validation checklists (prevents incomplete entries)
 - Gather queue seeded with 187 items across all 8 content types (plants, teas, conditions, remedies, ingredients, preparations, actions, terms)
 
 ### Placeholders (Not Yet Built)
@@ -114,13 +115,4 @@ scripts/           # Build utilities (not part of Next.js app)
 
 ## Next Steps
 
-### 1. Resolve staging ID mismatch
-
-**Issue**: The gather queue uses Duke Latin-name slugs as plant IDs (e.g., `salvia-officinalis`), but staging files use common-name slugs (e.g., `sage.json`). The status computation checks `${item.id}.json` in the staging directory, so `salvia-officinalis` won't match `sage.json` and will incorrectly show as "queued" instead of "staged".
-
-**Options**:
-- (a) Add an ID alias/mapping in `computeItemStatus` that checks the staged file's `id` field
-- (b) Rename staged files to match Duke slugs
-- (c) Add a reverse lookup: scan staging files and match by `latinName` or `commonName`
-
-This only affects plants added via the Duke browser. Items added manually (via `ManualEntryForm`) will use `slugify(name)` which matches the staging convention.
+*No known blockers. The staging ID mismatch (Latin-name queue IDs vs common-name file slugs) was resolved — `getStagedIds()` in `gather-queue.ts` now indexes staged files by basename, `id` field, and `slugify(latinName)`, so status computation works regardless of naming scheme.*

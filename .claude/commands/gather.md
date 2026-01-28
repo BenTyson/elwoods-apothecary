@@ -13,6 +13,9 @@ Research and populate apothecary data with a staging workflow and source citatio
 /gather action <name>      - Research an herbal action
 /gather term <name>        - Research a glossary term
 /gather tea <name>         - Research a tea variety
+/gather --next             - Gather the next queued item (any type)
+/gather --next plant       - Gather the next queued plant (etc.)
+/gather --queue [type]     - Show queue status (optionally filtered)
 /gather --list <category>  - Show existing items
 /gather --review           - Review all staged items
 /gather --merge <file>     - Merge staged item to main JSON
@@ -20,8 +23,9 @@ Research and populate apothecary data with a staging workflow and source citatio
 
 ## Workflow
 
-**Staging Area** → **Review** → **Merge**
+**Queue** → **Research** → **Staging Area** → **Review** → **Merge**
 
+Items enter Research either manually (`/gather plant sage`) or from the queue (`/gather --next`).
 All gathered data goes to `src/data/staging/` first, allowing review before adding to the main database.
 
 ---
@@ -32,44 +36,26 @@ When user runs any `/gather <type> <name>` command:
 
 ### Step 1: Check Existing Data
 
-First, check if the item already exists in the main database:
+Use the **Grep** tool to search for the item name (case-insensitive) in the appropriate main data file:
 
-```bash
-# For plants
-grep -i "<name>" src/data/plants.json
+| Type | File |
+|------|------|
+| plant | `src/data/plants.json` |
+| condition | `src/data/conditions.json` |
+| remedy | `src/data/remedies.json` |
+| ingredient | `src/data/ingredients.json` |
+| preparation | `src/data/preparations.json` |
+| action | `src/data/actions.json` |
+| term | `src/data/glossary.json` |
+| tea | `src/data/teas.json` |
 
-# For conditions
-grep -i "<name>" src/data/conditions.json
+If item exists in the main database, note this is an **update** (set `_meta.isUpdate: true`).
 
-# For remedies
-grep -i "<name>" src/data/remedies.json
-
-# For ingredients
-grep -i "<name>" src/data/ingredients.json
-
-# For preparations
-grep -i "<name>" src/data/preparations.json
-
-# For actions
-grep -i "<name>" src/data/actions.json
-
-# For glossary terms
-grep -i "<name>" src/data/glossary.json
-
-# For teas
-grep -i "<name>" src/data/teas.json
-```
-
-If item exists, note this is an **update** (set `_meta.isUpdate: true`).
+Also use **Glob** to check the staging directory (`src/data/staging/<pluralDir>/<id>.json`). If a staged file already exists, inform the user and ask whether to overwrite.
 
 ### Step 1.5: Check Duke Reference (Plants Only)
 
-For plant research, check the local Dr. Duke's Phytochemical & Ethnobotanical reference data:
-
-```bash
-# Look up plant in Duke reference (by common or Latin name)
-grep -i "<name>" src/data/reference/duke-plants.json | head -20
-```
+For plant research, use the **Grep** tool to search for the plant name (common or Latin) in `src/data/reference/duke-plants.json`. If a match is found, use the **Read** tool to extract the full Duke entry.
 
 If found, pre-fill from Duke data:
 - **constituents**: Use Duke's chemical list, grouped by plant part
@@ -77,27 +63,35 @@ If found, pre-fill from Duke data:
 - **family**: Use Duke's family classification
 - **latinName**: Validate against Duke's taxonomy
 
-This reduces web searches needed. Skip searches 2 (pharmacology/constituents) and partially skip 7 (taxonomy) when Duke data is available.
+Set a `hasDukeData` flag for Step 2 adaptive search.
+
+**Format note**: Duke uses Latin-only family names (e.g., `Lamiaceae`). This is the standard — do not add parenthetical English names.
 
 ### Step 2: Research
 
-Use WebSearch to gather authoritative information:
+Use WebSearch to gather authoritative information. Plant searches are **adaptive** based on Duke data availability.
 
-**Note**: When Duke reference data is available for a plant, searches 2 and 7 can be abbreviated or skipped. Focus web research on narrative content, safety, and practical fields that Duke doesn't cover.
-
-**For Plants:**
+**For Plants — Always perform (10 searches):**
 1. Search: `"<plant name>" herbal medicine uses traditional`
-2. Search: `"<latin name>" pharmacology constituents`
-3. Search: `"<plant name>" contraindications drug interactions safety`
-4. Search: `"<plant name>" pregnancy breastfeeding children`
-5. Search: `"<plant name>" history origin etymology cultural significance`
-6. Search: `"<plant name>" native range habitat distribution geography`
-7. Search: `"<latin name>" taxonomy classification related species`
-8. Search: `"<plant name>" morphology identification characteristics appearance`
-9. Search: `"<plant name>" storage shelf life dried herb`
-10. Search: `"<plant name>" quality indicators buying sourcing`
-11. Search: `"<plant name>" conservation status endangered sustainable`
-12. Search: `"<plant name>" lookalikes poisonous misidentification`
+2. Search: `"<plant name>" contraindications drug interactions safety`
+3. Search: `"<plant name>" pregnancy breastfeeding children`
+4. Search: `"<plant name>" history origin etymology cultural significance`
+5. Search: `"<plant name>" native range habitat distribution geography`
+6. Search: `"<plant name>" morphology identification characteristics appearance`
+7. Search: `"<plant name>" storage shelf life dried herb`
+8. Search: `"<plant name>" quality indicators buying sourcing`
+9. Search: `"<plant name>" conservation status endangered sustainable`
+10. Search: `"<plant name>" lookalikes poisonous misidentification`
+
+**For Plants — Skip when Duke provides constituents:**
+- ~~`"<latin name>" pharmacology constituents`~~ (pre-filled from Duke)
+
+**For Plants — Skip when Duke provides family/taxonomy:**
+- ~~`"<latin name>" taxonomy classification related species`~~ → lighter search: `"<plant name>" related species subspecies varieties` (for narrative content only)
+
+**For Plants — When Duke data is NOT available, add:**
+11. Search: `"<latin name>" pharmacology constituents`
+12. Search: `"<latin name>" taxonomy classification related species`
 
 **For Conditions:**
 1. Search: `"<condition>" herbal treatment natural remedies`
@@ -160,91 +154,104 @@ Use WebSearch to gather authoritative information:
 
 ### Step 4: Structure Data
 
-Map researched information to the TypeScript schema.
+Read `src/types/index.ts` to determine the required and optional fields for the item type.
 
-**Plants must include:**
-- id, commonName, latinName, family, partsUsed
-- taste, energy, actions, bodySystems, conditions
-- preparations, traditions, seasons
-- safety (ALL subfields: generalSafety, contraindications, drugInteractions, pregnancySafe, pregnancyNotes, nursingNotes, childrenNotes)
-- dosage (object with preparation types as keys)
-- content (overview, traditionalUses, modernResearch, howToUse)
-- content.history (etymology, cultural significance, notable historical figures)
-- content.nativeRange (native regions, habitats, where naturalized)
-- content.taxonomy (family relationships, related species, subspecies/varieties)
-- content.morphology (growth habit, leaves, flowers, roots, identifying features)
-- content.storage (shelf life, storage conditions, signs of degradation)
-- content.quality (buying tips, quality indicators, what to look for)
-- content.conservationStatus (endangered status, ethical sourcing, United Plant Savers)
-- content.lookalikes (dangerous look-alikes, identification warnings)
+**Type → Interface mapping:**
 
-**Conditions must include:**
-- id, name, category (BodySystem), description
-- symptoms, herbs, approaches, lifestyle, whenToSeek
+| Content Type | Primary Interface | Content Interface |
+|-------------|-------------------|-------------------|
+| plant | `Plant` | `PlantContent` |
+| condition | `Condition` | *(inline)* |
+| remedy | `Remedy` | *(inline)* |
+| ingredient | `Ingredient` | `IngredientContent` |
+| preparation | `Preparation` | `PreparationContent` |
+| action | `Action` | `ActionContent` |
+| term | `GlossaryTerm` | `GlossaryContent` |
+| tea | `Tea` | `TeaContent` |
 
-**Remedies must include:**
-- id, name, type (PreparationType), difficulty
-- prepTime, yield, description
-- herbs, conditions, bodySystems
-- ingredients, instructions
+**Rules:**
+- Non-optional fields (no `?` suffix in TypeScript) MUST be populated.
+- Optional fields (with `?` suffix) SHOULD be populated when research provides data.
+- **Plant-specific override**: All 8 botanical/practical content sections (`history`, `nativeRange`, `taxonomy`, `morphology`, `storage`, `quality`, `conservationStatus`, `lookalikes`) are editorially required despite being TypeScript-optional.
 
-**Ingredients must include:**
-- id, name, category (IngredientCategory)
-- source (where it comes from - bees, olives, etc.)
-- description
-- properties.shelfLife, properties.storageRequirements
-- properties.texture, properties.color, properties.scent (when applicable)
-- uses (array of preparation types it's used in)
-- content.overview
-- content.quality (what to look for when buying)
-- content.usageGuidelines (how to use in preparations)
-- safety.generalSafety, safety.internalUse
-- substitutes (at least 1-2 alternatives)
+**Format conventions:**
+- `family`: Latin only — `"Lamiaceae"` not `"Lamiaceae (Mint family)"`
+- `id`: common-name kebab-case — `"valerian"` not `"valeriana-officinalis"`
+- `taste` / `energy`: lowercase, comma-separated — `"bitter, pungent"`
+- Array strings: lowercase unless proper nouns — `["nervine", "adaptogen"]`
 
-**Preparations (Methods) must include:**
-- id, name, type (PreparationType)
-- description, difficulty, timeRequired
-- equipment (array of needed tools)
-- ingredientTypes (general categories needed)
-- ratios (at least one standard ratio with description)
-- process (numbered steps with instructions)
-- storage.container, storage.conditions, storage.shelfLife, storage.signsOfSpoilage
-- content.overview
-- content.theory (why this method works)
-- content.bestFor (what herbs/constituents it's suited for)
-- troubleshooting (at least 2-3 common problems)
+### Step 4.5: Validation Checklist
 
-**Actions must include:**
-- id, name, definition (one-sentence)
-- category (ActionCategory)
-- mechanism (physiological explanation)
-- exampleHerbs (3-5 representative herbs)
-- conditions (what it helps with)
-- traditions (array with at least Western tradition)
-- content.overview
-- content.physiology (detailed mechanism)
-- content.clinicalUse (how herbalists apply it)
-- relatedActions (similar or complementary)
+Before writing the staged file, verify every item against the checklist for its type. **If any check fails, go back and fill the gap with additional targeted research. Do not proceed to Step 5 with gaps.**
 
-**Glossary Terms must include:**
-- id, term, definition
-- category (GlossaryCategory)
-- etymology (word origin)
-- usageExamples (1-2 example sentences)
-- relatedTerms (when applicable)
+**Plants:**
+- [ ] All `Plant` required fields populated (id, commonName, latinName, family, partsUsed, taste, energy, actions, bodySystems, conditions, preparations, traditions, seasons, safety, dosage, content)
+- [ ] `family` is Latin-only format (e.g., `"Lamiaceae"`)
+- [ ] `id` is common-name kebab-case (e.g., `"valerian"`)
+- [ ] `safety` has ALL 7 subfields: generalSafety, contraindications, drugInteractions, pregnancySafe, pregnancyNotes, nursingNotes, childrenNotes
+- [ ] `content` has 4 core sections: overview, traditionalUses, modernResearch, howToUse
+- [ ] `content` has all 8 extended sections: history, nativeRange, taxonomy, morphology, storage, quality, conservationStatus, lookalikes
+- [ ] Each content section is substantive (minimum 2-3 sentences)
+- [ ] `constituents` populated (from Duke or research)
+- [ ] `_meta.sources` has ≥4 URLs
 
-**Teas must include:**
-- id, name, teaType (TeaType)
-- origin.country, origin.region
-- processing.oxidationLevel, processing.steps
-- profile.appearance, profile.liquorColor, profile.aroma, profile.flavor
-- brewing.waterTemp, brewing.steepTime, brewing.leafRatio
-- caffeine.level, caffeine.lTheanine (when known)
-- health.primaryBenefits
-- content.overview
-- content.history (origin and cultural significance)
-- content.selection (how to choose quality)
-- content.storage (storage and shelf life)
+**Conditions:**
+- [ ] All `Condition` required fields populated (id, name, category, description, symptoms, herbs, approaches, lifestyle, whenToSeek)
+- [ ] `category` is a valid `BodySystem` value
+- [ ] `herbs` lists at least 3 relevant herbs
+- [ ] `approaches` and `lifestyle` are substantive arrays
+- [ ] `whenToSeek` is specific and actionable
+- [ ] `_meta.sources` has ≥3 URLs
+
+**Remedies:**
+- [ ] All `Remedy` required fields populated (id, name, type, difficulty, prepTime, yield, description, herbs, conditions, bodySystems, ingredients, instructions)
+- [ ] `type` is a valid `PreparationType`
+- [ ] `ingredients` has amount for each item
+- [ ] `instructions` are numbered, clear steps
+- [ ] `_meta.sources` has ≥3 URLs
+
+**Ingredients:**
+- [ ] All `Ingredient` required fields populated (id, name, category, source, description, properties, uses, content)
+- [ ] `properties.shelfLife` and `properties.storageRequirements` present
+- [ ] `content.overview` is substantive
+- [ ] `safety` populated with at least generalSafety and internalUse
+- [ ] At least 1 substitute listed
+- [ ] `_meta.sources` has ≥3 URLs
+
+**Preparations:**
+- [ ] All `Preparation` required fields populated (id, name, type, description, difficulty, timeRequired, equipment, ingredientTypes, ratios, process, storage, content)
+- [ ] `ratios` has at least one entry with description and ratio
+- [ ] `process` has numbered steps with instructions
+- [ ] `storage` has all 4 subfields (container, conditions, shelfLife, signsOfSpoilage)
+- [ ] `content.overview` is substantive
+- [ ] At least 2 troubleshooting items
+- [ ] `_meta.sources` has ≥3 URLs
+
+**Actions:**
+- [ ] All `Action` required fields populated (id, name, definition, category, mechanism, exampleHerbs, conditions, traditions, content)
+- [ ] `definition` is one clear sentence
+- [ ] `exampleHerbs` has 3-5 herbs
+- [ ] `traditions` has at least Western tradition
+- [ ] `content.overview` is substantive
+- [ ] `_meta.sources` has ≥3 URLs
+
+**Glossary Terms:**
+- [ ] All `GlossaryTerm` required fields populated (id, term, definition, category)
+- [ ] `definition` is concise (1-2 sentences)
+- [ ] `etymology` populated
+- [ ] At least 1 usage example
+- [ ] `_meta.sources` has ≥2 URLs
+
+**Teas:**
+- [ ] All `Tea` required fields populated (id, name, teaType, origin, processing, profile, brewing, caffeine, health, content)
+- [ ] `origin.country` present
+- [ ] `processing.oxidationLevel` and `processing.steps` present
+- [ ] `profile` has appearance, liquorColor, aroma, flavor
+- [ ] `brewing` has waterTemp, steepTime, leafRatio
+- [ ] `caffeine.level` present
+- [ ] `health.primaryBenefits` has at least 3 items
+- [ ] `content.overview` is substantive
+- [ ] `_meta.sources` has ≥4 URLs
 
 ### Step 5: Write Staged File
 
@@ -288,8 +295,79 @@ Output a summary:
 - Safety highlights
 - Number of sources cited
 - Confidence level
+- Validation checklist result (all passed / gaps found)
 - Path to staged file
 - Next steps (`/gather --review` or `/gather --merge <path>`)
+
+---
+
+## Execution: Queue Status Command
+
+When user runs `/gather --queue [type]`:
+
+1. Use **Read** to load `src/data/gather-queue.json`
+2. For each item, determine status:
+   - **merged**: Use **Grep** to check if the item's common-name slug exists as an `id` in the main data file for its type
+   - **staged**: Use **Glob** to check `src/data/staging/<pluralDir>/*.json` for a matching file
+   - **queued**: Neither merged nor staged
+3. Display a breakdown by type:
+   ```
+   Gather Queue Status
+   ═══════════════════
+   Plants:       51 total (5 merged, 2 staged, 44 queued)
+   Teas:         16 total (1 merged, 0 staged, 15 queued)
+   Conditions:   25 total (0 merged, 0 staged, 25 queued)
+   Remedies:     20 total (0 merged, 0 staged, 20 queued)
+   Ingredients:  20 total (0 merged, 0 staged, 20 queued)
+   Preparations: 10 total (0 merged, 0 staged, 10 queued)
+   Actions:      25 total (0 merged, 0 staged, 25 queued)
+   Terms:        20 total (0 merged, 0 staged, 20 queued)
+   ───────────────────
+   Total:       187 items
+   ```
+4. Show the next item per type that would be picked up by `--next`:
+   ```
+   Next in queue:
+     plant:       Ginseng (Panax ginseng)
+     tea:         Earl Grey
+     condition:   Anxiety
+     ...
+   ```
+
+If a `[type]` filter is provided, show only that type's items with full detail (name, queue ID, Duke ref if any, notes if any).
+
+---
+
+## Execution: Next-From-Queue Command
+
+When user runs `/gather --next [type]`:
+
+### Step 1: Select Item
+
+1. Use **Read** to load `src/data/gather-queue.json`
+2. Filter to the specified type (if provided), otherwise consider all types
+3. For each item, check status (same as queue status command) — find the first item with status "queued" (not staged or merged)
+4. Report selection to user:
+   ```
+   Next from queue: Ginseng (Panax ginseng)
+   Type: plant | Queue ID: panax-ginseng | Duke ref: available
+   Notes: (any notes from queue item)
+   ```
+
+### Step 2: Map Queue Item to Gather Parameters
+
+- **Research name**: Use the `name` field (common name)
+- **Staged file ID**: Slugify the `name` field (e.g., `"Ginseng"` → `"ginseng"`, `"St. John's Wort"` → `"st-johns-wort"`)
+  - **Critical**: Do NOT use the queue item's `id` for the staged file. Plant queue IDs are Latin-name slugs (`panax-ginseng`) but the main database convention is common-name slugs (`ginseng`). All plant queue items have this mismatch.
+- **Duke lookup**: Use `dukeRef` field directly if present (no search needed — read `src/data/reference/duke-plants.json` and extract the entry keyed by `dukeRef`)
+- **Notes**: Display `notes` field if present before starting research
+
+### Step 3: Execute Standard Flow
+
+Execute the standard gather flow (Steps 1–6) with the mapped parameters. At the end, remind the user:
+```
+Run `/gather --next [type]` to continue, or `/gather --review` to inspect.
+```
 
 ---
 
@@ -297,21 +375,20 @@ Output a summary:
 
 When user runs `/gather --list <category>`:
 
-1. Read the appropriate main JSON file
+1. Use **Read** to load the appropriate main JSON file
 2. List all items with id and name
-3. Also list any staged items in `src/data/staging/<category>/`
+3. Use **Glob** on `src/data/staging/<category>/*.json` to find staged items
+4. Display both lists:
+   ```
+   Plants in database: 15
+   - chamomile (Chamomile)
+   - lavender (Lavender)
+   ...
 
-```bash
-# Example output format:
-# Plants in database: 15
-# - chamomile (Chamomile)
-# - lavender (Lavender)
-# ...
-#
-# Staged plants: 2
-# - ashwagandha (pending review)
-# - valerian (pending review)
-```
+   Staged plants: 2
+   - ashwagandha (pending review)
+   - valerian (pending review)
+   ```
 
 ---
 
@@ -319,25 +396,13 @@ When user runs `/gather --list <category>`:
 
 When user runs `/gather --review`:
 
-1. List all files in staging directories
-2. For each staged file, show:
+1. Use **Glob** with pattern `src/data/staging/**/*.json` to find all staged files
+2. For each staged file, use **Read** to load it and show:
    - Item name and type
    - Gathered date
    - Confidence level
    - Source count
    - Any notes/flags
-
-```bash
-# Find all staged files
-ls -la src/data/staging/plants/
-ls -la src/data/staging/conditions/
-ls -la src/data/staging/remedies/
-ls -la src/data/staging/ingredients/
-ls -la src/data/staging/preparations/
-ls -la src/data/staging/actions/
-ls -la src/data/staging/glossary/
-ls -la src/data/staging/teas/
-```
 
 If user wants to review a specific item, read and summarize the staged JSON file.
 
@@ -351,9 +416,7 @@ When user runs `/gather --merge <file>`:
 
 ### Step 1: Read Staged File
 
-```bash
-cat src/data/staging/<file>
-```
+Use **Read** to load `src/data/staging/<file>`.
 
 ### Step 2: Validate Structure
 
@@ -370,17 +433,7 @@ Remove the `_meta` block - it's for review only, not for production data.
 
 ### Step 5: Update Main JSON
 
-Read the main JSON file, add/update the item, write back.
-
-**For new items:**
-```typescript
-// Read existing array, push new item, write back
-```
-
-**For updates:**
-```typescript
-// Find item by id, replace it, write back
-```
+Use **Read** to load the main JSON file, add/update the item, then **Write** back.
 
 ### Step 6: Remove Staged File
 
@@ -391,7 +444,6 @@ rm src/data/staging/<file>
 ### Step 7: Verify
 
 ```bash
-# Ensure TypeScript still compiles
 npx tsc --noEmit
 ```
 
@@ -652,8 +704,50 @@ Summary:
 - Safety: Avoid with thyroid medications, nightshade allergy
 - Sources: 8 references cited
 - Confidence: HIGH
+- Validation: All 12 content sections PRESENT
 
 Run `/gather --review` to inspect the full entry, or `/gather --merge plants/ashwagandha.json` to add to the database.
+```
+
+### Queue Example
+```
+User: /gather --next plant
+
+Claude: Checking gather queue...
+
+Next from queue: Ginseng (Panax ginseng)
+Type: plant | Queue ID: panax-ginseng | Duke ref: available
+
+Pre-filling from Duke reference data:
+- Family: Araliaceae
+- Constituents: 47 compounds across plant parts
+- Ethnobotany: 12 traditional uses
+
+[Performs 10 adaptive web searches, cross-references sources]
+[Runs validation checklist...]
+
+Validation:
+- All Plant required fields: PASS
+- Family Latin-only format: PASS (Araliaceae)
+- Safety 7 subfields: PASS
+- Content 4 core sections: PASS
+- Content 8 extended sections: PASS
+- Each section substantive: PASS
+- Constituents populated: PASS (from Duke)
+- Sources ≥4 URLs: PASS (6 URLs)
+
+Staged to: src/data/staging/plants/ginseng.json
+
+Summary:
+- Latin: Panax ginseng (Araliaceae)
+- Actions: adaptogen, tonic, immunomodulator
+- Body Systems: nervous, immune, endocrine
+- Safety: Avoid with blood thinners, MAOIs; not for children under 12
+- Sources: 6 references cited
+- Confidence: HIGH
+- All 12 content sections: PRESENT
+
+Run `/gather --next plant` to continue, or `/gather --review` to inspect.
 ```
 
 ### Ingredient Example
@@ -790,3 +884,6 @@ Run `/gather --review` to inspect the full entry, or `/gather --merge teas/longj
   - `src/data/teas.json` - Tea varieties (Camellia sinensis)
 - **Reference data**: `src/data/reference/duke-plants.json` (Dr. Duke's Phytochemical DB, CC0)
 - **Types**: `src/types/index.ts`
+- **Queue data**: `src/data/gather-queue.json` — Item queue (187 items, 8 categories)
+- **Queue types**: `src/types/gather-queue.ts` — Queue item interfaces
+- **Queue library**: `src/lib/gather-queue.ts` — Queue management functions (reference)

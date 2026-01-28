@@ -8,6 +8,7 @@ import {
   GatherItemStatus,
   DukePlantSummary,
 } from '@/types/gather-queue';
+import { slugify } from '@/lib/data';
 
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const QUEUE_FILE = path.join(DATA_DIR, 'gather-queue.json');
@@ -29,6 +30,9 @@ const TYPE_CONFIG: Record<GatherContentType, { pluralDir: string; mainDataFile: 
 
 // Cache for main data IDs (per type)
 let mainDataIdCache: Record<string, Set<string>> | null = null;
+
+// Cache for staged IDs (per type) — includes basename, id field, and slugified latinName
+let stagedIdCache: Record<string, Set<string>> | null = null;
 
 /**
  * Load all main data IDs into a lookup cache
@@ -65,6 +69,50 @@ function getMainDataIds(): Record<string, Set<string>> {
 }
 
 /**
+ * Load all staged IDs into a lookup cache.
+ * For each staged .json file, collects the file basename, the `id` field,
+ * and slugify(latinName) so any ID scheme resolves correctly.
+ */
+function getStagedIds(): Record<string, Set<string>> {
+  if (stagedIdCache) return stagedIdCache;
+
+  const cache: Record<string, Set<string>> = {};
+
+  for (const [type, config] of Object.entries(TYPE_CONFIG)) {
+    const ids = new Set<string>();
+    const dir = path.join(STAGING_BASE, config.pluralDir);
+
+    try {
+      if (fs.existsSync(dir)) {
+        const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+        for (const file of files) {
+          // Add the file basename (without .json)
+          const basename = file.replace(/\.json$/, '');
+          ids.add(basename);
+
+          // Parse the file and extract additional identifiers
+          try {
+            const content = fs.readFileSync(path.join(dir, file), 'utf-8');
+            const data = JSON.parse(content);
+            if (data.id) ids.add(data.id);
+            if (data.latinName) ids.add(slugify(data.latinName));
+          } catch {
+            // Skip files that can't be parsed
+          }
+        }
+      }
+    } catch (error) {
+      console.error(`Error reading staging directory ${config.pluralDir}:`, error);
+    }
+
+    cache[type] = ids;
+  }
+
+  stagedIdCache = cache;
+  return cache;
+}
+
+/**
  * Compute the status of a queue item based on filesystem state
  */
 function computeItemStatus(item: GatherQueueItem): GatherItemStatus {
@@ -75,10 +123,9 @@ function computeItemStatus(item: GatherQueueItem): GatherItemStatus {
     return 'merged';
   }
 
-  // Check if staged
-  const config = TYPE_CONFIG[item.type];
-  const stagingPath = path.join(STAGING_BASE, config.pluralDir, `${item.id}.json`);
-  if (fs.existsSync(stagingPath)) {
+  // Check if staged (using index that maps multiple ID schemes)
+  const stagedIds = getStagedIds();
+  if (stagedIds[item.type]?.has(item.id)) {
     return 'staged';
   }
 
@@ -114,8 +161,9 @@ function writeQueueFile(items: GatherQueueItem[]): void {
  * Get all gather queue items with computed statuses
  */
 export function getGatherQueue(): GatherQueueItemWithStatus[] {
-  // Reset cache on each read to pick up filesystem changes
+  // Reset caches on each read to pick up filesystem changes
   mainDataIdCache = null;
+  stagedIdCache = null;
 
   const items = readQueueFile();
   return items.map(item => ({

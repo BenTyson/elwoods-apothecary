@@ -377,6 +377,12 @@ The `/gather` skill provides a structured workflow for researching and adding da
 /gather term menstruum         # Glossary terms
 /gather tea longjing           # Tea varieties (9 searches)
 
+# Queue commands
+/gather --next                 # Gather next queued item (any type)
+/gather --next plant           # Gather next queued plant
+/gather --queue                # Show queue status breakdown
+/gather --queue plant          # Show queue status for plants only
+
 # Management commands
 /gather --list plants          # List existing items
 /gather --review               # Review all staged items
@@ -384,10 +390,12 @@ The `/gather` skill provides a structured workflow for researching and adding da
 ```
 
 **Workflow:**
-1. **Research** - Claude searches authoritative sources
-2. **Stage** - Data saved to `src/data/staging/<type>/<id>.json` with metadata
-3. **Review** - Inspect staged files, verify accuracy (also via `/admin/staging` UI)
-4. **Merge** - Add to main JSON, metadata stripped
+1. **Queue** - Items enter from `gather-queue.json` via `--next` or manually via `/gather <type> <name>`
+2. **Research** - Claude searches authoritative sources (adaptive: skips searches when Duke data covers constituents/taxonomy)
+3. **Validate** - Per-type checklist ensures all required fields and content sections are populated before writing
+4. **Stage** - Data saved to `src/data/staging/<type>/<id>.json` with metadata
+5. **Review** - Inspect staged files, verify accuracy (also via `/admin/staging` UI)
+6. **Merge** - Add to main JSON, metadata stripped
 
 **Staging Directory Structure:**
 ```
