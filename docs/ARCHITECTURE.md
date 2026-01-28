@@ -40,7 +40,7 @@ JSON Files → data.ts functions → Components → UI
   index.ts     validation
 
 Staging Files → staging.ts functions → Admin UI
-Reference DB  → /gather skill (pre-fills plant data)
+Reference DB  → extract-duke-entry.js → /gather skill (pre-fills plant data)
 Gather Queue  → gather-queue.ts → /admin/gather UI (status from filesystem)
 ```
 
@@ -104,4 +104,5 @@ import { getAllPlants } from '@/lib/data';
 | `types/staging.ts` | Staging-specific types |
 | `types/gather-queue.ts` | Gather queue types |
 | `gather-queue.ts` | Gather queue CRUD + status computation |
+| `extract-duke-entry.js` | CLI to extract/filter single Duke entry (used by /gather) |
 | `globals.css` | All design tokens |

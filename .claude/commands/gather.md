@@ -57,17 +57,44 @@ Also use **Glob** to check the staging directory (`src/data/staging/<pluralDir>/
 
 ### Step 1.5: Check Duke Reference (Plants Only)
 
-For plant research, use the **Grep** tool to search for the plant name (common or Latin) in `src/data/reference/duke-plants.json`. If a match is found, use the **Read** tool to extract the full Duke entry.
+For plant research, run the extraction script via **Bash**:
 
-If found, pre-fill from Duke data:
-- **constituents**: Curate Duke's chemical list (see curation rules below)
-- **conditions**: Derive from Duke's ethnobotany list
-- **family**: Use Duke's family classification
-- **latinName**: Validate against Duke's taxonomy
+```bash
+node scripts/extract-duke-entry.js "<plant-name-or-slug>"
+```
+
+This accepts a slug (`allium-sativum`), common name (`"garlic"`), or Latin name (`"Allium sativum"`). It outputs compact JSON with filtered compounds (nutritional noise removed, max 30 per part), ethnobotany, family, and common names. Exit code 0 = found, 1 = not found.
+
+If found (exit 0), pre-fill from the output:
+- **constituents**: Curate the `compounds` object (see curation rules below)
+- **conditions**: Derive from the `ethnobotany` array
+- **family**: Use the `family` field (but see APG IV override below)
+- **latinName**: Validate against the `latinName` field
 
 Set a `hasDukeData` flag for Step 2 adaptive search.
 
 **Format note**: Duke uses Latin-only family names (e.g., `Lamiaceae`). This is the standard — do not add parenthetical English names.
+
+#### APG IV Taxonomy Override
+
+Duke's database uses older taxonomic classifications. When Duke's family differs from the modern APG IV system, **prefer the APG IV family** and note the discrepancy in `_meta.notes` (e.g., `"Duke lists Liliaceae; updated to Amaryllidaceae per APG IV"`).
+
+Common overrides:
+
+| Duke Family | APG IV Family | Affected Genera |
+|-------------|---------------|-----------------|
+| Liliaceae | Amaryllidaceae | Allium |
+| Labiatae | Lamiaceae | Mentha, Salvia, Ocimum, Lavandula |
+| Compositae | Asteraceae | Matricaria, Echinacea, Calendula |
+| Umbelliferae | Apiaceae | Angelica, Foeniculum |
+| Leguminosae | Fabaceae | Glycyrrhiza, Astragalus |
+| Cruciferae | Brassicaceae | Sinapis |
+| Gramineae | Poaceae | Avena |
+| Guttiferae | Hypericaceae | Hypericum |
+| Palmae | Arecaceae | Serenoa |
+| Scrophulariaceae | Plantaginaceae | Digitalis (partial move) |
+
+If a genus is not in this table but the Duke family name looks outdated, verify against a current taxonomic source during Step 2 research.
 
 #### Duke Constituent Curation Rules
 
@@ -93,7 +120,7 @@ essential oil (alpha-panasinsene, beta-farnesene, caryophyllene, limonene)
 
 ### Step 2: Research
 
-Use WebSearch to gather authoritative information. **All searches within a type are independent — run them in parallel batches for efficiency** (e.g., 5 at a time).
+Use WebSearch to gather authoritative information. **All searches within a type are independent — launch ALL searches for a type in a single parallel batch.** Issue them all simultaneously in one tool-call message.
 
 Plant searches are **adaptive** based on Duke data availability.
 
@@ -105,11 +132,11 @@ Plant searches are **adaptive** based on Duke data availability.
 5. Search: `"<plant name>" morphology identification characteristics appearance`
 6. Search: `"<plant name>" storage quality sourcing shelf life`
 7. Search: `"<plant name>" harvesting cultivation growing conditions`
-8. Search: `"<plant name>" herb combinations synergistic pairings formula`
+8. Search: `"<plant name>" herbal formula synergy medicinal combination protocol` — Focus on therapeutic pairings; ignore culinary results.
 
 **For Plants — Conditional (add when applicable):**
-9. Search: `"<plant name>" conservation status endangered sustainable` — Add when the plant is wild-harvested, foraged, on the United Plant Savers At-Risk/To-Watch list, or CITES-listed. Skip for widely cultivated garden herbs (e.g., chamomile, lavender, peppermint).
-10. Search: `"<plant name>" lookalikes poisonous misidentification` — Add when the plant is commonly foraged in the wild or has known dangerous lookalikes. Skip for plants that are exclusively purchased or cultivated (e.g., ashwagandha, turmeric).
+9. Search: `"<plant name>" conservation status endangered sustainable` — Add when the plant is wild-harvested, foraged, on the United Plant Savers At-Risk/To-Watch list, CITES-listed, OR when genetic diversity is threatened (e.g., garlic's clonal bottleneck) or wild populations are under pressure. Skip only for exclusively seed-cultivated plants with no wild population concerns.
+10. Search: `"<plant name>" lookalikes poisonous misidentification` — Add when the genus has wild-foraged relatives (Allium, Sambucus, Apiaceae family) or the plant has documented dangerous lookalikes. Skip only when there are no wild relatives AND no documented lookalikes.
 
 **For Plants — Adaptive (Duke-dependent):**
 - **Skip when Duke provides constituents:** ~~`"<latin name>" pharmacology constituents`~~ (pre-filled from Duke)
@@ -124,6 +151,23 @@ Plant searches are **adaptive** based on Duke data availability.
 - **Latin names**: Confirm against Duke reference (if available) and at least one search result. Flag discrepancies.
 - **Safety information**: Searches #2 and #3 both cover safety — note where sources agree or conflict. If sources conflict on a safety claim, set `_meta.confidence` to `"medium"` or `"low"` and document the conflict in `_meta.notes`.
 - **Conflicting claims**: When sources disagree on non-safety facts (e.g., native range, traditional uses), prefer peer-reviewed sources (PMC, PubMed) over commercial sites. Note the disagreement in the relevant content section.
+
+#### Source Priority Tiers
+
+When evaluating and citing sources, apply these tiers:
+
+| Tier | Label | Sources |
+|------|-------|---------|
+| **1** | Authoritative | PubMed/PMC, NCCIH (nccih.nih.gov), WHO monographs, EMA/HMPC, Merck Manual, MSKCC (mskcc.org/cancer-care/integrative-medicine/herbs) |
+| **2** | Reliable | Drugs.com, WebMD, Britannica, .edu domains, peer-reviewed journals |
+| **3** | Supplementary | Herbal practitioner sites (Mountain Rose Herbs, Herbal Academy), Wikipedia (taxonomy only) |
+| **4** | Avoid as sole source | Blogs, social media, supplement marketing sites |
+
+**Tier rules:**
+- Plant, condition, and remedy entries need **≥2 Tier 1** sources in `_meta.sources`.
+- All other types need **≥1 Tier 1** source.
+- List sources in `_meta.sources` in descending tier order (Tier 1 first).
+- Never cite a Tier 4 source as the sole support for a claim.
 
 **For Conditions:**
 1. Search: `"<condition>" herbal treatment natural remedies`
@@ -180,7 +224,7 @@ Plant searches are **adaptive** based on Duke data availability.
 
 ### Step 3: Structure Data
 
-Read `src/types/index.ts` if not already in context from a previous gather in this session. On subsequent gathers in the same session, skip this read.
+Read `src/types/index.ts` on the **FIRST** gather of a session only. If you can recall the Plant/PlantContent interfaces without re-reading, you already have the types loaded. Do **NOT** read again.
 
 **Type → Interface mapping:**
 
@@ -204,6 +248,7 @@ Read `src/types/index.ts` if not already in context from a previous gather in th
 - `family`: Latin only — `"Lamiaceae"` not `"Lamiaceae (Mint family)"`
 - `id`: common-name kebab-case — `"valerian"` not `"valeriana-officinalis"`
 - `taste` / `energy`: lowercase, comma-separated — `"bitter, pungent"`
+- `latinName`: Use base species binomial — `"Allium sativum"` not `"Allium sativum var. sativum"`. Strip Duke's variety/subspecies markers. Note full taxonomy (varieties, cultivars) in the `taxonomy` content section.
 - Array strings: lowercase unless proper nouns — `["nervine", "adaptogen"]`
 
 **Content section length targets** (sentences per section — enforces consistent entry size):
@@ -335,6 +380,35 @@ Include `_meta` block at top level:
   ...
 }
 ```
+
+### Step 4.5: Post-Write Content Length Audit
+
+After writing the staged file, read it back and audit each content section against the length targets from Step 3.
+
+1. For each content section, count the number of sentences (approximate: split on `. `, `! `, `? `).
+2. Compare against the target range for that section type.
+3. If any section is **under the minimum target**, perform a targeted follow-up search to expand it. Then update the staged file.
+4. Build an audit table for the Step 5 report:
+
+```
+Content Length Audit:
+  overview:           7 sentences (target: 5-8) ✓
+  traditionalUses:    6 sentences (target: 5-8) ✓
+  modernResearch:     5 sentences (target: 5-8) ✓
+  howToUse:           5 sentences (target: 5-8) ✓
+  history:            4 sentences (target: 5-8) ⚠ expanded
+  nativeRange:        3 sentences (target: 3-5) ✓
+  taxonomy:           3 sentences (target: 3-5) ✓
+  morphology:         5 sentences (target: 4-6) ✓
+  harvesting:         3 sentences (target: 3-5) ✓
+  cultivation:        3 sentences (target: 3-5) ✓
+  storage:            3 sentences (target: 3-5) ✓
+  quality:            3 sentences (target: 3-5) ✓
+  conservationStatus: 3 sentences (target: 3-5) ✓
+  lookalikes:         4 sentences (target: 4-8) ✓
+```
+
+Include this audit table in the Step 5 report output.
 
 ### Step 5: Report Summary
 

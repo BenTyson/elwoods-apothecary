@@ -87,6 +87,10 @@ scripts/           # Build utilities (not part of Next.js app)
 - `/gather` skill supporting 8 content types + queue commands (`--next`, `--queue`)
 - `/gather` includes per-type validation checklists (combinations, harvesting, cultivation, content length targets)
 - `/gather` Duke constituent curation rules (distills 400+ raw compounds → 15-25 curated entries)
+- `/gather` Duke extraction utility (`scripts/extract-duke-entry.js`) — single Bash call replaces multi-Read lookup
+- `/gather` APG IV taxonomy override table (corrects outdated Duke family names)
+- `/gather` source priority tiers (4-tier system with minimum Tier 1 citation requirements)
+- `/gather` post-write content length audit (Step 4.5 — verifies sentence counts per section)
 - `/gather` adaptive search (8 core + conditional + Duke-adaptive = 8-12 searches per plant)
 - `/gather` queue awareness on manual runs (detects when item is in queue)
 - Gather queue seeded with 187 items across all 8 content types (plants, teas, conditions, remedies, ingredients, preparations, actions, terms)
@@ -112,6 +116,7 @@ scripts/           # Build utilities (not part of Next.js app)
 | `src/data/staging/` | Staged data from `/gather` skill |
 | `src/data/reference/duke-plants.json` | Duke phytochemical reference (2,336 plants) |
 | `scripts/build-duke-reference.js` | Builds Duke reference from CSV data |
+| `scripts/extract-duke-entry.js` | CLI to extract a single Duke entry (used by `/gather`) |
 | `.claude/commands/` | Claude Code skills (gather, update-phase) |
 
 ---

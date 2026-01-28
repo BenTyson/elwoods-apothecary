@@ -394,8 +394,11 @@ The `/gather` skill provides a structured workflow for researching and adding da
 2. **Research** - Claude searches authoritative sources (8 core + conditional conservation/lookalikes + Duke-adaptive constituent/taxonomy)
 3. **Validate** - Per-type checklist ensures all required fields, content sections, combinations, harvesting/cultivation, and length targets are met
 4. **Stage** - Data saved to `src/data/staging/<type>/<id>.json` with metadata
-5. **Review** - Inspect staged files, verify accuracy (also via `/admin/staging` UI)
-6. **Merge** - Add to main JSON, metadata stripped
+5. **Audit** - Post-write content length audit (Step 4.5) reads back file, counts sentences per section, expands under-length sections
+6. **Review** - Inspect staged files, verify accuracy (also via `/admin/staging` UI)
+7. **Merge** - Add to main JSON, metadata stripped
+
+**Source priority tiers**: Plants/conditions/remedies require ≥2 Tier 1 sources (PubMed, NCCIH, WHO, etc.); other types ≥1 Tier 1. Sources listed in descending tier order.
 
 **Staging Directory Structure:**
 ```
@@ -443,6 +446,14 @@ Pre-built reference indexed by slugified Latin name (e.g., `valeriana-officinali
 - `ethnobotany` — Traditional uses (e.g., Insomnia, Sedative, Nervine)
 
 The `/gather` skill consults this reference in Step 1.5 to pre-fill plant data before web searches.
+
+**Extraction utility**: `node scripts/extract-duke-entry.js <slug-or-name>`
+- Accepts slug (`allium-sativum`), common name (`"garlic"`), or Latin name (`"Allium sativum"`)
+- Outputs compact JSON: family, filtered compounds (nutritional noise removed, max 30 per part), ethnobotany, common names
+- Exit code 0 = found, 1 = not found
+- Used by `/gather` Step 1.5 as a single Bash call instead of multi-Read lookup
+
+**APG IV override**: Duke uses older family classifications (e.g., Liliaceae for Allium). The `/gather` skill includes an APG IV override table to correct to modern taxonomy (e.g., Amaryllidaceae).
 
 ## Color Mapping
 
