@@ -1,6 +1,6 @@
 # Gather Data
 
-Research and populate apothecary data with a staging workflow and source citations.
+Research and populate apothecary data with source citations.
 
 ## Usage
 
@@ -17,16 +17,14 @@ Research and populate apothecary data with a staging workflow and source citatio
 /gather --next plant       - Gather the next queued plant (etc.)
 /gather --queue [type]     - Show queue status (optionally filtered)
 /gather --list <category>  - Show existing items
-/gather --review           - Review all staged items
-/gather --merge <file>     - Merge staged item to main JSON
 ```
 
 ## Workflow
 
-**Queue** → **Research** → **Staging Area** → **Review** → **Merge**
+**Queue** → **Research** → **Database**
 
 Items enter Research either manually (`/gather plant sage`) or from the queue (`/gather --next`).
-All gathered data goes to `src/data/staging/` first, allowing review before adding to the main database.
+All gathered data is validated and written directly to the main database.
 
 ---
 
@@ -34,7 +32,7 @@ All gathered data goes to `src/data/staging/` first, allowing review before addi
 
 When user runs any `/gather <type> <name>` command:
 
-**Queue awareness (manual runs):** Before starting, use **Grep** to check if this item exists in `src/data/gather-queue.json` (search by name, case-insensitive). If found, note the queue item's ID and inform the user: `"Note: This item is also in the gather queue (ID: <id>). Its queue status will update automatically once staged."` This is informational only — proceed with the gather regardless.
+**Queue awareness (manual runs):** Before starting, use **Grep** to check if this item exists in `src/data/gather-queue.json` (search by name, case-insensitive). If found, note the queue item's ID and inform the user: `"Note: This item is also in the gather queue (ID: <id>)."` This is informational only — proceed with the gather regardless.
 
 ### Step 1: Check Existing Data
 
@@ -51,9 +49,7 @@ Use the **Grep** tool to search for the item name (case-insensitive) in the appr
 | term | `src/data/glossary.json` |
 | tea | `src/data/teas.json` |
 
-If item exists in the main database, note this is an **update** (set `_meta.isUpdate: true`).
-
-Also use **Glob** to check the staging directory (`src/data/staging/<pluralDir>/<id>.json`). If a staged file already exists, inform the user and ask whether to overwrite.
+If item exists in the main database, note this is an **update** (will replace the existing entry).
 
 ### Step 1.5: Check Duke Reference (Plants Only)
 
@@ -77,7 +73,7 @@ Set a `hasDukeData` flag for Step 2 adaptive search.
 
 #### APG IV Taxonomy Override
 
-Duke's database uses older taxonomic classifications. When Duke's family differs from the modern APG IV system, **prefer the APG IV family** and note the discrepancy in `_meta.notes` (e.g., `"Duke lists Liliaceae; updated to Amaryllidaceae per APG IV"`).
+Duke's database uses older taxonomic classifications. When Duke's family differs from the modern APG IV system, **prefer the APG IV family** and note the discrepancy in the report (e.g., `"Duke lists Liliaceae; updated to Amaryllidaceae per APG IV"`).
 
 Common overrides:
 
@@ -149,7 +145,7 @@ Plant searches are **adaptive** based on Duke data availability.
 
 **Cross-referencing (all types):** As you review search results, validate key facts across sources inline:
 - **Latin names**: Confirm against Duke reference (if available) and at least one search result. Flag discrepancies.
-- **Safety information**: Searches #2 and #3 both cover safety — note where sources agree or conflict. If sources conflict on a safety claim, set `_meta.confidence` to `"medium"` or `"low"` and document the conflict in `_meta.notes`.
+- **Safety information**: Searches #2 and #3 both cover safety — note where sources agree or conflict. If sources conflict on a safety claim, set confidence to `"medium"` or `"low"` and document the conflict in the report.
 - **Conflicting claims**: When sources disagree on non-safety facts (e.g., native range, traditional uses), prefer peer-reviewed sources (PMC, PubMed) over commercial sites. Note the disagreement in the relevant content section.
 
 #### Source Priority Tiers
@@ -164,15 +160,18 @@ When evaluating and citing sources, apply these tiers:
 | **4** | Avoid as sole source | Blogs, social media, supplement marketing sites |
 
 **Tier rules:**
-- Plant, condition, and remedy entries need **≥2 Tier 1** sources in `_meta.sources`.
+- Plant, condition, and remedy entries need **≥2 Tier 1** sources.
 - All other types need **≥1 Tier 1** source.
-- List sources in `_meta.sources` in descending tier order (Tier 1 first).
+- List sources in the report in descending tier order (Tier 1 first).
 - Never cite a Tier 4 source as the sole support for a claim.
 
-**For Conditions:**
-1. Search: `"<condition>" herbal treatment natural remedies`
-2. Search: `"<condition>" symptoms when to see doctor`
-3. Search: `"<condition>" lifestyle modifications`
+**For Conditions (6 searches):**
+1. Search: `"<condition>" herbal remedies evidence clinical trials`
+2. Search: `"<condition>" pathophysiology causes risk factors`
+3. Search: `"<condition>" symptoms diagnosis when to seek medical help`
+4. Search: `"<condition>" lifestyle diet exercise management`
+5. Search: `"<condition>" herb drug interactions contraindications safety`
+6. Search: `"<condition>" traditional medicine TCM ayurveda natural treatment` — Skip for conditions without established traditional frameworks (e.g., modern diagnoses like ADHD).
 
 **For Remedies:**
 1. Search: `"<remedy name>" herbal recipe preparation`
@@ -280,7 +279,7 @@ For non-plant types, aim for 3-5 sentences per content section unless the guidel
 
 ### Step 3.5: Validation Checklist
 
-Before writing the staged file, verify every item against the checklist for its type. **If any check fails, go back and fill the gap with additional targeted research. Do not proceed to Step 4 with gaps.**
+Before writing to the database, verify every item against the checklist for its type. **If any check fails, go back and fill the gap with additional targeted research. Do not proceed to Step 4 with gaps.**
 
 **Plants:**
 - [ ] All `Plant` required fields populated (id, commonName, latinName, family, partsUsed, taste, energy, actions, bodySystems, conditions, preparations, traditions, seasons, safety, dosage, content)
@@ -293,22 +292,25 @@ Before writing the staged file, verify every item against the checklist for its 
 - [ ] Each content section meets length targets (see table above)
 - [ ] `constituents` populated and curated (15-25 entries, see Duke curation rules)
 - [ ] `combinations` has 3-5 herb pairings with purposes
-- [ ] `_meta.sources` has ≥4 URLs
+- [ ] ≥4 sources cited (≥2 Tier 1)
 
 **Conditions:**
 - [ ] All `Condition` required fields populated (id, name, category, description, symptoms, herbs, approaches, lifestyle, whenToSeek)
 - [ ] `category` is a valid `BodySystem` value
-- [ ] `herbs` lists at least 3 relevant herbs
-- [ ] `approaches` and `lifestyle` are substantive arrays
-- [ ] `whenToSeek` is specific and actionable
-- [ ] `_meta.sources` has ≥3 URLs
+- [ ] `description` is 3-5 sentences covering pathophysiology and herbal framing
+- [ ] `symptoms` has ≥8 items covering both physical and psychological manifestations
+- [ ] `herbs` has ≥5 entries, ordered by evidence strength (most supported first)
+- [ ] `approaches` has ≥5 items, each following the format: `"<Category> (<specific herbs>) for <use case> — <evidence or practical note>"`
+- [ ] `lifestyle` has ≥5 items with actionable specifics (dosing, frequency, or measurable targets)
+- [ ] `whenToSeek` is ≥2 sentences covering timeline triggers, red-flag symptoms, and emergency indicators
+- [ ] ≥5 sources cited (≥2 Tier 1)
 
 **Remedies:**
 - [ ] All `Remedy` required fields populated (id, name, type, difficulty, prepTime, yield, description, herbs, conditions, bodySystems, ingredients, instructions)
 - [ ] `type` is a valid `PreparationType`
 - [ ] `ingredients` has amount for each item
 - [ ] `instructions` are numbered, clear steps
-- [ ] `_meta.sources` has ≥3 URLs
+- [ ] ≥3 sources cited (≥2 Tier 1)
 
 **Ingredients:**
 - [ ] All `Ingredient` required fields populated (id, name, category, source, description, properties, uses, content)
@@ -316,7 +318,7 @@ Before writing the staged file, verify every item against the checklist for its 
 - [ ] `content.overview` is substantive
 - [ ] `safety` populated with at least generalSafety and internalUse
 - [ ] At least 1 substitute listed
-- [ ] `_meta.sources` has ≥3 URLs
+- [ ] ≥3 sources cited (≥2 Tier 1)
 
 **Preparations:**
 - [ ] All `Preparation` required fields populated (id, name, type, description, difficulty, timeRequired, equipment, ingredientTypes, ratios, process, storage, content)
@@ -325,7 +327,7 @@ Before writing the staged file, verify every item against the checklist for its 
 - [ ] `storage` has all 4 subfields (container, conditions, shelfLife, signsOfSpoilage)
 - [ ] `content.overview` is substantive
 - [ ] At least 2 troubleshooting items
-- [ ] `_meta.sources` has ≥3 URLs
+- [ ] ≥3 sources cited (≥2 Tier 1)
 
 **Actions:**
 - [ ] All `Action` required fields populated (id, name, definition, category, mechanism, exampleHerbs, conditions, traditions, content)
@@ -333,14 +335,14 @@ Before writing the staged file, verify every item against the checklist for its 
 - [ ] `exampleHerbs` has 3-5 herbs
 - [ ] `traditions` has at least Western tradition
 - [ ] `content.overview` is substantive
-- [ ] `_meta.sources` has ≥3 URLs
+- [ ] ≥3 sources cited (≥2 Tier 1)
 
 **Glossary Terms:**
 - [ ] All `GlossaryTerm` required fields populated (id, term, definition, category)
 - [ ] `definition` is concise (1-2 sentences)
 - [ ] `etymology` populated
 - [ ] At least 1 usage example
-- [ ] `_meta.sources` has ≥2 URLs
+- [ ] ≥2 sources cited (≥1 Tier 1)
 
 **Teas:**
 - [ ] All `Tea` required fields populated (id, name, teaType, origin, processing, profile, brewing, caffeine, health, content)
@@ -351,70 +353,27 @@ Before writing the staged file, verify every item against the checklist for its 
 - [ ] `caffeine.level` present
 - [ ] `health.primaryBenefits` has at least 3 items
 - [ ] `content.overview` is substantive
-- [ ] `_meta.sources` has ≥4 URLs
+- [ ] ≥4 sources cited (≥2 Tier 1)
 
-### Step 4: Write Staged File
+### Step 4: Write to Database
 
-Write to appropriate staging directory:
+Write the gathered data directly to the main JSON file.
 
-```
-src/data/staging/plants/<id>.json
-src/data/staging/conditions/<id>.json
-src/data/staging/remedies/<id>.json
-src/data/staging/ingredients/<id>.json
-src/data/staging/preparations/<id>.json
-src/data/staging/actions/<id>.json
-src/data/staging/glossary/<id>.json
-src/data/staging/teas/<id>.json
-```
+1. **Read** the main data file for this type (see table in Step 1)
+2. **If update**: Find the existing entry by `id` and replace it
+3. **If new**: Append the entry to the array
+4. **Write** the updated JSON back to the file
 
-Include `_meta` block at top level:
+**Do NOT include `_meta` in the database** — metadata (sources, confidence, notes) is for the report output only.
 
-```json
-{
-  "_meta": {
-    "gatheredAt": "YYYY-MM-DD",
-    "sources": [
-      "https://example.com/source1",
-      "https://example.com/source2"
-    ],
-    "confidence": "high|medium|low",
-    "isUpdate": false,
-    "notes": "Any uncertainty or flags"
-  },
-  "id": "item-id",
-  ...
-}
-```
+### Step 4.5: Post-Write Content Length Audit (Plants and Teas only)
 
-### Step 4.5: Post-Write Content Length Audit
+After writing, read the entry back and audit each content section against the length targets from Step 3.
 
-After writing the staged file, read it back and audit each content section against the length targets from Step 3.
-
-1. For each content section, count the number of sentences (approximate: split on `. `, `! `, `? `).
-2. Compare against the target range for that section type.
-3. If any section is **under the minimum target**, perform a targeted follow-up search to expand it. Then update the staged file.
-4. Build an audit table for the Step 5 report:
-
-```
-Content Length Audit:
-  overview:           7 sentences (target: 5-8) ✓
-  traditionalUses:    6 sentences (target: 5-8) ✓
-  modernResearch:     5 sentences (target: 5-8) ✓
-  howToUse:           5 sentences (target: 5-8) ✓
-  history:            4 sentences (target: 5-8) ⚠ expanded
-  nativeRange:        3 sentences (target: 3-5) ✓
-  taxonomy:           3 sentences (target: 3-5) ✓
-  morphology:         5 sentences (target: 4-6) ✓
-  harvesting:         3 sentences (target: 3-5) ✓
-  cultivation:        3 sentences (target: 3-5) ✓
-  storage:            3 sentences (target: 3-5) ✓
-  quality:            3 sentences (target: 3-5) ✓
-  conservationStatus: 3 sentences (target: 3-5) ✓
-  lookalikes:         4 sentences (target: 4-8) ✓
-```
-
-Include this audit table in the Step 5 report output.
+1. For each content section, count sentences (approximate: split on `. `, `! `, `? `).
+2. Compare against the target range.
+3. If any section is **under the minimum**, perform a targeted follow-up search to expand it, then update the database entry.
+4. Build an audit table for the Step 5 report.
 
 ### Step 5: Report Summary
 
@@ -422,11 +381,11 @@ Output a summary:
 - Item name and Latin name (for plants)
 - Key properties (actions, body systems, etc.)
 - Safety highlights
-- Number of sources cited
-- Confidence level
+- Sources cited (count + tier breakdown)
+- Confidence level (high/medium/low)
 - Validation checklist result (all passed / gaps found)
-- Path to staged file
-- Next steps (`/gather --review` or `/gather --merge <path>`)
+- Confirmation: written to `<main data file>`
+- Next steps: `Run /gather --next [type] to continue.`
 
 ---
 
@@ -436,21 +395,20 @@ When user runs `/gather --queue [type]`:
 
 1. Use **Read** to load `src/data/gather-queue.json`
 2. For each item, determine status:
-   - **merged**: Use **Grep** to check if the item's common-name slug exists as an `id` in the main data file for its type
-   - **staged**: Use **Glob** to check `src/data/staging/<pluralDir>/*.json` for a matching file
-   - **queued**: Neither merged nor staged
+   - **done**: Use **Grep** to check if the item's common-name slug exists as an `id` in the main data file for its type
+   - **queued**: Not yet in the database
 3. Display a breakdown by type:
    ```
    Gather Queue Status
    ═══════════════════
-   Plants:       51 total (5 merged, 2 staged, 44 queued)
-   Teas:         16 total (1 merged, 0 staged, 15 queued)
-   Conditions:   25 total (0 merged, 0 staged, 25 queued)
-   Remedies:     20 total (0 merged, 0 staged, 20 queued)
-   Ingredients:  20 total (0 merged, 0 staged, 20 queued)
-   Preparations: 10 total (0 merged, 0 staged, 10 queued)
-   Actions:      25 total (0 merged, 0 staged, 25 queued)
-   Terms:        20 total (0 merged, 0 staged, 20 queued)
+   Plants:       51 total (5 done, 46 queued)
+   Teas:         16 total (1 done, 15 queued)
+   Conditions:   25 total (0 done, 25 queued)
+   Remedies:     20 total (0 done, 20 queued)
+   Ingredients:  20 total (0 done, 20 queued)
+   Preparations: 10 total (0 done, 10 queued)
+   Actions:      25 total (0 done, 25 queued)
+   Terms:        20 total (0 done, 20 queued)
    ───────────────────
    Total:       187 items
    ```
@@ -475,7 +433,7 @@ When user runs `/gather --next [type]`:
 
 1. Use **Read** to load `src/data/gather-queue.json`
 2. Filter to the specified type (if provided), otherwise consider all types
-3. For each item, check status (same as queue status command) — find the first item with status "queued" (not staged or merged)
+3. For each item, check status (same as queue status command) — find the first item with status "queued" (not yet in database)
 4. Report selection to user:
    ```
    Next from queue: Ginseng (Panax ginseng)
@@ -486,8 +444,8 @@ When user runs `/gather --next [type]`:
 ### Step 2: Map Queue Item to Gather Parameters
 
 - **Research name**: Use the `name` field (common name)
-- **Staged file ID**: Slugify the `name` field (e.g., `"Ginseng"` → `"ginseng"`, `"St. John's Wort"` → `"st-johns-wort"`)
-  - **Critical**: Do NOT use the queue item's `id` for the staged file. Plant queue IDs are Latin-name slugs (`panax-ginseng`) but the main database convention is common-name slugs (`ginseng`). All plant queue items have this mismatch.
+- **Database ID**: Slugify the `name` field (e.g., `"Ginseng"` → `"ginseng"`, `"St. John's Wort"` → `"st-johns-wort"`)
+  - **Critical**: Do NOT use the queue item's `id` for the database entry. Plant queue IDs are Latin-name slugs (`panax-ginseng`) but the main database convention is common-name slugs (`ginseng`). All plant queue items have this mismatch.
 - **Duke lookup**: Use `dukeRef` field directly if present (no search needed — read `src/data/reference/duke-plants.json` and extract the entry keyed by `dukeRef`)
 - **Notes**: Display `notes` field if present before starting research
 
@@ -495,7 +453,7 @@ When user runs `/gather --next [type]`:
 
 Execute the standard gather flow (Steps 1–5) with the mapped parameters. At the end, remind the user:
 ```
-Run `/gather --next [type]` to continue, or `/gather --review` to inspect.
+Run `/gather --next [type]` to continue.
 ```
 
 ---
@@ -505,82 +463,13 @@ Run `/gather --next [type]` to continue, or `/gather --review` to inspect.
 When user runs `/gather --list <category>`:
 
 1. Use **Read** to load the appropriate main JSON file
-2. List all items with id and name
-3. Use **Glob** on `src/data/staging/<category>/*.json` to find staged items
-4. Display both lists:
+2. List all items with id and name:
    ```
    Plants in database: 15
    - chamomile (Chamomile)
    - lavender (Lavender)
    ...
-
-   Staged plants: 2
-   - ashwagandha (pending review)
-   - valerian (pending review)
    ```
-
----
-
-## Execution: Review Command
-
-When user runs `/gather --review`:
-
-1. Use **Glob** with pattern `src/data/staging/**/*.json` to find all staged files
-2. For each staged file, use **Read** to load it and show:
-   - Item name and type
-   - Gathered date
-   - Confidence level
-   - Source count
-   - Any notes/flags
-
-If user wants to review a specific item, read and summarize the staged JSON file.
-
----
-
-## Execution: Merge Command
-
-When user runs `/gather --merge <file>`:
-
-**File path format:** `plants/valerian.json` or `conditions/headache.json`
-
-### Step 1: Read Staged File
-
-Use **Read** to load `src/data/staging/<file>`.
-
-### Step 2: Validate Structure
-
-Ensure all required fields are present for the item type.
-
-### Step 3: Strip Metadata
-
-Remove the `_meta` block - it's for review only, not for production data.
-
-### Step 4: Determine Operation
-
-- If `_meta.isUpdate` is true: Replace existing item in array
-- If `_meta.isUpdate` is false: Append to array
-
-### Step 5: Update Main JSON
-
-Use **Read** to load the main JSON file, add/update the item, then **Write** back.
-
-### Step 6: Remove Staged File
-
-```bash
-rm src/data/staging/<file>
-```
-
-### Step 7: Verify
-
-```bash
-npx tsc --noEmit
-```
-
-### Step 8: Report
-
-- Confirm item added/updated
-- Show item count in database
-- Remind about committing changes
 
 ---
 
@@ -639,6 +528,46 @@ sustainable harvesting practices, alternative herbs if endangered.
 **lookalikes**: Dangerous plants commonly confused with this herb, key
 distinguishing features, habitat overlap warnings, fatality risks. Critical
 for foragers - err on the side of caution.
+
+---
+
+## Condition Section Guidelines
+
+**description** (3-5 sentences): What the condition is, underlying
+pathophysiology or mechanisms (e.g., HPA axis dysregulation for anxiety,
+inflammatory cascade for arthritis), how common it is, and how herbal
+approaches frame the condition (e.g., nervine support, immune modulation).
+Avoid clinical jargon but include enough mechanism to justify the herbal
+strategy.
+
+**symptoms** (≥8 items): Cover both physical and psychological manifestations.
+Order from most common/recognizable to less obvious. Use lowercase, descriptive
+phrases — not single words. Include the experience, not just the label
+(e.g., `"fatigue despite adequate rest"` not `"fatigue"`).
+
+**herbs** (≥5 entries): Order by evidence strength — herbs with clinical trial
+support first, traditional-use-only herbs last. Use kebab-case IDs matching
+the plant database (e.g., `"lemon-balm"` not `"Lemon Balm"`). Include herbs
+from different action categories when applicable (nervines + adaptogens for
+anxiety, immune stimulants + anti-inflammatories for cold).
+
+**approaches** (≥5 items): Each entry should follow this format:
+`"<Herbal category/action> (<specific herbs>) for <use case> — <evidence, dosing note, or practical guidance>"`
+Cover different therapeutic strategies: acute relief, chronic support,
+symptomatic management, combination formulas. Include preparation forms
+(tea, tincture, extract) and any time-limited guidance (e.g., kava ≤8 weeks).
+
+**lifestyle** (≥5 items): Each item must include actionable specifics — not
+just `"exercise"` but frequency, type, and evidence-based targets (e.g.,
+`"2+ hours/week moderate activity"`). Cover the major lifestyle domains:
+movement, sleep, diet, substances to limit, stress management, social/environmental.
+
+**whenToSeek** (≥2 sentences): Must include: (1) a timeline trigger for
+when symptoms have persisted long enough to warrant professional evaluation,
+(2) specific red-flag symptoms that need prompt attention, (3) emergency
+indicators or differential diagnosis flags (e.g., cardiac symptoms that
+mimic anxiety). Be concrete — `"persists most days for six weeks"` not
+`"persists for a long time"`.
 
 ---
 
@@ -827,32 +756,45 @@ User: /gather plant ashwagandha
 Claude: I'll research ashwagandha comprehensively.
 
 Note: This item is also in the gather queue (ID: withania-somnifera).
-Its queue status will update automatically once staged.
 
 [Performs 8 core searches + 0 conditional (cultivated herb, no foraging)]
 [Duke reference: available — skipping constituent/taxonomy searches]
 
-Staged to: src/data/staging/plants/ashwagandha.json
-
-Validation:
-- All Plant required fields: PASS
-- Family Latin-only format: PASS (Solanaceae)
-- Safety 7 subfields: PASS
-- Content 4 core + 8 extended + harvesting + cultivation: PASS
-- Section length targets: PASS
-- Constituents curated (18 entries): PASS
-- Combinations (4 pairings): PASS
-- Sources ≥4 URLs: PASS (8 URLs)
+Validation: All checks passed
+Written to: src/data/plants.json (updated)
 
 Summary:
 - Latin: Withania somnifera (Solanaceae)
 - Actions: adaptogen, anxiolytic, immunomodulator, anti-inflammatory
 - Body Systems: nervous, immune, endocrine
 - Safety: Avoid with thyroid medications, nightshade allergy
-- Sources: 8 references cited
+- Sources: 8 cited (3 Tier 1)
 - Confidence: HIGH
 
-Run `/gather --review` to inspect the full entry, or `/gather --merge plants/ashwagandha.json` to add to the database.
+Run `/gather --next plant` to continue.
+```
+
+### Condition Example
+```
+User: /gather condition anxiety
+
+Claude: I'll research anxiety comprehensively.
+
+Note: This item is also in the gather queue (ID: anxiety).
+
+[Performs 3 searches in parallel]
+
+Validation: All checks passed
+Written to: src/data/conditions.json (updated)
+
+Summary:
+- Category: nervous
+- Herbs: 8 (lavender, chamomile, passionflower, lemon balm, ashwagandha, valerian, holy basil, kava)
+- Approaches: 7 (anxiolytic nervines, calming nervines, adaptogens, sedative nervines, kava, aromatherapy, combinations)
+- Sources: 7 cited (3 Tier 1)
+- Confidence: HIGH
+
+Run `/gather --next condition` to continue.
 ```
 
 ### Queue Example
@@ -864,159 +806,26 @@ Claude: Checking gather queue...
 Next from queue: Ginseng (Panax ginseng)
 Type: plant | Queue ID: panax-ginseng | Duke ref: available
 
-Pre-filling from Duke reference data:
-- Family: Araliaceae
-- Constituents: 400+ raw compounds → curated to 20 entries
-- Ethnobotany: 30 traditional uses
+[Performs 8 core + 2 conditional + 1 lighter taxonomy = 11 searches]
 
-[Performs 8 core + 2 conditional (foraged/endangered) + 1 lighter taxonomy = 11 searches]
-
-Validation:
-- All Plant required fields: PASS
-- Family Latin-only format: PASS (Araliaceae)
-- Safety 7 subfields: PASS
-- Content 4 core + 8 extended + harvesting + cultivation: PASS
-- Section length targets: PASS
-- Constituents curated (20 entries): PASS
-- Combinations (5 pairings): PASS
-- Sources ≥4 URLs: PASS (10 URLs)
-
-Staged to: src/data/staging/plants/ginseng.json
+Validation: All checks passed
+Written to: src/data/plants.json (new entry)
 
 Summary:
 - Latin: Panax ginseng (Araliaceae)
 - Actions: adaptogen, tonic, immunomodulator
 - Body Systems: nervous, immune, endocrine
 - Safety: Avoid with blood thinners, MAOIs; not for children
-- Sources: 10 references cited
+- Sources: 10 cited (4 Tier 1)
 - Confidence: HIGH
 
-Run `/gather --next plant` to continue, or `/gather --review` to inspect.
-```
-
-### Ingredient Example
-```
-User: /gather ingredient jojoba oil
-
-Claude: I'll research jojoba oil comprehensively.
-
-[Performs web searches, cross-references sources]
-
-Staged to: src/data/staging/ingredients/jojoba-oil.json
-
-Summary:
-- Category: carrier-oil
-- Source: Simmondsia chinensis seeds
-- Shelf Life: 2-5 years (very stable)
-- Uses: salves, oils, lotions, lip balms
-- Key Properties: Actually a liquid wax, non-comedogenic, closely mimics sebum
-- Substitutes: Meadowfoam seed oil, fractionated coconut oil
-- Safety: Generally very safe, rare sensitivity
-- Sources: 5 references cited
-- Confidence: HIGH
-
-Run `/gather --review` to inspect the full entry, or `/gather --merge ingredients/jojoba-oil.json` to add to the database.
-```
-
-### Preparation Example
-```
-User: /gather preparation tincture
-
-Claude: I'll research tincture-making comprehensively.
-
-[Performs web searches, cross-references sources]
-
-Staged to: src/data/staging/preparations/tincture.json
-
-Summary:
-- Type: tincture
-- Difficulty: beginner
-- Time Required: 4-6 weeks (5 minutes active)
-- Equipment: Mason jar, strainer, cheesecloth, amber bottles
-- Standard Ratio: 1:5 (dried herb) or 1:2 (fresh herb)
-- Best For: Most herbs, especially alkaloids and resins
-- Storage: 5+ years in dark glass
-- Sources: 6 references cited
-- Confidence: HIGH
-
-Run `/gather --review` to inspect the full entry, or `/gather --merge preparations/tincture.json` to add to the database.
-```
-
-### Action Example
-```
-User: /gather action adaptogen
-
-Claude: I'll research the adaptogen action comprehensively.
-
-[Performs web searches, cross-references sources]
-
-Staged to: src/data/staging/actions/adaptogen.json
-
-Summary:
-- Category: general (whole-body)
-- Definition: Herbs that increase resistance to stress and promote homeostasis
-- Mechanism: Modulates HPA axis, supports adrenal function, normalizes cortisol
-- Example Herbs: Ashwagandha, Rhodiola, Eleuthero, Holy Basil, Schisandra
-- Conditions: Chronic stress, fatigue, burnout, immune support
-- Related Actions: nervine, tonic, immunomodulator
-- Sources: 6 references cited
-- Confidence: HIGH
-
-Run `/gather --review` to inspect the full entry, or `/gather --merge actions/adaptogen.json` to add to the database.
-```
-
-### Glossary Example
-```
-User: /gather term menstruum
-
-Claude: I'll research the term "menstruum" comprehensively.
-
-[Performs web searches, cross-references sources]
-
-Staged to: src/data/staging/glossary/menstruum.json
-
-Summary:
-- Category: preparation
-- Definition: The solvent used to extract constituents from plant material
-- Etymology: Latin "menstruus" (monthly), alchemical term
-- Examples: "Use a 50% alcohol menstruum for this tincture"
-- Related Terms: marc, maceration, solvent
-- Sources: 3 references cited
-- Confidence: HIGH
-
-Run `/gather --review` to inspect the full entry, or `/gather --merge glossary/menstruum.json` to add to the database.
-```
-
-### Tea Example
-```
-User: /gather tea longjing
-
-Claude: I'll research Longjing (Dragon Well) tea comprehensively.
-
-[Performs web searches, cross-references sources]
-
-Staged to: src/data/staging/teas/longjing.json
-
-Summary:
-- Type: green
-- Origin: Zhejiang Province, China (West Lake region)
-- Processing: 0% oxidation, pan-fired, hand-pressed flat
-- Profile: Flat jade leaves, pale yellow-green liquor, chestnut & vegetal notes
-- Brewing: 175°F/80°C, 2-3 min, 3g per 6oz
-- Caffeine: moderate, high L-theanine (calm alertness)
-- Health: High in catechins/EGCG, antioxidant, focus-enhancing
-- Grading: Pre-Qingming (Ming Qian) is highest grade
-- Sources: 7 references cited
-- Confidence: HIGH
-
-Run `/gather --review` to inspect the full entry, or `/gather --merge teas/longjing.json` to add to the database.
+Run `/gather --next plant` to continue.
 ```
 
 ---
 
 ## Files
 
-- **Staging directory**: `src/data/staging/`
 - **Main data files**:
   - `src/data/plants.json` - Herbs and medicinal plants
   - `src/data/conditions.json` - Health conditions

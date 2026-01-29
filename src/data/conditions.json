@@ -4,23 +4,42 @@
       "id": "anxiety",
       "name": "Anxiety & Stress",
       "category": "nervous",
-      "description": "Feelings of worry, nervousness, or unease about something with an uncertain outcome. Stress response that may include racing thoughts, tension, and physical symptoms.",
-      "symptoms": ["Racing thoughts", "Tension", "Restlessness", "Sleep difficulties", "Difficulty concentrating", "Irritability"],
-      "herbs": ["chamomile", "lavender", "lemon-balm", "passionflower", "ashwagandha", "holy-basil"],
+      "description": "A nervous system condition characterized by persistent feelings of worry, nervousness, or unease, often accompanied by physical symptoms such as muscle tension, rapid heartbeat, and gastrointestinal distress. Anxiety ranges from occasional situational stress to chronic generalized anxiety disorder (GAD), which involves difficulty controlling worry on most days for at least six months. The stress response activates the hypothalamic-pituitary-adrenal (HPA) axis and sympathetic nervous system, and herbal approaches aim to modulate these pathways through nervine, anxiolytic, and adaptogenic actions.",
+      "symptoms": [
+        "persistent or excessive worry",
+        "restlessness or feeling on edge",
+        "muscle tension",
+        "difficulty concentrating",
+        "irritability",
+        "fatigue despite adequate rest",
+        "sleep disturbances (difficulty falling or staying asleep)",
+        "racing or intrusive thoughts",
+        "rapid heartbeat or palpitations",
+        "shortness of breath",
+        "gastrointestinal upset (nausea, churning stomach)",
+        "sweating or trembling"
+      ],
+      "herbs": ["lavender", "chamomile", "passionflower", "lemon-balm", "ashwagandha", "valerian", "holy-basil", "kava"],
       "approaches": [
-        "Nervine herbs to calm the nervous system",
-        "Adaptogens for long-term stress resilience",
-        "Relaxing teas throughout the day",
-        "Aromatherapy with calming essential oils"
+        "Anxiolytic nervines (lavender, passionflower) for acute anxiety relief — lavender extract (Lavela/Silexan) has clinical evidence comparable to low-dose benzodiazepines",
+        "Calming nervines (chamomile, lemon balm) as daily teas or extracts to reduce baseline tension and promote relaxation",
+        "Adaptogens (ashwagandha, holy basil) for long-term HPA axis support and stress resilience, taken consistently over weeks",
+        "Sedative nervines (valerian, passionflower) at bedtime when anxiety disrupts sleep",
+        "Kava for moderate situational anxiety — effective short-term but limited to 4-8 weeks due to hepatotoxicity risk; avoid with alcohol or liver conditions",
+        "Aromatherapy with lavender essential oil (inhalation or topical dilution) for immediate calming effect",
+        "Combination formulas pairing an adaptogen for chronic support with a nervine for acute episodes (e.g., ashwagandha daily + chamomile tea as needed)"
       ],
       "lifestyle": [
-        "Regular sleep schedule",
-        "Mindfulness or meditation practice",
-        "Physical exercise",
-        "Limiting caffeine and alcohol",
-        "Time in nature"
+        "Regular physical exercise — moderate to vigorous activity for 2+ hours per week reduces anxiety symptoms; mindful movement (yoga, tai chi, qigong) is particularly effective",
+        "Consistent sleep schedule with 7-9 hours nightly; practice sleep hygiene (dark room, no screens before bed, consistent wake time)",
+        "Daily meditation or mindfulness practice, even 5-10 minutes — guided imagery, intentional breathing, and progressive muscle relaxation all show benefit",
+        "Limit or eliminate caffeine, as chronic use is linked to increased anxiety; switch to herbal teas or decaffeinated options",
+        "Reduce or avoid alcohol and nicotine, both of which alter brain chemistry and worsen anxiety over time",
+        "Nutrient-dense diet rich in lean protein, complex carbohydrates, fruits, vegetables, and omega-3 fatty acids to support neurotransmitter production",
+        "Maintain social connections — isolation worsens anxiety; regular contact with supportive friends, family, or support groups builds resilience",
+        "Spend time in nature — green spaces and natural environments have documented cortisol-lowering effects"
       ],
-      "whenToSeek": "If anxiety significantly interferes with daily life, causes panic attacks, or is accompanied by depression"
+      "whenToSeek": "Seek professional help if anxiety persists most days for six weeks or more, significantly interferes with work, relationships, or daily activities, causes repeated panic attacks, involves avoidance of normal situations, is accompanied by depression or substance use, or includes thoughts of self-harm. Physical symptoms like chest pain, severe shortness of breath, or dizziness warrant immediate medical evaluation to rule out cardiac or thyroid conditions."
     },
     {
       "id": "insomnia",
@@ -219,6 +238,46 @@
         "Adequate vitamin D"
       ],
       "whenToSeek": "Frequent severe infections, infections that don't respond to treatment, unexplained weight loss or fatigue"
+    },
+    {
+      "id": "joint-pain",
+      "name": "Joint Pain & Arthritis",
+      "category": "musculoskeletal",
+      "description": "Discomfort, aching, or soreness in one or more joints, most commonly caused by osteoarthritis (cartilage degradation), rheumatoid arthritis (autoimmune synovial inflammation), or gout (crystal deposition). Joint pain originates from activation of nociceptors in the joint capsule, periosteum, ligaments, and synovium — not the cartilage itself, which lacks nerve endings. Pro-inflammatory cytokines (IL-1, TNF-α) drive a cycle of inflammation, degradative enzyme production, and progressive joint destruction. Herbal approaches target these inflammatory cascades through COX/LOX inhibition, antioxidant support, and connective tissue nourishment, offering a complementary strategy alongside conventional care.",
+      "symptoms": [
+        "persistent aching or soreness in one or more joints",
+        "joint stiffness, especially upon waking or after inactivity",
+        "swelling or visible puffiness around the joint",
+        "warmth or redness over the affected area",
+        "reduced range of motion or difficulty bending/straightening",
+        "crepitus (grinding, clicking, or popping sensation during movement)",
+        "weakness or instability in the affected joint",
+        "pain that worsens with activity or weather changes",
+        "fatigue or general malaise accompanying chronic joint inflammation",
+        "difficulty with daily tasks (gripping, climbing stairs, walking)",
+        "disturbed sleep due to nighttime joint pain",
+        "muscle tension or compensatory soreness around affected joints"
+      ],
+      "herbs": ["turmeric", "boswellia", "ginger", "willow-bark", "devils-claw", "rosehip", "nettle"],
+      "approaches": [
+        "Anti-inflammatory herbs (turmeric/curcumin, boswellia) for chronic joint inflammation — curcumin meta-analysis shows efficacy comparable to NSAIDs for OA pain; combine with black pepper (piperine) to increase bioavailability by up to 2000%",
+        "Natural salicylates (willow bark, meadowsweet) for acute pain relief — contain salicin which converts to salicylic acid; gentler on the stomach than synthetic aspirin but avoid with aspirin allergy or blood-thinning medications",
+        "Warming circulatory herbs (ginger, cayenne) for stiff, cold joints — ginger clinical trials show reduced knee OA pain; use internally as tea or decoction, or externally as warming compresses",
+        "Connective tissue support (rosehip, nettle) for long-term cartilage maintenance — rosehip meta-analysis of 3 trials showed one-third pain reduction in 300 OA patients; nettle provides anti-inflammatory silicic acid and minerals",
+        "Topical analgesics (cayenne/capsaicin, arnica, comfrey) for localized joint relief — capsaicin cream depletes substance P at nerve endings; apply 3-4 times daily for cumulative effect over 1-2 weeks",
+        "Combination formulas (boswellia + ginger + glucosamine) for synergistic effect — 6-month trial showed significant WOMAC score improvement for moderate knee OA without safety concerns",
+        "Traditional system approaches (Ayurvedic: turmeric, fenugreek, shallaki for Vata imbalance; TCM: acupuncture for Bi syndrome blockage) as complementary therapy — both systems emphasize addressing root imbalance alongside symptomatic relief"
+      ],
+      "lifestyle": [
+        "Low-impact exercise for 2+ hours per week — walking, swimming, cycling, or tai chi to maintain joint mobility and strengthen supporting muscles; tai chi specifically shown to improve OA pain, balance, and flexibility",
+        "Anti-inflammatory diet following Mediterranean pattern — fatty fish 2x/week for omega-3s, colorful fruits and vegetables, whole grains; eliminate or reduce sugar and processed foods which trigger pro-inflammatory cytokine release",
+        "Maintain healthy body weight — each pound of excess weight adds 4 pounds of pressure on knee joints; fat tissue also produces inflammatory adipokines that damage joints beyond mechanical stress",
+        "Quality sleep of 7-9 hours nightly — poor sleep amplifies pain sensitivity and systemic inflammation; use supportive pillows or positioning aids for affected joints",
+        "Quit smoking — tobacco triggers systemic inflammation, slows tissue healing, and reduces blood flow to joint structures",
+        "Daily stress management through meditation, yoga, or gentle movement — stress hormones cortisol and adrenaline amplify inflammatory pathways; NIH studies confirm mindfulness meditation reduces arthritis pain perception",
+        "Alternate heat and cold therapy — apply heat (warm compresses, baths) for stiffness and chronic ache; cold packs for acute swelling and inflammation; 15-20 minutes per application, several times daily as needed"
+      ],
+      "whenToSeek": "Seek medical evaluation if joint pain persists for more than two weeks, limits daily activities, or does not improve with rest and over-the-counter remedies. Urgent red flags include sudden severe swelling in a single joint with warmth and fever (possible septic arthritis — a medical emergency that can destroy joint structures within hours), unexplained weight loss alongside joint symptoms, visible joint deformity, or inability to bear weight. Joint pain accompanied by skin rash, eye inflammation, or mouth sores may indicate systemic autoimmune conditions requiring prompt diagnosis."
     }
   ]
 }

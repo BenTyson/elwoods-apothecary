@@ -17,7 +17,7 @@
 | `src/data/teas.json` | Tea varieties (Camellia sinensis) | varies |
 | `src/data/reference/duke-plants.json` | Dr. Duke's phytochemical reference (2,336 plants, CC0) | 3.4MB |
 | `src/data/gather-queue.json` | Gather queue (187 items across all 8 content types, status computed at read time) | 20KB+ |
-| `src/data/staging/` | Staged data awaiting review (see Gather Skill below) | varies |
+| `src/data/staging/` | Legacy staging directory (admin UI still reads from here) | varies |
 
 ---
 
@@ -364,12 +364,12 @@ interface Tea {
 
 ### Using the Gather Skill
 
-The `/gather` skill provides a structured workflow for researching and adding data:
+The `/gather` skill researches and writes data directly to the main database:
 
 ```bash
 # Research different content types
 /gather plant ashwagandha      # Herbs/medicinal plants (8-12 adaptive searches)
-/gather condition insomnia     # Health conditions (3 searches)
+/gather condition anxiety      # Health conditions (6 searches)
 /gather remedy calming-tea     # Recipes/formulas (2 searches)
 /gather ingredient jojoba-oil  # Non-plant materials (8 searches)
 /gather preparation tincture   # Method guides (7 searches)
@@ -385,51 +385,18 @@ The `/gather` skill provides a structured workflow for researching and adding da
 
 # Management commands
 /gather --list plants          # List existing items
-/gather --review               # Review all staged items
-/gather --merge plants/xyz.json # Merge staged item to main database
 ```
 
 **Workflow:**
 1. **Queue** - Items enter from `gather-queue.json` via `--next` or manually via `/gather <type> <name>`
-2. **Research** - Claude searches authoritative sources (8 core + conditional conservation/lookalikes + Duke-adaptive constituent/taxonomy)
-3. **Validate** - Per-type checklist ensures all required fields, content sections, combinations, harvesting/cultivation, and length targets are met
-4. **Stage** - Data saved to `src/data/staging/<type>/<id>.json` with metadata
-5. **Audit** - Post-write content length audit (Step 4.5) reads back file, counts sentences per section, expands under-length sections
-6. **Review** - Inspect staged files, verify accuracy (also via `/admin/staging` UI)
-7. **Merge** - Add to main JSON, metadata stripped
+2. **Research** - Claude searches authoritative sources (parallel batch per type)
+3. **Validate** - Per-type checklist with specific minimums per field (e.g., conditions require ≥8 symptoms, ≥5 herbs, ≥5 approaches with format convention)
+4. **Write** - Data written directly to main JSON file (insert or update)
+5. **Audit** - Post-write content length audit for plants/teas (counts sentences per section, expands under-length sections)
 
 **Source priority tiers**: Plants/conditions/remedies require ≥2 Tier 1 sources (PubMed, NCCIH, WHO, etc.); other types ≥1 Tier 1. Sources listed in descending tier order.
 
-**Staging Directory Structure:**
-```
-src/data/staging/
-├── plants/
-├── conditions/
-├── remedies/
-├── ingredients/
-├── preparations/
-├── actions/
-├── glossary/
-├── teas/
-└── README.md
-```
-
-**Staged File Metadata:**
-```json
-{
-  "_meta": {
-    "gatheredAt": "2026-01-26",
-    "sources": ["https://...", "https://..."],
-    "confidence": "high",
-    "isUpdate": false,
-    "notes": "Optional flags"
-  },
-  "id": "plant-id",
-  ...
-}
-```
-
-See `src/data/staging/README.md` for full workflow documentation.
+**Section guidelines**: Each content type has dedicated section guidelines (Botanical, Condition, Ingredient, Preparation, Action, Glossary, Tea) defining what each field should contain and quality targets.
 
 ## Duke Reference Data
 

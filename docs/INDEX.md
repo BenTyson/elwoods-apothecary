@@ -1,6 +1,6 @@
 # El Woods Apothecary - Agent Documentation
 
-> **Last Updated**: 2026-01-28
+> **Last Updated**: 2026-01-29
 > **Version**: 0.1.0
 
 ## Session-Start Protocol
@@ -85,12 +85,14 @@ scripts/           # Build utilities (not part of Next.js app)
 - 13 reusable UI components (including staging + gather components)
 - Comprehensive type system (8 content types)
 - `/gather` skill supporting 8 content types + queue commands (`--next`, `--queue`)
-- `/gather` includes per-type validation checklists (combinations, harvesting, cultivation, content length targets)
+- `/gather` writes directly to main database (no staging step; `--review`/`--merge` removed)
+- `/gather` includes per-type validation checklists with specific minimums per field
+- `/gather` condition section guidelines (6 searches, ≥8 symptoms, ≥5 herbs/approaches/lifestyle, approaches format convention)
 - `/gather` Duke constituent curation rules (distills 400+ raw compounds → 15-25 curated entries)
 - `/gather` Duke extraction utility (`scripts/extract-duke-entry.js`) — single Bash call replaces multi-Read lookup
 - `/gather` APG IV taxonomy override table (corrects outdated Duke family names)
 - `/gather` source priority tiers (4-tier system with minimum Tier 1 citation requirements)
-- `/gather` post-write content length audit (Step 4.5 — verifies sentence counts per section)
+- `/gather` post-write content length audit (Step 4.5 — plants/teas only)
 - `/gather` adaptive search (8 core + conditional + Duke-adaptive = 8-12 searches per plant)
 - `/gather` queue awareness on manual runs (detects when item is in queue)
 - Gather queue seeded with 187 items across all 8 content types (plants, teas, conditions, remedies, ingredients, preparations, actions, terms)
@@ -123,4 +125,4 @@ scripts/           # Build utilities (not part of Next.js app)
 
 ## Next Steps
 
-*No known blockers. The staging ID mismatch (Latin-name queue IDs vs common-name file slugs) was resolved — `getStagedIds()` in `gather-queue.ts` now indexes staged files by basename, `id` field, and `slugify(latinName)`, so status computation works regardless of naming scheme.*
+*No known blockers. The `/gather` skill now writes directly to the main database — the staging workflow was removed. The admin staging UI and staging library still exist in the codebase but are no longer used by gather.*
