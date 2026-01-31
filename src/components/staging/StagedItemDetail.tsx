@@ -14,38 +14,38 @@ const typeLabels: Record<string, string> = {
 
 export function StagedItemDetail({ item }: StagedItemDetailProps) {
   return (
-    <div className="h-full overflow-y-auto rounded-xl border border-moss bg-deep-forest/90 p-6">
+    <div className="h-full overflow-y-auto rounded-xl border border-gray-700 bg-gray-900 p-6">
       {/* Header */}
-      <div className="border-b border-moss pb-4">
+      <div className="border-b border-gray-700 pb-4">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-medium uppercase tracking-wider text-sage">
+          <span className="text-xs font-medium text-gray-400">
             {typeLabels[item.type]}
           </span>
           {item.meta.isUpdate && (
-            <Pill variant="preparation">Update</Pill>
+            <Pill variant="blue">Update</Pill>
           )}
         </div>
-        <h2 className="mt-2 font-display text-2xl font-semibold text-cream">
+        <h2 className="mt-2 text-2xl font-semibold text-gray-100">
           {item.name}
         </h2>
-        <p className="mt-1 text-sm text-sage">
+        <p className="mt-1 text-sm text-gray-400">
           {item.filePath}
         </p>
       </div>
 
       {/* Metadata Section */}
       <div className="mt-6 space-y-4">
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-gold">
+        <h3 className="text-sm font-semibold text-accent-400">
           Metadata
         </h3>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-xs text-sage">Gathered</p>
-            <p className="text-sm text-cream">{item.meta.gatheredAt}</p>
+            <p className="text-xs text-gray-400">Gathered</p>
+            <p className="text-sm text-gray-100">{item.meta.gatheredAt}</p>
           </div>
           <div>
-            <p className="text-xs text-sage">Confidence</p>
+            <p className="text-xs text-gray-400">Confidence</p>
             <div className="mt-1">
               <Pill variant={getConfidenceVariant(item.meta.confidence)}>
                 {item.meta.confidence}
@@ -56,8 +56,8 @@ export function StagedItemDetail({ item }: StagedItemDetailProps) {
 
         {item.meta.notes && (
           <div>
-            <p className="text-xs text-sage">Notes</p>
-            <p className="mt-1 rounded-lg bg-forest-900/50 p-3 text-sm text-mist">
+            <p className="text-xs text-gray-400">Notes</p>
+            <p className="mt-1 rounded-lg bg-gray-800 p-3 text-sm text-gray-300">
               {item.meta.notes}
             </p>
           </div>
@@ -66,7 +66,7 @@ export function StagedItemDetail({ item }: StagedItemDetailProps) {
 
       {/* Sources Section */}
       <div className="mt-6">
-        <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gold">
+        <h3 className="mb-3 text-sm font-semibold text-accent-400">
           Sources ({item.meta.sources.length})
         </h3>
         <div className="space-y-2">
@@ -78,10 +78,10 @@ export function StagedItemDetail({ item }: StagedItemDetailProps) {
 
       {/* Data Preview Section */}
       <div className="mt-6">
-        <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gold">
+        <h3 className="mb-3 text-sm font-semibold text-accent-400">
           Data Preview
         </h3>
-        <pre className="max-h-96 overflow-auto rounded-lg bg-forest-900/80 p-4 text-xs text-mist">
+        <pre className="max-h-96 overflow-auto rounded-lg bg-gray-800 p-4 font-mono text-xs text-gray-300">
           {JSON.stringify(item.data, null, 2)}
         </pre>
       </div>

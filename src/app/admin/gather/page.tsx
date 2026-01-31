@@ -17,10 +17,10 @@ export default function GatherQueuePage() {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="font-display text-4xl font-semibold text-cream">
+          <h1 className="text-4xl font-semibold text-gray-100">
             Gather Queue
           </h1>
-          <p className="mt-2 font-remedy text-xl text-gold">
+          <p className="mt-2 text-lg text-gray-400">
             Curate research targets across all content types
           </p>
         </div>

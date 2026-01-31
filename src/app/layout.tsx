@@ -1,7 +1,26 @@
 import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import { Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+});
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+});
+
+const instrumentSerif = Instrument_Serif({
+  weight: '400',
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-instrument-serif',
+});
 
 export const metadata: Metadata = {
   title: 'El Woods Apothecary | The Forest Provides',
@@ -15,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-gradient-to-b from-deep-forest via-forest-900 to-forest-950 antialiased">
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
+      <body className="min-h-screen bg-gray-950 text-gray-300 font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

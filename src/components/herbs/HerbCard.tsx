@@ -15,23 +15,19 @@ export function HerbCard({ plant, featured, className }: HerbCardProps) {
     <Link href={`/browse/${plant.id}`}>
       <article
         className={cn(
-          'group relative overflow-hidden rounded-xl border border-moss bg-deep-forest/80 p-6 transition-all duration-300',
-          'hover:-translate-y-1 hover:border-amber hover:shadow-lg hover:shadow-black/20',
-          featured &&
-            'border-amber bg-gradient-to-br from-amber/10 to-deep-forest/90',
+          'group relative overflow-hidden rounded-xl border border-gray-700 bg-gray-900 p-6 transition-colors duration-150',
+          'hover:border-gray-600 hover:bg-gray-800',
+          featured && 'border-accent-500/30 bg-accent-900/20',
           className
         )}
       >
-        {/* Top accent bar on hover */}
-        <div className="absolute left-0 right-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-amber to-gold transition-transform duration-300 group-hover:scale-x-100" />
-
         {/* Latin name */}
-        <p className="font-display text-sm italic text-sage">
+        <p className="font-serif text-sm italic text-gray-400">
           {plant.latinName}
         </p>
 
         {/* Common name */}
-        <h3 className="mt-1 font-display text-2xl font-semibold text-cream transition-colors group-hover:text-gold">
+        <h3 className="mt-1 text-2xl font-semibold text-gray-100 transition-colors group-hover:text-accent-400">
           {plant.commonName}
         </h3>
 
@@ -45,12 +41,12 @@ export function HerbCard({ plant, featured, className }: HerbCardProps) {
         </div>
 
         {/* Overview excerpt */}
-        <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-mist">
+        <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-gray-300">
           {plant.content.overview}
         </p>
 
         {/* Learn more indicator */}
-        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-gold opacity-0 transition-opacity group-hover:opacity-100">
+        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-accent-400 opacity-0 transition-opacity group-hover:opacity-100">
           <span>Learn more</span>
           <svg
             className="h-4 w-4 transition-transform group-hover:translate-x-1"

@@ -1,145 +1,94 @@
-/* Google Fonts - must be first */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Caveat:wght@400;500;600&display=swap');
-
 @import "tailwindcss";
 
-/* El Woods Apothecary - Design System
-   Where ancient plant wisdom meets modern understanding
-   ===================================================== */
+/* El Woods Apothecary - Design System v2
+   Quiet authority. The interface disappears; the content is the product.
+   ======================================================================= */
 
 :root {
-  /* Forest color palette - Core El Woods Identity */
-  --deep-forest: #1a2f23;
-  --forest-green: #2d4a3e;
-  --moss: #3d6b4f;
-  --sage: #6b8f71;
-  --fern: #8fb996;
-  --mist: #c8d5c8;
-  --cream: #f5f3ef;
-  --bark: #4a3c31;
-  --earth: #8b7355;
-  --gold-accent: #c9a959;
+  /* Base Grays (slight cool undertone) */
+  --gray-950: #0a0a0c;
+  --gray-900: #111114;
+  --gray-850: #18181c;
+  --gray-800: #1f1f24;
+  --gray-700: #2a2a31;
+  --gray-600: #3a3a44;
+  --gray-500: #555562;
+  --gray-400: #7c7c8a;
+  --gray-300: #a1a1ad;
+  --gray-200: #c8c8d0;
+  --gray-100: #e4e4e9;
+  --gray-50: #f4f4f7;
 
-  /* Extended forest scale */
-  --forest-950: #0a140a;
-  --forest-900: #1a2e1a;
-  --forest-800: #2d4a3e;
-  --forest-700: #3d6b4f;
-  --forest-600: #4a7c59;
-  --forest-500: #5a9268;
-  --forest-400: #7ab088;
-  --forest-300: #a3c9ad;
-  --forest-200: #c8dece;
-  --forest-100: #e8f0ea;
-  --forest-50: #f4f8f5;
+  /* Accent: Sage Green */
+  --accent-500: #5a9268;
+  --accent-400: #7ab088;
+  --accent-300: #a3c9ad;
+  --accent-900: #1a2f23;
 
-  /* Apothecary-specific colors */
-  --apothecary-amber: #c49a3d;
-  --apothecary-ochre: #b8860b;
-  --parchment: #f4e4c9;
-  --parchment-dark: #e8d5b5;
-  --parchment-light: #faf6ee;
-  --sepia: #704214;
-  --sepia-light: #8b5a2b;
-  --dried-herb: #8b9a6b;
-  --dried-herb-dark: #6b7a4b;
-  --ink: #2c1810;
+  /* Status Colors */
+  --status-success: #34d399;
+  --status-warning: #fbbf24;
+  --status-danger: #f87171;
+  --status-info: #60a5fa;
 
-  /* Category accent colors */
-  --color-calming: #9d8eb7;
-  --color-calming-light: #c4b8d6;
-  --color-digestive: #e6d490;
-  --color-digestive-dark: #c9a959;
-  --color-immune: #4a3b5c;
-  --color-immune-light: #7b6992;
-  --color-respiratory: #6b9a8b;
-  --color-respiratory-light: #9bc4b8;
-  --color-skin: #c4a98b;
-  --color-skin-dark: #a08060;
-  --color-adaptogen: #8b7355;
-  --color-womens: #b85c7a;
-  --color-anti-inflammatory: #d4a574;
-
-  /* Gold scale */
-  --gold-600: #a68a3a;
-  --gold-500: #c9a959;
-  --gold-400: #d4b86a;
-  --gold-300: #e2cc8f;
-  --gold-200: #f0e4c4;
+  /* Category Colors */
+  --cat-purple: #a78bfa;
+  --cat-amber: #fbbf24;
+  --cat-blue: #60a5fa;
+  --cat-rose: #fb7185;
+  --cat-orange: #fb923c;
+  --cat-green: #34d399;
 
   /* Background and foreground */
-  --background: var(--deep-forest);
-  --foreground: var(--cream);
+  --background: var(--gray-950);
+  --foreground: var(--gray-300);
 }
 
 /* Tailwind v4 theme configuration */
 @theme inline {
-  /* Colors */
+  /* Base grays */
+  --color-gray-950: var(--gray-950);
+  --color-gray-900: var(--gray-900);
+  --color-gray-850: var(--gray-850);
+  --color-gray-800: var(--gray-800);
+  --color-gray-700: var(--gray-700);
+  --color-gray-600: var(--gray-600);
+  --color-gray-500: var(--gray-500);
+  --color-gray-400: var(--gray-400);
+  --color-gray-300: var(--gray-300);
+  --color-gray-200: var(--gray-200);
+  --color-gray-100: var(--gray-100);
+  --color-gray-50: var(--gray-50);
+
+  /* Accent */
+  --color-accent-500: var(--accent-500);
+  --color-accent-400: var(--accent-400);
+  --color-accent-300: var(--accent-300);
+  --color-accent-900: var(--accent-900);
+
+  /* Status */
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-danger: var(--status-danger);
+  --color-status-info: var(--status-info);
+
+  /* Category */
+  --color-cat-purple: var(--cat-purple);
+  --color-cat-amber: var(--cat-amber);
+  --color-cat-blue: var(--cat-blue);
+  --color-cat-rose: var(--cat-rose);
+  --color-cat-orange: var(--cat-orange);
+  --color-cat-green: var(--cat-green);
+
+  /* Background / Foreground */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Forest palette */
-  --color-forest-950: var(--forest-950);
-  --color-forest-900: var(--forest-900);
-  --color-forest-800: var(--forest-800);
-  --color-forest-700: var(--forest-700);
-  --color-forest-600: var(--forest-600);
-  --color-forest-500: var(--forest-500);
-  --color-forest-400: var(--forest-400);
-  --color-forest-300: var(--forest-300);
-  --color-forest-200: var(--forest-200);
-  --color-forest-100: var(--forest-100);
-  --color-forest-50: var(--forest-50);
-
-  /* Named colors */
-  --color-deep-forest: var(--deep-forest);
-  --color-moss: var(--moss);
-  --color-sage: var(--sage);
-  --color-fern: var(--fern);
-  --color-mist: var(--mist);
-  --color-cream: var(--cream);
-  --color-bark: var(--bark);
-  --color-earth: var(--earth);
-  --color-gold: var(--gold-accent);
-
-  /* Apothecary colors */
-  --color-amber: var(--apothecary-amber);
-  --color-ochre: var(--apothecary-ochre);
-  --color-parchment: var(--parchment);
-  --color-parchment-dark: var(--parchment-dark);
-  --color-parchment-light: var(--parchment-light);
-  --color-sepia: var(--sepia);
-  --color-sepia-light: var(--sepia-light);
-  --color-dried-herb: var(--dried-herb);
-  --color-ink: var(--ink);
-
-  /* Category colors */
-  --color-calming: var(--color-calming);
-  --color-calming-light: var(--color-calming-light);
-  --color-digestive: var(--color-digestive);
-  --color-digestive-dark: var(--color-digestive-dark);
-  --color-immune: var(--color-immune);
-  --color-immune-light: var(--color-immune-light);
-  --color-respiratory: var(--color-respiratory);
-  --color-respiratory-light: var(--color-respiratory-light);
-  --color-skin: var(--color-skin);
-  --color-skin-dark: var(--color-skin-dark);
-  --color-adaptogen: var(--color-adaptogen);
-  --color-womens: var(--color-womens);
-  --color-anti-inflammatory: var(--color-anti-inflammatory);
-
-  /* Gold scale */
-  --color-gold-600: var(--gold-600);
-  --color-gold-500: var(--gold-500);
-  --color-gold-400: var(--gold-400);
-  --color-gold-300: var(--gold-300);
-  --color-gold-200: var(--gold-200);
-
   /* Typography */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
-  --font-remedy: 'Caveat', cursive;
-  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
 }
 
 /* Base styles */
@@ -151,20 +100,20 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   line-height: 1.6;
 }
 
-/* Typography */
+/* Typography — headings use sans by default */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-weight: 600;
   line-height: 1.2;
 }
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--gold-accent);
+  outline: 2px solid var(--accent-500);
   outline-offset: 2px;
 }
 
@@ -175,81 +124,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--forest-900);
+  background: var(--gray-900);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--moss);
+  background: var(--gray-700);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--sage);
+  background: var(--gray-600);
 }
 
 /* Selection styling */
 ::selection {
-  background: var(--apothecary-amber);
-  color: var(--deep-forest);
+  background: var(--accent-500);
+  color: var(--gray-50);
 }
 
 /* Link base styles */
 a {
-  color: var(--gold-accent);
+  color: var(--accent-400);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 150ms ease;
 }
 
 a:hover {
-  color: var(--gold-400);
-}
-
-/* Utility classes for common patterns */
-.parchment-bg {
-  background-color: var(--parchment);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  color: var(--accent-300);
 }
 
 /* Animation keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(196, 154, 61, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(196, 154, 61, 0.5);
-  }
+.animate-fade-in {
+  animation: fadeIn 200ms ease-out forwards;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(196, 154, 61, 0.1) 50%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
+.animate-slide-up {
+  animation: slideUp 200ms ease-out forwards;
 }

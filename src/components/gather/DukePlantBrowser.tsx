@@ -63,7 +63,7 @@ export function DukePlantBrowser({ plants, queuedSlugs, onAdd }: DukePlantBrowse
 
   return (
     <div className="space-y-4">
-      <label className="block text-sm font-medium text-sage">
+      <label className="block text-sm font-medium text-gray-300">
         Duke Phytochemical Reference
       </label>
 
@@ -73,7 +73,7 @@ export function DukePlantBrowser({ plants, queuedSlugs, onAdd }: DukePlantBrowse
         value={search}
         onChange={(e) => handleSearch(e.target.value)}
         placeholder="Search by Latin name, common name, or family..."
-        className="w-full rounded-lg border border-moss bg-forest-900/50 px-3 py-2 text-sm text-cream placeholder-sage/50 outline-none transition-colors focus:border-amber"
+        className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 outline-none transition-colors focus:border-accent-500"
       />
 
       {/* A-Z letter nav (shown when no search query) */}
@@ -85,8 +85,8 @@ export function DukePlantBrowser({ plants, queuedSlugs, onAdd }: DukePlantBrowse
               onClick={() => handleLetterClick(letter)}
               className={
                 activeLetter === letter
-                  ? 'rounded px-2 py-1 text-xs font-medium border border-amber bg-amber/20 text-amber'
-                  : 'rounded px-2 py-1 text-xs font-medium border border-moss/50 text-sage hover:border-sage hover:text-cream'
+                  ? 'rounded-md border border-accent-500 bg-accent-500/15 px-2 py-1 text-xs font-medium text-accent-400'
+                  : 'rounded-md border border-gray-700 px-2 py-1 text-xs font-medium text-gray-400 hover:border-gray-600 hover:text-gray-200'
               }
             >
               {letter}
@@ -97,7 +97,7 @@ export function DukePlantBrowser({ plants, queuedSlugs, onAdd }: DukePlantBrowse
 
       {/* Results count */}
       {(debounced || activeLetter) && (
-        <p className="text-xs text-sage">
+        <p className="text-xs text-gray-400">
           {totalMatches === 0
             ? 'No matches found'
             : totalMatches <= MAX_RESULTS
@@ -114,18 +114,18 @@ export function DukePlantBrowser({ plants, queuedSlugs, onAdd }: DukePlantBrowse
             return (
               <div
                 key={plant.slug}
-                className="flex items-start justify-between gap-3 rounded-lg border border-moss/50 bg-forest-900/50 p-3"
+                className="flex items-start justify-between gap-3 rounded-lg border border-gray-700 bg-gray-800 p-3"
               >
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium italic text-cream">
+                  <p className="text-sm font-medium italic text-gray-100">
                     {plant.latinName}
                   </p>
                   {plant.commonNames.length > 0 && (
-                    <p className="mt-0.5 text-xs text-mist">
+                    <p className="mt-0.5 text-xs text-gray-300">
                       {plant.commonNames.join(', ')}
                     </p>
                   )}
-                  <p className="mt-0.5 text-xs text-sage">
+                  <p className="mt-0.5 text-xs text-gray-400">
                     {plant.family} &middot; {plant.constituentCount} constituents
                   </p>
                 </div>
@@ -134,8 +134,8 @@ export function DukePlantBrowser({ plants, queuedSlugs, onAdd }: DukePlantBrowse
                   disabled={isQueued}
                   className={
                     isQueued
-                      ? 'flex-shrink-0 rounded-lg border border-moss/30 px-3 py-1 text-xs text-sage/50 cursor-not-allowed'
-                      : 'flex-shrink-0 rounded-lg border border-moss bg-moss/30 px-3 py-1 text-xs font-medium text-cream transition-colors hover:border-amber hover:bg-amber/20 hover:text-amber'
+                      ? 'flex-shrink-0 cursor-not-allowed rounded-lg border border-gray-700/30 px-3 py-1 text-xs text-gray-500'
+                      : 'flex-shrink-0 rounded-lg border border-gray-700 bg-gray-800 px-3 py-1 text-xs font-medium text-gray-100 transition-colors hover:border-accent-500 hover:bg-accent-900/30 hover:text-accent-400'
                   }
                 >
                   {isQueued ? 'Queued' : 'Add'}
@@ -148,7 +148,7 @@ export function DukePlantBrowser({ plants, queuedSlugs, onAdd }: DukePlantBrowse
 
       {/* Empty state */}
       {!debounced && !activeLetter && (
-        <p className="py-4 text-center text-sm text-sage">
+        <p className="py-4 text-center text-sm text-gray-400">
           Search or browse by letter to find plants in the Duke database
         </p>
       )}

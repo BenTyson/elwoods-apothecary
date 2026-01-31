@@ -47,7 +47,7 @@ export function ManualEntryForm({ type, existingIds, onAdd }: ManualEntryFormPro
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-      <label className="block text-sm font-medium text-sage">
+      <label className="block text-sm font-medium text-gray-300">
         Add {typeLabels[type]}
       </label>
       <div className="flex gap-2">
@@ -59,17 +59,17 @@ export function ManualEntryForm({ type, existingIds, onAdd }: ManualEntryFormPro
             if (error) setError('');
           }}
           placeholder={`Enter ${typeLabels[type].toLowerCase()} name...`}
-          className="flex-1 rounded-lg border border-moss bg-forest-900/50 px-3 py-2 text-sm text-cream placeholder-sage/50 outline-none transition-colors focus:border-amber"
+          className="flex-1 rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 outline-none transition-colors focus:border-accent-500"
         />
         <button
           type="submit"
-          className="rounded-lg border border-moss bg-moss/30 px-4 py-2 text-sm font-medium text-cream transition-colors hover:border-amber hover:bg-amber/20 hover:text-amber"
+          className="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-100 transition-colors hover:border-accent-500 hover:bg-accent-900/30 hover:text-accent-400"
         >
           Add
         </button>
       </div>
       {error && (
-        <p className="text-xs text-womens">{error}</p>
+        <p className="text-xs text-status-danger">{error}</p>
       )}
     </form>
   );

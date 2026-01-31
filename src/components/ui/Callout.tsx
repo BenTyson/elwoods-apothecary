@@ -14,16 +14,16 @@ const variantStyles: Record<
   { container: string; icon: string }
 > = {
   warning: {
-    container: 'bg-amber/15 border-amber border-l-4',
-    icon: 'text-amber',
+    container: 'bg-status-warning/10 border-status-warning/30',
+    icon: 'text-status-warning',
   },
   danger: {
-    container: 'bg-womens/15 border-womens border-l-4',
-    icon: 'text-womens',
+    container: 'bg-status-danger/10 border-status-danger/30',
+    icon: 'text-status-danger',
   },
   info: {
-    container: 'bg-respiratory/15 border-respiratory border-l-4',
-    icon: 'text-respiratory',
+    container: 'bg-status-info/10 border-status-info/30',
+    icon: 'text-status-info',
   },
 };
 
@@ -65,9 +65,9 @@ export function Callout({
         {icons[variant]}
       </span>
       {title && (
-        <h4 className="mb-2 font-display text-base font-semibold">{title}</h4>
+        <h4 className="mb-2 text-base font-semibold text-gray-100">{title}</h4>
       )}
-      <div className="text-sm leading-relaxed">{children}</div>
+      <div className="text-sm leading-relaxed text-gray-300">{children}</div>
     </div>
   );
 }

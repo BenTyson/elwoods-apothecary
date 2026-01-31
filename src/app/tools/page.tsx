@@ -45,12 +45,12 @@ const tools = [
 export default function ToolsPage() {
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-6 py-20 text-center">
-      <h1 className="font-display text-5xl font-semibold text-cream">Tools</h1>
-      <p className="mt-4 font-remedy text-2xl text-gold">
+      <h1 className="text-5xl font-semibold text-gray-100">Tools</h1>
+      <p className="mt-4 text-2xl text-gray-400">
         Interactive Features Coming Soon
       </p>
 
-      <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-mist">
+      <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-gray-300">
         We&apos;re building powerful tools to help you navigate the world of
         herbal medicine - from finding the right remedy to tracking what works
         for you.
@@ -60,15 +60,15 @@ export default function ToolsPage() {
         {tools.map((tool) => (
           <div
             key={tool.name}
-            className="rounded-xl border border-moss bg-deep-forest/60 p-6 text-center"
+            className="rounded-xl border border-gray-700 bg-gray-900 p-6 text-center"
           >
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-amber bg-amber/10 text-gold">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-900/50 text-accent-400">
               {tool.icon}
             </div>
-            <h3 className="font-display text-xl font-semibold text-cream">
+            <h3 className="text-xl font-semibold text-gray-100">
               {tool.name}
             </h3>
-            <p className="mt-2 text-sm text-sage">{tool.description}</p>
+            <p className="mt-2 text-sm text-gray-400">{tool.description}</p>
           </div>
         ))}
       </div>

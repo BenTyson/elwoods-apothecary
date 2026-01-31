@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-type ButtonVariant = 'primary' | 'secondary' | 'parchment';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
@@ -17,11 +17,13 @@ interface ButtonProps {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-br from-moss to-forest-800 text-cream border border-moss hover:from-sage hover:to-moss',
+    'bg-accent-500 text-gray-50 border border-accent-500 hover:bg-accent-400 hover:border-accent-400',
   secondary:
-    'bg-transparent text-gold border border-gold hover:bg-gold/10 hover:text-amber',
-  parchment:
-    'bg-parchment text-sepia border border-sepia hover:bg-parchment-dark',
+    'bg-transparent text-gray-200 border border-gray-700 hover:bg-gray-800 hover:border-gray-600',
+  ghost:
+    'bg-transparent text-gray-400 border border-transparent hover:bg-gray-800 hover:text-gray-200',
+  danger:
+    'bg-transparent text-status-danger border border-status-danger/40 hover:bg-status-danger/10',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -41,10 +43,9 @@ export function Button({
   type = 'button',
 }: ButtonProps) {
   const baseStyles = cn(
-    'inline-flex items-center justify-center gap-2 rounded-lg font-display font-medium transition-all duration-200',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-deep-forest',
+    'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors duration-150',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950',
     'disabled:pointer-events-none disabled:opacity-50',
-    'hover:-translate-y-0.5 hover:shadow-md',
     variantStyles[variant],
     sizeStyles[size],
     className

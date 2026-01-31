@@ -113,10 +113,10 @@ export default function BrowsePage() {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="font-display text-4xl font-semibold text-cream">
+          <h1 className="text-4xl font-semibold text-gray-100 md:text-5xl">
             The Herbarium
           </h1>
-          <p className="mt-2 font-remedy text-xl text-gold">
+          <p className="mt-2 text-lg text-gray-400">
             Explore our collection of medicinal plants and herbs
           </p>
         </div>
@@ -124,27 +124,27 @@ export default function BrowsePage() {
         <div className="flex gap-8">
           {/* Filter Sidebar - Desktop */}
           <aside className="hidden w-72 flex-shrink-0 lg:block">
-            <div className="sticky top-24 rounded-xl border border-moss bg-deep-forest/90 p-6">
-              <h2 className="mb-6 border-b border-moss pb-2 font-display text-lg font-semibold text-gold">
+            <div className="sticky top-24 rounded-xl border border-gray-700 bg-gray-900 p-6">
+              <h2 className="mb-6 border-b border-gray-700 pb-2 text-sm font-semibold text-gray-100">
                 Filter Herbs
               </h2>
 
               {/* Body Systems */}
               <div className="mb-6">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-sage">
+                <h3 className="mb-3 text-xs font-medium text-gray-400">
                   Body Systems
                 </h3>
                 <div className="space-y-2">
                   {bodySystems.map((system) => (
                     <label
                       key={system.id}
-                      className="flex cursor-pointer items-center gap-2 text-sm text-mist transition-colors hover:text-cream"
+                      className="flex cursor-pointer items-center gap-2 text-sm text-gray-300 transition-colors hover:text-gray-100"
                     >
                       <input
                         type="checkbox"
                         checked={filters.bodySystems.includes(system.id)}
                         onChange={() => toggleFilter('bodySystems', system.id)}
-                        className="h-4 w-4 rounded border-moss bg-forest-900 text-gold accent-gold focus:ring-gold"
+                        className="h-4 w-4 rounded border-gray-700 bg-gray-800 text-accent-500 accent-accent-500 focus:ring-accent-500"
                       />
                       {system.name}
                     </label>
@@ -154,20 +154,20 @@ export default function BrowsePage() {
 
               {/* Preparation Types */}
               <div className="mb-6">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-sage">
+                <h3 className="mb-3 text-xs font-medium text-gray-400">
                   Preparation Type
                 </h3>
                 <div className="space-y-2">
                   {preparations.slice(0, 6).map((prep) => (
                     <label
                       key={prep.id}
-                      className="flex cursor-pointer items-center gap-2 text-sm text-mist transition-colors hover:text-cream"
+                      className="flex cursor-pointer items-center gap-2 text-sm text-gray-300 transition-colors hover:text-gray-100"
                     >
                       <input
                         type="checkbox"
                         checked={filters.preparations.includes(prep.id)}
                         onChange={() => toggleFilter('preparations', prep.id)}
-                        className="h-4 w-4 rounded border-moss bg-forest-900 text-gold accent-gold focus:ring-gold"
+                        className="h-4 w-4 rounded border-gray-700 bg-gray-800 text-accent-500 accent-accent-500 focus:ring-accent-500"
                       />
                       {prep.name}
                     </label>
@@ -177,20 +177,20 @@ export default function BrowsePage() {
 
               {/* Herbal Actions */}
               <div className="mb-6">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-sage">
+                <h3 className="mb-3 text-xs font-medium text-gray-400">
                   Herbal Actions
                 </h3>
                 <div className="space-y-2">
                   {actions.slice(0, 8).map((action) => (
                     <label
                       key={action.id}
-                      className="flex cursor-pointer items-center gap-2 text-sm text-mist transition-colors hover:text-cream"
+                      className="flex cursor-pointer items-center gap-2 text-sm text-gray-300 transition-colors hover:text-gray-100"
                     >
                       <input
                         type="checkbox"
                         checked={filters.actions.includes(action.id)}
                         onChange={() => toggleFilter('actions', action.id)}
-                        className="h-4 w-4 rounded border-moss bg-forest-900 text-gold accent-gold focus:ring-gold"
+                        className="h-4 w-4 rounded border-gray-700 bg-gray-800 text-accent-500 accent-accent-500 focus:ring-accent-500"
                       />
                       {action.name}
                     </label>
@@ -223,10 +223,10 @@ export default function BrowsePage() {
                   onChange={(e) =>
                     setFilters((prev) => ({ ...prev, search: e.target.value }))
                   }
-                  className="w-full rounded-full border border-moss bg-deep-forest/80 py-3 pl-12 pr-4 text-cream placeholder-sage transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20"
+                  className="w-full rounded-lg border border-gray-700 bg-gray-900 py-3 pl-12 pr-4 text-gray-100 placeholder-gray-500 transition-colors focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/20"
                 />
                 <svg
-                  className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-sage"
+                  className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -237,7 +237,7 @@ export default function BrowsePage() {
               </div>
 
               <div className="flex items-center gap-4">
-                <span className="text-sm text-sage">
+                <span className="text-sm text-gray-400">
                   {filteredPlants.length} herb
                   {filteredPlants.length !== 1 ? 's' : ''} found
                 </span>
@@ -245,7 +245,7 @@ export default function BrowsePage() {
                 {/* Mobile filter toggle */}
                 <button
                   onClick={() => setShowMobileFilters(true)}
-                  className="rounded-lg border border-moss p-2 text-sage transition-colors hover:bg-moss/30 hover:text-cream lg:hidden"
+                  className="rounded-lg border border-gray-700 p-2 text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200 lg:hidden"
                 >
                   <svg
                     className="h-5 w-5"
@@ -270,12 +270,12 @@ export default function BrowsePage() {
                 {filters.bodySystems.map((system) => (
                   <span
                     key={system}
-                    className="inline-flex items-center gap-1 rounded-full bg-moss/30 px-3 py-1 text-sm text-cream"
+                    className="inline-flex items-center gap-1 rounded-md bg-gray-800 px-3 py-1 text-sm text-gray-200"
                   >
                     {formatLabel(system)}
                     <button
                       onClick={() => toggleFilter('bodySystems', system)}
-                      className="ml-1 hover:text-gold"
+                      className="ml-1 text-gray-400 hover:text-gray-100"
                     >
                       &times;
                     </button>
@@ -284,12 +284,12 @@ export default function BrowsePage() {
                 {filters.preparations.map((prep) => (
                   <span
                     key={prep}
-                    className="inline-flex items-center gap-1 rounded-full bg-moss/30 px-3 py-1 text-sm text-cream"
+                    className="inline-flex items-center gap-1 rounded-md bg-gray-800 px-3 py-1 text-sm text-gray-200"
                   >
                     {formatLabel(prep)}
                     <button
                       onClick={() => toggleFilter('preparations', prep)}
-                      className="ml-1 hover:text-gold"
+                      className="ml-1 text-gray-400 hover:text-gray-100"
                     >
                       &times;
                     </button>
@@ -298,12 +298,12 @@ export default function BrowsePage() {
                 {filters.actions.map((action) => (
                   <span
                     key={action}
-                    className="inline-flex items-center gap-1 rounded-full bg-moss/30 px-3 py-1 text-sm text-cream"
+                    className="inline-flex items-center gap-1 rounded-md bg-gray-800 px-3 py-1 text-sm text-gray-200"
                   >
                     {formatLabel(action)}
                     <button
                       onClick={() => toggleFilter('actions', action)}
-                      className="ml-1 hover:text-gold"
+                      className="ml-1 text-gray-400 hover:text-gray-100"
                     >
                       &times;
                     </button>
@@ -321,7 +321,7 @@ export default function BrowsePage() {
               </div>
             ) : (
               <div className="py-16 text-center">
-                <p className="text-lg text-sage">
+                <p className="text-lg text-gray-400">
                   No herbs found matching your criteria.
                 </p>
                 <Button
@@ -344,14 +344,14 @@ export default function BrowsePage() {
             className="absolute inset-0 bg-black/60"
             onClick={() => setShowMobileFilters(false)}
           />
-          <div className="absolute bottom-0 left-0 right-0 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-deep-forest p-6">
+          <div className="absolute bottom-0 left-0 right-0 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-gray-900 p-6">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-display text-lg font-semibold text-gold">
+              <h2 className="text-sm font-semibold text-gray-100">
                 Filter Herbs
               </h2>
               <button
                 onClick={() => setShowMobileFilters(false)}
-                className="text-sage hover:text-cream"
+                className="text-gray-400 hover:text-gray-100"
               >
                 <svg
                   className="h-6 w-6"
@@ -373,20 +373,20 @@ export default function BrowsePage() {
             <div className="space-y-6">
               {/* Body Systems */}
               <div>
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-sage">
+                <h3 className="mb-3 text-xs font-medium text-gray-400">
                   Body Systems
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
                   {bodySystems.map((system) => (
                     <label
                       key={system.id}
-                      className="flex cursor-pointer items-center gap-2 text-sm text-mist"
+                      className="flex cursor-pointer items-center gap-2 text-sm text-gray-300"
                     >
                       <input
                         type="checkbox"
                         checked={filters.bodySystems.includes(system.id)}
                         onChange={() => toggleFilter('bodySystems', system.id)}
-                        className="h-4 w-4 rounded border-moss bg-forest-900 text-gold accent-gold"
+                        className="h-4 w-4 rounded border-gray-700 bg-gray-800 text-accent-500 accent-accent-500"
                       />
                       {system.name}
                     </label>
@@ -396,20 +396,20 @@ export default function BrowsePage() {
 
               {/* Preparation Types */}
               <div>
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-sage">
+                <h3 className="mb-3 text-xs font-medium text-gray-400">
                   Preparation Type
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
                   {preparations.slice(0, 6).map((prep) => (
                     <label
                       key={prep.id}
-                      className="flex cursor-pointer items-center gap-2 text-sm text-mist"
+                      className="flex cursor-pointer items-center gap-2 text-sm text-gray-300"
                     >
                       <input
                         type="checkbox"
                         checked={filters.preparations.includes(prep.id)}
                         onChange={() => toggleFilter('preparations', prep.id)}
-                        className="h-4 w-4 rounded border-moss bg-forest-900 text-gold accent-gold"
+                        className="h-4 w-4 rounded border-gray-700 bg-gray-800 text-accent-500 accent-accent-500"
                       />
                       {prep.name}
                     </label>

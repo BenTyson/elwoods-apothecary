@@ -8,15 +8,15 @@ interface StatusBadgeProps {
 const statusConfig: Record<GatherItemStatus, { label: string; className: string }> = {
   queued: {
     label: 'Queued',
-    className: 'bg-moss/30 text-fern border-moss',
+    className: 'bg-gray-800/50 text-gray-300 border-gray-700',
   },
   staged: {
     label: 'Staged',
-    className: 'bg-amber/30 text-amber border-amber',
+    className: 'bg-status-warning/15 text-status-warning border-status-warning/30',
   },
   merged: {
     label: 'Merged',
-    className: 'bg-fern/30 text-fern border-fern',
+    className: 'bg-status-success/15 text-status-success border-status-success/30',
   },
 };
 

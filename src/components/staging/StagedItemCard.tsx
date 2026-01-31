@@ -21,26 +21,23 @@ export function StagedItemCard({ item, isSelected, onClick }: StagedItemCardProp
     <button
       onClick={onClick}
       className={cn(
-        'group relative w-full overflow-hidden rounded-xl border border-moss bg-deep-forest/80 p-4 text-left transition-all duration-300',
-        'hover:-translate-y-1 hover:border-amber hover:shadow-lg hover:shadow-black/20',
-        isSelected && 'border-amber bg-amber/10'
+        'group relative w-full overflow-hidden rounded-xl border border-gray-700 bg-gray-900 p-4 text-left transition-colors duration-150',
+        'hover:border-gray-600 hover:bg-gray-800',
+        isSelected && 'border-accent-500 bg-accent-900/20'
       )}
     >
-      {/* Top accent bar on hover */}
-      <div className="absolute left-0 right-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-amber to-gold transition-transform duration-300 group-hover:scale-x-100" />
-
       {/* Type badge */}
       <div className="flex items-center justify-between">
-        <span className="text-xs font-medium uppercase tracking-wider text-sage">
+        <span className="text-xs font-medium text-gray-400">
           {typeLabels[item.type]}
         </span>
-        <span className="text-xs text-mist">
+        <span className="text-xs text-gray-500">
           {item.meta.gatheredAt}
         </span>
       </div>
 
       {/* Name */}
-      <h3 className="mt-2 font-display text-xl font-semibold text-cream transition-colors group-hover:text-gold">
+      <h3 className="mt-2 text-xl font-semibold text-gray-100 transition-colors group-hover:text-accent-400">
         {item.name}
       </h3>
 
@@ -50,19 +47,19 @@ export function StagedItemCard({ item, isSelected, onClick }: StagedItemCardProp
           {item.meta.confidence}
         </Pill>
         {item.meta.isUpdate && (
-          <Pill variant="preparation">Update</Pill>
+          <Pill variant="blue">Update</Pill>
         )}
       </div>
 
       {/* Notes preview */}
       {item.meta.notes && (
-        <p className="mt-3 line-clamp-2 text-sm text-mist">
+        <p className="mt-3 line-clamp-2 text-sm text-gray-300">
           {item.meta.notes}
         </p>
       )}
 
       {/* Sources count */}
-      <div className="mt-3 text-xs text-sage">
+      <div className="mt-3 text-xs text-gray-400">
         {item.meta.sources.length} source{item.meta.sources.length !== 1 ? 's' : ''}
       </div>
     </button>

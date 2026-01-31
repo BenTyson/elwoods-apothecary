@@ -66,9 +66,9 @@ export function StagingReviewClient({ initialItems }: StagingReviewClientProps) 
 
   if (initialItems.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl border border-moss bg-deep-forest/80 py-16">
+      <div className="flex flex-col items-center justify-center rounded-xl border border-gray-700 bg-gray-900 py-16">
         <svg
-          className="h-16 w-16 text-sage"
+          className="h-16 w-16 text-gray-500"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -80,9 +80,9 @@ export function StagingReviewClient({ initialItems }: StagingReviewClientProps) 
             d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
           />
         </svg>
-        <h3 className="mt-4 font-display text-xl text-cream">No Staged Data</h3>
-        <p className="mt-2 text-center text-mist">
-          Use the <code className="rounded bg-moss/50 px-2 py-0.5 text-sm">/gather</code> command
+        <h3 className="mt-4 text-xl text-gray-100">No Staged Data</h3>
+        <p className="mt-2 text-center text-gray-300">
+          Use the <code className="rounded bg-gray-800 px-2 py-0.5 font-mono text-sm">/gather</code> command
           <br />
           to collect research data for review.
         </p>
@@ -99,17 +99,17 @@ export function StagingReviewClient({ initialItems }: StagingReviewClientProps) 
             key={tab.value}
             onClick={() => setFilter(tab.value)}
             className={cn(
-              'flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition-colors',
+              'flex items-center gap-2 whitespace-nowrap rounded-lg border px-4 py-2 text-sm font-medium transition-colors',
               filter === tab.value
-                ? 'border-amber bg-amber/20 text-amber'
-                : 'border-moss bg-deep-forest/80 text-mist hover:border-sage hover:text-cream'
+                ? 'border-accent-500 bg-accent-500/15 text-accent-400'
+                : 'border-gray-700 bg-gray-900 text-gray-300 hover:border-gray-600 hover:text-gray-100'
             )}
           >
             {tab.label}
             <span
               className={cn(
-                'rounded-full px-2 py-0.5 text-xs',
-                filter === tab.value ? 'bg-amber/30 text-amber' : 'bg-moss/50 text-sage'
+                'rounded-md px-2 py-0.5 text-xs',
+                filter === tab.value ? 'bg-accent-500/20 text-accent-400' : 'bg-gray-800 text-gray-400'
               )}
             >
               {typeCounts[tab.value]}
@@ -122,7 +122,7 @@ export function StagingReviewClient({ initialItems }: StagingReviewClientProps) 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Item Cards - Scrollable List */}
         <div className="space-y-4">
-          <div className="text-sm text-sage">
+          <div className="text-sm text-gray-400">
             {filteredItems.length} item{filteredItems.length !== 1 ? 's' : ''} staged
           </div>
           <div className="max-h-[calc(100vh-320px)] space-y-3 overflow-y-auto pr-2">
@@ -142,8 +142,8 @@ export function StagingReviewClient({ initialItems }: StagingReviewClientProps) 
           {selectedDetail ? (
             <StagedItemDetailView item={selectedDetail} />
           ) : isPending ? (
-            <div className="flex h-64 items-center justify-center rounded-xl border border-moss bg-deep-forest/80">
-              <div className="flex items-center gap-3 text-sage">
+            <div className="flex h-64 items-center justify-center rounded-xl border border-gray-700 bg-gray-900">
+              <div className="flex items-center gap-3 text-gray-400">
                 <svg
                   className="h-5 w-5 animate-spin"
                   fill="none"
@@ -167,9 +167,9 @@ export function StagingReviewClient({ initialItems }: StagingReviewClientProps) 
               </div>
             </div>
           ) : (
-            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-moss bg-deep-forest/50">
+            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-gray-700 bg-gray-900/50">
               <svg
-                className="h-12 w-12 text-sage/50"
+                className="h-12 w-12 text-gray-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -187,7 +187,7 @@ export function StagingReviewClient({ initialItems }: StagingReviewClientProps) 
                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                 />
               </svg>
-              <p className="mt-4 text-mist">Select an item to view details</p>
+              <p className="mt-4 text-gray-400">Select an item to view details</p>
             </div>
           )}
         </div>
