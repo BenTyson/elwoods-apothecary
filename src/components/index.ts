@@ -23,3 +23,20 @@ export * from './gather/StatusBadge';
 export * from './gather/GatherQueueCard';
 export * from './gather/ManualEntryForm';
 export * from './gather/DukePlantBrowser';
+
+// Detail page components
+export * from './detail/HeroPlaceholder';
+export * from './detail/QuickInfoBar';
+export * from './detail/TableOfContents';
+export * from './detail/MobileTOC';
+export * from './detail/ContentSection';
+export * from './detail/ProseBlock';
+export * from './detail/DataCard';
+export * from './detail/OxidationMeter';
+export * from './detail/CaffeineMeter';
+export * from './detail/ProcessingTimeline';
+export * from './detail/BrewingCard';
+export * from './detail/FlavorProfile';
+export * from './detail/ImageGalleryPlaceholder';
+export * from './detail/RelatedTeas';
+export * from './detail/RelatedPlants';

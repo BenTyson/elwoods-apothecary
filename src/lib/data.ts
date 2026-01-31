@@ -188,6 +188,51 @@ export function searchTeas(query: string): Tea[] {
   );
 }
 
+// Related item functions
+export function getRelatedTeas(currentId: string, limit = 3): Tea[] {
+  const current = getTeaById(currentId);
+  if (!current) return [];
+
+  const others = teas.filter((t) => t.id !== currentId);
+
+  // Score by matching teaType first, then origin country
+  const scored = others.map((tea) => {
+    let score = 0;
+    if (tea.teaType === current.teaType) score += 2;
+    if (tea.origin.country === current.origin.country) score += 1;
+    return { tea, score };
+  });
+
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((s) => s.tea);
+}
+
+export function getRelatedPlants(currentId: string, limit = 3): Plant[] {
+  const current = getPlantById(currentId);
+  if (!current) return [];
+
+  const others = plants.filter((p) => p.id !== currentId);
+
+  // Score by shared bodySystems + actions
+  const scored = others.map((plant) => {
+    let score = 0;
+    for (const system of plant.bodySystems) {
+      if (current.bodySystems.includes(system)) score += 2;
+    }
+    for (const action of plant.actions) {
+      if (current.actions.includes(action)) score += 1;
+    }
+    return { plant, score };
+  });
+
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((s) => s.plant);
+}
+
 // Utility functions
 export function formatLabel(str: string): string {
   return str
