@@ -10,6 +10,9 @@ export * from './ui/Callout';
 // Herb components
 export * from './herbs/HerbCard';
 
+// Tea components
+export * from './teas/TeaCard';
+
 // Staging components
 export * from './staging/StagedItemCard';
 export * from './staging/StagedItemDetail';

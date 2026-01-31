@@ -129,7 +129,8 @@ src/
 ├── components/
 │   ├── ui/           # Generic reusable
 │   ├── layout/       # Header, Footer
-│   ├── herbs/        # Domain-specific
+│   ├── herbs/        # Herb domain-specific
+│   ├── teas/         # Tea domain-specific
 │   ├── staging/      # Admin staging review
 │   ├── gather/       # Admin gather queue
 │   └── index.ts      # Barrel exports

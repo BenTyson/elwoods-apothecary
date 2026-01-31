@@ -6,8 +6,9 @@
 
 ```
 /                    → Home (Server Component)
-/browse              → Herb browser (Client Component)
+/browse              → Herb & Tea browser (Client Component, tabbed)
 /browse/[slug]       → Plant detail (Server Component, SSG)
+/browse/tea/[slug]   → Tea detail (Server Component, SSG)
 /learn               → Educational [placeholder]
 /tools               → Tools [placeholder]
 /shop                → Marketplace [placeholder]
@@ -24,6 +25,7 @@
 | `/` | `src/app/page.tsx` | Server |
 | `/browse` | `src/app/browse/page.tsx` | Client (`'use client'`) |
 | `/browse/[slug]` | `src/app/browse/[slug]/page.tsx` | Server (SSG) |
+| `/browse/tea/[slug]` | `src/app/browse/tea/[slug]/page.tsx` | Server (SSG) |
 | `/learn` | `src/app/learn/page.tsx` | Server |
 | `/tools` | `src/app/tools/page.tsx` | Server |
 | `/shop` | `src/app/shop/page.tsx` | Server |
@@ -76,6 +78,28 @@ interface Props {
 ```typescript
 const plant = getPlantBySlug(slug);
 if (!plant) notFound();
+```
+
+### Tea Detail (`/browse/tea/[slug]`)
+
+**Static Generation**:
+```typescript
+export function generateStaticParams() {
+  return getAllTeas().map(tea => ({ slug: tea.id }));
+}
+```
+
+**Page Props**:
+```typescript
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+```
+
+**Data Fetching**:
+```typescript
+const tea = getTeaById(slug);
+if (!tea) notFound();
 ```
 
 ---

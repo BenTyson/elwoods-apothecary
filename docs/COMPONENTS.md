@@ -5,7 +5,7 @@
 ## Import Pattern
 
 ```typescript
-import { Button, Pill, Callout, HerbCard, StagedItemCard } from '@/components';
+import { Button, Pill, Callout, HerbCard, TeaCard, StagedItemCard } from '@/components';
 ```
 
 All components exported from `src/components/index.ts`.
@@ -95,6 +95,30 @@ interface HerbCardProps {
 ```tsx
 <HerbCard plant={plant} />
 <HerbCard plant={plant} featured />
+```
+
+---
+
+## Tea Components
+
+### TeaCard
+
+**File**: `src/components/teas/TeaCard.tsx`
+
+```typescript
+interface TeaCardProps {
+  tea: Tea;
+  className?: string;
+}
+```
+
+Displays a tea card with tea type badge (color-coded by type), origin country, caffeine level pill, overview excerpt, and links to `/browse/tea/[id]`.
+
+**Tea type color mapping**: green → green, white → rose, oolong → amber, black → orange, dark → purple, blend → blue.
+
+**Usage**:
+```tsx
+<TeaCard tea={tea} />
 ```
 
 ---
@@ -271,7 +295,8 @@ interface DukePlantBrowserProps {
 1. Create file in appropriate subfolder:
    - `ui/` - Generic reusable
    - `layout/` - Page structure
-   - `herbs/` - Domain-specific
+   - `herbs/` - Herb domain-specific
+   - `teas/` - Tea domain-specific
    - `staging/` - Admin staging review
    - `gather/` - Admin gather queue
 

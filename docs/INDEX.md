@@ -1,6 +1,6 @@
 # El Woods Apothecary - Agent Documentation
 
-> **Last Updated**: 2026-01-29
+> **Last Updated**: 2026-01-31
 > **Version**: 0.1.0
 
 ## Session-Start Protocol
@@ -78,11 +78,12 @@ scripts/           # Build utilities (not part of Next.js app)
 
 ### Implemented
 - Home page with hero, pillars, featured plants
-- Browse page with multi-filter search
-- Dynamic plant detail pages (SSR)
+- Browse page with Herbs/Teas tabs, multi-filter search for each
+- Dynamic plant detail pages (SSG)
+- Dynamic tea detail pages (SSG) at `/browse/tea/[slug]`
 - Admin staging review page (`/admin/staging`)
 - Admin gather queue page (`/admin/gather`) — 8 content-type tabs, Duke plant browser, manual entry
-- 13 reusable UI components (including staging + gather components)
+- 14 reusable UI components (including staging, gather, and tea components)
 - Comprehensive type system (8 content types)
 - `/gather` skill supporting 8 content types + queue commands (`--next`, `--queue`)
 - `/gather` writes directly to main database (no staging step; `--review`/`--merge` removed)

@@ -67,6 +67,14 @@ getRemediesByHerb(herbId: string): Remedy[]
 getRemediesByCondition(conditionId: string): Remedy[]
 ```
 
+### Teas
+
+```typescript
+getAllTeas(): Tea[]
+getTeaById(id: string): Tea | undefined
+searchTeas(query: string): Tea[]   // Searches name, otherNames, teaType, origin country
+```
+
 ### Staging
 
 **File**: `src/lib/staging.ts`

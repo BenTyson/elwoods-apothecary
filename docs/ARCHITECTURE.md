@@ -16,7 +16,7 @@
 │  └── JSON imports with type assertions          │
 ├─────────────────────────────────────────────────┤
 │  Static Data (src/data/*.json)                  │
-│  └── plants, categories, conditions, remedies   │
+│  └── plants, teas, categories, conditions, etc. │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -25,8 +25,9 @@
 | Route | Type | Why |
 |-------|------|-----|
 | `/` | Static (SSG) | Content doesn't change |
-| `/browse` | Client | Interactive filtering |
+| `/browse` | Client | Interactive filtering (Herbs/Teas tabs) |
 | `/browse/[slug]` | Static (SSG) | Pre-rendered via `generateStaticParams()` |
+| `/browse/tea/[slug]` | Static (SSG) | Pre-rendered via `generateStaticParams()` |
 | `/learn`, `/tools`, `/shop` | Static | Placeholder pages |
 | `/admin/staging` | Server + Client | Server fetches staged files, client handles selection UI |
 | `/admin/gather` | Dynamic + Client | Server reads queue JSON + Duke index, client handles tabs/search/CRUD |

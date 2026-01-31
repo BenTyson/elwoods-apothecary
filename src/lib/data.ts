@@ -1,17 +1,19 @@
 // El Woods Apothecary - Data Access Layer
 
-import { Plant, Categories, Condition, Remedy, FilterState } from '@/types';
+import { Plant, Tea, Categories, Condition, Remedy, FilterState } from '@/types';
 
 import plantsData from '@/data/plants.json';
 import categoriesData from '@/data/categories.json';
 import conditionsData from '@/data/conditions.json';
 import remediesData from '@/data/remedies.json';
+import teasData from '@/data/teas.json';
 
 // Type assertions for imported JSON (cast through unknown for strict TS)
 const plants = plantsData.plants as unknown as Plant[];
 const categories = categoriesData as unknown as Categories;
 const conditions = conditionsData.conditions as unknown as Condition[];
 const remedies = remediesData.remedies as unknown as Remedy[];
+const teas = teasData.teas as unknown as Tea[];
 
 // Plant functions
 export function getAllPlants(): Plant[] {
@@ -162,6 +164,28 @@ export function getRemediesByHerb(herbId: string): Remedy[] {
 
 export function getRemediesByCondition(conditionId: string): Remedy[] {
   return remedies.filter((remedy) => remedy.conditions.includes(conditionId));
+}
+
+// Tea functions
+export function getAllTeas(): Tea[] {
+  return teas;
+}
+
+export function getTeaById(id: string): Tea | undefined {
+  return teas.find((tea) => tea.id === id);
+}
+
+export function searchTeas(query: string): Tea[] {
+  const searchLower = query.toLowerCase();
+  return teas.filter(
+    (tea) =>
+      tea.name.toLowerCase().includes(searchLower) ||
+      tea.otherNames?.some((name) =>
+        name.toLowerCase().includes(searchLower)
+      ) ||
+      tea.teaType.toLowerCase().includes(searchLower) ||
+      tea.origin.country.toLowerCase().includes(searchLower)
+  );
 }
 
 // Utility functions

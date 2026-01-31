@@ -25,7 +25,7 @@ const TYPE_CONFIG: Record<GatherContentType, { pluralDir: string; mainDataFile: 
   preparation: { pluralDir: 'preparations', mainDataFile: null, mainDataKey: null },
   action: { pluralDir: 'actions', mainDataFile: null, mainDataKey: null },
   term: { pluralDir: 'glossary', mainDataFile: null, mainDataKey: null },
-  tea: { pluralDir: 'teas', mainDataFile: null, mainDataKey: null },
+  tea: { pluralDir: 'teas', mainDataFile: 'teas.json', mainDataKey: 'teas' },
 };
 
 // Cache for main data IDs (per type)
