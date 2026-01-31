@@ -160,8 +160,8 @@ When evaluating and citing sources, apply these tiers:
 | **4** | Avoid as sole source | Blogs, social media, supplement marketing sites |
 
 **Tier rules:**
-- Plant, condition, and remedy entries need **≥2 Tier 1** sources.
-- All other types need **≥1 Tier 1** source.
+- Plant, condition, remedy, ingredient, preparation, action, and tea entries need **≥2 Tier 1** sources.
+- Glossary terms need **≥1 Tier 1** source.
 - List sources in the report in descending tier order (Tier 1 first).
 - Never cite a Tier 4 source as the sole support for a claim.
 
@@ -173,17 +173,29 @@ When evaluating and citing sources, apply these tiers:
 5. Search: `"<condition>" herb drug interactions contraindications safety`
 6. Search: `"<condition>" traditional medicine TCM ayurveda natural treatment` — Skip for conditions without established traditional frameworks (e.g., modern diagnoses like ADHD).
 
-**For Remedies:**
-1. Search: `"<remedy name>" herbal recipe preparation`
-2. Search: `"<remedy type>" dosage instructions storage`
+**For Remedies (7 core + 1 adaptive):**
+
+**Pre-search inference**: Before launching searches, infer `<primary herb(s)>` and `<remedy type>` from the remedy name. If not obvious from the name (e.g., "Fire Cider", "Four Thieves Vinegar"), use search #1 results to determine them, then launch searches #2-7 as a second batch.
+
+1. Search: `"<remedy name>" herbal recipe preparation method`
+2. Search: `"<primary herb(s)>" "<remedy type>" recipe formula traditional`
+3. Search: `"<remedy name>" OR "<primary herb(s)> <remedy type>" dosage amount frequency`
+4. Search: `"<primary herb(s)>" synergy combination benefit evidence`
+5. Search: `"<primary herb(s)>" "<remedy type>" safety contraindications drug interactions`
+6. Search: `"<remedy name>" storage preservation shelf life`
+7. Search: `"<remedy name>" OR "<remedy type>" troubleshooting tips common mistakes beginner`
+
+**Adaptive (add based on internal vs external type):**
+- **Internal types** (tea, decoction, tincture, syrup, capsule): add `"<remedy name>" dosage children adults elderly pregnancy`
+- **External types** (salve, oil, poultice, compress, bath): add `"<remedy type>" application technique frequency skin patch test`
 
 **For Ingredients:**
 1. Search: `"<ingredient>" herbal preparations uses`
-2. Search: `"<ingredient>" properties characteristics`
+2. Search: `"<ingredient>" properties composition profile characteristics`
 3. Search: `"<ingredient>" quality sourcing buying guide`
 4. Search: `"<ingredient>" storage shelf life`
-5. Search: `"<ingredient>" safety skin sensitivity allergies`
-6. Search: `"<ingredient>" substitutes alternatives`
+5. Search: `"<ingredient>" safety sensitivity allergies internal external toxicity`
+6. Search: `"<ingredient>" substitutes alternatives comparison when to use`
 7. Search: `"<ingredient>" production extraction how made`
 8. Search: `"<ingredient>" history traditional use`
 
@@ -195,6 +207,7 @@ When evaluating and citing sources, apply these tiers:
 5. Search: `"<preparation type>" storage shelf life`
 6. Search: `"<preparation type>" history traditional method`
 7. Search: `"<preparation type>" which herbs best suited`
+8. Search: `"<preparation type>" safety precautions contamination sanitation hygiene`
 
 **For Actions:**
 1. Search: `"<action>" herbal action definition`
@@ -204,11 +217,14 @@ When evaluating and citing sources, apply these tiers:
 5. Search: `"<action>" etymology origin term`
 6. Search: `"<action>" traditional chinese medicine ayurveda`
 7. Search: `"<action>" related actions similar`
+8. Search: `"<action>" clinical herbalist protocol dosage formulation`
 
 **For Glossary Terms:**
 1. Search: `"<term>" herbal definition meaning`
 2. Search: `"<term>" etymology word origin`
 3. Search: `"<term>" herbalism context usage`
+4. Search: `"<term>" related terms synonyms antonyms herbalism`
+5. Search: `"<term>" history traditional herbal medicine evolution`
 
 **For Teas:**
 1. Search: `"<tea name>" tea origin region terroir`
@@ -248,6 +264,7 @@ Read `src/types/index.ts` on the **FIRST** gather of a session only. If you can 
 - Non-optional fields (no `?` suffix in TypeScript) MUST be populated.
 - Optional fields (with `?` suffix) SHOULD be populated when research provides data.
 - **Plant-specific override**: All 10 extended content sections (`harvesting`, `cultivation`, `history`, `nativeRange`, `taxonomy`, `morphology`, `storage`, `quality`, `conservationStatus`, `lookalikes`) are editorially required despite being TypeScript-optional.
+- **Remedy-specific override**: `tips`, `variations`, `storage`, `safety`, and `dosage` (internal types only) are editorially required despite being TypeScript-optional.
 
 **Format conventions:**
 - `family`: Latin only — `"Lamiaceae"` not `"Lamiaceae (Mint family)"`
@@ -275,7 +292,63 @@ Read `src/types/index.ts` on the **FIRST** gather of a session only. If you can 
 | `conservationStatus` | 3-5 sentences | Threat level, regulations, sustainable alternatives |
 | `lookalikes` | 4-8 sentences | Each dangerous lookalike with distinguishing features |
 
-For non-plant types, aim for 3-5 sentences per content section unless the guidelines below specify otherwise.
+**Remedy section length targets** (non-content fields):
+
+| Section | Target | Notes |
+|---------|--------|-------|
+| `description` | 3-5 sentences | What it does, heritage/tradition, who benefits, when to use |
+| `instructions` | ≥4 numbered steps | Each with timing cues, temperature, or sensory indicators |
+| `tips` | ≥3 items | Common mistakes, yield optimization, beginner wisdom |
+| `variations` | ≥2 items | Meaningful alternatives with rationale |
+| `storage` | 1-3 sentences | Container type, temperature, shelf life, spoilage signs |
+| `safety` | 2-4 sentences | Contraindications, drug interactions, vulnerable populations |
+| `dosage` | ≥2 keys with 1-2 sentence values | Adult + child dosing per scenario (e.g., prevention, acute). Internal remedies only. |
+
+**Ingredient content section length targets:**
+
+| Section | Target |
+|---------|--------|
+| `content.overview` | 4-6 sentences |
+| `content.history` | 3-5 sentences |
+| `content.production` | 3-5 sentences |
+| `content.quality` | 3-5 sentences |
+| `content.usageGuidelines` | 3-5 sentences |
+| `content.scienceNotes` | 3-5 sentences |
+
+**Preparation content section length targets:**
+
+| Section | Target |
+|---------|--------|
+| `content.overview` | 4-6 sentences |
+| `content.history` | 3-5 sentences |
+| `content.theory` | 4-6 sentences |
+| `content.bestFor` | 3-5 sentences |
+| `content.notRecommendedFor` | 2-4 sentences |
+| `content.safetyConsiderations` | 3-5 sentences |
+| `content.advancedTechniques` | 3-5 sentences |
+
+**Action content section length targets:**
+
+| Section | Target |
+|---------|--------|
+| `content.overview` | 4-6 sentences |
+| `content.history` | 3-5 sentences |
+| `content.physiology` | 4-6 sentences |
+| `content.clinicalUse` | 3-5 sentences |
+| `content.cautions` | 2-4 sentences |
+| `content.combining` | 3-5 sentences |
+
+**Glossary term content section length targets:**
+
+| Section | Target |
+|---------|--------|
+| `definition` | 1-2 sentences |
+| `etymology` | 1-3 sentences |
+| `content.extendedDefinition` | 3-5 sentences |
+| `content.history` | 2-4 sentences |
+| `content.modernUsage` | 2-4 sentences |
+
+For non-plant types not listed above, aim for 3-5 sentences per content section unless the guidelines below specify otherwise.
 
 ### Step 3.5: Validation Checklist
 
@@ -308,41 +381,60 @@ Before writing to the database, verify every item against the checklist for its 
 **Remedies:**
 - [ ] All `Remedy` required fields populated (id, name, type, difficulty, prepTime, yield, description, herbs, conditions, bodySystems, ingredients, instructions)
 - [ ] `type` is a valid `PreparationType`
-- [ ] `ingredients` has amount for each item
-- [ ] `instructions` are numbered, clear steps
-- [ ] ≥3 sources cited (≥2 Tier 1)
+- [ ] `description` is 3-5 sentences
+- [ ] `ingredients` has ≥3 items, each with amount specified
+- [ ] `instructions` has ≥4 steps, each with a clear action
+- [ ] `herbs` has ≥2 entries using plant ID format (kebab-case common names); note any IDs not yet in `plants.json` in the report
+- [ ] `conditions` has ≥2 entries
+- [ ] `tips` has ≥3 practical items
+- [ ] `variations` has ≥2 items
+- [ ] `storage` populated (string field)
+- [ ] `dosage` populated for internal remedies (tea, decoction, tincture, syrup, capsule)
+- [ ] `safety` is 2-4 sentences covering contraindications, drug interactions, and vulnerable populations
+- [ ] ≥4 sources cited (≥2 Tier 1)
 
 **Ingredients:**
 - [ ] All `Ingredient` required fields populated (id, name, category, source, description, properties, uses, content)
-- [ ] `properties.shelfLife` and `properties.storageRequirements` present
-- [ ] `content.overview` is substantive
-- [ ] `safety` populated with at least generalSafety and internalUse
-- [ ] At least 1 substitute listed
-- [ ] ≥3 sources cited (≥2 Tier 1)
+- [ ] `uses` has ≥3 items
+- [ ] `properties` has shelfLife, storageRequirements, and ≥2 additional fields (texture, color, scent, etc.)
+- [ ] `substitutes` has ≥1 item with notes explaining when/why to use
+- [ ] `safety` has generalSafety, internalUse, and at least allergens or sensitivityNotes
+- [ ] `content.overview` is ≥4 sentences
+- [ ] All populated content sections meet length targets
+- [ ] ≥4 sources cited (≥2 Tier 1)
 
 **Preparations:**
 - [ ] All `Preparation` required fields populated (id, name, type, description, difficulty, timeRequired, equipment, ingredientTypes, ratios, process, storage, content)
-- [ ] `ratios` has at least one entry with description and ratio
-- [ ] `process` has numbered steps with instructions
+- [ ] `ratios` has ≥2 entries (standard + at least one variation)
+- [ ] `process` has ≥5 steps with clear instructions
+- [ ] `equipment` has ≥3 items
+- [ ] `ingredientTypes` has ≥2 items
+- [ ] `troubleshooting` has ≥3 items
+- [ ] `variations` has ≥1 item with description and modifications
 - [ ] `storage` has all 4 subfields (container, conditions, shelfLife, signsOfSpoilage)
-- [ ] `content.overview` is substantive
-- [ ] At least 2 troubleshooting items
-- [ ] ≥3 sources cited (≥2 Tier 1)
+- [ ] All populated content sections meet length targets
+- [ ] ≥4 sources cited (≥2 Tier 1)
 
 **Actions:**
 - [ ] All `Action` required fields populated (id, name, definition, category, mechanism, exampleHerbs, conditions, traditions, content)
-- [ ] `definition` is one clear sentence
-- [ ] `exampleHerbs` has 3-5 herbs
-- [ ] `traditions` has at least Western tradition
-- [ ] `content.overview` is substantive
-- [ ] ≥3 sources cited (≥2 Tier 1)
+- [ ] `conditions` has ≥3 items
+- [ ] `relatedActions` has ≥2 items
+- [ ] `traditions` has ≥2 entries (Western + at least one other when applicable)
+- [ ] `mechanism` is ≥2 sentences
+- [ ] `definition` is exactly 1 clear sentence
+- [ ] All populated content sections meet length targets
+- [ ] ≥4 sources cited (≥2 Tier 1)
 
 **Glossary Terms:**
 - [ ] All `GlossaryTerm` required fields populated (id, term, definition, category)
 - [ ] `definition` is concise (1-2 sentences)
 - [ ] `etymology` populated
-- [ ] At least 1 usage example
-- [ ] ≥2 sources cited (≥1 Tier 1)
+- [ ] `usageExamples` has ≥2 examples
+- [ ] `relatedTerms` has ≥2 related terms
+- [ ] `seeAlso` has ≥1 cross-reference to plant, action, preparation, condition, or ingredient
+- [ ] `content` populated with at least `extendedDefinition`
+- [ ] All populated content sections meet length targets
+- [ ] ≥3 sources cited (≥1 Tier 1)
 
 **Teas:**
 - [ ] All `Tea` required fields populated (id, name, teaType, origin, processing, profile, brewing, caffeine, health, content)
@@ -366,7 +458,7 @@ Write the gathered data directly to the main JSON file.
 
 **Do NOT include `_meta` in the database** — metadata (sources, confidence, notes) is for the report output only.
 
-### Step 4.5: Post-Write Content Length Audit (Plants and Teas only)
+### Step 4.5: Post-Write Content Length Audit (Plants, Teas, Ingredients, Preparations, and Actions)
 
 After writing, read the entry back and audit each content section against the length targets from Step 3.
 
@@ -568,6 +660,41 @@ when symptoms have persisted long enough to warrant professional evaluation,
 indicators or differential diagnosis flags (e.g., cardiac symptoms that
 mimic anxiety). Be concrete — `"persists most days for six weeks"` not
 `"persists for a long time"`.
+
+---
+
+## Remedy Section Guidelines
+
+**description** (3-5 sentences): What the remedy does, its heritage or
+tradition, who benefits most, and when to use it. Frame the remedy's purpose
+clearly so users understand why they'd choose it.
+
+**ingredients**: Precise amounts with plant parts specified (e.g., "2 tbsp dried
+chamomile flowers"). Include notes for key substitutions where applicable.
+
+**instructions** (≥4 numbered steps): Each step should include timing cues,
+temperature when relevant, and sensory indicators (color, smell, texture) that
+signal readiness. Write for someone making this for the first time.
+
+**tips** (≥3 items): Common mistakes and how to avoid them, yield optimization,
+beginner wisdom. Practical, experience-based advice that won't be found in a
+bare recipe.
+
+**variations** (≥2 items): Meaningful alternatives with rationale — not just
+"add X" but why (e.g., "substitute valerian for passionflower for deeper
+sedation"). Each variation should serve a different purpose or audience.
+
+**storage**: Container type (amber glass, tin, etc.), temperature (cool/dark,
+refrigerated), expected shelf life, and signs of spoilage (color change,
+off smell, mold).
+
+**safety** (2-4 sentences): Cover contraindications, known drug interactions,
+age restrictions, and pregnancy/nursing considerations. Be specific —
+name the drug classes or conditions, not just "consult a doctor."
+
+**dosage** (internal remedies only): Populate for tea, decoction, tincture,
+syrup, and capsule types. Include adult dosing (amount and frequency) and
+child dosing or age restrictions. Note maximum duration if applicable.
 
 ---
 
