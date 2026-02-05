@@ -1,0 +1,78 @@
+{
+  "id": "lavender-salve",
+  "name": "Soothing Lavender Salve",
+  "type": "salve",
+  "difficulty": "intermediate",
+  "prepTime": "2-3 hours (plus 2-4 weeks for oil infusion)",
+  "yield": "About 4 oz",
+  "description": "A versatile healing salve for minor burns, cuts, scrapes, dry skin, and general skin soothing. The lavender provides calming aromatherapy as well.",
+  "herbs": [
+    "lavender",
+    "calendula"
+  ],
+  "conditions": [
+    "skin-irritation",
+    "burns",
+    "wounds",
+    "dry-skin"
+  ],
+  "bodySystems": [
+    "skin"
+  ],
+  "ingredients": [
+    {
+      "item": "lavender-infused olive oil",
+      "amount": "1/2 cup",
+      "note": "see instructions for making"
+    },
+    {
+      "item": "calendula-infused olive oil",
+      "amount": "1/4 cup",
+      "note": "optional, for enhanced healing"
+    },
+    {
+      "item": "beeswax",
+      "amount": "1 oz",
+      "note": "about 2 tablespoons grated"
+    },
+    {
+      "item": "lavender essential oil",
+      "amount": "20 drops",
+      "note": "optional, for stronger scent"
+    },
+    {
+      "item": "vitamin E oil",
+      "amount": "1/2 teaspoon",
+      "note": "optional, as preservative"
+    }
+  ],
+  "instructions": [
+    "TO MAKE INFUSED OIL (2-4 weeks ahead):",
+    "Fill a clean, dry jar 1/2 to 2/3 full with dried lavender flowers",
+    "Cover completely with olive oil, leaving 1 inch headspace",
+    "Stir to release air bubbles and ensure all plant material is submerged",
+    "Cap and place in a sunny window for 2-4 weeks, shaking daily",
+    "Strain through cheesecloth, squeezing to extract all oil",
+    "",
+    "TO MAKE SALVE:",
+    "Combine infused oils in a double boiler or heat-safe jar in a pot of water",
+    "Add beeswax and heat gently until beeswax is completely melted",
+    "Remove from heat",
+    "Add essential oil and vitamin E if using",
+    "Quickly pour into clean tins or jars",
+    "Let cool completely before capping (1-2 hours)",
+    "Label with ingredients and date"
+  ],
+  "storage": "Store in a cool, dark place for up to 1 year. Discard if it smells rancid or changes color.",
+  "tips": [
+    "Test consistency by putting a small amount on a cold plate - adjust beeswax if too soft/hard",
+    "More beeswax = firmer salve; less = softer",
+    "Ensure all equipment is completely dry to prevent mold"
+  ],
+  "variations": [
+    "Add tea tree essential oil for antimicrobial properties",
+    "Include chamomile for extra soothing effects",
+    "Use coconut oil for part of the base for a different texture"
+  ],
+  "safety": "For external use only. Patch test before widespread use. Do not apply to deep or infected wounds."
+}

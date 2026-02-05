@@ -15,17 +15,17 @@ const QUEUE_FILE = path.join(DATA_DIR, 'gather-queue.json');
 const STAGING_BASE = path.join(DATA_DIR, 'staging');
 
 /**
- * Config map: content type -> plural directory name and main data file info
+ * Config map: content type -> plural directory name
  */
-const TYPE_CONFIG: Record<GatherContentType, { pluralDir: string; mainDataFile: string | null; mainDataKey: string | null }> = {
-  plant: { pluralDir: 'plants', mainDataFile: 'plants.json', mainDataKey: 'plants' },
-  condition: { pluralDir: 'conditions', mainDataFile: 'conditions.json', mainDataKey: 'conditions' },
-  remedy: { pluralDir: 'remedies', mainDataFile: 'remedies.json', mainDataKey: 'remedies' },
-  ingredient: { pluralDir: 'ingredients', mainDataFile: null, mainDataKey: null },
-  preparation: { pluralDir: 'preparations', mainDataFile: null, mainDataKey: null },
-  action: { pluralDir: 'actions', mainDataFile: null, mainDataKey: null },
-  term: { pluralDir: 'glossary', mainDataFile: null, mainDataKey: null },
-  tea: { pluralDir: 'teas', mainDataFile: 'teas.json', mainDataKey: 'teas' },
+const TYPE_CONFIG: Record<GatherContentType, { pluralDir: string }> = {
+  plant: { pluralDir: 'plants' },
+  condition: { pluralDir: 'conditions' },
+  remedy: { pluralDir: 'remedies' },
+  ingredient: { pluralDir: 'ingredients' },
+  preparation: { pluralDir: 'preparations' },
+  action: { pluralDir: 'actions' },
+  term: { pluralDir: 'glossary' },
+  tea: { pluralDir: 'teas' },
 };
 
 // Cache for main data IDs (per type)
@@ -35,7 +35,8 @@ let mainDataIdCache: Record<string, Set<string>> | null = null;
 let stagedIdCache: Record<string, Set<string>> | null = null;
 
 /**
- * Load all main data IDs into a lookup cache
+ * Load all main data IDs into a lookup cache.
+ * Scans src/data/{type}/ directories for .json filenames — each filename (minus .json) IS the ID.
  */
 function getMainDataIds(): Record<string, Set<string>> {
   if (mainDataIdCache) return mainDataIdCache;
@@ -43,23 +44,16 @@ function getMainDataIds(): Record<string, Set<string>> {
   const cache: Record<string, Set<string>> = {};
 
   for (const [type, config] of Object.entries(TYPE_CONFIG)) {
-    if (!config.mainDataFile || !config.mainDataKey) {
-      cache[type] = new Set();
-      continue;
-    }
-
-    const filePath = path.join(DATA_DIR, config.mainDataFile);
+    const dir = path.join(DATA_DIR, config.pluralDir);
     try {
-      if (fs.existsSync(filePath)) {
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(content);
-        const items = data[config.mainDataKey] as { id: string }[];
-        cache[type] = new Set(items.map(item => item.id));
+      if (fs.existsSync(dir)) {
+        const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+        cache[type] = new Set(files.map(f => f.replace(/\.json$/, '')));
       } else {
         cache[type] = new Set();
       }
     } catch (error) {
-      console.error(`Error reading main data file ${config.mainDataFile}:`, error);
+      console.error(`Error reading data directory ${config.pluralDir}:`, error);
       cache[type] = new Set();
     }
   }

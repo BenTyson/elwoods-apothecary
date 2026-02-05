@@ -1,0 +1,109 @@
+{
+  "id": "ginger",
+  "commonName": "Ginger",
+  "otherNames": [
+    "Ginger Root",
+    "Zingiber"
+  ],
+  "latinName": "Zingiber officinale",
+  "family": "Zingiberaceae (Ginger family)",
+  "partsUsed": [
+    "rhizome (root)"
+  ],
+  "taste": "Pungent, spicy, warming",
+  "energy": "Warming, drying, stimulating",
+  "actions": [
+    "carminative",
+    "anti-inflammatory",
+    "antiemetic",
+    "diaphoretic",
+    "expectorant",
+    "antimicrobial",
+    "circulatory-stimulant"
+  ],
+  "bodySystems": [
+    "digestive",
+    "respiratory",
+    "cardiovascular",
+    "musculoskeletal"
+  ],
+  "conditions": [
+    "nausea",
+    "motion-sickness",
+    "morning-sickness",
+    "indigestion",
+    "cold",
+    "flu",
+    "inflammation",
+    "pain",
+    "poor-circulation"
+  ],
+  "preparations": [
+    "tea",
+    "decoction",
+    "tincture",
+    "syrup",
+    "capsule",
+    "compress"
+  ],
+  "traditions": [
+    "western",
+    "tcm",
+    "ayurveda",
+    "folk"
+  ],
+  "seasons": [
+    "fall",
+    "winter"
+  ],
+  "featured": true,
+  "safety": {
+    "generalSafety": "Very safe in culinary and moderate medicinal amounts",
+    "contraindications": [
+      "Gallstones - may increase bile flow",
+      "May increase bleeding in very large doses before surgery"
+    ],
+    "drugInteractions": [
+      "May enhance blood-thinning medications in very high doses",
+      "May affect blood sugar medications"
+    ],
+    "pregnancySafe": true,
+    "pregnancyNotes": "One of the best-researched herbs for pregnancy nausea; safe up to 1g dried ginger daily",
+    "nursingNotes": "Generally considered safe in food and moderate medicinal amounts",
+    "childrenNotes": "Safe for children; helpful for digestive upset and nausea"
+  },
+  "dosage": {
+    "tea": "1-2 teaspoons fresh grated or 1/2-1 teaspoon dried per cup, simmer 10-15 minutes",
+    "tincture": "30-90 drops (1-3ml) up to 3 times daily",
+    "capsule": "500-1000mg dried ginger, 2-4 times daily for nausea"
+  },
+  "content": {
+    "overview": "Ginger is one of the most widely used medicinal and culinary spices in the world. Its warming, stimulating properties make it invaluable for digestive complaints, nausea, circulation, and as a cold and flu remedy. Used across virtually every healing tradition, ginger is a true universal medicine.",
+    "traditionalUses": "Used medicinally for over 5,000 years, ginger is mentioned in ancient Chinese, Indian, and Middle Eastern texts. In Ayurveda, it's called 'vishwabhesaj' (universal medicine). Chinese medicine uses it to rescue 'devastated yang' and warm the middle burner. European herbalists used it for plague and to warm the stomach.",
+    "modernResearch": "Ginger is one of the most researched herbs. Clinical trials confirm its effectiveness for nausea (including pregnancy, chemotherapy, and motion sickness), osteoarthritis, and menstrual pain. Studies show anti-inflammatory effects comparable to NSAIDs through inhibition of COX-2 and 5-LOX pathways.",
+    "howToUse": "For nausea: Chew crystallized ginger, drink tea, or take capsules. For digestion: Add to food or drink tea with meals. For cold/flu: Drink hot ginger tea with honey and lemon. For pain/inflammation: Take consistently as tea or capsules. For circulation: Add to foot baths or drink warming tea.",
+    "harvesting": "Harvest fresh ginger when leaves begin to yellow and die back, usually 8-10 months after planting. Young ginger is milder; mature ginger is more pungent. Store fresh in refrigerator or freeze; dry for long-term storage.",
+    "cultivation": "Tropical plant that can be grown in containers in temperate climates. Needs warmth, humidity, and rich soil. Plant rhizome pieces with eyes facing up. Keep consistently moist but not waterlogged."
+  },
+  "constituents": [
+    "Gingerols (anti-inflammatory, antiemetic)",
+    "Shogaols (warming, from dried ginger)",
+    "Zingiberene (aromatic)",
+    "Volatile oils",
+    "Oleoresin"
+  ],
+  "combinations": [
+    {
+      "herb": "peppermint",
+      "purpose": "Enhanced digestive support"
+    },
+    {
+      "herb": "elderberry",
+      "purpose": "Immune support during illness"
+    },
+    {
+      "herb": "turmeric",
+      "purpose": "Anti-inflammatory synergy"
+    }
+  ]
+}

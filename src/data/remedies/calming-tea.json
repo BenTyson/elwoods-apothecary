@@ -1,0 +1,57 @@
+{
+  "id": "calming-tea",
+  "name": "Peaceful Evening Tea",
+  "type": "tea",
+  "difficulty": "beginner",
+  "prepTime": "10 minutes",
+  "yield": "1 cup",
+  "description": "A gentle, calming blend perfect for unwinding after a long day or preparing for restful sleep.",
+  "herbs": [
+    "chamomile",
+    "lavender",
+    "lemon-balm"
+  ],
+  "conditions": [
+    "anxiety",
+    "insomnia",
+    "stress"
+  ],
+  "bodySystems": [
+    "nervous"
+  ],
+  "ingredients": [
+    {
+      "herb": "chamomile",
+      "amount": "1 tablespoon",
+      "part": "dried flowers"
+    },
+    {
+      "herb": "lavender",
+      "amount": "1 teaspoon",
+      "part": "dried flowers"
+    },
+    {
+      "herb": "lemon-balm",
+      "amount": "1 teaspoon",
+      "part": "dried leaves"
+    }
+  ],
+  "instructions": [
+    "Combine all herbs in a tea strainer or teapot",
+    "Pour 8 oz of just-boiled water over the herbs",
+    "Cover and steep for 5-10 minutes (longer for stronger effect)",
+    "Strain and enjoy warm",
+    "Optional: Add honey to taste"
+  ],
+  "tips": [
+    "Drink 30-60 minutes before bed for sleep support",
+    "Covering while steeping preserves volatile oils",
+    "Can be made as a larger batch and reheated"
+  ],
+  "variations": [
+    "Add a small piece of fresh ginger for warmth",
+    "Include passionflower for enhanced sleep support",
+    "Add a sprig of fresh mint for a refreshing twist"
+  ],
+  "safety": "Generally safe. Avoid chamomile if allergic to ragweed. May enhance sedative medications."
+}

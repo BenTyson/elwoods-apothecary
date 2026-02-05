@@ -2,18 +2,13 @@
 
 import { Plant, Tea, Categories, Condition, Remedy, FilterState } from '@/types';
 
-import plantsData from '@/data/plants.json';
+import { plants } from '@/data/plants';
 import categoriesData from '@/data/categories.json';
-import conditionsData from '@/data/conditions.json';
-import remediesData from '@/data/remedies.json';
-import teasData from '@/data/teas.json';
+import { conditions } from '@/data/conditions';
+import { remedies } from '@/data/remedies';
+import { teas } from '@/data/teas';
 
-// Type assertions for imported JSON (cast through unknown for strict TS)
-const plants = plantsData.plants as unknown as Plant[];
 const categories = categoriesData as unknown as Categories;
-const conditions = conditionsData.conditions as unknown as Condition[];
-const remedies = remediesData.remedies as unknown as Remedy[];
-const teas = teasData.teas as unknown as Tea[];
 
 // Plant functions
 export function getAllPlants(): Plant[] {

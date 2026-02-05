@@ -1,0 +1,36 @@
+{
+  "id": "indigestion",
+  "name": "Indigestion & Upset Stomach",
+  "category": "digestive",
+  "description": "Discomfort in the upper abdomen including bloating, gas, nausea, or a feeling of fullness. Often related to eating too quickly, rich foods, or stress.",
+  "symptoms": [
+    "Bloating",
+    "Gas",
+    "Nausea",
+    "Fullness",
+    "Stomach pain",
+    "Heartburn"
+  ],
+  "herbs": [
+    "peppermint",
+    "ginger",
+    "chamomile",
+    "fennel",
+    "dandelion",
+    "gentian"
+  ],
+  "approaches": [
+    "Carminative herbs to relieve gas and bloating",
+    "Bitter herbs before meals to stimulate digestion",
+    "Soothing teas after meals",
+    "Ginger for nausea"
+  ],
+  "lifestyle": [
+    "Eat slowly and mindfully",
+    "Don't eat when stressed",
+    "Avoid lying down after meals",
+    "Identify trigger foods",
+    "Smaller, more frequent meals"
+  ],
+  "whenToSeek": "If symptoms persist, are severe, include vomiting blood, unexplained weight loss, or difficulty swallowing"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "inflammation",
+  "name": "Inflammation & Pain",
+  "category": "musculoskeletal",
+  "description": "Body's response to injury or irritation, causing redness, swelling, heat, and pain. Can be acute or chronic.",
+  "symptoms": [
+    "Swelling",
+    "Redness",
+    "Heat",
+    "Pain",
+    "Stiffness",
+    "Loss of function"
+  ],
+  "herbs": [
+    "turmeric",
+    "ginger",
+    "willow-bark",
+    "meadowsweet",
+    "boswellia",
+    "devil's-claw"
+  ],
+  "approaches": [
+    "Anti-inflammatory herbs taken consistently",
+    "Topical applications for localized pain",
+    "Combining multiple anti-inflammatory herbs",
+    "Addressing root cause alongside symptom relief"
+  ],
+  "lifestyle": [
+    "Anti-inflammatory diet (reduce sugar, processed foods)",
+    "Omega-3 fatty acids",
+    "Regular gentle movement",
+    "Adequate sleep",
+    "Stress management"
+  ],
+  "whenToSeek": "Severe pain, inability to move joint, signs of infection, inflammation without known cause"
+}

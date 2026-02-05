@@ -1,0 +1,36 @@
+{
+  "id": "flu",
+  "name": "Influenza (Flu)",
+  "category": "immune",
+  "description": "More severe viral respiratory illness than a cold, with sudden onset of high fever, body aches, fatigue, and respiratory symptoms.",
+  "symptoms": [
+    "High fever",
+    "Severe body aches",
+    "Extreme fatigue",
+    "Headache",
+    "Dry cough",
+    "Sore throat"
+  ],
+  "herbs": [
+    "elderberry",
+    "echinacea",
+    "boneset",
+    "yarrow",
+    "ginger",
+    "garlic"
+  ],
+  "approaches": [
+    "Elderberry to reduce duration and severity",
+    "Diaphoretic herbs to support fever response",
+    "Immune-stimulating herbs",
+    "Soothing preparations for symptoms"
+  ],
+  "lifestyle": [
+    "Complete rest - this is essential",
+    "Plenty of fluids",
+    "Light, easily digestible foods",
+    "Allow fever to work (unless dangerously high)",
+    "Isolation to prevent spread"
+  ],
+  "whenToSeek": "Difficulty breathing, persistent chest pain, confusion, severe vomiting, high-risk groups (elderly, pregnant, immunocompromised)"
+}

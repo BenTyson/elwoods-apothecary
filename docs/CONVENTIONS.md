@@ -109,12 +109,15 @@ className="text-sm md:text-base lg:text-lg"
 
 - **Never** fetch data directly in components
 - **Always** use functions from `src/lib/data.ts`
-- **Type assertions** through `unknown` for JSON imports
+- **Type assertions** through `unknown` in barrel files
 
 ```typescript
-// In data.ts
-import plantsData from '@/data/plants.json';
-const plants = plantsData as unknown as Plant[];
+// In src/data/plants/index.ts (barrel file)
+import chamomile from './chamomile.json';
+export const plants: Plant[] = [chamomile as unknown as Plant, ...];
+
+// In src/lib/data.ts
+import { plants } from '@/data/plants';
 
 // In components
 import { getAllPlants } from '@/lib/data';
@@ -136,9 +139,11 @@ src/
 │   └── index.ts      # Barrel exports
 ├── lib/              # Utilities, data access
 ├── types/            # TypeScript only
-└── data/             # JSON only
+└── data/             # Content data (file-per-entry)
+    ├── teas/         # {id}.json entries + index.ts barrel
+    ├── plants/       # {id}.json entries + index.ts barrel
     ├── reference/    # Generated reference data
-    └── staging/      # Staged data from /gather
+    └── ...           # conditions/, remedies/, ingredients/, etc.
 scripts/              # Build utilities (Node.js)
 ```
 

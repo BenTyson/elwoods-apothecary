@@ -36,20 +36,20 @@ When user runs any `/gather <type> <name>` command:
 
 ### Step 1: Check Existing Data
 
-Use the **Grep** tool to search for the item name (case-insensitive) in the appropriate main data file:
+Check if `src/data/{type}/{id}.json` exists using the **Glob** or **Read** tool:
 
-| Type | File |
-|------|------|
-| plant | `src/data/plants.json` |
-| condition | `src/data/conditions.json` |
-| remedy | `src/data/remedies.json` |
-| ingredient | `src/data/ingredients.json` |
-| preparation | `src/data/preparations.json` |
-| action | `src/data/actions.json` |
-| term | `src/data/glossary.json` |
-| tea | `src/data/teas.json` |
+| Type | Directory |
+|------|-----------|
+| plant | `src/data/plants/` |
+| condition | `src/data/conditions/` |
+| remedy | `src/data/remedies/` |
+| ingredient | `src/data/ingredients/` |
+| preparation | `src/data/preparations/` |
+| action | `src/data/actions/` |
+| term | `src/data/glossary/` |
+| tea | `src/data/teas/` |
 
-If item exists in the main database, note this is an **update** (will replace the existing entry).
+If `src/data/{type}/{id}.json` exists, note this is an **update** (will replace the existing entry).
 
 ### Step 1.5: Check Duke Reference (Plants Only)
 
@@ -449,12 +449,14 @@ Before writing to the database, verify every item against the checklist for its 
 
 ### Step 4: Write to Database
 
-Write the gathered data directly to the main JSON file.
+Write the gathered data as an individual JSON file.
 
-1. **Read** the main data file for this type (see table in Step 1)
-2. **If update**: Find the existing entry by `id` and replace it
-3. **If new**: Append the entry to the array
-4. **Write** the updated JSON back to the file
+1. **Write** the entry to `src/data/{type}/{id}.json` using the **Write** tool (single file, no read needed)
+2. **If new entry**: Read `src/data/{type}/index.ts`, then make two **Edit** calls:
+   - **Import**: Add `import {varName} from './{id}.json';` after the last existing `import ... from` line
+   - **Array**: Add `  {varName} as unknown as {TypeName},` before the closing `];`
+   - Variable name is the id in camelCase (e.g., `st-johns-wort` → `stJohnsWort`)
+3. **If update**: Just overwrite the JSON file — the barrel already has the import
 
 **Do NOT include `_meta` in the database** — metadata (sources, confidence, notes) is for the report output only.
 
@@ -476,7 +478,7 @@ Output a summary:
 - Sources cited (count + tier breakdown)
 - Confidence level (high/medium/low)
 - Validation checklist result (all passed / gaps found)
-- Confirmation: written to `<main data file>`
+- Confirmation: written to `src/data/{type}/{id}.json`
 - Next steps: `Run /gather --next [type] to continue.`
 
 ---
@@ -487,7 +489,7 @@ When user runs `/gather --queue [type]`:
 
 1. Use **Read** to load `src/data/gather-queue.json`
 2. For each item, determine status:
-   - **done**: Use **Grep** to check if the item's common-name slug exists as an `id` in the main data file for its type
+   - **done**: Check if `src/data/{type}/{id}.json` exists (use **Glob**)
    - **queued**: Not yet in the database
 3. Display a breakdown by type:
    ```
@@ -554,7 +556,7 @@ Run `/gather --next [type]` to continue.
 
 When user runs `/gather --list <category>`:
 
-1. Use **Read** to load the appropriate main JSON file
+1. Use **Glob** to list `src/data/{type}/*.json` files, then read each to extract id and name
 2. List all items with id and name:
    ```
    Plants in database: 15
@@ -888,7 +890,7 @@ Note: This item is also in the gather queue (ID: withania-somnifera).
 [Duke reference: available — skipping constituent/taxonomy searches]
 
 Validation: All checks passed
-Written to: src/data/plants.json (updated)
+Written to: src/data/plants/ashwagandha.json
 
 Summary:
 - Latin: Withania somnifera (Solanaceae)
@@ -912,7 +914,7 @@ Note: This item is also in the gather queue (ID: anxiety).
 [Performs 3 searches in parallel]
 
 Validation: All checks passed
-Written to: src/data/conditions.json (updated)
+Written to: src/data/conditions/anxiety.json
 
 Summary:
 - Category: nervous
@@ -936,7 +938,7 @@ Type: plant | Queue ID: panax-ginseng | Duke ref: available
 [Performs 8 core + 2 conditional + 1 lighter taxonomy = 11 searches]
 
 Validation: All checks passed
-Written to: src/data/plants.json (new entry)
+Written to: src/data/plants/ginseng.json (new entry + barrel updated)
 
 Summary:
 - Latin: Panax ginseng (Araliaceae)
@@ -953,15 +955,15 @@ Run `/gather --next plant` to continue.
 
 ## Files
 
-- **Main data files**:
-  - `src/data/plants.json` - Herbs and medicinal plants
-  - `src/data/conditions.json` - Health conditions
-  - `src/data/remedies.json` - Recipes and formulas
-  - `src/data/ingredients.json` - Non-plant materials
-  - `src/data/preparations.json` - Method guides
-  - `src/data/actions.json` - Herbal actions
-  - `src/data/glossary.json` - Terminology
-  - `src/data/teas.json` - Tea varieties (Camellia sinensis)
+- **Data directories** (file-per-entry, each entry is `{id}.json` + barrel `index.ts`):
+  - `src/data/plants/` - Herbs and medicinal plants
+  - `src/data/conditions/` - Health conditions
+  - `src/data/remedies/` - Recipes and formulas
+  - `src/data/ingredients/` - Non-plant materials
+  - `src/data/preparations/` - Method guides
+  - `src/data/actions/` - Herbal actions
+  - `src/data/glossary/` - Terminology
+  - `src/data/teas/` - Tea varieties (Camellia sinensis)
 - **Reference data**: `src/data/reference/duke-plants.json` (Dr. Duke's Phytochemical DB, CC0)
 - **Types**: `src/types/index.ts`
 - **Queue data**: `src/data/gather-queue.json` — Item queue (187 items, 8 categories)

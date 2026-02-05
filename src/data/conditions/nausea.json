@@ -1,0 +1,34 @@
+{
+  "id": "nausea",
+  "name": "Nausea & Motion Sickness",
+  "category": "digestive",
+  "description": "Feeling of sickness with an inclination to vomit. Can be caused by motion, pregnancy, digestive upset, or other factors.",
+  "symptoms": [
+    "Queasiness",
+    "Urge to vomit",
+    "Cold sweats",
+    "Dizziness",
+    "Loss of appetite"
+  ],
+  "herbs": [
+    "ginger",
+    "peppermint",
+    "chamomile",
+    "fennel",
+    "lemon-balm"
+  ],
+  "approaches": [
+    "Ginger in any form - tea, capsules, crystallized, or fresh",
+    "Peppermint tea or aromatherapy",
+    "Small sips rather than large amounts",
+    "Aromatherapy with calming scents"
+  ],
+  "lifestyle": [
+    "Eat small, frequent meals",
+    "Avoid strong smells",
+    "Fresh air",
+    "Avoid lying flat",
+    "Stay hydrated with small sips"
+  ],
+  "whenToSeek": "Persistent vomiting, blood in vomit, signs of dehydration, severe abdominal pain, head injury"
+}

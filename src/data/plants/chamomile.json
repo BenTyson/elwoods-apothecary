@@ -1,0 +1,106 @@
+{
+  "id": "chamomile",
+  "commonName": "Chamomile",
+  "otherNames": [
+    "German Chamomile",
+    "Wild Chamomile",
+    "Scented Mayweed"
+  ],
+  "latinName": "Matricaria chamomilla",
+  "family": "Asteraceae (Daisy family)",
+  "partsUsed": [
+    "flowers"
+  ],
+  "taste": "Sweet, slightly bitter, apple-like",
+  "energy": "Cooling, relaxing, drying",
+  "actions": [
+    "nervine",
+    "anti-inflammatory",
+    "carminative",
+    "antispasmodic",
+    "vulnerary",
+    "antimicrobial"
+  ],
+  "bodySystems": [
+    "nervous",
+    "digestive",
+    "skin"
+  ],
+  "conditions": [
+    "anxiety",
+    "insomnia",
+    "indigestion",
+    "nausea",
+    "colic",
+    "skin-irritation",
+    "inflammation"
+  ],
+  "preparations": [
+    "tea",
+    "tincture",
+    "salve",
+    "oil",
+    "bath",
+    "compress"
+  ],
+  "traditions": [
+    "western",
+    "folk"
+  ],
+  "seasons": [
+    "spring",
+    "summer",
+    "fall",
+    "winter"
+  ],
+  "featured": true,
+  "safety": {
+    "generalSafety": "Generally considered very safe for most people",
+    "contraindications": [
+      "Ragweed or daisy family allergies - may cause allergic reactions"
+    ],
+    "drugInteractions": [
+      "May enhance effects of sedatives",
+      "May interact with blood thinners (warfarin)"
+    ],
+    "pregnancySafe": false,
+    "pregnancyNotes": "Traditionally avoided during pregnancy due to mild emmenagogue effects; consult healthcare provider",
+    "nursingNotes": "Generally considered safe while nursing; start with small amounts",
+    "childrenNotes": "Safe for children; commonly used for colic and teething"
+  },
+  "dosage": {
+    "tea": "1-2 teaspoons dried flowers per cup, steep 5-10 minutes, 2-4 cups daily",
+    "tincture": "30-60 drops (1-2ml) up to 3 times daily",
+    "capsule": "400-1600mg dried herb daily"
+  },
+  "content": {
+    "overview": "Chamomile is one of the most beloved and widely used medicinal herbs in the world. Known for its gentle, calming effects, it has been used for thousands of years as a remedy for anxiety, digestive upset, and inflammation. Its sweet, apple-like flavor makes it one of the most pleasant herbs to take as tea.",
+    "traditionalUses": "Ancient Egyptians dedicated chamomile to the sun god Ra and used it for fevers. Greek physicians prescribed it for digestive complaints and menstrual disorders. In European folk medicine, it was considered a cure-all, used for everything from teething pain to nightmares. German folk healers called it 'alles zutraut' (capable of anything).",
+    "modernResearch": "Modern studies support chamomile's traditional uses. Research has demonstrated its anxiolytic effects comparable to mild benzodiazepines, anti-inflammatory activity through apigenin and other flavonoids, and antimicrobial properties. Clinical trials show benefits for generalized anxiety disorder, sleep quality, and digestive complaints.",
+    "howToUse": "For relaxation and sleep: Drink a cup of chamomile tea 30-60 minutes before bed. For digestive upset: Sip tea after meals or when symptoms arise. For skin issues: Apply cooled tea as a compress or use chamomile-infused oil. For children's colic: Diluted tea can be given in small amounts.",
+    "harvesting": "Harvest flower heads when fully open on a dry morning after dew has evaporated. Dry quickly in a warm, well-ventilated area away from direct sunlight. Store in airtight containers away from light.",
+    "cultivation": "Annual herb that grows easily from seed. Prefers full sun to partial shade and well-drained soil. Self-seeds readily once established. Harvest regularly to encourage continued blooming."
+  },
+  "constituents": [
+    "Apigenin (flavonoid - anxiolytic)",
+    "Chamazulene (anti-inflammatory)",
+    "Bisabolol (anti-inflammatory, antimicrobial)",
+    "Volatile oils",
+    "Coumarins",
+    "Flavonoids"
+  ],
+  "combinations": [
+    {
+      "herb": "lavender",
+      "purpose": "Enhanced relaxation and sleep support"
+    },
+    {
+      "herb": "peppermint",
+      "purpose": "Digestive support and nausea relief"
+    },
+    {
+      "herb": "lemon-balm",
+      "purpose": "Anxiety and stress relief"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "headache",
+  "name": "Headache & Tension",
+  "category": "nervous",
+  "description": "Pain or discomfort in the head, often related to tension, stress, dehydration, or eye strain. Tension headaches are most common.",
+  "symptoms": [
+    "Head pain",
+    "Pressure around head",
+    "Neck and shoulder tension",
+    "Sensitivity to light",
+    "Fatigue"
+  ],
+  "herbs": [
+    "peppermint",
+    "lavender",
+    "feverfew",
+    "willow-bark",
+    "meadowsweet",
+    "chamomile"
+  ],
+  "approaches": [
+    "Peppermint oil applied to temples (diluted)",
+    "Lavender aromatherapy",
+    "Anti-inflammatory herbs for pain",
+    "Nervine herbs if tension-related"
+  ],
+  "lifestyle": [
+    "Stay well hydrated",
+    "Regular sleep schedule",
+    "Manage stress",
+    "Good posture",
+    "Eye breaks from screens",
+    "Regular meals"
+  ],
+  "whenToSeek": "Sudden severe headache, headache with fever and stiff neck, headache after head injury, changes in vision or speech"
+}

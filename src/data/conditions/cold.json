@@ -1,0 +1,36 @@
+{
+  "id": "cold",
+  "name": "Common Cold",
+  "category": "immune",
+  "description": "Viral upper respiratory infection causing congestion, sore throat, runny nose, and general malaise. Typically lasts 7-10 days.",
+  "symptoms": [
+    "Runny or stuffy nose",
+    "Sore throat",
+    "Sneezing",
+    "Cough",
+    "Mild body aches",
+    "Low-grade fever"
+  ],
+  "herbs": [
+    "elderberry",
+    "echinacea",
+    "ginger",
+    "thyme",
+    "garlic",
+    "peppermint"
+  ],
+  "approaches": [
+    "Immune-supporting herbs at first sign of symptoms",
+    "Diaphoretic teas to support fever",
+    "Expectorant herbs for congestion",
+    "Throat-soothing preparations"
+  ],
+  "lifestyle": [
+    "Rest and adequate sleep",
+    "Stay well hydrated",
+    "Warm broths and soups",
+    "Humidifier for dry air",
+    "Reduce stress"
+  ],
+  "whenToSeek": "If fever is high or prolonged, symptoms worsen after 10 days, difficulty breathing, or symptoms of secondary infection"
+}

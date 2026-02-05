@@ -1,0 +1,50 @@
+{
+  "id": "anxiety",
+  "name": "Anxiety & Stress",
+  "category": "nervous",
+  "description": "A nervous system condition characterized by persistent feelings of worry, nervousness, or unease, often accompanied by physical symptoms such as muscle tension, rapid heartbeat, and gastrointestinal distress. Anxiety ranges from occasional situational stress to chronic generalized anxiety disorder (GAD), which involves difficulty controlling worry on most days for at least six months. The stress response activates the hypothalamic-pituitary-adrenal (HPA) axis and sympathetic nervous system, and herbal approaches aim to modulate these pathways through nervine, anxiolytic, and adaptogenic actions.",
+  "symptoms": [
+    "persistent or excessive worry",
+    "restlessness or feeling on edge",
+    "muscle tension",
+    "difficulty concentrating",
+    "irritability",
+    "fatigue despite adequate rest",
+    "sleep disturbances (difficulty falling or staying asleep)",
+    "racing or intrusive thoughts",
+    "rapid heartbeat or palpitations",
+    "shortness of breath",
+    "gastrointestinal upset (nausea, churning stomach)",
+    "sweating or trembling"
+  ],
+  "herbs": [
+    "lavender",
+    "chamomile",
+    "passionflower",
+    "lemon-balm",
+    "ashwagandha",
+    "valerian",
+    "holy-basil",
+    "kava"
+  ],
+  "approaches": [
+    "Anxiolytic nervines (lavender, passionflower) for acute anxiety relief — lavender extract (Lavela/Silexan) has clinical evidence comparable to low-dose benzodiazepines",
+    "Calming nervines (chamomile, lemon balm) as daily teas or extracts to reduce baseline tension and promote relaxation",
+    "Adaptogens (ashwagandha, holy basil) for long-term HPA axis support and stress resilience, taken consistently over weeks",
+    "Sedative nervines (valerian, passionflower) at bedtime when anxiety disrupts sleep",
+    "Kava for moderate situational anxiety — effective short-term but limited to 4-8 weeks due to hepatotoxicity risk; avoid with alcohol or liver conditions",
+    "Aromatherapy with lavender essential oil (inhalation or topical dilution) for immediate calming effect",
+    "Combination formulas pairing an adaptogen for chronic support with a nervine for acute episodes (e.g., ashwagandha daily + chamomile tea as needed)"
+  ],
+  "lifestyle": [
+    "Regular physical exercise — moderate to vigorous activity for 2+ hours per week reduces anxiety symptoms; mindful movement (yoga, tai chi, qigong) is particularly effective",
+    "Consistent sleep schedule with 7-9 hours nightly; practice sleep hygiene (dark room, no screens before bed, consistent wake time)",
+    "Daily meditation or mindfulness practice, even 5-10 minutes — guided imagery, intentional breathing, and progressive muscle relaxation all show benefit",
+    "Limit or eliminate caffeine, as chronic use is linked to increased anxiety; switch to herbal teas or decaffeinated options",
+    "Reduce or avoid alcohol and nicotine, both of which alter brain chemistry and worsen anxiety over time",
+    "Nutrient-dense diet rich in lean protein, complex carbohydrates, fruits, vegetables, and omega-3 fatty acids to support neurotransmitter production",
+    "Maintain social connections — isolation worsens anxiety; regular contact with supportive friends, family, or support groups builds resilience",
+    "Spend time in nature — green spaces and natural environments have documented cortisol-lowering effects"
+  ],
+  "whenToSeek": "Seek professional help if anxiety persists most days for six weeks or more, significantly interferes with work, relationships, or daily activities, causes repeated panic attacks, involves avoidance of normal situations, is accompanied by depression or substance use, or includes thoughts of self-harm. Physical symptoms like chest pain, severe shortness of breath, or dizziness warrant immediate medical evaluation to rule out cardiac or thyroid conditions."
+}

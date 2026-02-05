@@ -290,6 +290,152 @@ interface DukePlantBrowserProps {
 
 ---
 
+## Detail Page Components
+
+Shared components used by plant and tea detail pages (`/browse/[slug]`, `/browse/tea/[slug]`).
+
+### HeroPlaceholder
+
+**File**: `src/components/detail/HeroPlaceholder.tsx`
+
+Large hero section with SVG artwork (tea cup or botanical leaf), back link, pills, and metadata.
+
+```typescript
+interface HeroPlaceholderProps {
+  variant: 'tea' | 'plant';
+  name: string;
+  subtitle?: string;
+  pills?: { label: string; variant?: string }[];
+  meta?: { label: string; value: string }[];
+  className?: string;
+}
+```
+
+### QuickInfoBar
+
+**File**: `src/components/detail/QuickInfoBar.tsx`
+
+Responsive grid bar displaying labeled data items.
+
+```typescript
+interface QuickInfoItem { label: string; value: string; subValue?: string; }
+interface QuickInfoBarProps { items: QuickInfoItem[]; className?: string; }
+```
+
+### TableOfContents / MobileTOC
+
+**Files**: `src/components/detail/TableOfContents.tsx`, `src/components/detail/MobileTOC.tsx`
+
+Client components. Sticky desktop sidebar and fixed mobile dropdown with intersection observer tracking for active section.
+
+```typescript
+interface TOCItem { id: string; label: string; }
+// Both accept: { items: TOCItem[] }
+```
+
+### ContentSection
+
+**File**: `src/components/detail/ContentSection.tsx`
+
+Semantic section wrapper with heading and scroll margin for TOC navigation.
+
+```typescript
+interface ContentSectionProps { id: string; title: string; children: ReactNode; className?: string; }
+```
+
+### ProseBlock
+
+**File**: `src/components/detail/ProseBlock.tsx`
+
+Renders formatted prose text with optional pull quote extraction and lead paragraph styling.
+
+```typescript
+interface ProseBlockProps { text: string; lead?: boolean; showPullQuote?: boolean; className?: string; }
+```
+
+### DataCard
+
+**File**: `src/components/detail/DataCard.tsx`
+
+Labeled data point display with optional monospace styling.
+
+```typescript
+interface DataCardProps { label: string; value: string; mono?: boolean; className?: string; }
+```
+
+### OxidationMeter
+
+**File**: `src/components/detail/OxidationMeter.tsx`
+
+Visual progress bar for tea oxidation percentage with gradient styling.
+
+```typescript
+interface OxidationMeterProps { level: string; className?: string; }
+```
+
+### CaffeineMeter
+
+**File**: `src/components/detail/CaffeineMeter.tsx`
+
+Segmented bar (0-6 segments) representing caffeine content level.
+
+```typescript
+interface CaffeineMeterProps { level: CaffeineLevel; className?: string; }
+```
+
+### ProcessingTimeline
+
+**File**: `src/components/detail/ProcessingTimeline.tsx`
+
+Vertical timeline with numbered processing steps.
+
+```typescript
+interface ProcessingTimelineProps { steps: string[]; className?: string; }
+```
+
+### BrewingCard
+
+**File**: `src/components/detail/BrewingCard.tsx`
+
+Displays western and optional gongfu style brewing parameters.
+
+```typescript
+interface BrewingCardProps { brewing: BrewingParameters; className?: string; }
+```
+
+### FlavorProfile
+
+**File**: `src/components/detail/FlavorProfile.tsx`
+
+Shows aroma/flavor pills, appearance, liquor color, mouthfeel, and finish.
+
+```typescript
+interface FlavorProfileProps { profile: TeaProfile; className?: string; }
+```
+
+### ImageGalleryPlaceholder
+
+**File**: `src/components/detail/ImageGalleryPlaceholder.tsx`
+
+Grid of placeholder image cards with labels.
+
+```typescript
+interface ImageGalleryPlaceholderProps { labels: string[]; className?: string; }
+```
+
+### RelatedTeas / RelatedPlants
+
+**Files**: `src/components/detail/RelatedTeas.tsx`, `src/components/detail/RelatedPlants.tsx`
+
+Fetch and render up to 3 related items as cards. Return null if none found.
+
+```typescript
+// RelatedTeas: { currentTeaId: string }
+// RelatedPlants: { currentPlantId: string }
+```
+
+---
+
 ## Adding New Components
 
 1. Create file in appropriate subfolder:
@@ -297,6 +443,7 @@ interface DukePlantBrowserProps {
    - `layout/` - Page structure
    - `herbs/` - Herb domain-specific
    - `teas/` - Tea domain-specific
+   - `detail/` - Shared detail page components
    - `staging/` - Admin staging review
    - `gather/` - Admin gather queue
 

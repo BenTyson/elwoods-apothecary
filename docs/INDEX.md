@@ -1,6 +1,6 @@
 # El Woods Apothecary - Agent Documentation
 
-> **Last Updated**: 2026-01-31
+> **Last Updated**: 2026-02-05
 > **Version**: 0.1.0
 
 ## Session-Start Protocol
@@ -46,9 +46,13 @@ src/
 ├── components/    # Reusable UI
 ├── lib/           # Data layer + utils
 ├── types/         # TypeScript interfaces
-└── data/          # JSON content (plants, categories, etc.)
+└── data/          # Content data (file-per-entry architecture)
+    ├── teas/      # Tea entries (one .json per tea + index.ts barrel)
+    ├── plants/    # Plant entries
+    ├── conditions/# Condition entries
+    ├── remedies/  # Remedy entries
     ├── reference/ # Dr. Duke's phytochemical reference (CC0)
-    └── staging/   # Staged data from /gather skill
+    └── ...        # ingredients/, preparations/, actions/, glossary/ (stubs)
 scripts/           # Build utilities (not part of Next.js app)
 ```
 
@@ -83,7 +87,7 @@ scripts/           # Build utilities (not part of Next.js app)
 - Dynamic tea detail pages (SSG) at `/browse/tea/[slug]`
 - Admin staging review page (`/admin/staging`)
 - Admin gather queue page (`/admin/gather`) — 8 content-type tabs, Duke plant browser, manual entry
-- 14 reusable UI components (including staging, gather, and tea components)
+- 29 reusable UI components (UI, layout, herbs, teas, staging, gather, detail)
 - Comprehensive type system (8 content types)
 - `/gather` skill supporting 8 content types + queue commands (`--next`, `--queue`)
 - `/gather` writes directly to main database (no staging step; `--review`/`--merge` removed)
@@ -110,16 +114,16 @@ scripts/           # Build utilities (not part of Next.js app)
 | File | Why It Matters |
 |------|----------------|
 | `src/lib/data.ts` | All data access functions |
-| `src/lib/staging.ts` | Staging data access functions |
 | `src/lib/gather-queue.ts` | Gather queue CRUD + status computation |
+| `src/data/{type}/index.ts` | Barrel files aggregating per-entry JSON into typed arrays |
 | `src/data/gather-queue.json` | Gather queue (187 items across all 8 content types) |
 | `src/types/index.ts` | All TypeScript interfaces (50+ types) |
 | `src/app/globals.css` | Design tokens (100+ CSS vars) |
 | `src/components/index.ts` | Component barrel exports |
-| `src/data/staging/` | Staged data from `/gather` skill |
 | `src/data/reference/duke-plants.json` | Duke phytochemical reference (2,336 plants) |
 | `scripts/build-duke-reference.js` | Builds Duke reference from CSV data |
 | `scripts/extract-duke-entry.js` | CLI to extract a single Duke entry (used by `/gather`) |
+| `scripts/split-data.js` | Migration script: monolithic JSON → file-per-entry |
 | `.claude/commands/` | Claude Code skills (gather, update-phase) |
 
 ---

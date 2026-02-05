@@ -1,0 +1,103 @@
+{
+  "id": "fire-cider",
+  "name": "Fire Cider",
+  "type": "tincture",
+  "difficulty": "beginner",
+  "prepTime": "15 minutes (plus 4-6 weeks infusion)",
+  "yield": "About 1 quart",
+  "description": "A traditional warming tonic for immune support and circulation. Spicy, tangy, and invigorating - perfect for cold and flu season.",
+  "herbs": [
+    "ginger",
+    "garlic",
+    "horseradish"
+  ],
+  "conditions": [
+    "cold",
+    "flu",
+    "immune-weakness",
+    "poor-circulation"
+  ],
+  "bodySystems": [
+    "immune",
+    "cardiovascular",
+    "respiratory"
+  ],
+  "ingredients": [
+    {
+      "herb": "ginger",
+      "amount": "1/4 cup",
+      "part": "fresh, grated"
+    },
+    {
+      "herb": "garlic",
+      "amount": "1/4 cup",
+      "part": "fresh, chopped"
+    },
+    {
+      "item": "horseradish",
+      "amount": "1/4 cup",
+      "note": "fresh, grated"
+    },
+    {
+      "item": "onion",
+      "amount": "1/4 cup",
+      "note": "diced"
+    },
+    {
+      "item": "hot peppers",
+      "amount": "2",
+      "note": "jalapeno or cayenne, sliced"
+    },
+    {
+      "item": "lemon",
+      "amount": "1",
+      "note": "juiced, zest included"
+    },
+    {
+      "item": "rosemary",
+      "amount": "2 sprigs",
+      "note": "fresh"
+    },
+    {
+      "item": "turmeric",
+      "amount": "1 tablespoon",
+      "note": "fresh grated or 1 tsp dried"
+    },
+    {
+      "item": "apple cider vinegar",
+      "amount": "3-4 cups",
+      "note": "raw, with the mother"
+    },
+    {
+      "item": "raw honey",
+      "amount": "1/4-1/2 cup",
+      "note": "to taste, added at end"
+    }
+  ],
+  "instructions": [
+    "Add all ingredients except vinegar and honey to a quart jar",
+    "Pour apple cider vinegar over ingredients to fill jar, leaving 1 inch headspace",
+    "If using a metal lid, place parchment paper between lid and jar (vinegar corrodes metal)",
+    "Shake well to combine",
+    "Store in a cool, dark place for 4-6 weeks, shaking daily",
+    "Strain through cheesecloth, squeezing to extract all liquid",
+    "Add honey to taste, starting with 1/4 cup",
+    "Bottle and label with date"
+  ],
+  "storage": "Refrigerate for up to 1 year. The vinegar acts as a preservative.",
+  "dosage": {
+    "prevention": "1-2 tablespoons daily, diluted in water or juice if desired",
+    "acute": "1 tablespoon every 2-3 hours at onset of illness"
+  },
+  "tips": [
+    "Can be used as a salad dressing or marinade",
+    "The strained vegetables can be used in stir-fries",
+    "Adjust heat level by using more or fewer hot peppers"
+  ],
+  "variations": [
+    "Add echinacea root for enhanced immune support",
+    "Include elderberries (cooked first)",
+    "Add astragalus root for deep immune building"
+  ],
+  "safety": "May cause heartburn in sensitive individuals. Avoid if taking blood thinners (contains garlic and ginger). Not recommended during pregnancy due to strong herbs."
+}

@@ -1,0 +1,84 @@
+{
+  "id": "english-breakfast",
+  "name": "English Breakfast",
+  "otherNames": [
+    "Breakfast Tea",
+    "English Breakfast Tea"
+  ],
+  "teaType": "blend",
+  "origin": {
+    "country": "United Kingdom",
+    "region": "Blend originated in Britain (or possibly New York or Edinburgh — origins disputed); base teas sourced from India (Assam, Darjeeling), Sri Lanka (Ceylon), Kenya, and sometimes China (Keemun)",
+    "terroir": "Varies by component. Assam teas grow at low elevation in the Brahmaputra Valley; Ceylon teas span multiple elevations in Sri Lanka; Kenyan teas are highland-grown, producing bold and brisk liquor."
+  },
+  "processing": {
+    "oxidationLevel": "100% (fully oxidized black tea blend)",
+    "steps": [
+      "Component black teas are fully processed individually: withered, rolled, fully oxidized, and fired",
+      "Assam provides the robust, malty base — often processed via CTC (crush-tear-curl) for strength",
+      "Ceylon and Kenyan teas are blended in for brightness, briskness, and body",
+      "Keemun or Darjeeling may be added in premium blends for aromatic complexity",
+      "Finished teas are blended to a consistent flavor profile by the tea master"
+    ],
+    "roastLevel": "none"
+  },
+  "profile": {
+    "appearance": "Dark, uniform black tea leaves; CTC versions show small, tightly rolled granules while Orthodox blends have longer, twisted leaves. Premium blends may show golden tips from Assam second flush.",
+    "liquorColor": "Deep amber to rich reddish-brown, full-bodied and opaque when milk is added",
+    "aroma": [
+      "robust malt",
+      "toasted grain",
+      "honey sweetness",
+      "subtle citrus brightness",
+      "earthy undertones"
+    ],
+    "flavor": [
+      "bold malty richness",
+      "brisk astringent bite",
+      "mild natural sweetness",
+      "citrusy brightness from Ceylon",
+      "warm earthy depth"
+    ],
+    "mouthfeel": "Full-bodied and robust with moderate to firm astringency; substantial enough to stand up to milk and sugar without becoming thin or washed out",
+    "finish": "Clean and brisk with lingering malty warmth; slight dryness from tannins that refreshes the palate"
+  },
+  "brewing": {
+    "waterTemp": "200-212°F (95-100°C); full boil is traditional for robust extraction",
+    "steepTime": "3-5 minutes; 2-3 min for lighter brew, 5-7 min for strong brew with milk",
+    "leafRatio": "2-3 g per 8 oz (240 ml), or 1 teaspoon loose leaf per cup",
+    "resteeps": 1,
+    "notes": "English Breakfast is designed to be brewed strong and taken with milk and sugar. Use freshly boiled water — reboiled water has reduced oxygen content and produces a flatter cup. For stronger tea, add more leaves rather than extending steep time, which increases bitterness. Pre-warming the pot ensures consistent steeping temperature."
+  },
+  "caffeine": {
+    "level": "moderate",
+    "mgPerCup": "30-70 mg per 8 oz cup; Assam-heavy blends trend higher",
+    "lTheanine": "Approximately 5 mg/g dry leaf (consistent with black tea averages per PMC research); slightly less than green or white tea per gram but still physiologically significant",
+    "energyNotes": "Provides a dependable morning energy boost — stronger than most teas but roughly half the caffeine of coffee. The L-theanine and caffeine synergy promotes focused alertness without jitters, making it the traditional British alternative to coffee for starting the day."
+  },
+  "health": {
+    "primaryBenefits": [
+      "Rich in polyphenols (theaflavins, thearubigins, catechins) that provide antioxidant support and may reduce oxidative stress",
+      "Flavonoid content supports cardiovascular health — a 2017 prospective study found daily tea drinkers had 8% reduced heart disease risk and 10% reduced major cardiac event risk",
+      "Theaflavin and thearubigin compounds help manage cholesterol by supporting healthy lipid metabolism, with studies showing improved LDL and triglyceride levels",
+      "L-theanine amino acid promotes calm focus and may reduce stress and anxiety while supporting cognitive function alongside caffeine",
+      "Polyphenols promote beneficial gut bacteria growth while antimicrobial properties inhibit harmful bacteria, supporting digestive health"
+    ],
+    "antioxidants": "English Breakfast tea's antioxidant profile is dominated by black tea polyphenols: theaflavins (formed during oxidation), thearubigins (responsible for the dark color and body), and residual catechins. These compounds collectively provide anti-inflammatory, cardioprotective, and potential anticancer properties, though research often studies black tea generically rather than specific blends.",
+    "traditionalUses": "In British culture, English Breakfast tea has served as the primary morning stimulant since the 18th century, replacing ale as the breakfast beverage of choice. It was traditionally valued for its ability to aid digestion of the heavy full English breakfast and provide sustained mental alertness through the working morning.",
+    "modernResearch": "Most clinical evidence applies to black tea broadly rather than English Breakfast specifically. A Rutgers University study identified TF-2 (theaflavin-3'-monogallate) in black tea as a compound capable of inducing cancer cell apoptosis without harming normal cells. The American Heart Association journal Circulation reported that black tea consumption improved coronary artery circulation within four weeks. A 2023 study noted that antioxidant activity varies significantly by tea source, underscoring the importance of quality blends.",
+    "cautions": "Tannins in black tea can inhibit non-heme iron absorption — drink between meals if iron-deficient. Moderate caffeine content (30-70 mg/cup) may affect sleep if consumed late in the day. Excessive consumption may contribute to caffeine-related side effects including anxiety, restlessness, and increased heart rate in sensitive individuals. Black tea should complement, not replace, medical treatments."
+  },
+  "grading": {
+    "system": "No unified grading for the blend itself; quality depends on the grades of component teas. Orthodox (whole-leaf) and CTC (crush-tear-curl) are the two main processing methods used.",
+    "grade": "Premium blends use Orthodox whole-leaf teas (FTGFOP, TGFOP grades); mass-market tea bags typically use CTC or broken grades (BOP, fannings, dust) for quick, strong extraction",
+    "gradeExplanation": "CTC processing — used in most everyday English Breakfast tea bags — produces small, uniform granules that brew quickly and yield a strong, dark cup ideal for adding milk. Orthodox processing preserves larger leaf pieces that brew more slowly with greater nuance and complexity. The best English Breakfast blends balance these styles, using Orthodox leaves for flavor depth and CTC for body and strength."
+  },
+  "content": {
+    "overview": "English Breakfast is one of the world's most popular and widely consumed tea blends, a robust combination of fully oxidized black teas designed to produce a full-bodied, malty cup that pairs perfectly with milk and sugar. The blend typically builds on an Assam base for strength and maltiness, complemented by Ceylon tea for brightness and briskness, and often Kenyan tea for additional body and depth. Premium versions may include Chinese Keemun for aromatic complexity or Darjeeling for floral nuance. There is no single standardized recipe — every tea company crafts its own proprietary version, which is why English Breakfast can taste markedly different across brands. The blend's origins are contested between claims from New York (1843), Edinburgh (1892), and London, though all agree it became firmly established as a British institution by the late 19th century. Today it remains the default tea of British daily life, consumed by millions as their first cup of the morning.",
+    "history": "The origins of English Breakfast tea are vigorously debated among tea historians. One account credits Richard Davies, an English immigrant tea merchant in New York City, who in 1843 created a blend of Congou, Pekoe, and Pouchong that he sold for 50 cents per pound — when London tea merchants received inquiries about this 'Breakfast Tea,' none had heard of it. A competing narrative attributes the blend to Scottish tea master Robert Drysdale, who developed a strong black tea blend in Edinburgh in 1892 and marketed it specifically as a breakfast beverage. Queen Victoria is credited with popularizing the blend in England after tasting it at her Scottish residence Balmoral and returning to London with a supply, at which point the Scottish creation ironically acquired the prefix 'English.' The blend's evolution mirrors Britain's colonial tea history: originally built on Chinese Congou and Keemun, it shifted to Assam and Ceylon teas as British plantations in India and Sri Lanka expanded in the mid-1800s, and later incorporated Kenyan teas following Kenya's independence in 1963. Tea itself became a breakfast beverage in England around the mid-18th century, when Queen Anne began taking tea instead of ale in the morning, setting a fashion that transformed British dining culture.",
+    "culture": "English Breakfast tea is arguably the most culturally significant tea blend in the English-speaking world, serving as the foundation of British tea culture and daily ritual. It is the default choice for the traditional 'cuppa' — consumed not just at breakfast but throughout the day, with an estimated 100 million cups of tea drunk daily in the United Kingdom. The blend was specifically designed to complement the hearty full English breakfast of bacon, eggs, sausage, toast, and beans, with enough body and tannin to cut through rich, savory foods. Despite its name, the tea is enjoyed at all hours and is central to the British afternoon tea tradition alongside Earl Grey. A recent survey named Yorkshire Tea (an English Breakfast blend) as Britain's favourite tea brand, underscoring the blend's dominant position in British consumer culture. The blend also anchors the breakfast tea family: Irish Breakfast uses a higher proportion of Assam for extra strength, while Scottish Breakfast is blended even stronger to counteract Scotland's soft water.",
+    "selection": "When choosing an English Breakfast tea, the quality of the component teas matters more than the brand name. Look for blends that specify their tea origins — Assam, Ceylon, Kenya, or Keemun — rather than just listing 'black tea,' which often indicates lower-grade commodity leaves. Harney & Sons (pure Keemun base, smooth and subtle), Fortnum & Mason (balanced and brisk), Taylors of Harrogate (malty with Kenyan strength), and Teapigs (full-flavored in biodegradable temples) consistently receive strong reviews from tea critics. For everyday value, Twinings and Yorkshire Tea offer reliable quality at accessible prices, with Yorkshire Tea being Britain's top-selling brand. Loose-leaf versions generally offer more complexity than tea bags, though high-quality pyramid bags (Teapigs, Twinings Platinum) bridge the gap. Beware of blends that brew pale after 5 minutes of steeping — this signals excessive filler or dust-grade tea. The liquor should be a rich amber to reddish-brown with a pronounced malty aroma.",
+    "storage": "Store English Breakfast tea in an airtight, opaque container — metal tins, ceramic canisters, or dark glass jars — in a cool, dry place between 60-80°F (15-27°C), away from sunlight, heat, and strong odors. As a fully oxidized, unflavored black tea, English Breakfast has one of the longer shelf lives among teas: 18 months to 3 years when properly sealed, and 6-12 months past the best-by date before noticeable quality loss. Unlike flavored teas such as Earl Grey, there is no volatile flavoring oil to dissipate, so degradation is primarily loss of malty depth and briskness rather than a specific aroma fading. Never refrigerate or freeze tea — condensation introduces moisture that accelerates staleness and can cause mold. Signs that your English Breakfast has gone stale include a flat aroma, pale or dull brew color, and a thin, lifeless taste that lacks the characteristic malty punch. Tea absorbs surrounding odors readily, so store it well away from spices, coffee, and household chemicals.",
+    "pairings": "English Breakfast tea is the quintessential companion to a full English breakfast — its robust body and tannins cut through the richness of bacon, eggs, sausage, buttered toast, and baked beans. It pairs equally well with sweet breakfast items: scones with clotted cream and jam, crumpets with butter and honey, toast with marmalade, and pastries. For afternoon tea, serve alongside classic finger sandwiches (egg and cress, ham and mustard, cheese and pickle), Victoria sponge cake, and fruit tarts. The tea's maltiness complements chocolate well, from digestive biscuits to rich chocolate cake. English Breakfast is traditionally a morning tea, best enjoyed from waking through mid-afternoon — its moderate caffeine makes it less suited to evening consumption. Add semi-skimmed milk for the traditional British preparation, or try it with a splash of oat or cashew milk for a dairy-free alternative."
+  }
+}

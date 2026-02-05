@@ -1,0 +1,36 @@
+{
+  "id": "insomnia",
+  "name": "Insomnia & Sleep Issues",
+  "category": "nervous",
+  "description": "Difficulty falling asleep, staying asleep, or waking too early. Can be occasional or chronic, often related to stress, anxiety, or poor sleep habits.",
+  "symptoms": [
+    "Difficulty falling asleep",
+    "Waking during the night",
+    "Early morning waking",
+    "Daytime fatigue",
+    "Irritability",
+    "Poor concentration"
+  ],
+  "herbs": [
+    "valerian",
+    "passionflower",
+    "chamomile",
+    "lavender",
+    "hops",
+    "california-poppy"
+  ],
+  "approaches": [
+    "Sedative herbs taken 30-60 minutes before bed",
+    "Nervine teas to wind down in evening",
+    "Lavender aromatherapy or pillow sachets",
+    "Consistent evening herbal ritual"
+  ],
+  "lifestyle": [
+    "Consistent sleep schedule",
+    "Dark, cool sleeping environment",
+    "Avoid screens 1-2 hours before bed",
+    "No caffeine after noon",
+    "Regular exercise (not close to bedtime)"
+  ],
+  "whenToSeek": "If insomnia persists for more than a few weeks, if accompanied by daytime impairment, or if you suspect sleep apnea"
+}

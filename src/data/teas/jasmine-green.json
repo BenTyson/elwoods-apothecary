@@ -1,0 +1,100 @@
+{
+  "id": "jasmine-green",
+  "name": "Jasmine Green",
+  "otherNames": [
+    "Jasmine Tea",
+    "Mo Li Hua Cha",
+    "Jasmine Scented Green Tea"
+  ],
+  "teaType": "green",
+  "origin": {
+    "country": "China",
+    "region": "Fujian Province, primarily Fuzhou; also produced in Jiangsu, Hunan, Guangxi, and Sichuan",
+    "terroir": "Fuzhou sits in a river basin surrounded by mountains, with a subtropical climate providing warm temperatures, abundant rainfall, and cool nights that favor both Camellia sinensis cultivation and jasmine flower growth. Higher-elevation estates near Mount Taimu (1,500 ft and above) produce particularly prized base teas with complex flavor. The jasmine flowers are typically Jasminum sambac, harvested locally during the summer bloom.",
+    "harvest": "Base green tea is plucked in early spring (March–April) for the most tender leaves; jasmine flowers are harvested mid-July through August when their fragrance peaks"
+  },
+  "processing": {
+    "oxidationLevel": "0-2% (minimal oxidation; green tea base)",
+    "steps": [
+      "Green tea base is harvested in early spring and processed by steaming or pan-firing to halt oxidation",
+      "Prepared base tea is stored and kept dry until jasmine bloom season in summer",
+      "Fresh jasmine buds are harvested between noon and early afternoon while still closed to preserve fragrance",
+      "Buds are spread thinly and temperature-regulated (32-36°C) to encourage opening to approximately 80% bloom",
+      "Opened flowers are layered alternately with green tea leaves in heaps, allowing the tea to absorb jasmine aroma over 8-12 hours",
+      "Workers turn the heaps every 1-2 hours through the night to ensure even scenting",
+      "Spent flowers are separated from tea using a sorting machine",
+      "Tea is dried at 90-110°C to lock in fragrance and reduce moisture to 17-18%",
+      "Scenting process is repeated 3-9 times with fresh flowers for higher grades (premium grades receive 5-7 scentings)"
+    ],
+    "roastLevel": "none"
+  },
+  "profile": {
+    "appearance": "Slender, tightly twisted pale green leaves; high-grade versions (Yin Hao) show silvery tips with visible white trichomes; Dragon Pearls are hand-rolled into small spheres. Quality tea has few to no visible spent jasmine petals, as residual flowers indicate lower grade.",
+    "liquorColor": "Pale golden-green to light yellow, translucent and clear",
+    "aroma": [
+      "heady sweet jasmine perfume",
+      "fresh floral bouquet reminiscent of jasmine blossoms in evening bloom",
+      "delicate grassy green tea undertone",
+      "subtle honeyed sweetness",
+      "light dewy freshness"
+    ],
+    "flavor": [
+      "smooth sweet jasmine florality",
+      "light grassy and vegetal green tea base",
+      "gentle honeyed sweetness",
+      "subtle citrus or herbal complexity in premium grades",
+      "clean refreshing finish with lingering jasmine"
+    ],
+    "mouthfeel": "Light to medium body with a silky, smooth texture; low to mild astringency when properly brewed; creamy and rounded in higher grades such as Dragon Pearls",
+    "finish": "Long, sweet floral aftertaste with jasmine lingering on the palate; premium versions develop a pleasant umami sweetness with each subsequent infusion"
+  },
+  "brewing": {
+    "waterTemp": "175-185°F (80-85°C); lower end for delicate Yin Hao and Dragon Pearls, higher end for standard leaf grades",
+    "steepTime": "2-3 minutes for first infusion; adjust shorter for lighter flavor or longer for stronger jasmine expression",
+    "leafRatio": "2-2.5 g per 6 oz (180 ml), or approximately 1 rounded teaspoon per cup",
+    "resteeps": 3,
+    "notes": "Do not use boiling water, as excessive heat scorches the delicate green tea base and produces bitterness. If no thermometer is available, boil water and let it cool for 2-3 minutes before pouring. Cover while steeping to preserve volatile jasmine oils. Each resteeped infusion will have slightly less jasmine aroma but more green tea character. Dragon Pearls benefit from watching the leaves unfurl — use a glass vessel to enjoy the visual display.",
+    "gongfuStyle": {
+      "waterTemp": "175°F (80°C)",
+      "steepTime": "5-10 seconds for the first infusion, increasing by 5-10 seconds with each subsequent steep",
+      "leafRatio": "4-5 g per 100 ml gaiwan",
+      "resteeps": 6,
+      "notes": "Gongfu brewing emphasizes multiple short infusions that highlight the evolving jasmine-to-green-tea flavor arc. Rinse leaves with a brief hot water flash before the first steep."
+    }
+  },
+  "caffeine": {
+    "level": "low",
+    "mgPerCup": "25-50 mg per 8 oz cup; varies with leaf grade, steep time, and water temperature",
+    "lTheanine": "Approximately 40-60 mg per cup; the L-theanine-to-caffeine ratio is notably favorable, promoting calm alertness without jitters",
+    "energyNotes": "Delivers gentle, sustained energy with a smooth onset. The caffeine-L-theanine synergy produces focused calm rather than the sharp spike and crash of coffee, with alpha brain wave activity enhanced for relaxed concentration. The overall stimulation is roughly one-quarter to one-third that of a standard cup of coffee."
+  },
+  "health": {
+    "primaryBenefits": [
+      "Rich in catechins, especially EGCG (epigallocatechin gallate), which are potent antioxidants that protect cells from oxidative stress and free radical damage",
+      "Catechins support cardiovascular health by lowering LDL cholesterol oxidation and reducing inflammation in arteries, with green tea consumption associated with reduced risk of heart attack and stroke",
+      "EGCG and caffeine may boost metabolism by 4-5% and increase fat oxidation by 10-16%, supporting healthy weight management",
+      "L-theanine and caffeine synergy enhances cognitive function, improving focus, attention, and alpha brain wave activity for calm alertness",
+      "Jasmine aroma has demonstrated calming effects on the autonomic nervous system, reducing heart rate and promoting relaxation through linalool and other volatile compounds",
+      "Catechins and polyphenols support immune function, gut health by promoting beneficial bacteria, and oral health by inhibiting bacteria that cause bad breath and tooth decay"
+    ],
+    "antioxidants": "Green tea base provides a rich catechin profile including EGCG, epicatechin (EC), epicatechin gallate (ECG), and epigallocatechin (EGC). EGCG is the most abundant and researched catechin, associated with anticancer, anti-inflammatory, and neuroprotective properties. The scenting process introduces additional volatile compounds from jasmine flowers, including linalool and methyl jasmonate, which contribute aromatic and mild anxiolytic effects.",
+    "traditionalUses": "In traditional Chinese medicine, jasmine tea is considered neither strongly cooling nor warming, making it suitable for harmonizing the body's qi (vital energy). It has been used to ease digestive discomfort, reduce stress, and promote a sense of calm. Jasmine flowers were historically used in Chinese folk medicine for their mood-lifting and mildly sedative properties. In southern China, serving jasmine tea to guests is a customary gesture of welcome and hospitality.",
+    "modernResearch": "Research on jasmine green tea draws primarily from studies on green tea polyphenols and jasmine aromatherapy. A peer-reviewed study found that jasmine tea's caffeine-theanine synergy raised alpha brain waves 18% more than coffee, with no jitters reported in 92% of participants. Green tea catechins have been extensively studied for cardiovascular protection, metabolic support, and cancer prevention, though most studies use green tea extract rather than brewed jasmine tea specifically. A study on jasmine's aroma found that linalool — a key volatile component — had measurable calming effects on the autonomic nervous system. Clinical evidence remains strongest for the green tea base components; jasmine-specific health benefits are less studied but supported by aromatherapy research.",
+    "cautions": "Catechins in green tea can inhibit non-heme iron absorption — people at risk of iron deficiency (including pregnant women and young children) should drink jasmine tea between meals rather than with food. Contains caffeine, though at modest levels; those with caffeine sensitivity should limit intake or avoid evening consumption. Excessive consumption beyond 8 cups per day is not recommended. The scenting process does not introduce significant allergen risk, but those with jasmine allergy (rare) should avoid."
+  },
+  "grading": {
+    "system": "Chinese green tea grading based on leaf quality, harvest timing, and number of scentings",
+    "grade": "Grades range from standard (3 scentings, later-harvest leaves) through Superior and Yin Hao (Silver Tip, 5-7 scentings, early-spring buds with silver tips) to Dragon Pearls (hand-rolled buds, 5-7 scentings, the most labor-intensive form)",
+    "gradeExplanation": "Quality in jasmine green tea is determined by three primary factors: (1) the grade of the base green tea — earlier spring harvests with more tender buds produce sweeter, more complex tea; (2) the number of scenting rounds — each round uses fresh flowers and deepens the aroma, with premium grades receiving 5-7 scentings versus 3 for standard; (3) the leaf form — Dragon Pearls (hand-rolled spheres of one bud and one leaf) and Yin Hao (silver-tipped leaves with visible white trichomes) represent the highest tiers. Counterintuitively, high-quality jasmine tea contains few visible flower remnants, since spent flowers are removed after each scenting and only lower grades leave petals in for visual appeal."
+  },
+  "content": {
+    "overview": "Jasmine green tea is one of the most iconic scented teas in the world, produced by layering fresh jasmine blossoms with green tea leaves so the tea absorbs the flowers' intoxicating perfume. Originating in Fuzhou, Fujian Province, during the Song Dynasty (960-1279 AD), it represents over a thousand years of Chinese tea craftsmanship. The scenting process is labor-intensive and time-sensitive: base green tea is harvested in spring, then held for months until jasmine flowers reach peak bloom in summer, at which point workers spend nights turning alternating layers of tea and blossoms to achieve even fragrance transfer. Premium grades undergo this process five to seven times with fresh flowers each round, producing a tea whose jasmine aroma is deeply embedded in the leaf rather than superficially applied. The result is a harmonious marriage of smooth green tea character and sweet, heady floral fragrance that has made jasmine tea the most consumed scented tea in China and one of the most popular worldwide. Its gentle flavor, low caffeine content, and calming aroma make it an approachable entry point for those new to Chinese tea, while its highest grades — Dragon Pearls and Yin Hao Silver Tip — reward experienced drinkers with remarkable depth and complexity.",
+    "history": "Jasmine was introduced to China from South Asia via the Maritime Silk Road during the Han Dynasty (206 BC - 220 AD), where it was initially prized in medicine and perfumery rather than tea. The practice of scenting tea with jasmine flowers developed during the Song Dynasty (960-1279 AD) in Fuzhou, which earned the enduring title 'City of Jasmine in China' between 960 and 1127 AD. While scented teas including rose, orchid, and gardenia varieties flourished during the Ming Dynasty (1368-1644), jasmine tea outlasted them all to become the dominant scented tea. During the Qing Dynasty (1644-1911), jasmine tea evolved from an elite luxury into a beverage enjoyed across all social classes, propelled by Empress Dowager Cixi's well-known fondness for jasmine — she famously presented it as a diplomatic gift to foreign envoys, cementing its status in Chinese state protocol. The tea was among the earliest Chinese teas exported to the West during the Qing era, and it remains the tea most strongly associated with Chinese restaurants globally. Fuzhou's jasmine tea production process was inscribed on China's national intangible cultural heritage list, recognizing it as the only city preserving the complete traditional scenting method from flower cultivation through final firing.",
+    "culture": "In southern China, offering jasmine tea to guests is a deeply ingrained gesture of welcome and hospitality, practiced in homes, restaurants, and teahouses alike. The flower itself carries rich symbolism in Chinese culture: jasmine's fragrance was historically described as 'heavenly,' and the flower is associated with purity, grace, and feminine beauty. Jasmine green tea is traditionally offered during ancestral worship ceremonies as a gesture of filial respect, with the fragrant aroma believed to guide and comfort the spirits of departed ancestors. The tea plays a central role in Fuzhou's cultural identity — jasmine is the city's official municipal flower, and annual jasmine festivals celebrate both the flower and the tea-making tradition. Unlike the formal gongfu ceremony associated with oolong or the whisked preparation of matcha, jasmine tea is characteristically democratic and informal, brewed simply in a covered bowl (gaiwan) or glass and enjoyed throughout the day. Chinese folk song 'Mo Li Hua' (Jasmine Flower), one of the most recognized Chinese melodies worldwide, reflects the deep cultural resonance of jasmine across Chinese art, music, and daily life.",
+    "production": "The production of jasmine green tea is a meticulously timed two-stage process spanning spring through late summer. Base green tea — typically from cultivars grown in Fujian — is harvested in early spring when leaves are most tender and rich in amino acids, then processed immediately by steaming or pan-firing to halt oxidation. The prepared tea is stored until July-August when Jasminum sambac reaches peak bloom. Jasmine buds are harvested between noon and early afternoon while still tightly closed, preserving their concentrated fragrance; they are then spread on trays and temperature-regulated between 32-36°C to coax them open to approximately 80% bloom, the point of maximum fragrance release. Workers layer the opened flowers with tea leaves in alternating heaps, beginning the scenting phase that runs 8-12 hours and requires periodic turning every 1-2 hours throughout the night to ensure even absorption. After scenting, spent flowers are mechanically separated and the tea is quickly dried at 90-110°C to lock in the jasmine oils while reducing moisture to a stable 17-18%. For premium grades, this entire cycle is repeated 3 to 9 times with fresh flowers each round — a single batch of top-grade jasmine tea may consume 5-10 times its weight in jasmine blossoms. Commercial alternatives exist using jasmine oil spraying or flavor extracts, but traditionally scented tea is considered vastly superior.",
+    "selection": "The most reliable quality indicator in jasmine green tea is, counterintuitively, the absence of visible flower petals — high-grade tea has its spent blossoms removed after each scenting, while lower grades leave petals in for visual appeal after the fragrance has already been absorbed. Look for leaves that are tightly rolled and uniform in size with a fresh, vibrant green color; Yin Hao grades should display silvery-white tips from young bud trichomes. The dry leaf aroma should be distinctly jasmine but balanced — not cloyingly sweet or artificial-smelling, which can indicate synthetic flavoring or jasmine oil spraying rather than traditional scenting. Dragon Pearls should be tightly and uniformly rolled into small, dense spheres that unfurl gracefully when steeped. When brewed, the liquor should be clear and pale golden-green, never cloudy or dark. Reputable sourcing regions include Fuzhou in Fujian (the traditional heartland), Hengxian in Guangxi, and Changsha in Hunan. Price is a reasonable quality proxy: traditional multi-scented jasmine tea is labor-intensive, so very cheap jasmine tea is almost certainly artificially flavored.",
+    "storage": "Jasmine green tea should be stored in an airtight, opaque container — tin, ceramic, or dark glass — in a cool, dark location away from direct sunlight, heat sources, moisture, and strong odors. As a scented green tea, it is doubly perishable: the green tea base degrades with oxidation and moisture exposure, while the jasmine volatiles dissipate over time. Expect peak flavor for 6-12 months when properly stored; the tea remains safe to consume beyond this window but will lose its signature jasmine fragrance and fresh green character. Refrigeration (4°C) in a factory-sealed package can extend freshness, but once opened, avoid repeated refrigeration as temperature cycling introduces condensation that accelerates degradation. Jasmine tea is especially prone to absorbing nearby odors — never store near spices, coffee, or aromatic foods. In humid environments, consider placing a food-safe silica gel packet inside the storage container. Signs of degradation include faded or yellowish leaf color, loss of jasmine aroma, clumping from moisture, and a flat or stale taste when brewed. Unlike pu-erh or certain oolongs, jasmine green tea does not improve with age and should be consumed as fresh as possible.",
+    "pairings": "Jasmine green tea's light, sweet floral character pairs beautifully with delicate foods that do not overpower its fragrance. Classic companions include dim sum — particularly steamed dumplings, har gow, and siu mai — where the tea's clean flavor cuts through the richness of the fillings. White fish, steamed shrimp, and lightly prepared shellfish are excellent savory matches, as are spring rolls and rice paper wraps with fresh herbs. For sweets, pair with light desserts such as fruit tarts, mochi, almond cookies, and panna cotta; jasmine tea and white chocolate make a particularly harmonious combination. The tea is best enjoyed as an afternoon beverage or alongside a light meal, and is a traditional post-dinner digestive in Chinese dining. Seasonally, jasmine green tea is especially refreshing in spring and summer — it can be served cold-brewed in warmer months for a smooth, extra-sweet rendition with naturally reduced bitterness and lower caffeine extraction. Avoid pairing with heavily spiced, very acidic, or strongly flavored foods that compete with the jasmine's delicate perfume.",
+    "variations": "Jasmine green tea exists in several distinct forms, each with a unique character. Jasmine Dragon Pearls (Long Zhu) are hand-rolled from one bud and one leaf into tight spheres that unfurl dramatically in hot water, producing a particularly sweet and full-bodied liquor — they are widely considered the finest expression of jasmine tea. Yin Hao (Silver Tip) is a high-grade loose-leaf style featuring young buds with visible silvery-white trichomes, offering a balanced profile where both the jasmine and the green tea base are clearly expressed. Standard jasmine green tea uses larger, later-harvest leaves and fewer scentings, providing a more affordable everyday option. Beyond green tea bases, jasmine scenting is also applied to white tea (producing a delicate, honey-sweet variation), oolong (creating a creamy, more complex character), and occasionally black tea (yielding a bolder, malty-floral blend). Jasmine Flowering Tea (blooming tea) bundles tea leaves around dried flowers into a ball that 'blooms' in hot water — primarily an aesthetic presentation piece with milder flavor. Across borders, jasmine tea has inspired regional adaptations from Vietnamese lotus-jasmine combinations to Japanese jasmine green tea (sanpin-cha) popular in Okinawa."
+  }
+}

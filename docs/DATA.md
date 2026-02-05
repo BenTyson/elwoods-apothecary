@@ -4,20 +4,24 @@
 
 ## Data Files
 
+**Architecture**: File-per-entry. Each entry is a standalone JSON file; barrel `index.ts` files aggregate them into typed arrays.
+
+| Directory | Content | Entries | Pattern |
+|-----------|---------|---------|---------|
+| `src/data/teas/` | Tea varieties | 12 | `{id}.json` + `index.ts` |
+| `src/data/plants/` | Herbs & medicinal plants | 5 | `{id}.json` + `index.ts` |
+| `src/data/conditions/` | Health conditions | 11 | `{id}.json` + `index.ts` |
+| `src/data/remedies/` | Recipes & formulas | 5 | `{id}.json` + `index.ts` |
+| `src/data/ingredients/` | Non-plant materials | 0 (stub) | `index.ts` only |
+| `src/data/preparations/` | Method guides | 0 (stub) | `index.ts` only |
+| `src/data/actions/` | Herbal actions | 0 (stub) | `index.ts` only |
+| `src/data/glossary/` | Terminology | 0 (stub) | `index.ts` only |
+
 | File | Content | ~Size |
 |------|---------|-------|
-| `src/data/plants.json` | Herb database | 20KB+ |
 | `src/data/categories.json` | Taxonomy (body systems, preparations, actions, traditions) | 5KB |
-| `src/data/conditions.json` | Ailment guides | 8KB |
-| `src/data/remedies.json` | Recipe database | 10KB |
-| `src/data/ingredients.json` | Non-plant materials (carrier oils, waxes, etc.) | varies |
-| `src/data/preparations.json` | Method guides (how to make tinctures, etc.) | varies |
-| `src/data/actions.json` | Herbal action definitions | varies |
-| `src/data/glossary.json` | Herbal terminology | varies |
-| `src/data/teas.json` | Tea varieties (Camellia sinensis) | varies |
 | `src/data/reference/duke-plants.json` | Dr. Duke's phytochemical reference (2,336 plants, CC0) | 3.4MB |
 | `src/data/gather-queue.json` | Gather queue (187 items across all 8 content types, status computed at read time) | 20KB+ |
-| `src/data/staging/` | Legacy staging directory (admin UI still reads from here) | varies |
 
 ---
 
@@ -73,15 +77,13 @@ getRemediesByCondition(conditionId: string): Remedy[]
 getAllTeas(): Tea[]
 getTeaById(id: string): Tea | undefined
 searchTeas(query: string): Tea[]   // Searches name, otherNames, teaType, origin country
+getRelatedTeas(currentId: string, limit?: number): Tea[]   // Score by teaType + origin
 ```
 
-### Staging
-
-**File**: `src/lib/staging.ts`
+### Plants (Related)
 
 ```typescript
-getAllStagedItems(): StagedItemSummary[]
-getStagedItemByPath(relativePath: string): StagedItemDetail | null
+getRelatedPlants(currentId: string, limit?: number): Plant[]  // Score by bodySystems + actions
 ```
 
 ### Gather Queue
@@ -94,12 +96,12 @@ getGatherQueueByType(type): GatherQueueItemWithStatus[] // Filtered by content t
 addToGatherQueue(item): { success, error? }             // Append with dedup check
 removeFromGatherQueue(id, type): { success, error? }    // Remove by id+type
 getDukePlantIndex(): DukePlantSummary[]                  // Lightweight Duke index (~2,336 entries, cached)
-getPluralDir(type): string                               // Type → staging directory name
+getPluralDir(type): string                               // Type → plural directory name (e.g., 'plant' → 'plants')
 ```
 
 **Status computation** (derived at read time, never stored):
-- `merged` → item ID found in main data file (e.g., `plants.json`)
-- `staged` → file exists at `src/data/staging/<type-plural>/<id>.json`
+- `merged` → `src/data/{type}/{id}.json` exists (directory scan, no file parsing)
+- `staged` → file exists at `src/data/staging/<type-plural>/<id>.json` (legacy)
 - `queued` → neither of the above
 
 ### Utilities
@@ -366,13 +368,14 @@ interface Tea {
 
 ### Manual Addition
 
-1. Add to appropriate JSON file in `src/data/`
-2. Ensure structure matches TypeScript interface
-3. Types auto-validate via import assertions
+1. Write entry as `src/data/{type}/{id}.json`
+2. Add import + array entry to `src/data/{type}/index.ts`
+3. Ensure structure matches TypeScript interface
+4. Types auto-validate via import assertions
 
 ### Using the Gather Skill
 
-The `/gather` skill researches and writes data directly to the main database:
+The `/gather` skill researches and writes data as individual files:
 
 ```bash
 # Research different content types
@@ -399,7 +402,7 @@ The `/gather` skill researches and writes data directly to the main database:
 1. **Queue** - Items enter from `gather-queue.json` via `--next` or manually via `/gather <type> <name>`
 2. **Research** - Claude searches authoritative sources (parallel batch per type)
 3. **Validate** - Per-type checklist with specific minimums per field (e.g., conditions require ≥8 symptoms, ≥5 herbs, ≥5 approaches with format convention)
-4. **Write** - Data written directly to main JSON file (insert or update)
+4. **Write** - Entry written to `src/data/{type}/{id}.json`; barrel updated for new entries
 5. **Audit** - Post-write content length audit for plants/teas (counts sentences per section, expands under-length sections)
 
 **Source priority tiers**: Plants/conditions/remedies require ≥2 Tier 1 sources (PubMed, NCCIH, WHO, etc.); other types ≥1 Tier 1. Sources listed in descending tier order.

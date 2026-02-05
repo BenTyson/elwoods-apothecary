@@ -13,10 +13,10 @@
 │  └── Client Components ('use client')           │
 ├─────────────────────────────────────────────────┤
 │  Data Layer (src/lib/data.ts)                   │
-│  └── JSON imports with type assertions          │
+│  └── Imports from barrel files (index.ts)       │
 ├─────────────────────────────────────────────────┤
-│  Static Data (src/data/*.json)                  │
-│  └── plants, teas, categories, conditions, etc. │
+│  Static Data (src/data/{type}/*.json)           │
+│  └── File-per-entry: teas/, plants/, etc.       │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -35,17 +35,16 @@
 ## Data Flow
 
 ```
-JSON Files → data.ts functions → Components → UI
-     ↓              ↓
-  types/       TypeScript
-  index.ts     validation
+Per-entry JSON → barrel index.ts → data.ts functions → Components → UI
+     ↓                 ↓
+  types/          TypeScript
+  index.ts        validation
 
-Staging Files → staging.ts functions → Admin UI
 Reference DB  → extract-duke-entry.js → /gather skill (pre-fills plant data)
-Gather Queue  → gather-queue.ts → /admin/gather UI (status from filesystem)
+Gather Queue  → gather-queue.ts → /admin/gather UI (status from directory scan)
 ```
 
-**Pattern**: No runtime data fetching. All data imported statically from JSON at build time. Staging data read at build time via `staging.ts`. Reference data consulted by the `/gather` skill during research.
+**Pattern**: No runtime data fetching. All data imported statically from barrel files at build time. Each entry is a standalone JSON file; barrel `index.ts` files aggregate them into typed arrays. Reference data consulted by the `/gather` skill during research.
 
 ## Key Patterns
 
@@ -63,9 +62,13 @@ export function generateStaticParams() {
 
 ### 3. Type-Safe Data Access
 ```typescript
-// JSON imported through unknown for safety
-import plantsData from '@/data/plants.json';
-const plants = plantsData as unknown as Plant[];
+// Barrel files aggregate per-entry JSON with type assertions
+// src/data/plants/index.ts
+import chamomile from './chamomile.json';
+export const plants: Plant[] = [chamomile as unknown as Plant, ...];
+
+// src/lib/data.ts
+import { plants } from '@/data/plants';
 ```
 
 ### 4. Component Variants
@@ -100,9 +103,7 @@ import { getAllPlants } from '@/lib/data';
 |------|----------------------|
 | `layout.tsx` | Wrap pages with Header/Footer |
 | `data.ts` | All data queries |
-| `staging.ts` | Staging data access (read staged JSON files) |
 | `types/index.ts` | All interfaces |
-| `types/staging.ts` | Staging-specific types |
 | `types/gather-queue.ts` | Gather queue types |
 | `gather-queue.ts` | Gather queue CRUD + status computation |
 | `extract-duke-entry.js` | CLI to extract/filter single Duke entry (used by /gather) |

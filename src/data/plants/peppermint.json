@@ -1,0 +1,107 @@
+{
+  "id": "peppermint",
+  "commonName": "Peppermint",
+  "otherNames": [
+    "Brandy Mint",
+    "Balm Mint"
+  ],
+  "latinName": "Mentha x piperita",
+  "family": "Lamiaceae (Mint family)",
+  "partsUsed": [
+    "leaves",
+    "aerial parts"
+  ],
+  "taste": "Intensely cooling, refreshing, slightly sweet",
+  "energy": "Cooling, drying, stimulating then relaxing",
+  "actions": [
+    "carminative",
+    "antispasmodic",
+    "analgesic",
+    "antimicrobial",
+    "diaphoretic",
+    "nervine"
+  ],
+  "bodySystems": [
+    "digestive",
+    "nervous",
+    "respiratory"
+  ],
+  "conditions": [
+    "indigestion",
+    "nausea",
+    "ibs",
+    "headache",
+    "congestion",
+    "muscle-pain",
+    "bad-breath"
+  ],
+  "preparations": [
+    "tea",
+    "tincture",
+    "oil",
+    "capsule"
+  ],
+  "traditions": [
+    "western",
+    "folk",
+    "ayurveda"
+  ],
+  "seasons": [
+    "spring",
+    "summer",
+    "fall",
+    "winter"
+  ],
+  "featured": true,
+  "safety": {
+    "generalSafety": "Generally very safe; essential oil should be used with caution",
+    "contraindications": [
+      "GERD/acid reflux - may worsen symptoms by relaxing lower esophageal sphincter",
+      "Gallbladder problems",
+      "Hiatal hernia"
+    ],
+    "drugInteractions": [
+      "May affect absorption of some medications",
+      "May interact with cyclosporine"
+    ],
+    "pregnancySafe": true,
+    "pregnancyNotes": "Tea considered safe in moderate amounts; avoid concentrated essential oil",
+    "nursingNotes": "May reduce milk supply in large amounts; moderate tea consumption generally safe",
+    "childrenNotes": "Tea safe for children; avoid essential oil near face of young children"
+  },
+  "dosage": {
+    "tea": "1-2 teaspoons dried leaves per cup, steep 5-10 minutes covered, up to 4 cups daily",
+    "tincture": "30-60 drops (1-2ml) up to 3 times daily",
+    "capsule": "Enteric-coated capsules: 0.2-0.4ml peppermint oil, 2-3 times daily for IBS"
+  },
+  "content": {
+    "overview": "Peppermint is one of the world's most popular herbs, used for its refreshing flavor and powerful medicinal properties. A natural hybrid of watermint and spearmint, it has been cultivated for centuries as a digestive remedy and cooling refreshment. Its high menthol content gives it distinctive cooling and antispasmodic effects.",
+    "traditionalUses": "Ancient Egyptians, Greeks, and Romans all used mint medicinally. It was strewn on floors for its fresh scent and used to treat digestive complaints. In medieval Europe, it was used to whiten teeth and treat wounds. Traditional Chinese Medicine uses it for headaches, sore throats, and to disperse wind-heat.",
+    "modernResearch": "Clinical trials confirm peppermint's effectiveness for IBS when taken as enteric-coated capsules. Studies show it relaxes smooth muscle in the digestive tract, has antimicrobial effects, and can reduce tension headaches when applied topically. Research supports its use for nausea and indigestion.",
+    "howToUse": "For digestive relief: Drink tea after meals or when symptoms arise. For headaches: Apply diluted essential oil to temples, or drink tea. For congestion: Inhale steam from hot tea or add to steam inhalation. For IBS: Use enteric-coated peppermint oil capsules.",
+    "harvesting": "Harvest leaves just before flowering for highest oil content. Cut stems in mid-morning after dew has dried. Dry quickly in a warm, dark place. Fresh leaves can be used immediately or frozen.",
+    "cultivation": "Perennial that spreads vigorously via runners - consider container planting. Prefers moist, rich soil and partial shade. Regular harvesting encourages bushy growth. Very hardy and easy to grow."
+  },
+  "constituents": [
+    "Menthol (cooling, antispasmodic)",
+    "Menthone",
+    "Menthyl acetate",
+    "Rosmarinic acid (antioxidant)",
+    "Flavonoids",
+    "Tannins"
+  ],
+  "combinations": [
+    {
+      "herb": "chamomile",
+      "purpose": "Digestive support and relaxation"
+    },
+    {
+      "herb": "ginger",
+      "purpose": "Enhanced digestive support, nausea relief"
+    },
+    {
+      "herb": "fennel",
+      "purpose": "Gas, bloating, and digestive discomfort"
+    }
+  ]
+}

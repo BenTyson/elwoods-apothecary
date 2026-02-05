@@ -1,0 +1,106 @@
+{
+  "id": "lavender",
+  "commonName": "Lavender",
+  "otherNames": [
+    "English Lavender",
+    "True Lavender",
+    "Garden Lavender"
+  ],
+  "latinName": "Lavandula angustifolia",
+  "family": "Lamiaceae (Mint family)",
+  "partsUsed": [
+    "flowers",
+    "leaves"
+  ],
+  "taste": "Floral, slightly bitter, aromatic",
+  "energy": "Cooling, drying, relaxing",
+  "actions": [
+    "nervine",
+    "anxiolytic",
+    "sedative",
+    "antimicrobial",
+    "antispasmodic",
+    "carminative",
+    "vulnerary"
+  ],
+  "bodySystems": [
+    "nervous",
+    "skin",
+    "digestive"
+  ],
+  "conditions": [
+    "anxiety",
+    "insomnia",
+    "stress",
+    "headache",
+    "burns",
+    "wounds",
+    "muscle-tension"
+  ],
+  "preparations": [
+    "tea",
+    "tincture",
+    "oil",
+    "salve",
+    "bath"
+  ],
+  "traditions": [
+    "western",
+    "folk"
+  ],
+  "seasons": [
+    "spring",
+    "summer",
+    "fall",
+    "winter"
+  ],
+  "featured": true,
+  "safety": {
+    "generalSafety": "Very safe herb; essential oil should be properly diluted for topical use",
+    "contraindications": [
+      "Rare allergy possible"
+    ],
+    "drugInteractions": [
+      "May enhance effects of sedatives and CNS depressants"
+    ],
+    "pregnancySafe": true,
+    "pregnancyNotes": "Considered safe in culinary and tea amounts; avoid large medicinal doses in first trimester",
+    "nursingNotes": "Generally considered safe",
+    "childrenNotes": "Safe for children; popular for calming and sleep"
+  },
+  "dosage": {
+    "tea": "1-2 teaspoons dried flowers per cup, steep 5-10 minutes, 2-3 cups daily",
+    "tincture": "30-60 drops (1-2ml) up to 3 times daily",
+    "oil": "Topical: 1-3 drops diluted in carrier oil; Aromatherapy: diffuse or inhale directly"
+  },
+  "content": {
+    "overview": "Lavender is perhaps the most beloved aromatic herb, prized for its beautiful purple flowers and distinctive calming scent. Used for over 2,500 years, it remains one of the most researched and effective herbs for anxiety, sleep, and mood support. Its versatility spans from medicine to culinary arts to household use.",
+    "traditionalUses": "The name comes from Latin 'lavare' (to wash) - Romans added it to baths and laundry. Ancient Egyptians used it in mummification. Medieval Europeans used it against plague and to scent linens. Victorian ladies used lavender water for headaches and fainting. Traditionally placed under pillows for peaceful sleep.",
+    "modernResearch": "Extensive research supports lavender's anxiolytic effects. Silexan (lavender oil supplement) has been shown in clinical trials to be as effective as lorazepam for generalized anxiety disorder without sedation or dependence. Studies confirm benefits for sleep quality, stress reduction, and wound healing.",
+    "howToUse": "For anxiety and sleep: Drink tea in the evening, use in aromatherapy, or place sachet under pillow. For headaches: Apply diluted essential oil to temples. For burns and wounds: Apply lavender-infused oil or diluted essential oil. For stress: Add to bath or use in diffuser.",
+    "harvesting": "Harvest flower spikes when about half the flowers have opened, usually in mid-summer. Cut in the morning after dew has dried. Bundle and hang upside down to dry in a dark, well-ventilated area.",
+    "cultivation": "Perennial shrub that thrives in poor, well-drained soil and full sun. Does not like humidity or wet feet. Prune after flowering to maintain shape. Many varieties available from compact to tall."
+  },
+  "constituents": [
+    "Linalool (calming, antimicrobial)",
+    "Linalyl acetate (relaxing)",
+    "Camphor (small amounts)",
+    "Tannins",
+    "Coumarins",
+    "Flavonoids"
+  ],
+  "combinations": [
+    {
+      "herb": "chamomile",
+      "purpose": "Enhanced calming and sleep support"
+    },
+    {
+      "herb": "lemon-balm",
+      "purpose": "Anxiety and mood support"
+    },
+    {
+      "herb": "valerian",
+      "purpose": "Stronger sleep support"
+    }
+  ]
+}

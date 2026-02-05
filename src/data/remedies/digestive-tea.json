@@ -1,0 +1,58 @@
+{
+  "id": "digestive-tea",
+  "name": "After Dinner Digestive Tea",
+  "type": "tea",
+  "difficulty": "beginner",
+  "prepTime": "10 minutes",
+  "yield": "1 cup",
+  "description": "A classic blend to ease digestion, relieve bloating, and settle the stomach after meals.",
+  "herbs": [
+    "peppermint",
+    "ginger",
+    "fennel"
+  ],
+  "conditions": [
+    "indigestion",
+    "nausea",
+    "bloating"
+  ],
+  "bodySystems": [
+    "digestive"
+  ],
+  "ingredients": [
+    {
+      "herb": "peppermint",
+      "amount": "1 tablespoon",
+      "part": "dried leaves"
+    },
+    {
+      "herb": "ginger",
+      "amount": "1/2 teaspoon",
+      "part": "dried root (or 3 slices fresh)"
+    },
+    {
+      "herb": "fennel",
+      "amount": "1 teaspoon",
+      "part": "seeds, lightly crushed"
+    }
+  ],
+  "instructions": [
+    "Lightly crush the fennel seeds to release oils",
+    "Combine all herbs in a tea strainer or small pot",
+    "If using fresh ginger, simmer in water for 5 minutes first",
+    "Pour 8 oz of hot water over the herbs",
+    "Cover and steep for 5-10 minutes",
+    "Strain and sip slowly after meals"
+  ],
+  "tips": [
+    "Best enjoyed warm, sipped slowly",
+    "Can be made stronger for acute digestive upset",
+    "Fresh ginger is more warming than dried"
+  ],
+  "variations": [
+    "Add chamomile for added relaxation",
+    "Include a small amount of licorice root for sweetness",
+    "Add fresh lemon juice for extra digestive support"
+  ],
+  "safety": "Avoid peppermint if you have GERD or acid reflux. Ginger may affect blood-thinning medications in large amounts."
+}

@@ -1,0 +1,102 @@
+{
+  "id": "elderberry",
+  "commonName": "Elderberry",
+  "otherNames": [
+    "Black Elder",
+    "European Elder",
+    "Sambucus"
+  ],
+  "latinName": "Sambucus nigra",
+  "family": "Adoxaceae (Moschatel family)",
+  "partsUsed": [
+    "berries",
+    "flowers"
+  ],
+  "taste": "Berries: Sweet-tart; Flowers: Sweet, honey-like",
+  "energy": "Cooling, drying",
+  "actions": [
+    "immunomodulator",
+    "antioxidant",
+    "antimicrobial",
+    "diaphoretic",
+    "anti-inflammatory"
+  ],
+  "bodySystems": [
+    "immune",
+    "respiratory"
+  ],
+  "conditions": [
+    "cold",
+    "flu",
+    "fever",
+    "congestion",
+    "immune-weakness",
+    "inflammation"
+  ],
+  "preparations": [
+    "syrup",
+    "tea",
+    "tincture",
+    "capsule"
+  ],
+  "traditions": [
+    "western",
+    "folk"
+  ],
+  "seasons": [
+    "fall",
+    "winter"
+  ],
+  "featured": true,
+  "safety": {
+    "generalSafety": "Cooked berries and flowers are safe; raw berries, leaves, bark, and seeds contain cyanogenic glycosides",
+    "contraindications": [
+      "Autoimmune conditions - may stimulate immune system",
+      "Do not consume raw berries, leaves, or bark"
+    ],
+    "drugInteractions": [
+      "May interact with immunosuppressants",
+      "May interact with diabetes medications",
+      "May enhance diuretic effects"
+    ],
+    "pregnancySafe": true,
+    "pregnancyNotes": "Cooked berries and flowers considered safe in food amounts; avoid concentrated supplements",
+    "nursingNotes": "Cooked berries considered safe in food amounts",
+    "childrenNotes": "Cooked preparations safe for children over 1 year; popular for immune support"
+  },
+  "dosage": {
+    "syrup": "Adults: 1 tablespoon up to 4 times daily during illness; Children: 1 teaspoon up to 4 times daily",
+    "tea": "1-2 teaspoons dried berries or flowers per cup, steep 10-15 minutes",
+    "tincture": "30-60 drops (1-2ml) up to 3 times daily"
+  },
+  "content": {
+    "overview": "Elderberry is one of the most effective herbs for supporting the immune system during cold and flu season. Both the deep purple berries and the creamy white flowers have been used medicinally for centuries. Rich in antioxidants and vitamin C, elderberry has become a go-to remedy for preventing and shortening respiratory infections.",
+    "traditionalUses": "Elder has been called 'the medicine chest of country people' in European folk tradition. Hippocrates referred to elder as his 'medicine chest.' Native Americans used various species for infections, fever, and skin conditions. In folklore, the elder tree was believed to be inhabited by protective spirits.",
+    "modernResearch": "Clinical studies have demonstrated elderberry's ability to reduce the duration and severity of cold and flu symptoms. Research shows it inhibits viral replication by preventing viruses from entering cells. Studies also confirm high antioxidant activity and anti-inflammatory effects through anthocyanin compounds.",
+    "howToUse": "For prevention: Take elderberry syrup daily during cold and flu season. For acute illness: Increase frequency to every 2-3 hours at onset of symptoms. Elderflower tea promotes sweating during fever. Never consume raw elderberries.",
+    "harvesting": "Harvest berries when fully ripe (deep purple-black) in late summer to early fall. Harvest flowers in late spring when fully open. Both should be dried quickly or processed immediately. Always cook berries before use.",
+    "cultivation": "Large deciduous shrub that grows in moist, fertile soil. Tolerates partial shade but fruits best in full sun. Prune annually for best berry production. Hardy and easy to grow."
+  },
+  "constituents": [
+    "Anthocyanins (antioxidant, antiviral)",
+    "Flavonoids (quercetin, rutin)",
+    "Vitamin C",
+    "Phenolic acids",
+    "Lectins",
+    "Volatile oils (flowers)"
+  ],
+  "combinations": [
+    {
+      "herb": "echinacea",
+      "purpose": "Enhanced immune support during illness"
+    },
+    {
+      "herb": "ginger",
+      "purpose": "Warming immune support, nausea relief"
+    },
+    {
+      "herb": "rose-hips",
+      "purpose": "Additional vitamin C and antioxidants"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "immune-weakness",
+  "name": "Weak Immunity",
+  "category": "immune",
+  "description": "Tendency to catch illnesses frequently, slow recovery, or general feeling of being run down. Often related to stress, poor diet, or lack of sleep.",
+  "symptoms": [
+    "Frequent colds",
+    "Slow recovery",
+    "Fatigue",
+    "Recurrent infections"
+  ],
+  "herbs": [
+    "astragalus",
+    "elderberry",
+    "reishi",
+    "echinacea",
+    "garlic",
+    "holy-basil"
+  ],
+  "approaches": [
+    "Adaptogenic herbs for long-term resilience",
+    "Immune-modulating herbs taken consistently",
+    "Elderberry during cold/flu season",
+    "Deep immune tonics for chronic weakness"
+  ],
+  "lifestyle": [
+    "7-9 hours of sleep",
+    "Stress management",
+    "Nutrient-rich diet",
+    "Regular moderate exercise",
+    "Adequate vitamin D"
+  ],
+  "whenToSeek": "Frequent severe infections, infections that don't respond to treatment, unexplained weight loss or fatigue"
+}

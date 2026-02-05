@@ -1,0 +1,34 @@
+{
+  "id": "skin-irritation",
+  "name": "Skin Irritation & Minor Wounds",
+  "category": "skin",
+  "description": "Minor skin issues including rashes, irritation, minor cuts, scrapes, burns, and insect bites.",
+  "symptoms": [
+    "Redness",
+    "Itching",
+    "Minor pain",
+    "Swelling",
+    "Dry or cracked skin"
+  ],
+  "herbs": [
+    "calendula",
+    "plantain",
+    "chamomile",
+    "lavender",
+    "comfrey",
+    "aloe"
+  ],
+  "approaches": [
+    "Vulnerary herbs to promote healing",
+    "Anti-inflammatory herbs to reduce irritation",
+    "Antimicrobial herbs to prevent infection",
+    "Demulcent herbs to soothe and protect"
+  ],
+  "lifestyle": [
+    "Keep wounds clean and covered",
+    "Avoid scratching",
+    "Identify and remove irritants",
+    "Stay hydrated for skin health"
+  ],
+  "whenToSeek": "Signs of infection (increasing redness, pus, fever), deep wounds, burns larger than 3 inches, wounds that won't stop bleeding"
+}

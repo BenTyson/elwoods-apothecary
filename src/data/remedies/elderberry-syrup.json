@@ -1,0 +1,80 @@
+{
+  "id": "elderberry-syrup",
+  "name": "Classic Elderberry Syrup",
+  "type": "syrup",
+  "difficulty": "beginner",
+  "prepTime": "1 hour",
+  "yield": "About 2 cups",
+  "description": "The quintessential immune-support syrup. Take daily during cold and flu season or increase frequency at first sign of illness.",
+  "herbs": [
+    "elderberry",
+    "ginger",
+    "cinnamon"
+  ],
+  "conditions": [
+    "cold",
+    "flu",
+    "immune-weakness"
+  ],
+  "bodySystems": [
+    "immune",
+    "respiratory"
+  ],
+  "ingredients": [
+    {
+      "herb": "elderberry",
+      "amount": "1 cup",
+      "part": "dried berries"
+    },
+    {
+      "herb": "ginger",
+      "amount": "1 tablespoon",
+      "part": "fresh, grated"
+    },
+    {
+      "item": "cinnamon",
+      "amount": "1 stick",
+      "note": "or 1/2 tsp ground"
+    },
+    {
+      "item": "cloves",
+      "amount": "5 whole",
+      "note": "optional"
+    },
+    {
+      "item": "water",
+      "amount": "3 cups"
+    },
+    {
+      "item": "raw honey",
+      "amount": "1 cup",
+      "note": "add after cooking"
+    }
+  ],
+  "instructions": [
+    "Combine elderberries, ginger, cinnamon, and cloves in a pot with water",
+    "Bring to a boil, then reduce heat and simmer uncovered for 45 minutes to 1 hour",
+    "Liquid should reduce by about half",
+    "Remove from heat and let cool until warm (not hot)",
+    "Mash the berries to release remaining juice",
+    "Strain through a fine mesh strainer or cheesecloth, pressing to extract all liquid",
+    "Once cooled to warm temperature, stir in honey until dissolved",
+    "Pour into a clean glass jar and store in refrigerator"
+  ],
+  "storage": "Refrigerate for up to 3 months. Do not freeze (honey may crystallize).",
+  "dosage": {
+    "prevention": "Adults: 1 tablespoon daily. Children (1-12): 1 teaspoon daily",
+    "acute": "Adults: 1 tablespoon every 2-3 hours. Children: 1 teaspoon every 2-3 hours"
+  },
+  "tips": [
+    "Never consume raw elderberries - always cook them first",
+    "Add honey only after mixture has cooled to preserve its benefits",
+    "Label with date made"
+  ],
+  "variations": [
+    "Add echinacea root to the decoction for enhanced immune support",
+    "Include rose hips for extra vitamin C",
+    "Use maple syrup instead of honey for vegan version (shorter shelf life)"
+  ],
+  "safety": "Do not give honey to children under 1 year. Avoid elderberry with autoimmune conditions or if taking immunosuppressants."
+}

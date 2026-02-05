@@ -1,0 +1,84 @@
+{
+  "id": "earl-grey",
+  "name": "Earl Grey",
+  "otherNames": [
+    "Earl Grey's Mixture",
+    "Bergamot Tea"
+  ],
+  "teaType": "blend",
+  "origin": {
+    "country": "United Kingdom",
+    "region": "Blend originated in England; base teas sourced from China (Keemun), India (Assam, Darjeeling), and Sri Lanka (Ceylon)",
+    "terroir": "Varies by base tea. Bergamot oil primarily from Calabria, southern Italy, which produces nearly 80% of the world's supply."
+  },
+  "processing": {
+    "oxidationLevel": "95-100% (fully oxidized black tea base)",
+    "steps": [
+      "Source base black tea (traditionally Keemun; modern blends use Assam, Ceylon, or Darjeeling)",
+      "Black tea undergoes full withering, rolling, oxidation, and firing",
+      "Finished black tea is flavored with oil of bergamot orange by spraying or coating leaves",
+      "Alternative method: dried bergamot orange rinds are blended with the tea leaves",
+      "Blend is sealed to allow bergamot aroma to permeate the leaves"
+    ],
+    "roastLevel": "none"
+  },
+  "profile": {
+    "appearance": "Dark, tightly twisted black tea leaves with a glossy sheen from bergamot oil coating; some blends include visible dried citrus peel or cornflower petals",
+    "liquorColor": "Rich amber to deep copper, translucent with a slight golden edge",
+    "aroma": [
+      "bright bergamot citrus",
+      "floral lavender-like notes",
+      "malty black tea base",
+      "hint of lemon zest",
+      "subtle spice"
+    ],
+    "flavor": [
+      "bold citrus bergamot",
+      "smooth malty foundation",
+      "light floral sweetness",
+      "gentle tannic structure",
+      "clean lemony finish"
+    ],
+    "mouthfeel": "Medium to full body depending on base tea; smooth with moderate astringency; Assam bases yield a fuller, more robust mouthfeel while Darjeeling bases are lighter and more brisk",
+    "finish": "Clean, slightly tannic aftertaste with lingering bergamot citrus that fades to a pleasant sweetness"
+  },
+  "brewing": {
+    "waterTemp": "200-212°F (93-100°C); use lower end for Darjeeling-based blends, higher for Assam or Ceylon bases",
+    "steepTime": "3-5 minutes for loose leaf; 1-3 minutes for tea bags",
+    "leafRatio": "2 g per 8 oz (240 ml), or approximately 1 teaspoon per 6 oz cup",
+    "resteeps": 1,
+    "notes": "Cover while steeping to preserve volatile bergamot oils. Pre-warm the teapot or cup for consistent temperature. Brewing at 200°F rather than full boil yields a gentler bergamot expression. Over-steeping beyond 5 minutes produces bitterness."
+  },
+  "caffeine": {
+    "level": "moderate",
+    "mgPerCup": "40-70 mg per 8 oz cup",
+    "lTheanine": "Approximately 5 mg/g dry leaf (consistent with black tea averages); provides calming complement to caffeine",
+    "energyNotes": "Delivers steady, moderate energy without the jitters associated with coffee. The caffeine-L-theanine synergy promotes calm alertness and sustained focus rather than a sharp spike and crash. Energy is roughly half that of a cup of coffee."
+  },
+  "health": {
+    "primaryBenefits": [
+      "Rich in polyphenols (catechins, theaflavins, thearubigins) and bergamot-specific flavonoids (neoeriocitrin, neohesperidin, naringin) that provide broad antioxidant support",
+      "Bergamot extract has been shown to lower LDL cholesterol and total cholesterol levels in clinical studies, supporting cardiovascular health",
+      "Black tea consumption is associated with reduced stroke risk — a pooled analysis of nine studies (194,965 adults) found three daily cups reduced stroke incidence",
+      "L-theanine and caffeine combination enhances focus and attention, with L-theanine boosting alpha brain wave activity for calm concentration",
+      "Contains catechins and fluoride that support oral health by fighting tooth decay and strengthening enamel"
+    ],
+    "antioxidants": "Dual antioxidant profile: black tea contributes catechins, theaflavins, and thearubigins, while bergamot oil adds polyphenols including neoeriocitrin, neohesperidin, and naringin. This combination may provide broader antioxidant coverage than either component alone.",
+    "traditionalUses": "In British tradition, Earl Grey has long been valued as an afternoon digestive and mental stimulant. The bergamot component has roots in Italian folk medicine for digestive complaints. In aromatherapy, bergamot oil is used for mood elevation and stress relief.",
+    "modernResearch": "Most clinical evidence focuses on bergamot extract or black tea independently rather than the combined beverage. A 12-week black tea study showed 38% reduction in triglycerides, 18% reduction in blood sugar, and 17% reduction in LDL cholesterol. Bergamot polyphenols show antiproliferative activity in cell studies (University of Messina). More direct research on Earl Grey as a prepared beverage is needed.",
+    "cautions": "Tannins in black tea can interfere with iron absorption — drink between meals if iron-deficient. Excessive consumption (more than 4 liters daily) has been linked to muscle cramps due to bergamot's potential interference with potassium channels. Contains moderate caffeine; those sensitive should limit intake or avoid evening consumption. Bergamot oil may increase photosensitivity in some individuals."
+  },
+  "grading": {
+    "system": "No standardized grading system for Earl Grey blends; quality is determined by the base tea grade and bergamot oil quality rather than a unified scale",
+    "grade": "Varies by manufacturer — premium blends use whole-leaf Orthodox-grade black teas (FTGFOP or higher), while mass-market versions use CTC or broken-leaf grades in tea bags",
+    "gradeExplanation": "Since Earl Grey is a flavored blend, quality depends on three factors: (1) the grade and origin of the base black tea, (2) whether real Calabrian bergamot oil is used versus synthetic flavoring, and (3) the balance between tea and bergamot. Whole-leaf loose blends with natural bergamot oil generally indicate higher quality."
+  },
+  "content": {
+    "overview": "Earl Grey is one of the most recognized and beloved tea blends in the world, defined by its signature flavoring of bergamot oil — a fragrant citrus extract from the rind of the bergamot orange grown primarily in Calabria, Italy. The blend traditionally uses a black tea base, most classically Chinese Keemun, though modern versions frequently employ Assam, Ceylon, or Darjeeling teas, each lending a distinct character. Named after Charles Grey, 2nd Earl Grey and British Prime Minister from 1830 to 1834, the blend has been in continuous production since at least the 1880s. Its flavor profile balances bright citrus-floral bergamot notes against the malty depth of black tea, creating a layered and immediately recognizable taste. Earl Grey occupies a unique position in tea culture as both an everyday staple and a symbol of British refinement, famously ordered by Star Trek's Captain Picard. The blend has spawned numerous variations including Lady Grey, French Earl Grey, Russian Earl Grey, and the popular London Fog latte.",
+    "history": "The precise origins of Earl Grey remain debated despite nearly two centuries of lore. It was named for Charles Grey, 2nd Earl Grey, who served as British Prime Minister from 1830 to 1834 and is historically notable for the Abolition of Slavery Act of 1833. The Grey family maintains that a Chinese mandarin specially blended the tea to suit the lime-heavy water at Howick Hall, the family estate in Northumberland. Competing claims exist: Jacksons of Piccadilly assert Lord Grey gave the recipe to partner George Charlton in 1830, while Twinings' version holds that Lady Grey popularized the blend at London political gatherings. The earliest documented reference to bergamot-flavored tea dates to 1824, though it makes no mention of Earl Grey. The first published advertisements for 'Earl Grey' tea appeared in the 1880s from Charlton & Co. of Jermyn Street, London. Historians suggest the blend likely originated as a commercial strategy — bergamot was used to imitate expensive Chinese scented teas, and the Earl's name lent aristocratic appeal.",
+    "culture": "Earl Grey has become deeply embedded in British cultural identity, associated with afternoon tea tradition and upper-class refinement. A 2010 UK survey found that many Britons associate drinking Earl Grey with being 'posh' or 'middle class,' distinguishing it from the more working-class English Breakfast. The blend's cultural reach extends to popular culture through Star Trek: The Next Generation, where Patrick Stewart's Captain Jean-Luc Picard made 'Tea, Earl Grey, hot' an iconic catchphrase. In 2011, Twinings' attempt to reformulate their Earl Grey recipe sparked significant public backlash, demonstrating the tea's emotional hold on British consumers. The London Fog — an Earl Grey latte made with steamed milk and vanilla syrup — originated in Vancouver, Canada, in the mid-1990s when a pregnant customer requested a gentler alternative to coffee, and has since become a global café staple. Lady Grey, with its added Seville orange peel and cornflower, was created by Twinings as a milder, more approachable entry point to the bergamot-flavored tea family.",
+    "selection": "When choosing Earl Grey, the most important quality indicator is whether the blend uses real bergamot oil from Calabria versus synthetic or artificial flavoring — naturally flavored versions offer more balanced, nuanced citrus character. Premium loose-leaf blends from Harney & Sons (Earl Grey Supreme with silver-tipped leaves), VAHDAM (Indian single-origin base, vacuum-sealed within 72 hours of harvest), and Numi (Assam aged with real Italian bergamot for weeks) consistently rank among the best reviewed. For everyday value, Twinings and Bigelow offer reliable quality at accessible prices. Look for whole, intact leaves rather than broken fannings or dust — CTC tea bags brew stronger but lack the subtlety of Orthodox whole-leaf. Consider the base tea origin: Keemun lends a smooth, wine-like character suited to drinking without milk, Assam provides bold maltiness that stands up to milk, and Darjeeling adds floral delicacy. The aroma through the packaging should be distinctly citrus-floral but not overwhelming or artificial-smelling.",
+    "storage": "Store Earl Grey in an airtight, opaque container — tin, ceramic, or dark glass — at room temperature between 68-77°F (20-25°C), away from direct sunlight, heat sources, and strong odors. Tea readily absorbs surrounding aromas, so keep it well separated from spices, coffee, and other scented teas. Flavored teas like Earl Grey have a shorter shelf life than unflavored black teas because the bergamot oil gradually dissipates: expect optimal flavor for 6-12 months once opened, up to 18 months in a well-sealed tin, or 2 years in original sealed packaging. Earl Grey does not improve with age — unlike pu-erh or certain oolongs, the bergamot aroma fades over time, leaving flat, unremarkable black tea. Avoid refrigeration or freezing, as condensation introduces moisture that can cause mold. Signs of degradation include loss of the bergamot citrus aroma, faded or dusty leaf appearance, and a flat or stale taste when brewed. Always use clean, dry utensils when scooping loose leaf to prevent moisture contamination.",
+    "pairings": "Earl Grey's bergamot citrus character pairs beautifully with buttery baked goods — scones, shortbread, madeleines, and lemon drizzle cake are classic afternoon tea companions. The tea's brightness cuts through rich, creamy foods, making it an excellent match for custard tarts, crème brûlée, and chocolate truffles. Savory pairings include smoked salmon finger sandwiches, mild soft cheeses (Brie, Camembert), and cucumber sandwiches. Earl Grey is traditionally an afternoon tea, best enjoyed between 2-5 PM, though its moderate caffeine makes it suitable for morning drinking as well. Avoid pairing with heavily spiced or very acidic foods that compete with the bergamot's delicate citrus-floral notes. Seasonally, it is enjoyed year-round but especially favored in autumn and winter as a warming afternoon drink."
+  }
+}

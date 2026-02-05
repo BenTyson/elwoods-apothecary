@@ -1,0 +1,93 @@
+{
+  "id": "tie-guan-yin",
+  "name": "Tie Guan Yin",
+  "otherNames": ["Tieguanyin", "Iron Goddess of Mercy", "Iron Buddha", "Ti Kuan Yin", "Iron Guanyin"],
+  "teaType": "oolong",
+  "origin": {
+    "country": "China",
+    "region": "Anxi County, Fujian Province",
+    "terroir": "Misty mountains with mineral-rich acidic soils at 300-1000m elevation; subtropical maritime climate with high humidity, abundant rainfall, and cool mountain fog that slows leaf growth and concentrates flavor compounds. Higher-elevation gardens in villages like Xiping and Gande produce the most nuanced teas, while lowland plantations yield bolder, more accessible versions.",
+    "harvest": "Spring (April-May) and autumn (September-October); spring harvest prized for freshness and floral intensity, autumn harvest for deeper aromatics and fuller body. Limited summer and winter harvests exist but are considered lower quality."
+  },
+  "processing": {
+    "oxidationLevel": "15-40% (modern green-style); up to 60-70% (traditional roasted style)",
+    "steps": [
+      "Plucking mature leaves with 2-4 open leaves from the Tie Guan Yin cultivar, typically mid-morning after dew evaporates",
+      "Solar withering outdoors for 30-60 minutes to begin moisture reduction and initiate enzymatic changes",
+      "Indoor withering and cooling to stabilize leaf temperature and allow even moisture redistribution",
+      "Tossing and bruising (yaoqing) in 3-4 rounds alternating with resting periods — the most critical step, each round lasting 10-20 minutes with 2-12 hour rest intervals to control oxidation",
+      "Fixation (kill-green) by tumble-roasting in a heated drum at approximately 250-300°C to halt oxidation when desired aroma and flavor are achieved",
+      "Rolling and shaping into characteristic tight ball form using cloth-wrapped compression, repeated multiple times to achieve the dense pellet shape"
+    ],
+    "roastLevel": "none",
+    "aged": false
+  },
+  "profile": {
+    "appearance": "Tightly rolled, semi-ball-shaped pellets with a dark green to jade-green color; leaves unfurl dramatically when steeped to reveal full, intact leaves with reddish-brown edges from bruising",
+    "liquorColor": "Pale golden-green to light amber, bright and clear with a luminous quality that deepens slightly with each subsequent infusion",
+    "aroma": [
+      "orchid",
+      "gardenia",
+      "fresh butter",
+      "meadow grass",
+      "light honeydew melon"
+    ],
+    "flavor": [
+      "orchid floral",
+      "creamy butter",
+      "toasted chestnut",
+      "light stone fruit",
+      "sweet vegetal finish"
+    ],
+    "mouthfeel": "Silky, buttery, and medium-bodied with a velvety texture that coats the palate; the liquor has a pleasant weight without heaviness, and high-quality examples exhibit a mineral undertone",
+    "finish": "Lingering floral sweetness with a distinctive huigan (returning sweetness) that builds in the throat; subtle orchid fragrance persists in the empty cup, a hallmark of quality Tie Guan Yin known as guanyin yun (Guanyin charm)"
+  },
+  "brewing": {
+    "waterTemp": "195-205°F (90-96°C)",
+    "steepTime": "2-3 minutes for first infusion",
+    "leafRatio": "2.5g per 6 fl oz (180ml)",
+    "resteeps": 6,
+    "notes": "Rinse the tightly rolled leaves with a brief hot water wash before the first infusion to help them begin unfurling. Increase steep time by 30 seconds for each subsequent infusion. The tightly rolled pellets need space to expand fully, so avoid overfilling the vessel.",
+    "gongfuStyle": {
+      "waterTemp": "200-212°F (93-100°C)",
+      "steepTime": "5-10 seconds for first infusion, increasing by 5-10 seconds per round",
+      "leafRatio": "7-8g per 100ml gaiwan or Yixing teapot",
+      "resteeps": 10,
+      "notes": "Gongfu brewing is the traditional and preferred method for Tie Guan Yin. Use a porcelain gaiwan or unglazed Yixing clay teapot. Smelling the lid of the gaiwan between infusions is a traditional way to appreciate the evolving aroma — a key indicator of quality. Pour from a height to aerate. The tea reveals different character across infusions: early steeps are intensely floral, middle steeps develop body and sweetness, later steeps show mineral and woody notes."
+    }
+  },
+  "caffeine": {
+    "level": "moderate",
+    "mgPerCup": "30-50mg per 8 oz cup",
+    "lTheanine": "Contains significant L-theanine that synergizes with caffeine to promote calm alertness without jitteriness; the L-theanine to caffeine ratio in Tie Guan Yin is relatively balanced, contributing to its reputation as a tea that clarifies the mind.",
+    "energyNotes": "Provides a gentle, sustained lift rather than a sharp caffeine spike. The moderate caffeine content makes it suitable for afternoon drinking without disrupting sleep for most people. Multiple short gongfu infusions spread the caffeine intake more evenly than a single long steep."
+  },
+  "health": {
+    "primaryBenefits": [
+      "Rich in polyphenols and catechins that exhibit antioxidant activity, helping neutralize free radicals and protect cells from oxidative stress (Journal of Agricultural and Food Chemistry).",
+      "Research in APP/PS1 mouse models demonstrated that Tieguanyin extracts reduced amyloid plaques and improved cognitive ability by modulating neuroinflammation and enhancing endogenous antioxidant capacity (PMC, 2022).",
+      "Oolong tea polyphenols support cardiovascular health by helping lower LDL cholesterol levels, improving blood lipid profiles, and promoting healthy blood pressure regulation (European Journal of Clinical Nutrition).",
+      "Contains bioactive compounds including catechins and tea polysaccharides that may aid glucose metabolism and improve insulin sensitivity, supporting metabolic health and weight management (Journal of Food Science).",
+      "The combination of L-theanine and caffeine promotes a state of relaxed focus, with L-theanine modulating alpha brain wave activity to reduce stress without causing drowsiness (Nutritional Neuroscience)."
+    ],
+    "antioxidants": "Contains a diverse spectrum of polyphenols characteristic of partially oxidized oolong tea, including catechins (particularly EGCG and ECG, though less than in green tea), theaflavins, thearubigins, and unique oolong-specific polymerized polyphenols. The partial oxidation creates a broader polyphenol profile than either green or black tea.",
+    "traditionalUses": "In Traditional Chinese Medicine, oolong teas like Tie Guan Yin are considered cooling to neutral in nature and are valued for aiding digestion, clearing heat, promoting fluid production, and sharpening mental clarity. Historically consumed after meals in southern Fujian to aid digestion and as a daily health-promoting beverage.",
+    "modernResearch": "A 2022 study published in PMC found that Tieguanyin extracts alleviated behavioral abnormalities in Alzheimer's disease mouse models through modulation of neuroinflammation. Metabolomic analysis published in LWT - Food Science and Technology (2023) identified distinct biochemical markers across different grades that correlate with quality and potential bioactivity. Broader oolong tea research supports benefits for metabolic health, weight management, and oral health.",
+    "cautions": "Contains moderate caffeine and should be consumed in moderation by individuals sensitive to caffeine. Tannins in Tie Guan Yin may inhibit non-heme iron absorption — avoid drinking within one hour of iron-rich meals or iron supplements. Pregnant and nursing women should limit consumption to 1-2 cups per day."
+  },
+  "grading": {
+    "system": "Chinese multi-grade system (Anxi standard)",
+    "grade": "Ranges from standard commercial grade through A, A+, AA, AAA to competition grade",
+    "gradeExplanation": "Tie Guan Yin is graded on leaf material quality, fragrance intensity and persistence, flavor complexity, and visual uniformity. Higher grades require younger leaves from bushes under 8-10 years old, hand-selection for consistent leaf size and shape, and a pronounced guanyin yun (Guanyin charm) — the distinctive lingering orchid fragrance. Competition-grade teas are evaluated by professional tea masters using gaiwan side-by-side comparison, with lid aroma being a primary quality indicator. The price roughly doubles with each step up in grade."
+  },
+  "content": {
+    "overview": "Tie Guan Yin, whose name translates to Iron Goddess of Mercy, is one of China's most celebrated oolong teas and one of the most famous teas in the world. Originating from Anxi County in southern Fujian Province, it is prized for its distinctive orchid fragrance, creamy mouthfeel, and the elusive quality known as guanyin yun — a lingering floral sweetness that echoes in the throat and empty cup. The tea is made from a specific cultivar of the same name, which produces thick, fleshy leaves ideally suited to oolong processing. Tie Guan Yin occupies a special place in Chinese tea culture as one of the top ten famous teas of China, and it has been produced for over 300 years. Modern production has shifted toward a lighter, greener style that emphasizes fresh floral aromatics, though traditional roasted versions with deeper, more complex profiles are experiencing a revival among connoisseurs. The tea is exceptionally well-suited to gongfu brewing, where its tightly rolled leaves unfurl across multiple infusions to reveal evolving layers of flavor from bright floral to mineral to sweet woody notes.",
+    "history": "The origins of Tie Guan Yin are steeped in legend, with two competing origin stories dating to the Qing Dynasty era around 1723-1735. In the Wei legend, a devout farmer named Wei Yin discovered a tea plant in a rocky crevice after the bodhisattva Guanyin appeared to him in a dream and directed him to a treasure behind the local temple. He cultivated the plant, shared cuttings with neighbors, and named the tea after the iron statue of Guanyin in the temple. The Wang legend attributes the discovery to scholar Wang Shiring, who found the plant beneath Guanyin Rock, cultivated it, and presented the tea to the Qianlong Emperor, who was so impressed he named it after its place of origin. Regardless of which legend is closer to truth, Anxi has over 1,000 years of tea cultivation history, and the development of Tie Guan Yin roughly 300 years ago coincided with the refinement of oolong processing techniques in Fujian. The tea rose to national prominence during the Qing Dynasty and was among the earliest Chinese teas exported to Southeast Asia, carried by Fujianese emigrants. In 2022, the FAO designated the Anxi Tieguanyin Tea Culture System as a Globally Important Agricultural Heritage System, recognizing its centuries of sustainable cultivation and cultural significance.",
+    "culture": "Tie Guan Yin is deeply woven into the social fabric of southern Fujian Province, where offering the tea to guests is a fundamental gesture of respect and hospitality. The gongfu tea ceremony, as practiced in Fujian and Guangdong, finds one of its highest expressions in the brewing of Tie Guan Yin, with the ritual of heating the vessel, rinsing the leaves, and pouring from a height serving both practical and aesthetic purposes. In Anxi and surrounding areas, tea drinking is not merely a beverage habit but a daily social ritual — neighbors gather to compare harvests, evaluate quality, and discuss the distinctive guanyin yun that distinguishes exceptional lots. The tea has also contributed to shaping the philosophy of chadao, the Chinese way of tea, emphasizing harmony, respect, purity, and tranquility. Tea competitions in Anxi draw farmers and connoisseurs from across the region, where judges evaluate submissions through systematic gaiwan brewing and lid-aroma comparison. Beyond China, Tie Guan Yin has become one of the most recognized Chinese teas internationally, particularly popular in Southeast Asia and among Western specialty tea enthusiasts.",
+    "production": "The production of Tie Guan Yin is among the most labor-intensive of any tea, requiring precise timing and skilled judgment at every stage. After plucking mature leaves with two to four open leaves attached, the leaves undergo solar withering followed by indoor cooling. The most critical phase is tossing and bruising (yaoqing), conducted in three to four rounds alternating with extended rest periods — initial rounds last 10-15 minutes followed by two-hour rests, with the final round resting for over 12 hours. This prolonged tossing-and-resting cycle allows controlled oxidation to develop the tea's signature floral aromatics while preserving freshness. Once the tea master judges the leaves ready by aroma and appearance, fixation halts oxidation through tumble-roasting in a heated drum. The leaves are then repeatedly rolled and compressed in cloth bundles to form the characteristic tight ball shape, a process that may be repeated dozens of times. Modern production since the 1990s has trended toward a greener, less oxidized style (qingxiang or clear-fragrance), while traditional production (nongxiang or rich-fragrance) involves higher oxidation and sometimes additional charcoal roasting that produces a deeper, more complex flavor profile.",
+    "selection": "When selecting Tie Guan Yin, look for tightly rolled, uniform pellets with a vibrant dark green color and a fresh, pronounced orchid fragrance even in the dry leaf. High-quality examples will have intact, unbroken leaves that unfurl into large, whole leaves when brewed — broken or dusty leaf material indicates lower grades. The best indicator of quality is the guanyin yun: after brewing, smell the lid of the gaiwan or the empty cup, where superior Tie Guan Yin leaves a lingering floral-sweet fragrance that persists for minutes. The tea master's traditional evaluation method involves side-by-side gaiwan comparison of different grades, and buyers can apply this same technique. Seek tea from recognized Anxi villages like Xiping and Gande, and be aware that younger tea bushes (under 8-10 years old) produce higher quality leaf. Fresh Tie Guan Yin should have been harvested within the current or most recent season — ask about harvest date, as green-style Tie Guan Yin loses its freshness relatively quickly.",
+    "storage": "Green-style (qingxiang) Tie Guan Yin is best consumed fresh and should ideally be drunk within 12-18 months of harvest. Store in an airtight, opaque container in the refrigerator or freezer to preserve its delicate floral aromatics — this is one of the few teas that genuinely benefits from refrigerated storage. Allow the container to reach room temperature before opening to prevent condensation from damaging the leaves. Traditional roasted-style (nongxiang) Tie Guan Yin is more shelf-stable and can be stored at room temperature in a cool, dark place for 2-3 years; some connoisseurs deliberately age well-roasted Tie Guan Yin for 10-28 years, during which it develops a mellowed, herbal sweetness and smooth, thick body. Signs of degradation include loss of fragrance, stale or musty aroma, and a flat taste that lacks the characteristic returning sweetness.",
+    "pairings": "Tie Guan Yin's floral elegance and clean finish make it a versatile food companion. It pairs beautifully with light dim sum dishes — steamed dumplings, rice noodle rolls, and spring rolls complement the tea's buttery mouthfeel without overwhelming its delicate fragrance. Mild seafood, particularly steamed fish and shrimp, benefits from the tea's palate-cleansing properties. The tea also pairs surprisingly well with light pastries, shortbread cookies, and fruit-based desserts where the orchid notes can harmonize with subtle sweetness. In the traditional Fujianese context, Tie Guan Yin is served throughout meals as a digestive aid and is particularly enjoyed alongside roasted or braised dishes where its clean, floral character provides contrast. It is ideal as a mid-morning or afternoon tea, offering enough substance for contemplative solo drinking sessions while remaining refined enough for social gatherings.",
+    "variations": "The Tie Guan Yin cultivar is produced in several distinct styles that can taste dramatically different despite coming from the same plant. Qingxiang (clear-fragrance) is the modern, lightly oxidized style dominant since the 1990s, emphasizing bright floral aromatics and a fresh, green character. Nongxiang (rich-fragrance) represents the traditional, more heavily oxidized and sometimes charcoal-roasted style, offering deeper notes of roasted nuts, caramel, and stone fruit with a fuller body. Chenxiang (aged fragrance) refers to traditionally roasted Tie Guan Yin aged for a decade or more, developing a mellow, herbal sweetness with medicinal depth. Beyond Anxi, the cultivar is also grown in Taiwan, where Muzha Tie Guan Yin — produced in the hills outside Taipei — tends to be more heavily roasted with a distinctive charcoal character, and has won numerous competition awards. Vietnamese and Thai producers also grow the cultivar, though Anxi remains the definitive origin."
+  }
+}
